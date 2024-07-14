@@ -1,0 +1,65 @@
+.abstract {
+    font-size: 11pt;
+    text-align: justify;
+}
+
+.despic {
+    margin-top: 10pt;
+}
+
+.publications {
+    margin-top: 5pt;
+    text-align: justify;
+}
+
+.publications > .title {
+    font-size: 12pt;
+    font-style: italic;
+    font-weight: bold;
+    color: #bc7676;
+}
+
+.conference-name {
+    color: red;
+}
+
+.info {
+    font-size: 15pt;
+}
+
+.info > a {
+    color: #000000;
+    text-decoration: underline;
+}
+
+.information {
+    margin-top: 15pt;
+}
+
+.navi {
+    font-size: 15pt;
+    margin-top: 15pt;
+}
+
+#home {
+    font-size: 13pt;
+}
+
+.announcement {
+    margin-top: 5pt;
+    font-size: 13pt;
+    background: #D1EEEE;
+    border: 1px dashed;
+}
+
+body {
+    margin-bottom: 15pt;
+}
+
+h3 {
+    color: #43579a;
+}
+
+#publications {
+    text-align: justify;
+}
