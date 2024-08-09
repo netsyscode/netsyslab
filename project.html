@@ -4,14 +4,14 @@
         <meta charset="utf-8"/>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Project</title>
+        <title>Research</title>
         <!--<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">-->
         <link rel="stylesheet" href="css/bootstrap.min.css"/>
         <link rel="stylesheet" href="css/main.css">
     </head>
     <body>
 
-    <div class="container information">
+   <div class="container information">
         <div class="row">
             <div class="col-md-9">
                 <h2>Han Zhang(张晗)</h2>
@@ -19,32 +19,63 @@
                 <div class="info"><a href="https://www.insc.tsinghua.edu.cn/">Institute for Network Sciences and
                         Cyberspace</a> </div>
                 <div class="info"><a href="http://www.tsinghua.edu.cn">Tsinghua University</a>, P.R.China</div>
-                <div class="info">Email: zhhan AT tsinghua.edu.cn</div>
-                <div class="info">Office Building: FIT 3-204</div>
+                <div class="info">Email: zhhan@tsinghua.edu.cn</div>
             </div>
             <div style="text-align: center;" class="col-md-3"><img src="images/face.jpg" width="160pt" /></div>
         </div>
         <div class="row navi">
-            <div class="col-md-2"> [<a href="index.html" onclick="showPanel(1)">Home</a>] </div>
-            <div class="col-md-2"> [<a href="research.html" onclick="showPanel(2)">Research</a>] </div>
-            <div class="col-md-2"> [<a href="javascript: void(0);" onclick="showPanel(2)">Project</a>] </div>
+           <div class="col-md-2"> [<a href="index.html" onclick="showPanel(1)">About</a>] </div>
+            <div class="col-md-2"> [<a href="research.html" onclick="showPanel(2)">Publications</a>] </div>
+            <div class="col-md-2"> [<a href="project.html" onclick="showPanel(3)">Projects</a>] </div>
             <div class="col-md-2"> [<a href="javascript: void(0);" onclick="showPanel(0)">Students</a>] </div>
         </div>
     </div>
         <div class="container" id="home"></div>
         <div class="container" id="publications"></div>
-        <div class="container" id="research">
-            <hr/>
-            <div class="row">
-                <div class="col-md-12" style="font-size: 18px;">We aim to build efficient Internet architecture. </div>
-            </div>
-            <h3 style="text-align: center; ">Introduction of projects</h3>
-            <div class="row">
-                <div class="col-md-12" style="font-size: 18px;">
-                <!--In this area, we aim to build real IoT systems for different types of applications and to see how far IoTs can reach. -->
+        <div class="container" id="research"></div>
+
+         <div class="container" id="projects">
+        <div class="row">
+            <div class="col-md-12" style="text-align: justify;">
+                    <h3>Network-centric Application Behaviour Sensing Technology:</h3>
+                    <div class="abstract ">Focusing on the scientific problem of <b>"the contradiction between perception completeness, accuracy and efficiency"</b>, we have carried out research on network-centric application behaviour perception technology from the perspectives of network state monitoring, application component association analysis and application behaviour deduction. 
+                        To address the low efficiency of performance monitoring of large OSPF/BGP networks, we proposed a test traffic generation technique based on formal analysis [<a href="https://ieeexplore.ieee.org/document/10081489">TIFS'23</a>] [<a href="https://smartinternet.group/wp-content/uploads/2024/01/paper-zhzy-hashflow-tpds.pdf">TPDS'22</a>], which achieves real-time monitoring of network performance of the whole network with full coverage at low cost; 
+                        to address the problem that it is difficult to fully capture the application behaviours due to the variety of types of large-scale distributed application components deployed in the network. We have designed and implemented a narrow-waisted double-loop non-intrusive application data collection mechanism [<a href="https://dl.acm.org/doi/pdf/10.1145/3603269.3604823">SIGCOMM'23</a>], which enables low overhead data collection of application behaviours without intruding into the applications. 
+                        The proposed techniques of Internet IPv6 active address detection and IPv6 geolocation for latency [<a href="https://ieeexplore.ieee.org/document/10186436">NETWORKING'23</a>] can accurately and quickly locate the geolocation and other information of assets in the network; 
+                        to address the challenges of widely distributed application behaviours on the network and the cloud and the difficulty of accurately monitoring the service status, we design and implement a service quality inference method based on the correlation analysis of heterogeneous data [<a href="https://dl.acm.org/doi/pdf/10.1145/3603269.3604823">SIGCOMM'23</a>], which can collect low overhead data on application behaviours without intrusion.
+                        Inference method [<a href="https://ieeexplore.ieee.org/document/8910605">TON'19</a>] [<a href="https://ieeexplore.ieee.org/document/10081489">TIFS</a>], through machine learning and deep learning and other methods, it realises high-precision service quality inference for applications. 
+                        We have published nearly 20 high-level papers in high-level or international conferences such as SIGCOMM, ToN, CCS, TIFS, TPDS, etc., and applied for nearly 10 invention patents, of which the core technology DeepFlow [<a href="https://dl.acm.org/doi/pdf/10.1145/3603269.3604823">SIGCOMM'23</a>] is supported by Cloud Native Computing Foundation (CNCF), and has been awarded the 2022 China Open Source Cloud Alliance - Excellent Open Source project, which is applied by more than 70 famous enterprises such as Bank of China and China Mobile.</div>
                 </div>
+                <div class="col-md-2 "> <img src="images/deepflow.png" width="280pt " /> <img src="images/hashflow.png" width="280pt " />  <img src="images/OWAD.png" width="280pt " /> </div>
             </div>
             <hr/>
+            <div class="row ">
+                <div class="col-md-10 ">
+                    <h3>Application-Oriented End-Network Collaborative Routing and Transport Techniques</h3>
+                    <div class="abstract ">Focusing on the scientific problem of <b>"the contradiction between the deterministic demand of applications and the uncertainty of resources"</b>, we have carried out research on application-oriented end-to-end network cooperative routing and transmission technology from the perspectives of network layer routing algorithm design, transport layer congestion control algorithm design, and application layer task scheduling mechanism design. 
+                        At the network layer, for the problem that traditional Internet routing protocols focus only on network reachability, which impairs the performance of delay-sensitive applications, a routing method that takes into account service availability and network performance is proposed [<a href="https://ieeexplore.ieee.org/document/9980572">TON'22</a>] [<a href="infocom2024">INFOCOM'24</a>], which achieves the guarantee of service availability with the lowest resource consumption. 
+                        Aiming at the slow convergence of routes after the failure of large ISP networks, which seriously affects the performance of applications, a route protection mechanism based on link state protection [<a href="https://dl.acm.org/doi/pdf/10.1145/3485983.3494843">CoNEXT'21</a>] [<a href="https://ieeexplore.ieee.org/document/9940402">ICNP'22</a>] is designed and implemented to ensure the stability of the network in the event of a failure; at the transport layer, for the differentiated needs of rate control without distinguishing between the applications, an adaptive congestion control mechanism is based on the proposed term mechanism [<a href="https://ieeexplore.ieee.org/document/8910605">TON'19</a>] [<a href="https://dl.acm.org/doi/abs/10.1016/j.comnet.2017.08.020">INFOCOM'15</a>], which can adaptively adjust the application transmission rate according to the network congestion and application demand. 
+                        At the application layer, the design implements importance-based task scheduling mechanism [<a href="https://ieeexplore.ieee.org/document/9812868">TPDS'22</a>] [<a href="https://ieeexplore.ieee.org/document/10089180">TPDS'23</a>] [<a href="https://ieeexplore.ieee.org/document/8668552">TPDS'19</a>] [<a href="https://ieeexplore.ieee.org/document/8117586">ICNP'17</a>], which guarantees the performance of the important tasks in the resource competition environment. Published more than 10 CCF Class A papers. 
+                        Applied for more than 10 invention patents. 
+                        The core technology has served national key industries such as banks and operators, served more than 5 million gaming customers of China Mobile, 10 million IoT edge access devices, and supported the scheduling of the Future Internet Test Facility FITI, a major national scientific and technological infrastructure, for network resources and cloud resources distributed in 35 cities across the country.</div>
+                </div>
+                <div class="col-md-2 "> <img src="images/BATE.png" width="280pt " /> <img src="images/DAFD.png" width="280pt " /> <img src="images/coflow.png" width="280pt " />  </div>
+            </div>
+            <hr/>
+            <div class="row ">
+                <div class="col-md-10 ">
+                    <h3>Interpretable Artificial Intelligence Based Diagnosis of Network Failures and Security Events</h3>
+                    <div class="abstract ">Focusing on the scientific problem of the contradiction between model scalability and diagnostic accuracy, the research on network fault and security event diagnostic technology based on interpretable artificial intelligence is carried out from three perspectives, namely, feature engineering design, anomaly detection algorithm design, and deep learning interpretability. 
+                        Aiming at the current situation that the proportion of encrypted traffic in the network is large and the means of encrypting traffic is highly differentiated, an automated traffic feature construction technique based on self-encoder and natural language model is proposed [<a href="https://www.researchgate.net/publication/369575757_Real-time_Malicious_Traffic_Detection_with_Online_Isolation_Forest_over_SD-WAN">TIFS'23</a>] [<a href="https://ieeexplore.ieee.org/document/9899459">TIFS'22</a>], which can be automated to vectorise and model the encrypted traffic. 
+                        Aiming at the problem that the anomaly detection model of machine learning has a big difference in performance results due to the different features of the training set and the test set, we designed and implemented a low overhead and high precision fault event detection mechanism based on incremental learning [<a href="https://www.researchgate.net/publication/369575757_Real-time_Malicious_Traffic_Detection_with_Online_Isolation_Forest_over_SD-WAN">TIFS'23</a>] [<a href="https://dl.acm.org/doi/pdf/10.1145/3460120.3484589">CCS'21</a>], which can automate updating the parameters of the model in the real world. 
+                        Aiming at the problem of poor interpretability of deep learning in the field of cyberspace security, which is difficult to be widely used, we have designed and implemented an interpretive mechanism for anomaly detection results of deep learning models based on gradient analysis [<a href="https://www.ndss-symposium.org/wp-content/uploads/2023/02/ndss2023_f830_paper.pdf">NDSS'23</a>], which achieves the accurate positioning of the detection results of network faults and security events. 
+                        He has published nearly 20 high-level papers, including nearly 10 CCF Class A papers.
+                         Applied for nearly 10 invention patents. The core technology of the results has been transformed by Green Alliance Technology and other enterprises, generating about 20 million RMB revenue, and won the 2024 IRTF Applied Network Research Award, etc.</div>
+                </div>
+                <div class="col-md-2 "> <img src="images/gringotts.png" width="280pt " /> <img src="images/deepaid.png" width="280pt " /> <img src="images/shift.png" width="280pt " />  </div>
+
+            </div>
+            </div>
         </div>
         <div class="container" id="service"></div>
         <div class="container" id="funds"></div>
