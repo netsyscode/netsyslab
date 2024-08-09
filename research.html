@@ -4,7 +4,7 @@
         <meta charset="utf-8"/>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Research</title>
+        <title>Project</title>
         <!--<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">-->
         <link rel="stylesheet" href="css/bootstrap.min.css"/>
         <link rel="stylesheet" href="css/main.css">
@@ -19,84 +19,464 @@
                 <div class="info"><a href="https://www.insc.tsinghua.edu.cn/">Institute for Network Sciences and
                         Cyberspace</a> </div>
                 <div class="info"><a href="http://www.tsinghua.edu.cn">Tsinghua University</a>, P.R.China</div>
-                <div class="info">Email: zhhan AT tsinghua.edu.cn</div>
-                <div class="info">Office Building: FIT 3-204</div>
+                <div class="info">Email: zhhan@tsinghua.edu.cn</div>
             </div>
             <div style="text-align: center;" class="col-md-3"><img src="images/face.jpg" width="160pt" /></div>
         </div>
         <div class="row navi">
-            <div class="col-md-2"> [<a href="index.html" onclick="showPanel(1)">Home</a>] </div>
-            <div class="col-md-2"> [<a href="javascript: void(0);" onclick="showPanel(2)">Research</a>] </div>
-            <div class="col-md-2"> [<a href="project.html" onclick="showPanel(2)">Project</a>] </div>
+            <div class="col-md-2"> [<a href="index.html" onclick="showPanel(1)">About</a>] </div>
+            <div class="col-md-2"> [<a href="research.html" onclick="showPanel(2)">Publications</a>] </div>
+            <div class="col-md-2"> [<a href="project.html" onclick="showPanel(3)">Projects</a>] </div>
             <div class="col-md-2"> [<a href="javascript: void(0);" onclick="showPanel(0)">Students</a>] </div>
         </div>
     </div>
         <div class="container" id="home"></div>
         <div class="container" id="publications"></div>
         <div class="container" id="research">
-            <hr/>
-            <div class="row">
-                <div class="col-md-12" style="font-size: 18px;">We aim to build efficient Internet architecture. </div>
-            </div>
-            <h3 style="text-align: center; ">Introduction of Lab.</h3>
-            <div class="row">
-                <div class="col-md-12" style="font-size: 18px;">
-                <!--In this area, we aim to build real IoT systems for different types of applications and to see how far IoTs can reach. -->
-                </div>
-            </div>
-            <div class="row ">
-                <div class="col-md-10 ">
-                    <div class="abstract ">The team focuses on the innovation of Internet architecture technology. 
-                        In order to ensure zero business interruption in the network and realize on-demand provision of network resources, the applicant focused on the research challenges of <b>"difficult business perception, low resource utilization, and slow fault location"</b> of the network and focused on application-driven Conduct research on network intelligent security operation and maintenance technology. 
-                        A series of research results have been achieved in three aspects: <b>"network-centric application behavior perception technology", "application-oriented end-network collaborative routing and transmission technology", and "network fault and security event diagnosis technology based on explainable artificial intelligence"</b>. 
-                        In the past five years, he has published nearly 60 high-level papers, most of which were published in top conferences and journals including <b>SIGCOMM, INFOCOM, CoNEXT, CCS, NDSS, TON, TPDS, TIFS</b>, etc. 
-                        He has applied for and obtained nearly 20 invention patents and published 1 monograph.  </div>
-                </div>
-                <div class="col-md-2 "> <img src="images/lab.png" width="280pt " /> </div>
+        <div class="container" id="publications">
+        <h3 style="text-align: left">Conference(* is corresponding author)</h3>
 
+     <div class="row" style="font-size:12pt">
+            <div class="col-md-1 conference-name">[INFOCOM'24]</div>
+            <div class="col-md-11 ">Yi Qiao, <b>Han Zhang*</b>, Jilong Wang. "NNetFEC: In-network FEC Encoding Acceleration for Latency-sensitive Multimedia Applications." In Proceedings of the IEEE INFOCOM 2024 Conference, pp. 420-437. 2023.
+                [<a href="https://dl.acm.org/doi/pdf/10.1145/3603269.3604823">PDF</a>]
             </div>
-            <hr/>
-            <h3 style="text-align: center; ">Research</h3>
-            <div class="row ">
-                <div class="col-md-10 ">
-                    <h4>Network-centric Application Behaviour Sensing Technology:</h4>
-                    <div class="abstract ">Focusing on the scientific problem of <b>"the contradiction between perception completeness, accuracy and efficiency"</b>, we have carried out research on network-centric application behaviour perception technology from the perspectives of network state monitoring, application component association analysis and application behaviour deduction. 
-                        To address the low efficiency of performance monitoring of large OSPF/BGP networks, we proposed a test traffic generation technique based on formal analysis [<a href="https://ieeexplore.ieee.org/document/10081489">TIFS'23</a>] [<a href="https://smartinternet.group/wp-content/uploads/2024/01/paper-zhzy-hashflow-tpds.pdf">TPDS'22</a>], which achieves real-time monitoring of network performance of the whole network with full coverage at low cost; 
-                        to address the problem that it is difficult to fully capture the application behaviours due to the variety of types of large-scale distributed application components deployed in the network. We have designed and implemented a narrow-waisted double-loop non-intrusive application data collection mechanism [<a href="https://dl.acm.org/doi/pdf/10.1145/3603269.3604823">SIGCOMM'23</a>], which enables low overhead data collection of application behaviours without intruding into the applications. 
-                        The proposed techniques of Internet IPv6 active address detection and IPv6 geolocation for latency [<a href="https://ieeexplore.ieee.org/document/10186436">NETWORKING'23</a>] can accurately and quickly locate the geolocation and other information of assets in the network; 
-                        to address the challenges of widely distributed application behaviours on the network and the cloud and the difficulty of accurately monitoring the service status, we design and implement a service quality inference method based on the correlation analysis of heterogeneous data [<a href="https://dl.acm.org/doi/pdf/10.1145/3603269.3604823">SIGCOMM'23</a>], which can collect low overhead data on application behaviours without intrusion.
-                        Inference method [<a href="https://ieeexplore.ieee.org/document/8910605">TON'19</a>] [<a href="https://ieeexplore.ieee.org/document/10081489">TIFS</a>], through machine learning and deep learning and other methods, it realises high-precision service quality inference for applications. 
-                        We have published nearly 20 high-level papers in high-level or international conferences such as SIGCOMM, ToN, CCS, TIFS, TPDS, etc., and applied for nearly 10 invention patents, of which the core technology DeepFlow [<a href="https://dl.acm.org/doi/pdf/10.1145/3603269.3604823">SIGCOMM'23</a>] is supported by Cloud Native Computing Foundation (CNCF), and has been awarded the 2022 China Open Source Cloud Alliance - Excellent Open Source project, which is applied by more than 70 famous enterprises such as Bank of China and China Mobile.</div>
-                </div>
-                <div class="col-md-2 "> <img src="images/deepflow.png" width="280pt " /> <img src="images/hashflow.png" width="280pt " />  <img src="images/OWAD.png" width="280pt " /> </div>
-            </div>
-            <hr/>
-            <div class="row ">
-                <div class="col-md-10 ">
-                    <h4>Application-Oriented End-Network Collaborative Routing and Transport Techniques</h4>
-                    <div class="abstract ">Focusing on the scientific problem of <b>"the contradiction between the deterministic demand of applications and the uncertainty of resources"</b>, we have carried out research on application-oriented end-to-end network cooperative routing and transmission technology from the perspectives of network layer routing algorithm design, transport layer congestion control algorithm design, and application layer task scheduling mechanism design. 
-                        At the network layer, for the problem that traditional Internet routing protocols focus only on network reachability, which impairs the performance of delay-sensitive applications, a routing method that takes into account service availability and network performance is proposed [<a href="https://ieeexplore.ieee.org/document/9980572">TON'22</a>] [<a href="infocom2024">INFOCOM'24</a>], which achieves the guarantee of service availability with the lowest resource consumption. 
-                        Aiming at the slow convergence of routes after the failure of large ISP networks, which seriously affects the performance of applications, a route protection mechanism based on link state protection [<a href="https://dl.acm.org/doi/pdf/10.1145/3485983.3494843">CoNEXT'21</a>] [<a href="https://ieeexplore.ieee.org/document/9940402">ICNP'22</a>] is designed and implemented to ensure the stability of the network in the event of a failure; at the transport layer, for the differentiated needs of rate control without distinguishing between the applications, an adaptive congestion control mechanism is based on the proposed term mechanism [<a href="https://ieeexplore.ieee.org/document/8910605">TON'19</a>] [<a href="https://dl.acm.org/doi/abs/10.1016/j.comnet.2017.08.020">INFOCOM'15</a>], which can adaptively adjust the application transmission rate according to the network congestion and application demand. 
-                        At the application layer, the design implements importance-based task scheduling mechanism [<a href="https://ieeexplore.ieee.org/document/9812868">TPDS'22</a>] [<a href="https://ieeexplore.ieee.org/document/10089180">TPDS'23</a>] [<a href="https://ieeexplore.ieee.org/document/8668552">TPDS'19</a>] [<a href="https://ieeexplore.ieee.org/document/8117586">ICNP'17</a>], which guarantees the performance of the important tasks in the resource competition environment. Published more than 10 CCF Class A papers. 
-                        Applied for more than 10 invention patents. 
-                        The core technology has served national key industries such as banks and operators, served more than 5 million gaming customers of China Mobile, 10 million IoT edge access devices, and supported the scheduling of the Future Internet Test Facility FITI, a major national scientific and technological infrastructure, for network resources and cloud resources distributed in 35 cities across the country.</div>
-                </div>
-                <div class="col-md-2 "> <img src="images/BATE.png" width="280pt " /> <img src="images/DAFD.png" width="280pt " /> <img src="images/coflow.png" width="280pt " />  </div>
-            </div>
-            <hr/>
-            <div class="row ">
-                <div class="col-md-10 ">
-                    <h4>Interpretable Artificial Intelligence Based Diagnosis of Network Failures and Security Events</h4>
-                    <div class="abstract ">Focusing on the scientific problem of the contradiction between model scalability and diagnostic accuracy, the research on network fault and security event diagnostic technology based on interpretable artificial intelligence is carried out from three perspectives, namely, feature engineering design, anomaly detection algorithm design, and deep learning interpretability. 
-                        Aiming at the current situation that the proportion of encrypted traffic in the network is large and the means of encrypting traffic is highly differentiated, an automated traffic feature construction technique based on self-encoder and natural language model is proposed [<a href="https://www.researchgate.net/publication/369575757_Real-time_Malicious_Traffic_Detection_with_Online_Isolation_Forest_over_SD-WAN">TIFS'23</a>] [<a href="https://ieeexplore.ieee.org/document/9899459">TIFS'22</a>], which can be automated to vectorise and model the encrypted traffic. 
-                        Aiming at the problem that the anomaly detection model of machine learning has a big difference in performance results due to the different features of the training set and the test set, we designed and implemented a low overhead and high precision fault event detection mechanism based on incremental learning [<a href="https://www.researchgate.net/publication/369575757_Real-time_Malicious_Traffic_Detection_with_Online_Isolation_Forest_over_SD-WAN">TIFS'23</a>] [<a href="https://dl.acm.org/doi/pdf/10.1145/3460120.3484589">CCS'21</a>], which can automate updating the parameters of the model in the real world. 
-                        Aiming at the problem of poor interpretability of deep learning in the field of cyberspace security, which is difficult to be widely used, we have designed and implemented an interpretive mechanism for anomaly detection results of deep learning models based on gradient analysis [<a href="https://www.ndss-symposium.org/wp-content/uploads/2023/02/ndss2023_f830_paper.pdf">NDSS'23</a>], which achieves the accurate positioning of the detection results of network faults and security events. 
-                        He has published nearly 20 high-level papers, including nearly 10 CCF Class A papers.
-                         Applied for nearly 10 invention patents. The core technology of the results has been transformed by Green Alliance Technology and other enterprises, generating about 20 million RMB revenue, and won the 2024 IRTF Applied Network Research Award, etc.</div>
-                </div>
-                <div class="col-md-2 "> <img src="images/gringotts.png" width="280pt " /> <img src="images/deepaid.png" width="280pt " /> <img src="images/shift.png" width="280pt " />  </div>
+        </div>
 
+        <div class="row" style="font-size:12pt">
+            <div class="col-md-1 conference-name">[SIGCOMM'23]</div>
+            <div class="col-md-11 ">Shen Junxian, <b>Han Zhang*</b>, Yang Xiang, Xingang Shi, Xinrui Li, Yunxi Shen,
+                Zijian Zhang et al. "Network-centric distributed tracing with DeepFlow: Troubleshooting your
+                microservices in zero code." In Proceedings of the ACM SIGCOMM 2023 Conference, pp. 420-437. 2023.
+                [<a href="https://dl.acm.org/doi/pdf/10.1145/3603269.3604823">PDF</a>]
             </div>
+        </div>
+
+        <div class="row" style="font-size:12pt">
+            <div class="col-md-1 conference-name">[ISCC'23]</div>
+            <div class="col-md-11 ">Ming Wang, Yahui Li, <b>Han Zhang</b>, Anlun Hong, Jun He and Jilong Wang, "Knocking
+                Cells: Latency-Based Identification of IPv6 Cellular Addresses on the Internet," 2023 IEEE Symposium on
+                Computers and Communications (ISCC), Gammarth, Tunisia, 2023.
+                [<a href="https://ieeexplore.ieee.org/document/10218257">PDF</a>]
+            </div>
+        </div>
+        <div class="row" style="font-size:12pt">
+            <div class="col-md-1 conference-name">[ICWS'23]</div>
+            <div class="col-md-11 ">Jiawei Li, <b>Han Zhang*</b> and Jilong Wang, "PUVAR:Minimize Idle Resource SLO
+                Violations by Uncertainty-Aware Scheduling in Cloud Platforms," 2023 IEEE International Conference on
+                Web Services (ICWS), Chicago, IL, USA, 2023.
+                [<a href="https://ieeexplore.ieee.org/document/10248271">PDF</a>]
+            </div>
+        </div>
+        <div class="row" style="font-size:12pt">
+            <div class="col-md-1 conference-name">[IWQoS'23]</div>
+            <div class="col-md-11 ">Yantao Geng, <b>Han Zhang*</b>, Jilong Wang, "Delay Based Congestion Control for
+                Cross-Datacenter Networks," 2023 IEEE/ACM 31st International Symposium on Quality of Service (IWQoS),
+                Orlando, FL, USA, 2023.
+                [<a href="https://ieeexplore.ieee.org/document/10188700">PDF</a>]
+            </div>
+        </div>
+        <div class="row" style="font-size:12pt">
+            <div class="col-md-1 conference-name">[Networking'23]</div>
+            <div class="col-md-11 ">Allen Hong, Yahui Li*,<b> Han Zhang*</b>, Ming Wang, Changqing An and Jilong Wang, "A cheap and accurate delay-based IP Geolocation method using Machine Learning and Looking Glass," 2023 IFIP Networking Conference (IFIP Networking), Barcelona, Spain, 2023.
+                [<a href="https://ieeexplore.ieee.org/document/10186436">PDF</a>]
+            </div>
+        </div>
+        <div class="row" style="font-size:12pt">
+            <div class="col-md-1 conference-name">[ICC'23]</div>
+            <div class="col-md-11 ">Jun He, Yahui Li*, <b>Han Zhang*</b>, Ming Wang, Changqing An, Jilong Wang, "Be
+                Careful of Your Neighbors: Injected Sub-Prefix Hijacking Invisible to Public Monitors," ICC 2023.
+            </div>
+        </div>
+        <div class="row" style="font-size:12pt">
+            <div class="col-md-1 conference-name">[ICC'23]</div>
+            <div class="col-md-11 ">Shuanghong Yu, Fenghua Li*, <b>Han Zhang</b>, Kunling He and Xingkun Yao, "GapReplay:
+                A High-Accuracy Packet Replayer," ICC 2023 - IEEE International Conference on Communications, Rome,
+                Italy, 2023.
+                [<a href="https://ieeexplore.ieee.org/document/10279258">PDF</a>]
+            </div>
+        </div>
+             <div class="row" style="font-size:12pt">
+            <div class="col-md-1 conference-name">[CCS'22]</div>
+            <div class="col-md-11 ">Junxian Shen, <b>Han Zhang*</b>, Yantao Geng, Jiawei Li, Jilong Wang, and Mingwei Xu.
+                2022, "Gringotts: Fast and Accurate Internal Denial-of-Wallet Detection for Serverless Computing", In
+                Proceedings of the 2022 ACM SIGSAC Conference on Computer and Communications Security (CCS '22).
+                Association for Computing Machinery, New York, NY, USA, 2627–2641. 
+                [<a href="https://dl.acm.org/doi/pdf/10.1145/3548606.3560629">PDF</a>]
+            </div>
+        </div>
+        <div class="row" style="font-size:12pt">
+            <div class="col-md-1 conference-name">[NDSS'22]</div>
+            <div class="col-md-11 "> Dongqi Han, Zhiliang Wang*, Wenqi Chen, Kai Wang, Rui Yu, Su Wang, <b>Han Zhang</b>,
+                Zhihua Wang et al.,"Anomaly Detection in the Open World: Normality Shift Detection, Explanation, and
+                Adaptation", Network and Distributed System Security Symposium 2022.
+                [<a href="https://www.ndss-symposium.org/wp-content/uploads/2023/02/ndss2023_f830_paper.pdf">PDF</a>]
+            </div>
+        </div>
+
+        <div class="row" style="font-size:12pt">
+            <div class="col-md-1 conference-name">[IWQoS'22]</div>
+            <div class="col-md-11 ">Heng Yu, Junxain Shen, <b>Han Zhang*</b>, Jilong Wang, Congcong Miao and Mingwei Xu,
+                "Scorpius: Proactive Code Preparation to Accelerate Function Startup," 2022 IEEE/ACM 30th International
+                Symposium on Quality of Service (IWQoS), Oslo, Norway, 2022.
+                [<a href="https://ieeexplore.ieee.org/document/9812868">PDF</a>]
+            </div>
+        </div>
+        <div class="row" style="font-size:12pt">
+            <div class="col-md-1 conference-name">[TrustCom'22]</div>
+            <div class="col-md-11 ">Yongkang Chen, Ming Zhang*, Jin Li, Xiaohui Kuang, Xurong Zhang and <b>Han Zhang</b>,
+                "Dynamic and Diverse Transformations for Defending Against Adversarial Examples," 2022 IEEE
+                International Conference on Trust, Security and Privacy in Computing and Communications (TrustCom),
+                Wuhan, China, 2022.
+                [<a href="https://ieeexplore.ieee.org/document/10063418">PDF</a>]
+            </div>
+        </div>
+        <div class="row" style="font-size:12pt">
+            <div class="col-md-1 conference-name">[ICNP'22]</div>
+            <div class="col-md-11 ">Ying Tian, Zhiliang Wang*, Xia Yin, Xingang Shi, Jiahai Yang and <b>Han Zhang</b>,
+                "Centralized Network Utility Maximization with Accelerated Gradient Method," 2022 IEEE 30th
+                International Conference on Network Protocols (ICNP), Lexington, KY, USA, 2022.
+                [<a href="https://ieeexplore.ieee.org/document/9940402">PDF</a>]
+            </div>
+        </div>
+        <div class="row" style="font-size:12pt">
+            <div class="col-md-1 conference-name">[DSC'22]</div>
+            <div class="col-md-11 ">Shangbin Han, Qianhong Wu, <b>Han Zhang*</b> and Bo Qin, "Light-weight Unsupervised
+                Anomaly Detection for Encrypted Malware Traffic," 2022 7th IEEE International Conference on Data Science
+                in Cyberspace (DSC), Guilin, China, 2022.
+                [<a href="https://ieeexplore.ieee.org/document/9900159">PDF</a>]
+            </div>
+        </div>
+        <div class="row" style="font-size:12pt">
+            <div class="col-md-1 conference-name">[CoNEXT'21]</div>
+            <div class="col-md-11 "><b>Han Zhang</b>, Xingang Shi*, Xia Yin, Jilong Wang, Zhiliang Wang, Yingya Guo, and
+                Tian Lan. 2021, "Boosting bandwidth availability over inter-DC WAN," In Proceedings of the 17th
+                International Conference on emerging Networking EXperiments and Technologies (CoNEXT '21). Association
+                for Computing Machinery, New York, NY, USA.
+                [<a href="https://dl.acm.org/doi/pdf/10.1145/3485983.3494843">PDF</a>]
+            </div>
+        </div>
+        <div class="row" style="font-size:12pt">
+            <div class="col-md-1 conference-name">[CCS'21]</div>
+            <div class="col-md-11 ">Dongqi Han, Zhiliang Wang*, Wenqi Chen, Ying Zhong, Su Wang, <b>Han Zhang</b>, Jiahai
+                Yang, Xingang Shi, and Xia Yin. 2021, "DeepAID: Interpreting and Improving Deep Learning-based Anomaly
+                Detection in Security Applications", In Proceedings of the 2021 ACM SIGSAC Conference on Computer and
+                Communications Security (CCS '21). Association for Computing Machinery, New York, NY, USA.
+                [<a href="https://dl.acm.org/doi/pdf/10.1145/3460120.3484589">PDF</a>]
+            </div>
+        </div>
+        <div class="row" style="font-size:12pt">
+            <div class="col-md-1 conference-name">[CNSM'21]</div>
+            <div class="col-md-11 ">Weihan Chen, Zhiliang Wang*, <b>Han Zhang</b>, Xia Yin and Xingang Shi,
+                "Cost-Efficient Dynamic Service Function Chain Embedding in Edge Clouds," 2021 17th International
+                Conference on Network and Service Management (CNSM), Izmir, Turkey, 2021.
+                [<a href="https://ieeexplore.ieee.org/document/9615590">PDF</a>]
+            </div>
+        </div>
+        <div class="row" style="font-size:12pt">
+            <div class="col-md-1 conference-name">[CNSM'21]</div>
+            <div class="col-md-11 ">Ying Tian, Zhiliang Wang*, Xia Yin, Xingang Shi, Jiahai Yang, <b>Han Zhang</b>,
+                Yingya Guo et al., "Traffic Engineering with Segment Routing Considering Probabilistic Failures," 2021
+                17th International Conference on Network and Service Management (CNSM), Izmir, Turkey, 2021.
+                [<a href="https://ieeexplore.ieee.org/document/9615559">PDF</a>]
+            </div>
+        </div>
+        <div class="row" style="font-size:12pt">
+            <div class="col-md-1 conference-name">[INFOCOM'20]</div>
+            <div class="col-md-11 ">Weihan Chen, Zhiliang Wang, <b>Han Zhang</b>, Xia Yin, Xingang Shi and Lei Sun,
+                "Poster Abstract: Joint Optimization of Service Function Chain Elastic Scaling and Routing," IEEE
+                INFOCOM 2020 - IEEE Conference on Computer Communications Workshops (INFOCOM WKSHPS), Toronto, ON,
+                Canada, 2020.
+                [<a href="https://ieeexplore.ieee.org/document/9162655">PDF</a>]
+            </div>
+        </div>
+        <div class="row" style="font-size:12pt">
+            <div class="col-md-1 conference-name">[TS'18]</div>
+            <div class="col-md-11 ">Zhifeng Liu, Xia Yin,Zhiliang Wang,Xingang Shi,Yiqiang Hua,
+                Xiaohong Huang,Liang Wei,Jiangyuan Yao, <b>Han Zhang</b>, Man Zeng,Zijun Su,Shuai Liu. Design and construction of hierarchical 
+                and cross-regional SDN verification and demonstration system[J]. Telecommunications Science, 2018.
+                [<a href="https://www.infocomm-journal.com/dxkx/CN/10.11959/j.issn.1000-0801.2018286">PDF</a>]
+            </div>
+        </div>
+        <div class="row" style="font-size:12pt">
+            <div class="col-md-1 conference-name">[IPCCC'17]</div>
+            <div class="col-md-11 "><b>Han Zhang</b>, Xingang Shi, Yingya Guo, Haijun Geng, Zhiliang Wang and Xia Yin, "Joint source selection and transfer 
+                optimization for erasure coding storage system," 2017 IEEE 36th International Performance Computing and Communications Conference (IPCCC), San Diego, CA, USA, 2017
+                [<a href="https://ieeexplore.ieee.org/document/8280455">PDF</a>]
+            </div>
+        </div>
+
+        <div class="row" style="font-size:12pt">
+            <div class="col-md-1 conference-name">[ICNP'17]</div>
+            <div class="col-md-11 "><b>Han Zhang</b>, Xingang Shi*, Xia Yin and Zhiliang Wang, "Yosemite: Efficient scheduling of weighted coflows
+                 in data centers," 2017 IEEE 25th International Conference on Network Protocols (ICNP), Toronto, ON, Canada, 2017.
+                [<a href="https://ieeexplore.ieee.org/document/8117586">PDF</a>]
+            </div>
+        </div>
+        <div class="row" style="font-size:12pt">
+            <div class="col-md-1 conference-name">[IWQoS'16]</div>
+            <div class="col-md-11 "><b>Han Zhang</b>, Xingang Shi, Xia Yin, Zhiliang Wang and Yingya Guo, "FDRC - Flow duration time based rate control 
+                in data center networks," 2016 IEEE/ACM 24th International Symposium on Quality of Service (IWQoS), Beijing, China, 2016
+                [<a href="https://www.infocomm-journal.com/dxkx/CN/10.11959/j.issn.1000-0801.2018286">PDF</a>]
+            </div>
+        </div>
+        <div class="row" style="font-size:12pt">
+            <div class="col-md-1 conference-name">[ICC'16]</div>
+            <div class="col-md-11 ">Zongyi Zhao, Qi Li, Mingwei Xu, Xingang Shi and <b>Han Zhang</b>, "Reduce completion time and guarantee throughput by transport with slight congestion," 2016 IEEE International Conference on Communications (ICC), Kuala Lumpur, Malaysia, 2016.
+                [<a href="https://ieeexplore.ieee.org/document/7511594/similar#similar">PDF</a>]
+            </div>
+        </div>
+        <div class="row" style="font-size:12pt">
+            <div class="col-md-1 conference-name">[INFOCOM'16]</div>
+            <div class="col-md-11 ">M. Gharaibeh, <b>Han Zhang</b>, C. Papadopoulos and J. Heidemann, "Assessing co-locality of IP blocks," 2016 IEEE Conference on Computer Communications Workshops (INFOCOM WKSHPS), San Francisco, CA, 2016
+                [<a href="https://ieeexplore.ieee.org/abstract/document/7562129">PDF</a>]
+            </div>
+        </div>
+        <div class="row" style="font-size:12pt">
+            <div class="col-md-1 conference-name">[IPCCC'15]</div>
+            <div class="col-md-11 ">Yingya Guo, Zhiliang Wang, Xia Yin, Xingang Shi, Jianping Wu and <b>Han Zhang</b>, "Incremental deployment for traffic engineering in hybrid SDN network," 2015 IEEE 34th International Performance Computing and Communications Conference (IPCCC), Nanjing, China.
+                [<a href="https://www.infocomm-journal.com/dxkx/CN/10.11959/j.issn.1000-0801.2018286">PDF</a>]
+            </div>
+        </div>
+        <div class="row" style="font-size:12pt">
+            <div class="col-md-1 conference-name">[IWQoS'15]</div>
+            <div class="col-md-11 ">Haijun Geng, Xingang Shi, Xia Yin, Zhiliang Wang and <b>Han Zhang</b>, "Algebra and algorithms for efficient and correct multipath QoS routing in link state networks," 2015 IEEE 23rd International Symposium on Quality of Service (IWQoS), Portland, OR, USA, 2015.
+                [<a href="https://ieeexplore.ieee.org/document/7404744">PDF</a>]
+            </div>
+        </div>
+        <div class="row" style="font-size:12pt">
+            <div class="col-md-1 conference-name">[ICC'15]</div>
+            <div class="col-md-11 ">Haijun Geng, Xia Shi, Xia Yin, Zhiliang Wang and <b>Han Zhang</b>, "An efficient link protection scheme for link-state routing networks," 2015 IEEE International Conference on Communications (ICC), London, UK, 2015.
+                [<a href="https://ieeexplore.ieee.org/document/7249282">PDF</a>]
+            </div>
+        </div>
+        <div class="row" style="font-size:12pt">
+            <div class="col-md-1 conference-name">[INFOCOM'15]</div>
+            <div class="col-md-11 "><b>Han Zhang</b>, Xingang Shi, Xia Yin, Fengyuan Ren and Zhiliang Wang, "More load, more differentiation — A design principle for deadline-aware congestion control," 2015 IEEE Conference on Computer Communications (INFOCOM), Hong Kong, China.
+                [<a href="https://ieeexplore.ieee.org/document/7218375">PDF</a>]
+            </div>
+        </div>
+        <div class="row" style="font-size:12pt">
+            <div class="col-md-1 conference-name">[ICC'15]</div>
+            <div class="col-md-11 "><b>Han Zhang</b> and C. Papadopoulos, "BotTalker: Generating encrypted, customizable C&C traces," 2015 IEEE International Symposium on Technologies for Homeland Security (HST), Waltham, MA, USA, 2015.
+                [<a href="https://ieeexplore.ieee.org/abstract/document/7225305">PDF</a>]
+            </div>
+        </div>
+        <div class="row" style="font-size:12pt">
+            <div class="col-md-1 conference-name">[IPCCC'15]</div>
+            <div class="col-md-11 ">Haijun Geng, Xia Shi, Xingang Yin, Zhiliang Wang, <b>Han Zhang</b> and Jiangyuan Yao, "A hybrid link protection scheme for link-state routing networks," 
+                2014 IEEE 33rd International Performance Computing and Communications Conference (IPCCC), Austin, TX, USA, 2014.
+                [<a href="https://ieeexplore.ieee.org/abstract/document/7017037">PDF</a>]
+            </div>
+        </div>
+        <div class="row" style="font-size:12pt">
+            <div class="col-md-1 conference-name">[IPCCC'14]</div>
+            <div class="col-md-11 ">Haijun Geng, Xingang Shi, Xia Yin, Zhiliang Wang, <b>Han Zhang</b> and Jiangyuan Yao, "Let more nodes have a second choice," 2014 IEEE 33rd International Performance Computing and Communications Conference (IPCCC), Austin, TX, USA, 2014
+                [<a href="https://ieeexplore.ieee.org/abstract/document/7017018">PDF</a>]
+            </div>
+        </div>
+
+
+
+        <h3 style="text-align: left;">Journal(* is corresponding author)</h3>
+        <div class="row" style="font-size:12pt">
+            <div class="col-md-1 conference-name">[CN'24]</div>
+            <div class="col-md-11 ">Weihan Chen, Zhiliang Wang*, <b>Han Zhang</b>, Xia Yin, Xingang Shi,  
+                "Cost-efficient flow migration for SFC dynamical scheduling in geo-distributed clouds", Computer Networks
+                Volume 249, July 2024.
+                [<a href="https://www.sciencedirect.com/science/article/pii/S1389128624003281">PDF</a>]
+            </div>
+        </div>
+        
+        <div class="row" style="font-size:12pt">
+            <div class="col-md-1 conference-name">[TIFS'23]</div>
+            <div class="col-md-11 ">Yahui Li, <b>Han Zhang*</b>, Jilong Wang, Xingang Shi, Xia Yin, Zhiliang Wang,
+                Jiankun Hu, Congcong Miao, and Jianping Wu. "Proactively Verifying Quantitative Network Policy across
+                Unsafe and Unreliable Environments", IEEE Transactions on Information Forensics and Security.
+                [<a href="https://dl.acm.org/doi/pdf/10.1145/3548606.3560629">PDF</a>]
+            </div>
+        </div>
+        <div class="row" style="font-size:12pt">
+            <div class="col-md-1 conference-name">[TPDS'23]</div>
+            <div class="col-md-11 ">Heng Yu, <b>Han Zhang*</b>, Junxian Shen, Yantao Geng et al., "Serpens: A High
+                Performance FaaS Platform for Network Functions," in IEEE Transactions on Parallel and Distributed
+                Systems, vol. 34, no. 8, pp. 2448-2463, Aug. 2023.
+                [<a href="https://ieeexplore.ieee.org/document/10089180">PDF</a>]
+            </div>
+        </div>
+        <div class="row" style="font-size:12pt">
+            <div class="col-md-1 conference-name">[TIFS'23]</div>
+            <div class="col-md-11 ">Pei Zhang, Fangzhou He, <b>Han Zhang*</b>, Jiankun Hu et al., "Real-Time Malicious
+                Traffic Detection With Online Isolation Forest Over SD-WAN," in IEEE Transactions on Information
+                Forensics and Security, vol. 18, pp. 2076-2090, 2023.
+                [<a href="https://www.researchgate.net/publication/369575757_Real-time_Malicious_Traffic_Detection_with_Online_Isolation_Forest_over_SD-WAN">PDF</a>]
+            </div>
+        </div>
+        <div class="row" style="font-size:12pt">
+            <div class="col-md-1 conference-name">[TIFS'23]</div>
+            <div class="col-md-11 ">Tianbo Wang, Huacheng Li, Chunhe Xia*, <b>Han Zhang</b> and Pei Zhang, "From the
+                Dialectical Perspective: Modeling and Exploiting of Hybrid Worm Propagation," in IEEE Transactions on
+                Information Forensics and Security, vol. 18, pp. 1610-1624, 2023.
+                [<a href="https://ieeexplore.ieee.org/document/10081489">PDF</a>]
+            </div>
+        </div>
+        <div class="row" style="font-size:12pt">
+            <div class="col-md-1 conference-name">[TPDS'23]</div>
+            <div class="col-md-11 ">Yahui Li, <b>Han Zhang*</b>, Jilong Wang, Xia Yin, Xingang Shi, Jianping Wu, "A
+                General Approach to Generate Test Packets With Network Configurations," in IEEE Transactions on Parallel
+                and Distributed Systems, vol. 34, no. 4, pp. 1362-1375, April 2023.
+                [<a href="https://ieeexplore.ieee.org/document/10035502">PDF</a>]
+            </div>
+        </div>
+         <div class="row" style="font-size:12pt">
+            <div class="col-md-1 conference-name">[TPDS'22]</div>
+            <div class="col-md-11 ">Yi Qiao, Menghao Zhang, Yu Zhou, Xiao Kong, <b>Han Zhang*</b> et al, "NetEC: Accelerating Erasure Coding Reconstruction With In-Network Aggregation," 
+                in IEEE Transactions on Parallel and Distributed Systems, vol. 33, no. 10, pp. 2571-2583, 1 Oct. 2022
+                [<a href="https://ieeexplore.ieee.org/document/9812868">PDF</a>]
+            </div>
+        </div>
+        <div class="row" style="font-size:12pt">
+            <div class="col-md-1 conference-name">[TIFS'22]</div>
+            <div class="col-md-11 ">Su Wang, Zhiliang Wang*, Tao Zhou, Hongbin Sun, Xia Yin, Dongqi Han, <b>Han Zhang</b>
+                et al., "THREATRACE: Detecting and Tracing Host-Based Threats in Node Level Through Provenance Graph
+                Learning," in IEEE Transactions on Information Forensics and Security, vol. 17, pp. 3972-3987, 2022.
+                [<a href="https://ieeexplore.ieee.org/document/9899459">PDF</a>]
+            </div>
+        </div>
+        <div class="row" style="font-size:12pt">
+            <div class="col-md-1 conference-name">[TON'22]</div>
+            <div class="col-md-11 "> <b>Han Zhang</b>, Yin Xia, Shi Xingang*, Wang Jilong, Wang Zhiliang, Guo Yingya, Lan
+                Tian, Li Yahui, Zhu Yongqing, Ruan Ke, Geng Haijun. "Achieving High Availability in Inter-DC WAN Traffic
+                Engineering". IEEE/ACM Transactions on Networking, 2022.
+                [<a href="https://ieeexplore.ieee.org/document/9980572">PDF</a>]
+            </div>
+        </div>
+        <div class="row" style="font-size:12pt">
+            <div class="col-md-1 conference-name">[TPDS'22]</div>
+            <div class="col-md-11 ">Zongyi Zhao, Xingang Shi*, Zhiliang Wang, Qi Li, <b>Han Zhang</b> and Xia Yin,
+                "Efficient and Accurate Flow Record Collection With HashFlow," in IEEE Transactions on Parallel and
+                Distributed Systems, vol. 33, no. 5, pp. 1069-1083, 1 May 2022.
+                [<a href="https://smartinternet.group/wp-content/uploads/2024/01/paper-zhzy-hashflow-tpds.pdf">PDF</a>]
+            </div>
+        </div>
+        <div class="row" style="font-size:12pt">
+            <div class="col-md-1 conference-name">[ICAIS'22]</div>
+            <div class="col-md-11 ">Shangbin Han, Qianhong Wu, <b>Han Zhang</b>, Bo Qin, Jiangyuan Yao, Willy Susilo,
+                "Autoperman: Automatic Network Traffic Anomaly Detection with Ensemble Learning". In: Sun, X.,
+                Zhang, X., Xia, Z., Bertino, E. (eds) Advances in Artificial Intelligence and Security. ICAIS 2022.
+                [<a href="https://link.springer.com/chapter/10.1007/978-3-031-06761-7_49">PDF</a>]
+            </div>
+        </div>
+        <div class="row" style="font-size:12pt">
+            <div class="col-md-1 conference-name">[JACA'21]</div>
+            <div class="col-md-11 ">Yingya Guo, Weipeng Wang, <b>Han Zhang</b>, Wenzhong Guo, Zhiliang Wang, Ying Tian
+                et al., "Traffic Engineering in Hybrid Software Defined Network via Reinforcement Learning", Journal of
+                Network and Computer Applications 189, 103116, 2021.
+                [<a href="https://www.sciencedirect.com/science/article/pii/S1084804521001363">PDF</a>]
+            </div>
+        </div>
+        <div class="row" style="font-size:12pt">
+            <div class="col-md-1 conference-name">[TIFS'21]</div>
+            <div class="col-md-11 ">Shangbin Han, Qianhong Wu, <b>Han Zhang*</b>, Bo Qin, Jiankun Hu et al., "Log-Based
+                Anomaly Detection With Robust Feature Extraction and Online Learning," in IEEE Transactions on
+                Information Forensics and Security, vol. 16, pp. 2300-2311, 2021.
+                [<a href="https://ieeexplore.ieee.org/document/9330769">PDF</a>]
+            </div>
+        </div>
+
+        <div class="row" style="font-size:12pt">
+            <div class="col-md-1 conference-name">[CMC'21]</div>
+            <div class="col-md-11 ">Haijun Geng, <b>Han Zhang*</b>, Yangyang Zhang, "Efficient Routing Protection
+                Algorithm in Large-Scale Networks", Computers, Materials & Continua, 2021, Vol 66, Issue 3, p1733.
+                [<a href="https://www.techscience.com/cmc/v66n2/40670/html">PDF</a>]
+            </div>
+        </div>
+        <div class="row" style="font-size:12pt">
+            <div class="col-md-1 conference-name">[CN'20]</div>
+            <div class="col-md-11 ">Yahui Li, Zhiliang Wang*, Xia Yin, Xingang Shi, Jianping Wu, Fangdan Ye, Jiangyuan
+                Yao, <b>Han Zhang</b>, "Assisting reachability verification of network configurations updates with NUV", Computer Networks
+                Volume 177, 4 August 2020.
+                [<a href="https://www.sciencedirect.com/science/article/pii/S1389128619314458">PDF</a>]
+            </div>
+        </div>
+
+
+
+        <div class="row" style="font-size:12pt">
+            <div class="col-md-1 conference-name">[JNCA'20]</div>
+            <div class="col-md-11 ">Haijun Geng, <b>Han Zhang</b>, Xingang Shi*, Zhiliang Wang, Xia Yin, "Efficient
+                computation of loop-free alternates", Journal of Network and Computer Applications, Volume 151, 1
+                February 2020.
+                [<a href="https://www.sciencedirect.com/science/article/pii/S1084804519303613">PDF</a>]
+            </div>
+        </div>
+
+
+        <div class="row" style="font-size:12pt">
+            <div class="col-md-1 conference-name">[JCN'20]</div>
+            <div class="col-md-11 ">Haijun Geng, <b>Han Zhang</b>, Xingang Shi* et al., "A hybrid link protection scheme
+                for ensuring network service availability in link-state routing networks," in Journal of Communications
+                and Networks, vol. 22, no. 1, pp. 46-60, Feb. 2020
+                [<a href="https://ieeexplore.ieee.org/abstract/document/9042897">PDF</a>]
+            </div>
+        </div>
+
+        <div class="row" style="font-size:12pt">
+            <div class="col-md-1 conference-name">[TON'19]</div>
+            <div class="col-md-11 "><b>Han Zhang</b>, Haijun Geng, Yahui Li et al., "DA&FD–Deadline-Aware and Flow
+                Duration-Based Rate Control for Mixed Flows in DCNs," in IEEE/ACM Transactions on Networking, vol. 27,
+                no. 6, pp. 2458-2471, Dec. 2019.
+                [<a href="https://ieeexplore.ieee.org/document/8910605">PDF</a>]
+            </div>
+        </div>
+        <div class="row" style="font-size:12pt">
+            <div class="col-md-1 conference-name">[JNCA'19]</div>
+            <div class="col-md-11 ">Yingya Guo, Zhiliang Wang*, <b>Han Zhang</b>, Xia Yin, Xingang Shi, Jianping Wu,
+                "Joint optimization of tasks placement and routing to minimize Coflow Completion Time", Journal of Network and Computer Applications, Volume 135, 1
+                June 2019.
+                [<a href="https://www.sciencedirect.com/science/article/pii/S1084804519300906">PDF</a>]
+            </div>
+        </div>
+        <div class="row" style="font-size:12pt">
+            <div class="col-md-1 conference-name">[CN'19]</div>
+            <div class="col-md-11 ">Yahui Li, Zhiliang Wang*, Jiangyuan Yao, Xia Yin, Xingang Shi, Jianping Wu, <b>Han
+                    Zhang</b>, "MSAID: Automated detection of interference in multiple SDN applications", Computer
+                Networks, Volume 153, 22 April 2019.
+                [<a href="https://www.sciencedirect.com/science/article/pii/S138912861830536X">PDF</a>]
+            </div>
+        </div>
+        <div class="row" style="font-size:12pt">
+            <div class="col-md-1 conference-name">[TPDS'19]</div>
+            <div class="col-md-11 ">Zhiliang Wang, <b>Han Zhang*</b>, Xingang Shi et al, "Efficient Scheduling of
+                Weighted Coflows in Data Centers," in IEEE Transactions on Parallel and Distributed Systems, vol. 30,
+                no. 9, pp. 2003-2017, 1 Sept. 2019.
+                [<a href="https://ieeexplore.ieee.org/document/8668552">PDF</a>]
+            </div>
+        </div>
+        <div class="row" style="font-size:12pt">
+            <div class="col-md-1 conference-name">[CST'19]</div>
+            <div class="col-md-11 ">Yahui Li, Xia Yin, Zhiliang Wang*, Jiangyuan Yang, Xingang Shi, Jianping Wu, <b>Han
+                    Zhang</b> et al, "A Survey on Network Verification and Testing With Formal Methods: Approaches and
+                Challenges," in IEEE Communications Surveys & Tutorials, vol. 21, no. 1, pp. 940-969, Firstquarter 2019.
+                [<a href="https://ieeexplore.ieee.org/document/8453007">PDF</a>]
+            </div>
+        </div>
+        <div class="row" style="font-size:12pt">
+            <div class="col-md-1 conference-name">[Sensors'18]</div>
+            <div class="col-md-11 ">Xiao Ma, Chuang Lin, <b>Han Zhang*</b>, Jianwei Liu. "Energy-Aware Computation
+                Offloading of IoT Sensors in Cloudlet-Based Mobile Edge Computing". Sensors (Basel). 2018.
+                [<a href="https://www.researchgate.net/publication/325801030_Energy-Aware_Computation_Offloading_of_IoT_Sensors_in_Cloudlet-Based_Mobile_Edge_Computing">PDF</a>]
+            </div>
+        </div>
+          <div class="row" style="font-size:12pt">
+            <div class="col-md-1 conference-name">[CN'17]</div>
+            <div class="col-md-11 "><b>Han Zhang</b>, Xingang Shi*, Yingya Guo, Zhiliang Wang, and Xia Yin. 2017. More load, more differentiation 
+                Let more flows finish before deadline in data center networks. Comput. Netw. 127, C (November 2017).
+                [<a href="https://dl.acm.org/doi/abs/10.1016/j.comnet.2017.08.020">PDF</a>]
+            </div>
+        </div>
+    </div>
+
         </div>
         <div class="container" id="service"></div>
         <div class="container" id="funds"></div>
