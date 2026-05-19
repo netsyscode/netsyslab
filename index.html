@@ -253,7 +253,7 @@
   .pub-venue {
     display: inline-block; font-family: var(--mono); font-size: 11.5px;
     font-weight: 500; padding: 1px 7px; margin-left: 2px;
-    background: var(--c-tag-bg); color: var(--c-ink-soft);
+    background: var(--c-accent); color: #fff;
     border-radius: 3px; letter-spacing: .3px;
   }
   .pub-venue.top {
@@ -266,6 +266,133 @@
     color: var(--c-link); text-decoration: none;
   }
   .pub-pdf:hover { background: var(--c-accent); color: #fff; border-color: var(--c-accent); text-decoration: none; }
+
+  /* ─── Featured publications (rich cards) ─────────────── */
+  .featured-list { display: flex; flex-direction: column; gap: 16px; }
+  .pub-feature {
+    background: var(--c-paper);
+    border: 1px solid var(--c-line);
+    border-left: 3px solid var(--c-accent);
+    border-radius: var(--radius);
+    padding: 18px 22px 16px;
+    box-shadow: var(--shadow-sm);
+    transition: box-shadow .2s ease, transform .15s ease;
+  }
+  .pub-feature:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-1px);
+  }
+  .pub-feature .pf-head {
+    display: flex; flex-wrap: wrap; align-items: baseline; gap: 10px;
+    margin-bottom: 6px;
+  }
+  .pub-feature .pf-badge {
+    font-family: var(--mono); font-size: 11.5px; font-weight: 600;
+    padding: 3px 9px; border-radius: 4px;
+    background: var(--c-accent); color: #fff; letter-spacing: .4px;
+    white-space: nowrap; flex-shrink: 0;
+  }
+  .pub-feature .pf-badge.tier2 {
+    background: var(--c-accent); color: #fff;
+  }
+  .pub-feature .pf-title {
+    font-family: var(--serif);
+    font-size: 17.5px; font-weight: 600;
+    color: var(--c-ink); line-height: 1.35;
+    margin: 0;
+  }
+  .pub-feature .pf-authors {
+    font-size: 13.5px; color: var(--c-ink-soft);
+    margin: 4px 0 2px; line-height: 1.5;
+  }
+  .pub-feature .pf-authors b { color: var(--c-accent); font-weight: 600; }
+  .pub-feature .pf-authors .stu { text-decoration: underline; text-decoration-color: var(--c-muted); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+  .pub-feature .pf-venue {
+    font-size: 13px; color: var(--c-muted); font-style: italic;
+    margin: 0 0 10px;
+  }
+  /* Abstract / BibTeX toggles styled as chips (same row as PDF link) */
+  .pub-feature details.pf-abstract,
+  .pub-feature details.bibtex {
+    margin: 0;
+  }
+  .pub-feature details.pf-abstract[open],
+  .pub-feature details.bibtex[open] {
+    flex: 1 0 100%;
+  }
+  .pub-feature details.pf-abstract > summary,
+  .pub-feature details.bibtex > summary {
+    list-style: none; user-select: none;
+  }
+  .pub-feature details.pf-abstract > summary::-webkit-details-marker,
+  .pub-feature details.bibtex > summary::-webkit-details-marker { display: none; }
+  .pub-feature details.pf-abstract > summary::before {
+    content: "\f02d";
+    font-family: "Font Awesome 6 Free"; font-weight: 900;
+    font-size: 11px;
+  }
+  .pub-feature details.bibtex > summary::before {
+    content: "\f121";
+    font-family: "Font Awesome 6 Free"; font-weight: 900;
+    font-size: 11px;
+  }
+  .pub-feature details.pf-abstract > summary:hover,
+  .pub-feature details.bibtex > summary:hover {
+    background: var(--c-accent); color: #fff; border-color: var(--c-accent);
+  }
+  .pub-feature details.pf-abstract[open] > summary,
+  .pub-feature details.bibtex[open] > summary {
+    background: var(--c-accent-soft); color: var(--c-accent);
+    border-color: var(--c-accent);
+  }
+  .pub-feature details.pf-abstract p {
+    font-size: 13.5px; color: var(--c-ink-soft); line-height: 1.65;
+    margin: 8px 0 0; text-align: justify; hyphens: auto;
+    background: #f8f6f1;
+    border: 1px solid var(--c-line);
+    border-radius: 4px;
+    padding: 10px 14px;
+  }
+  .pub-feature .pf-links {
+    display: flex; flex-wrap: wrap; gap: 6px;
+    align-items: center; margin-top: 4px;
+  }
+  /* Unified chip style for all action buttons */
+  .pub-feature .pf-links a,
+  .pub-feature .pf-links > details > summary {
+    box-sizing: border-box;
+    display: inline-flex; align-items: center; justify-content: center;
+    gap: 5px;
+    height: 26px; padding: 0 10px;
+    font-family: var(--sans);
+    font-size: 12.5px; font-weight: 500; line-height: 1;
+    border-radius: 4px;
+    background: var(--c-bg);
+    border: 1px solid var(--c-line);
+    color: var(--c-link); text-decoration: none; cursor: pointer;
+    transition: all .15s ease;
+  }
+  .pub-feature .pf-links a:hover,
+  .pub-feature .pf-links > details > summary:hover {
+    background: var(--c-accent); color: #fff; border-color: var(--c-accent);
+    text-decoration: none;
+  }
+  .pub-feature .pf-links i,
+  .pub-feature .pf-links > details > summary::before {
+    font-size: 11px; width: 12px; text-align: center;
+  }
+  .pub-feature details.bibtex pre {
+    font-family: var(--mono); font-size: 11.5px; line-height: 1.5;
+    background: #f8f6f1; border: 1px solid var(--c-line);
+    border-radius: 4px; padding: 10px 12px;
+    margin: 8px 0 0; white-space: pre-wrap;
+    color: var(--c-ink-soft); overflow-x: auto;
+  }
+  .pub-subtitle {
+    font-family: var(--serif); font-size: 16px; font-weight: 600;
+    color: var(--c-ink-soft); margin: 28px 0 12px;
+    padding-bottom: 6px; border-bottom: 1px dashed var(--c-line);
+  }
 
   /* ─── Patents accordion ──────────────────────────────────── */
   details.patents {
@@ -312,6 +439,68 @@
     content: "▸"; position: absolute; left: 4px; top: 10px;
     color: var(--c-accent); font-size: 13px;
   }
+
+  /* ─── News timeline ──────────────────────────────────────── */
+  .news-wrap {
+    max-height: 420px; overflow-y: auto;
+    background: var(--c-paper);
+    border: 1px solid var(--c-line);
+    border-radius: var(--radius);
+    padding: 8px 22px 12px;
+    box-shadow: var(--shadow-sm);
+    scrollbar-width: thin;
+    scrollbar-color: var(--c-line) transparent;
+  }
+  .news-wrap::-webkit-scrollbar { width: 8px; }
+  .news-wrap::-webkit-scrollbar-thumb { background: var(--c-line); border-radius: 4px; }
+  .news-list {
+    list-style: none; padding: 0; margin: 0;
+    position: relative;
+  }
+  .news-list::before {
+    content: ""; position: absolute;
+    left: 88px; top: 16px; bottom: 8px; width: 2px;
+    background: var(--c-line); z-index: 0;
+  }
+  .news-item {
+    display: grid; grid-template-columns: 80px 16px 1fr; gap: 12px;
+    padding: 12px 0; align-items: start;
+    position: relative;
+  }
+  .news-item + .news-item { border-top: 1px dashed var(--c-line-soft); }
+  .news-date {
+    font-family: var(--mono); font-size: 12px;
+    color: var(--c-muted); padding-top: 3px;
+    text-align: right; white-space: nowrap;
+  }
+  .news-dot {
+    width: 10px; height: 10px; border-radius: 50%;
+    background: var(--c-accent);
+    border: 2px solid var(--c-bg);
+    box-shadow: 0 0 0 2px var(--c-accent-soft);
+    margin-top: 7px; margin-left: 3px;
+    z-index: 1;
+  }
+  .news-dot.muted {
+    background: var(--c-paper); border-color: var(--c-muted);
+    box-shadow: 0 0 0 2px var(--c-line);
+  }
+  .news-text {
+    font-size: 14px; color: var(--c-ink); line-height: 1.55;
+  }
+  .news-text b { color: var(--c-accent); font-weight: 600; }
+  .news-badge {
+    display: inline-block; font-family: var(--mono);
+    font-size: 10.5px; font-weight: 600; letter-spacing: .4px;
+    padding: 1px 7px; margin-right: 6px;
+    border-radius: 3px; vertical-align: 1px;
+    text-transform: uppercase;
+  }
+  .news-badge.paper   { background: #fde2e2; color: #991b1b; }
+  .news-badge.award   { background: #fef3c7; color: #92400e; }
+  .news-badge.service { background: #dbeafe; color: #1e40af; }
+  .news-badge.talk    { background: #dcfce7; color: #14532d; }
+  .news-badge.misc    { background: var(--c-tag-bg); color: var(--c-ink-soft); }
 
   /* ─── Students grid ──────────────────────────────────────── */
   .students-grid {
@@ -377,6 +566,7 @@
     <a href="#top" class="brand">Han&nbsp;Zhang<span class="dot">.</span></a>
     <div class="nav-links">
       <a href="#about">About</a>
+      <a href="#news">News</a>
       <a href="#research">Research</a>
       <a href="#publications">Publications</a>
       <a href="#patents">Patents</a>
@@ -415,7 +605,7 @@
 <!-- ═══════════════════════ About ═══════════════════════ -->
 <section class="section about" id="about">
   <h2><i class="fa-solid fa-user icon"></i>About</h2>
-  <p>My research interests broadly span <b>network systems and security</b>, with a focus on wide area networks, the Internet, and cloud computing. My work aims to make these systems smarter and more secure by bridging networking and security with observability, data science, machine learning, formal verification, artificial intelligence, and distributed computing.</p>
+  <p>My research interests broadly span <b>Network Measurement and Security</b> and <b>AI for Network</b>, with a focus on wide area networks, the Internet, and cloud computing. My work aims to make these systems smarter and more secure by bridging networking and security with observability, data science, machine learning, formal verification, artificial intelligence, and distributed computing.</p>
 
   <p>In the areas of observability and routing technologies, I have conducted in-depth research and led projects such as <b>DeepShield</b>. To date, I have published nearly 100 papers in top-tier international conferences and journals, including <i>SIGCOMM, INFOCOM, CoNEXT,</i> and <i>CCS</i>. My research outcomes have been widely adopted in industry, with related technologies deeply integrated into critical national network infrastructures such as <b>China Telecom's backbone network</b>, the <b>Future Internet Technology Infrastructure (FITI)</b>, and <b>CERNET / CERNET2</b>. These contributions serve vital sectors including telecommunications operators, the military, and other areas crucial to the national economy and people's livelihoods.</p>
 
@@ -426,13 +616,194 @@
   </div>
 </section>
 
+<!-- ═══════════════════════ News ═══════════════════════ -->
+<section class="section" id="news">
+  <h2><i class="fa-solid fa-bullhorn icon"></i>What's New</h2>
+  <div class="news-wrap">
+    <ul class="news-list">
+
+      <li class="news-item">
+        <div class="news-date">2026 · May</div>
+        <div class="news-dot"></div>
+        <div class="news-text"><span class="news-badge paper">Paper</span>
+          🎉 Our paper <b>"Providing Efficient and Robust ISP-Centric Intrusion Detection Service with Programmable Switches"</b> is accepted by <b>ACM SIGCOMM 2026</b>!
+        </div>
+      </li>
+
+      <li class="news-item">
+        <div class="news-date">2026 · Apr</div>
+        <div class="news-dot"></div>
+        <div class="news-text"><span class="news-badge paper">Paper</span>
+          Our paper <b>"GlassMiner: Mining Looking Glass Services via Structure-Semantics Fusion for Web Observability"</b> is published at <b>ACM WWW 2026</b>.
+        </div>
+      </li>
+
+      <li class="news-item">
+        <div class="news-date">2026 · Mar</div>
+        <div class="news-dot"></div>
+        <div class="news-text"><span class="news-badge paper">Paper</span>
+          Our paper <b>"Clover: Workload Verification for Real-Time Detection of Contention-Induced Slowdowns in Serverless Platforms"</b> is accepted by <b>IEEE/ACM Transactions on Networking</b>.
+        </div>
+      </li>
+
+      <li class="news-item">
+        <div class="news-date">2026 · Feb</div>
+        <div class="news-dot"></div>
+        <div class="news-text"><span class="news-badge paper">Paper</span>
+          Our review <b>"The Evolution of Provenance-Based Intrusion Detection Systems"</b> is published in <b>IEEE Network</b>.
+        </div>
+      </li>
+
+      <li class="news-item">
+        <div class="news-date">2026 · Jan</div>
+        <div class="news-dot"></div>
+        <div class="news-text"><span class="news-badge paper">Paper</span>
+          Our paper <b>"Non-Intrusive Distributed Tracing with Method-Level Delay Estimation for Microservices Troubleshooting"</b> is accepted by <b>ACM ICSE 2026</b>.
+        </div>
+      </li>
+
+      <li class="news-item">
+        <div class="news-date">2025 · Oct</div>
+        <div class="news-dot"></div>
+        <div class="news-text"><span class="news-badge paper">Paper</span>
+          Our paper <b>"Scalable and Interpretable Overlay Network Checking via Ensemble Verification"</b> is accepted by <b>ACM CoNEXT 2025</b>.
+          <a href="https://dl.acm.org/doi/abs/10.1145/3768974">[PDF]</a>
+        </div>
+      </li>
+
+      <li class="news-item">
+        <div class="news-date">2025 · Oct</div>
+        <div class="news-dot"></div>
+        <div class="news-text"><span class="news-badge paper">Paper</span>
+          Poster <b>"ERIS: Evaluating ROV via ICMPv6 Rate Limiting Side Channels"</b> accepted at <b>ACM CCS 2025</b>.
+          <a href="https://dl.acm.org/doi/abs/10.1145/3719027.3760707">[PDF]</a>
+        </div>
+      </li>
+
+      <li class="news-item">
+        <div class="news-date">2025 · Oct</div>
+        <div class="news-dot"></div>
+        <div class="news-text"><span class="news-badge paper">Paper</span>
+          <b>"SRmesh: Deterministic and Efficient Diagnosis of Latency Bottleneck Links in SRv6 Networks"</b> accepted by <b>IEEE ICNP 2025</b>.
+          <a href="https://ieeexplore.ieee.org/abstract/document/11192455/">[PDF]</a>
+        </div>
+      </li>
+
+      <li class="news-item">
+        <div class="news-date">2025 · Sep</div>
+        <div class="news-dot muted"></div>
+        <div class="news-text"><span class="news-badge service">Service</span>
+          Serving as <b>TPC member</b> for <b>ACM CoNEXT 2026</b>.
+        </div>
+      </li>
+
+      <li class="news-item">
+        <div class="news-date">2025 · Sep</div>
+        <div class="news-dot"></div>
+        <div class="news-text"><span class="news-badge paper">Paper</span>
+          <b>"BGPFlow: Flow-based Feature Extraction for BGP Anomaly Detection"</b> presented at the <b>1st SIGCOMM NGNO Workshop</b>.
+          <a href="https://dl.acm.org/doi/abs/10.1145/3748496.3748993">[PDF]</a>
+        </div>
+      </li>
+
+      <li class="news-item">
+        <div class="news-date">2025 · Aug</div>
+        <div class="news-dot"></div>
+        <div class="news-text"><span class="news-badge talk">SIGCOMM</span>
+          Two papers presented at <b>ACM SIGCOMM 2025</b>: <b>DeepTrace</b> (low-overhead distributed tracing in production) and an encrypted traffic anomaly detection system on programmable switches.
+          <a href="https://dl.acm.org/doi/abs/10.1145/3718958.3750477">[DeepTrace]</a>
+          <a href="https://dl.acm.org/doi/abs/10.1145/3718958.3750493">[P4-AD]</a>
+        </div>
+      </li>
+
+      <li class="news-item">
+        <div class="news-date">2025 · Jul</div>
+        <div class="news-dot muted"></div>
+        <div class="news-text"><span class="news-badge service">Service</span>
+          Serving as <b>TPC Co-Chair</b> of <b>ACM SIGCOMM 2025 NGNO Workshop</b> and <b>Travel Grant Co-Chair</b> of <b>ACM APNet 2025</b>.
+        </div>
+      </li>
+
+      <li class="news-item">
+        <div class="news-date">2025 · Jun</div>
+        <div class="news-dot"></div>
+        <div class="news-text"><span class="news-badge paper">Paper</span>
+          <b>"Probabilistic Analysis of Overload-Free Property for Critical Traffic"</b> accepted by <b>IEEE/ACM IWQoS 2025</b>.
+          <a href="https://ieeexplore.ieee.org/abstract/document/11143368">[PDF]</a>
+        </div>
+      </li>
+
+      <li class="news-item">
+        <div class="news-date">2025 · May</div>
+        <div class="news-dot"></div>
+        <div class="news-text"><span class="news-badge award">Award</span>
+          Received the <b>NSGA Best Researcher Award</b>, 2025.
+        </div>
+      </li>
+
+      <li class="news-item">
+        <div class="news-date">2025 · Apr</div>
+        <div class="news-dot"></div>
+        <div class="news-text"><span class="news-badge paper">Paper</span>
+          <b>"ACME++: Secure ACME Client Verification for Web-PKI"</b> accepted by <b>ACM WWW 2025</b>.
+          <a href="https://dl.acm.org/doi/abs/10.1145/3696410.3714763">[PDF]</a>
+        </div>
+      </li>
+
+      <li class="news-item">
+        <div class="news-date">2025 · Mar</div>
+        <div class="news-dot"></div>
+        <div class="news-text"><span class="news-badge award">Award</span>
+          <b>First Prize, Science and Technology Award</b>, China Institute of Communications — "Key Technologies and Large-Scale Applications of Metropolitan Area Cloud Networks" (城域云网关键技术及规模应用).
+        </div>
+      </li>
+
+      <li class="news-item">
+        <div class="news-date">2025 · Feb</div>
+        <div class="news-dot"></div>
+        <div class="news-text"><span class="news-badge paper">Paper</span>
+          <b>"Centralized Network Utility Maximization with Accelerated Gradient Method"</b> accepted by <b>IEEE Transactions on Networking</b>.
+          <a href="https://ieeexplore.ieee.org/abstract/document/10981789">[PDF]</a>
+        </div>
+      </li>
+
+      <li class="news-item">
+        <div class="news-date">2024 · Dec</div>
+        <div class="news-dot muted"></div>
+        <div class="news-text"><span class="news-badge service">Service</span>
+          Serving as <b>TPC member</b> for <b>IEEE INFOCOM 2025</b>, <b>ACM CoNEXT 2025</b>, and <b>IEEE ICNP 2025</b>.
+        </div>
+      </li>
+
+      <li class="news-item">
+        <div class="news-date">2024 · Jun</div>
+        <div class="news-dot"></div>
+        <div class="news-text"><span class="news-badge paper">Paper</span>
+          <b>"Proactively Verifying Quantitative Network Policy across Unsafe and Unreliable Environments"</b> published in <b>IEEE TIFS</b>.
+          <a href="https://ieeexplore.ieee.org/abstract/document/10550010">[PDF]</a>
+        </div>
+      </li>
+
+      <li class="news-item">
+        <div class="news-date">2024 · May</div>
+        <div class="news-dot"></div>
+        <div class="news-text"><span class="news-badge paper">Paper</span>
+          <b>"NNetFEC: In-network FEC Encoding Acceleration for Latency-sensitive Multimedia Applications"</b> accepted by <b>IEEE INFOCOM 2024</b>.
+          <a href="https://dl.acm.org/doi/pdf/10.1145/3603269.3604823">[PDF]</a>
+        </div>
+      </li>
+
+    </ul>
+  </div>
+</section>
+
 <!-- ═══════════════════════ Research ═══════════════════════ -->
 <section class="section" id="research">
   <h2><i class="fa-solid fa-flask icon"></i>Research Areas</h2>
 
   <div class="research-grid">
     <div class="research-card">
-      <div class="area-title"><i class="fa-solid fa-eye"></i>Network Observability</div>
+      <div class="area-title"><i class="fa-solid fa-shield-halved"></i>Network Measurement and Security</div>
       <p>
         Distributed tracing systems
         <a class="venue-tag" href="https://dl.acm.org/doi/pdf/10.1145/3603269.3604823">SIGCOMM'23</a>
@@ -459,32 +830,29 @@
     </div>
 
     <div class="research-card">
-      <div class="area-title"><i class="fa-solid fa-route"></i>Internet Routing</div>
+      <div class="area-title"><i class="fa-solid fa-brain"></i>AI for Network</div>
       <p>
-        Routing reliability
-        <a class="venue-tag" href="https://ieeexplore.ieee.org/document/9980572">ToN'22</a>
-        <a class="venue-tag" href="https://dl.acm.org/doi/pdf/10.1145/3485983.3494843">CoNEXT'21</a>;
-        SDN routing
-        <a class="venue-tag" href="https://ieeexplore.ieee.org/document/9940402">ICNP'22</a>
-        <a class="venue-tag" href="https://ieeexplore.ieee.org/document/9162655">INFOCOM'20</a>;
-        protection algorithms
-        <a class="venue-tag" href="https://www.sciencedirect.com/science/article/pii/S1084804519303613">JNCA'20</a>;
-        hybrid SDN
-        <a class="venue-tag" href="https://www.sciencedirect.com/science/article/pii/S1084804521001363">JNCA'20</a>;
-        routing tester
-        <a class="venue-tag" href="https://ieeexplore.ieee.org/document/10035502">TIFS'23</a>;
-        programmable-switch routing
-        <a class="venue-tag" href="https://dl.acm.org/doi/pdf/10.1145/3485983.3494843">INFOCOM'24</a>
-        <a class="venue-tag" href="https://ieeexplore.ieee.org/document/9812868">TPDS'22</a>;
-        serverless function routing
-        <a class="venue-tag" href="https://ieeexplore.ieee.org/document/10089180">TPDS'23</a>;
-        cloud routing
-        <a class="venue-tag" href="https://ieeexplore.ieee.org/document/7218375">INFOCOM'15</a>
-        <a class="venue-tag" href="https://ieeexplore.ieee.org/document/8910605">ToN'20</a>
-        <a class="venue-tag" href="https://ieeexplore.ieee.org/document/10188700">IWQoS'23</a>;
-        coflow routing
-        <a class="venue-tag" href="https://ieeexplore.ieee.org/document/8668552">TPDS'19</a>
-        <a class="venue-tag" href="https://ieeexplore.ieee.org/document/8117586">ICNP'17</a>.
+        Deep-learning encrypted-traffic anomaly detection
+        <a class="venue-tag" href="https://dl.acm.org/doi/abs/10.1145/3718958.3750493">SIGCOMM'25</a>
+        <a class="venue-tag" href="https://ieeexplore.ieee.org/document/10049200">TIFS'22</a>
+        <a class="venue-tag" href="https://dl.acm.org/doi/pdf/10.1145/3460120.3484589">CCS'21</a>
+        <a class="venue-tag" href="https://www.ndss-symposium.org/wp-content/uploads/2023/02/ndss2023_f830_paper.pdf">NDSS'22</a>;
+        AI-assisted distributed tracing
+        <a class="venue-tag" href="https://dl.acm.org/doi/pdf/10.1145/3603269.3604823">SIGCOMM'23</a>
+        <a class="venue-tag" href="https://dl.acm.org/doi/abs/10.1145/3718958.3750477">SIGCOMM'25</a>;
+        structure-semantics fusion for web observability
+        <a class="venue-tag" href="https://dl.acm.org/doi/abs/10.1145/3774904.3792698">WWW'26</a>;
+        online learning for SD-WAN
+        <a class="venue-tag" href="https://www.researchgate.net/publication/369575757">TIFS'23</a>;
+        APT detection with provenance graphs
+        <a class="venue-tag" href="https://ieeexplore.ieee.org/document/9899459">TIFS'23</a>
+        <a class="venue-tag" href="https://ieeexplore.ieee.org/abstract/document/11400546">IEEE Network'26</a>;
+        log analysis with NLP
+        <a class="venue-tag" href="https://ieeexplore.ieee.org/document/9330769">TIFS'21</a>;
+        learning-driven malicious container detection
+        <a class="venue-tag" href="https://dl.acm.org/doi/pdf/10.1145/3548606.3560629">CCS'22</a>;
+        in-network ML acceleration
+        <a class="venue-tag" href="https://dl.acm.org/doi/pdf/10.1145/3603269.3604823">INFOCOM'24</a>.
       </p>
     </div>
   </div>
@@ -493,9 +861,243 @@
 <!-- ═══════════════════════ Publications ═══════════════════════ -->
 <section class="section" id="publications">
   <h2><i class="fa-solid fa-file-lines icon"></i>Selected Publications</h2>
-  <p style="font-size:13.5px;color:var(--c-muted);margin:-6px 0 8px">* corresponding author. Full list on
-    <a href="https://scholar.google.com/citations?user=2_wPPU0AAAAJ&hl=en">Google Scholar</a>.
+  <p style="font-size:13.5px;color:var(--c-muted);margin:-6px 0 14px">
+    <b>*</b> corresponding author &nbsp;·&nbsp; <b>†</b> co-primary authors &nbsp;·&nbsp;
+    <span class="stu" style="text-decoration:underline;text-decoration-color:var(--c-muted);text-underline-offset:2px">underline</span> marks supervised students.
+    Full list on <a href="https://scholar.google.com/citations?user=2_wPPU0AAAAJ&hl=en">Google Scholar</a>.
   </p>
+
+  <!-- ─── Featured publications (rich cards) ─── -->
+  <div class="featured-list">
+
+    <!-- 0. SIGCOMM'26 ISP-Centric IDS -->
+    <article class="pub-feature">
+      <div class="pf-head">
+        <span class="pf-badge">SIGCOMM '26</span>
+        <h4 class="pf-title">Providing Efficient and Robust ISP-Centric Intrusion Detection Service with Programmable Switches</h4>
+      </div>
+      <p class="pf-authors">
+        <b>Han Zhang</b>, <span class="stu">Xuefeng Liu</span>, <span class="stu">Linqiang Qian</span>, Guyue (Grace) Liu, <span class="stu">Tianyu Zhang</span>, <span class="stu">Kaiyang Zhao</span>, <span class="stu">Yantu Tong</span>, <span class="stu">Zeji Xiao</span>, Dongbiao He, Yahui Li, Ke Ruan, Jilong Wang, Yongqing Zhu, Xia Yin
+      </p>
+      <p class="pf-venue">Annual Conference of the ACM Special Interest Group on Data Communication (SIGCOMM '26), 2026. <em>To appear.</em></p>
+      <div class="pf-links">
+        <a href="#"><i class="fa-solid fa-clock"></i>Coming soon</a>
+        <details class="pf-abstract"><summary>Abstract</summary><p>
+          Internet Service Providers are uniquely positioned to deliver intrusion detection at the network's choke points, but operating an IDS at carrier scale faces stringent throughput, accuracy, and robustness constraints that conventional middlebox or host-based solutions cannot meet. This work proposes an <b>ISP-centric IDS architecture</b> built on programmable switches: it co-designs lightweight feature extraction in the data plane with adaptive learning in the control plane to sustain Tbps-class detection while remaining robust to traffic drift and adversarial evasion. The system has been validated in real ISP backbones and demonstrates orders-of-magnitude resource savings over CPU/GPU baselines without sacrificing detection quality.
+        </p></details>
+      </div>
+    </article>
+
+    <!-- 1. SIGCOMM'25 DeepTrace -->
+    <article class="pub-feature">
+      <div class="pf-head">
+        <span class="pf-badge">SIGCOMM '25</span>
+        <h4 class="pf-title">Low-Overhead Distributed Application Observation with DeepTrace: Achieving Accurate Tracing in Production Systems</h4>
+      </div>
+      <p class="pf-authors">
+        <span class="stu">Yantao Geng</span>, <b>Han Zhang*</b>, <span class="stu">Zhiheng Wu</span>, Yahui Li, Jilong Wang, Xia Yin
+      </p>
+      <p class="pf-venue">Annual Conference of the ACM Special Interest Group on Data Communication (SIGCOMM '25), pp. 1056–1069, 2025.</p>
+      <div class="pf-links">
+        <a href="https://dl.acm.org/doi/abs/10.1145/3718958.3750477"><i class="fa-solid fa-file-pdf"></i>PDF</a>
+        <a href="https://dl.acm.org/doi/abs/10.1145/3718958.3750477"><i class="fa-solid fa-link"></i>ACM DL</a>
+        <details class="pf-abstract"><summary>Abstract</summary><p>
+        Distributed tracing is a cornerstone for diagnosing performance issues in modern microservice architectures, yet existing solutions either incur prohibitive instrumentation overhead or sacrifice accuracy in production. <b>DeepTrace</b> proposes a non-intrusive, dual-path observation framework that parses protocol semantics at both kernel and user space, achieving accurate method-level delay estimation with negligible runtime cost. Large-scale evaluation in real production clusters shows DeepTrace reduces tracing overhead by an order of magnitude while preserving end-to-end causal accuracy.
+      </p></details>
+        <details class="bibtex">
+        <summary>BibTeX</summary>
+<pre>@inproceedings{geng2025deeptrace,
+  title     = {Low-Overhead Distributed Application Observation with DeepTrace},
+  author    = {Geng, Yantao and Zhang, Han and Wu, Zhiheng and Li, Yahui and Wang, Jilong and Yin, Xia},
+  booktitle = {ACM SIGCOMM},
+  pages     = {1056--1069},
+  year      = {2025}
+}</pre>
+      </details>
+      </div>
+    </article>
+
+    <!-- 2. SIGCOMM'25 P4 Anomaly Detection -->
+    <article class="pub-feature">
+      <div class="pf-head">
+        <span class="pf-badge">SIGCOMM '25</span>
+        <h4 class="pf-title">Achieving High-Speed and Robust Encrypted Traffic Anomaly Detection with Programmable Switches</h4>
+      </div>
+      <p class="pf-authors">
+        <b>Han Zhang</b>, Guyue Liu*, Xingang Shi, Yahui Li, Jilong Wang, Yongqing Zhu, Ke Ruan, Jie Liang, Xia Yin
+      </p>
+      <p class="pf-venue">Annual Conference of the ACM Special Interest Group on Data Communication (SIGCOMM '25), pp. 1254–1256, 2025.</p>
+      <div class="pf-links">
+        <a href="https://dl.acm.org/doi/abs/10.1145/3718958.3750493"><i class="fa-solid fa-file-pdf"></i>PDF</a>
+        <a href="https://dl.acm.org/doi/abs/10.1145/3718958.3750493"><i class="fa-solid fa-link"></i>ACM DL</a>
+        <details class="pf-abstract"><summary>Abstract</summary><p>
+        Detecting anomalies in line-rate encrypted traffic has long been hindered by the conflict between deep-learning accuracy and switch ASIC constraints. We present a programmable-switch-based pipeline that offloads lightweight feature extraction to the data plane while retaining robust classification in the control plane, enabling Tbps-class anomaly detection. The system has been deployed in real ISP backbones with sustained accuracy under concept drift and adversarial perturbations.
+      </p></details>
+        <details class="bibtex">
+        <summary>BibTeX</summary>
+<pre>@inproceedings{zhang2025p4ad,
+  title     = {Achieving High-Speed and Robust Encrypted Traffic Anomaly Detection with Programmable Switches},
+  author    = {Zhang, Han and Liu, Guyue and Shi, Xingang and Li, Yahui and Wang, Jilong and Zhu, Yongqing and Ruan, Ke and Liang, Jie and Yin, Xia},
+  booktitle = {ACM SIGCOMM},
+  pages     = {1254--1256},
+  year      = {2025}
+}</pre>
+      </details>
+      </div>
+    </article>
+
+    <!-- 6. SIGCOMM'23 DeepFlow -->
+    <article class="pub-feature">
+      <div class="pf-head">
+        <span class="pf-badge">SIGCOMM '23</span>
+        <h4 class="pf-title">Network-centric Distributed Tracing with DeepFlow: Troubleshooting Your Microservices in Zero Code</h4>
+      </div>
+      <p class="pf-authors">
+        <span class="stu">Junxian Shen</span>, <b>Han Zhang*</b>, Yang Xiang, Xingang Shi, Xinrui Li, Yunxi Shen, Zijian Zhang, et&nbsp;al.
+      </p>
+      <p class="pf-venue">Annual Conference of the ACM Special Interest Group on Data Communication (SIGCOMM '23), pp. 420–437, 2023.</p>
+      <div class="pf-links">
+        <a href="https://dl.acm.org/doi/pdf/10.1145/3603269.3604823"><i class="fa-solid fa-file-pdf"></i>PDF</a>
+        <a href="https://github.com/deepflowio/deepflow"><i class="fa-brands fa-github"></i>Code</a>
+        <details class="pf-abstract"><summary>Abstract</summary><p>
+        <b>DeepFlow</b> rethinks distributed tracing from a network-centric viewpoint: by hooking eBPF probes at protocol boundaries, it reconstructs causal traces across heterogeneous services <em>without</em> any application code change. Deployed at large cloud operators, DeepFlow has become an open-source de-facto standard, achieving zero-code observability across Kubernetes, service mesh, and serverless platforms.
+      </p></details>
+        <details class="bibtex">
+        <summary>BibTeX</summary>
+<pre>@inproceedings{shen2023deepflow,
+  title     = {Network-centric Distributed Tracing with DeepFlow: Troubleshooting Your Microservices in Zero Code},
+  author    = {Shen, Junxian and Zhang, Han and Xiang, Yang and Shi, Xingang and Li, Xinrui and Shen, Yunxi and Zhang, Zijian and others},
+  booktitle = {ACM SIGCOMM},
+  pages     = {420--437},
+  year      = {2023}
+}</pre>
+      </details>
+      </div>
+    </article>
+
+    <!-- 7. CCS'22 Gringotts -->
+    <article class="pub-feature">
+      <div class="pf-head">
+        <span class="pf-badge">CCS '22</span>
+        <h4 class="pf-title">Gringotts: Fast and Accurate Internal Denial-of-Wallet Detection for Serverless Computing</h4>
+      </div>
+      <p class="pf-authors">
+        <span class="stu">Junxian Shen</span>, <b>Han Zhang*</b>, <span class="stu">Yantao Geng</span>, <span class="stu">Jiawei Li</span>, Jilong Wang, Mingwei Xu
+      </p>
+      <p class="pf-venue">ACM SIGSAC Conference on Computer and Communications Security (CCS '22), pp. 2627–2641, 2022.</p>
+      <div class="pf-links">
+        <a href="https://dl.acm.org/doi/pdf/10.1145/3548606.3560629"><i class="fa-solid fa-file-pdf"></i>PDF</a>
+        <details class="pf-abstract"><summary>Abstract</summary><p>
+        Serverless platforms charge per invocation, making them uniquely vulnerable to <em>internal</em> Denial-of-Wallet attacks where compromised functions burn the tenant's budget. <b>Gringotts</b> performs fast cost-anomaly detection inside the function runtime, combining causal call-graph analysis with adaptive billing-aware thresholds to detect attacks in milliseconds with sub-1% false positive rate.
+      </p></details>
+        <details class="bibtex">
+        <summary>BibTeX</summary>
+<pre>@inproceedings{shen2022gringotts,
+  title     = {Gringotts: Fast and Accurate Internal Denial-of-Wallet Detection for Serverless Computing},
+  author    = {Shen, Junxian and Zhang, Han and Geng, Yantao and Li, Jiawei and Wang, Jilong and Xu, Mingwei},
+  booktitle = {ACM CCS},
+  pages     = {2627--2641},
+  year      = {2022}
+}</pre>
+      </details>
+      </div>
+    </article>
+
+    <!-- 8. CoNEXT'21 -->
+    <article class="pub-feature">
+      <div class="pf-head">
+        <span class="pf-badge">CoNEXT '21</span>
+        <h4 class="pf-title">Boosting Bandwidth Availability over Inter-DC WAN</h4>
+      </div>
+      <p class="pf-authors">
+        <b>Han Zhang</b>, Xingang Shi*, Xia Yin, Jilong Wang, Zhiliang Wang, Yingya Guo, Tian Lan
+      </p>
+      <p class="pf-venue">ACM CoNEXT '21, 2021.</p>
+      <div class="pf-links">
+        <a href="https://dl.acm.org/doi/pdf/10.1145/3485983.3494843"><i class="fa-solid fa-file-pdf"></i>PDF</a>
+        <details class="pf-abstract"><summary>Abstract</summary><p>
+        Inter-datacenter WANs trade off bandwidth utilization against fault tolerance, often leaving large capacity stranded. This paper proposes a traffic-engineering primitive that jointly schedules elephant and mice flows under probabilistic failure models, lifting effective inter-DC bandwidth availability by 1.4–2.1× on real Tencent and China Telecom topologies, while preserving SLA guarantees during link failures.
+      </p></details>
+      </div>
+    </article>
+
+    <!-- 3. ICSE'26 -->
+    <article class="pub-feature">
+      <div class="pf-head">
+        <span class="pf-badge">ICSE '26</span>
+        <h4 class="pf-title">Non-Intrusive Distributed Tracing with Method-Level Delay Estimation for Microservices Troubleshooting</h4>
+      </div>
+      <p class="pf-authors">
+        <span class="stu">Yantao Geng</span>, <b>Han Zhang*</b>, <span class="stu">Zhiheng Wu</span>, Yahui Li, Jilong Wang, Xia Yin
+      </p>
+      <p class="pf-venue">ACM/IEEE International Conference on Software Engineering (ICSE '26). <em>To appear.</em></p>
+      <div class="pf-links">
+        <a href="#"><i class="fa-solid fa-clock"></i>Coming soon</a>
+        <details class="pf-abstract"><summary>Abstract</summary><p>
+        Pinpointing latency culprits inside complex microservice call graphs traditionally requires invasive code instrumentation. This work introduces a fully non-intrusive tracing technique that infers method-level delays from network-side observations and lightweight runtime hints, eliminating the need to modify application code. Evaluation on production-scale microservice deployments demonstrates fault-localization accuracy on par with intrusive baselines at a fraction of the engineering cost.
+      </p></details>
+      </div>
+    </article>
+
+    <!-- 0a. WWW'26 GlassMiner -->
+    <article class="pub-feature">
+      <div class="pf-head">
+        <span class="pf-badge">WWW '26</span>
+        <h4 class="pf-title">GlassMiner: Mining Looking Glass Services via Structure-Semantics Fusion for Web Observability</h4>
+      </div>
+      <p class="pf-authors">
+        <span class="stu">Yunze Wei</span>, Xingang Shi, <b>Han Zhang*</b>, <span class="stu">Tianyu Zhang</span>, Yahui Li, Xia Yin
+      </p>
+      <p class="pf-venue">Proceedings of the ACM Web Conference (WWW '26), pp. 7576–7587, 2026.</p>
+      <div class="pf-links">
+        <a href="https://dl.acm.org/doi/abs/10.1145/3774904.3792698"><i class="fa-solid fa-file-pdf"></i>PDF</a>
+        <a href="https://dl.acm.org/doi/abs/10.1145/3774904.3792698"><i class="fa-solid fa-link"></i>ACM DL</a>
+        <details class="pf-abstract"><summary>Abstract</summary><p>
+          Looking Glass (LG) services expose a fragmented but invaluable view of the global Internet's routing fabric, yet their heterogeneous interfaces and free-form output have long resisted automated analysis. <b>GlassMiner</b> proposes a structure-semantics fusion approach that jointly models the DOM-level layout and natural-language hints of LG portals to extract structured measurements at scale. The system enables continent-wide BGP path observability and uncovers previously hidden routing anomalies across thousands of operator portals.
+        </p></details>
+      </div>
+    </article>
+
+    <!-- 11. INFOCOM'24 NNetFEC -->
+    <article class="pub-feature">
+      <div class="pf-head">
+        <span class="pf-badge">INFOCOM '24</span>
+        <h4 class="pf-title">NNetFEC: In-network FEC Encoding Acceleration for Latency-sensitive Multimedia Applications</h4>
+      </div>
+      <p class="pf-authors">
+        <span class="stu">Yi Qiao</span>, <b>Han Zhang*</b>, Jilong Wang
+      </p>
+      <p class="pf-venue">IEEE INFOCOM 2024, pp. 420–437, 2024.</p>
+      <div class="pf-links">
+        <a href="https://dl.acm.org/doi/pdf/10.1145/3603269.3604823"><i class="fa-solid fa-file-pdf"></i>PDF</a>
+        <details class="pf-abstract"><summary>Abstract</summary><p>
+        Forward Error Correction (FEC) is essential for low-latency video, AR/VR, and cloud gaming, but software FEC encoders cap end-host throughput. <b>NNetFEC</b> offloads encoding to programmable switches, exploiting tensor-style P4 templates to sustain line-rate FEC across 100GbE links while reducing 99-th percentile tail latency by 4–6× in real-world streaming workloads.
+      </p></details>
+      </div>
+    </article>
+
+    <!-- 10. ICNP'25 SRmesh -->
+    <article class="pub-feature">
+      <div class="pf-head">
+        <span class="pf-badge tier2">ICNP '25</span>
+        <h4 class="pf-title">SRmesh: Deterministic and Efficient Diagnosis of Latency Bottleneck Links in SRv6 Networks</h4>
+      </div>
+      <p class="pf-authors">
+        <span class="stu">Kaiyang Zhao</span>, <b>Han Zhang*</b>, <span class="stu">Yao Tong</span>, Yahui Li, Xingang Shi, Zhiliang Wang, Xia Yin, Jianping Wu
+      </p>
+      <p class="pf-venue">IEEE International Conference on Network Protocols (ICNP '25), pp. 1–12, 2025.</p>
+      <div class="pf-links">
+        <a href="https://ieeexplore.ieee.org/abstract/document/11192455/"><i class="fa-solid fa-file-pdf"></i>PDF</a>
+        <details class="pf-abstract"><summary>Abstract</summary><p>
+        Existing latency-diagnosis tools for SRv6 either flood the data plane with probes or return probabilistic verdicts. <b>SRmesh</b> embeds deterministic in-band telemetry into segment-routing headers, enabling per-link latency attribution with bounded measurement overhead. It has been validated in a multi-vendor SRv6 testbed and identifies bottleneck links in seconds with 100% recall.
+      </p></details>
+      </div>
+    </article>
+
+  </div>
+  <!-- end featured -->
+
+  <div class="pub-subtitle">All Publications by Year</div>
 
   <div class="pub-controls">
     <div class="pub-filter" id="pubFilter">
@@ -520,9 +1122,32 @@
     <div class="pub-year-label">2026</div>
     <ol class="pub-list">
       <li class="pub-item"><span class="pub-num">[1]</span><span class="pub-content">
+        <b>Han Zhang</b>, Xuefeng Liu, Linqiang Qian, Guyue Liu, Tianyu Zhang, Kaiyang Zhao, Yantu Tong, Zeji Xiao, Dongbiao He, Yahui Li, Ke Ruan, Jilong Wang, Yongqing Zhu, Xia Yin.
+        "Providing Efficient and Robust ISP-Centric Intrusion Detection Service with Programmable Switches."
+        <span class="pub-venue top">ACM SIGCOMM 2026</span> <em>(to appear)</em>
+      </span></li>
+      <li class="pub-item"><span class="pub-num">[2]</span><span class="pub-content">
+        Yunze Wei, Xingang Shi, <b>Han Zhang*</b>, Tianyu Zhang, Yahui Li, Xia Yin.
+        "GlassMiner: Mining Looking Glass Services via Structure-Semantics Fusion for Web Observability."
+        <span class="pub-venue top">ACM WWW 2026</span>, pp. 7576–7587.
+        <a class="pub-pdf" href="https://dl.acm.org/doi/abs/10.1145/3774904.3792698"><i class="fa-solid fa-file-pdf"></i>PDF</a>
+      </span></li>
+      <li class="pub-item"><span class="pub-num">[3]</span><span class="pub-content">
+        Junxian Shen, <b>Han Zhang*</b>, Wenxue Lin, Yantao Geng, Jiawei Li, Jilong Wang, Mingwei Xu.
+        "Clover: Workload Verification for Real-Time Detection of Contention-Induced Slowdowns in Serverless Platforms."
+        <span class="pub-venue top">IEEE/ACM Transactions on Networking</span>, 2026.
+        <a class="pub-pdf" href="https://ieeexplore.ieee.org/abstract/document/11474554/"><i class="fa-solid fa-file-pdf"></i>PDF</a>
+      </span></li>
+      <li class="pub-item"><span class="pub-num">[4]</span><span class="pub-content">
         Yantao Geng, <b>Han Zhang*</b>, Zhiheng Wu, Yahui Li, Jilong Wang, Xia Yin.
         "Non-Intrusive Distributed Tracing with Method-Level Delay Estimation for Microservices Troubleshooting."
         <span class="pub-venue top">ACM ICSE 2026</span> <em>(to appear)</em>
+      </span></li>
+      <li class="pub-item"><span class="pub-num">[5]</span><span class="pub-content">
+        Shuhuan Wang, Zhiyu Wang, Hao Sun, Zhi Jiang, Xia Yin, Dongbin Han, <b>Han Zhang</b>, Xingang Shi, Jiahai Yang.
+        "The Evolution of Provenance-Based Intrusion Detection Systems: A Review of Approaches, Limitations, and Future Directions."
+        <span class="pub-venue">IEEE Network</span>, 2026.
+        <a class="pub-pdf" href="https://ieeexplore.ieee.org/abstract/document/11400546"><i class="fa-solid fa-file-pdf"></i>PDF</a>
       </span></li>
     </ol>
   </div>
@@ -1014,7 +1639,7 @@
   <h2><i class="fa-solid fa-certificate icon"></i>Patents</h2>
 
   <details class="patents" open>
-    <summary>Network Observability （网络可观测性） &nbsp;<span style="font-weight:400;color:var(--c-muted);font-size:13px">— 27 items</span></summary>
+    <summary>Network Measurement and Security （网络测量与安全） &nbsp;<span style="font-weight:400;color:var(--c-muted);font-size:13px">— 27 items</span></summary>
     <ol class="patent-list">
       <li><b>张晗</b>, 钱林强, 李卓, 刘雪枫. 基于频域增强与单类自适应学习的加密流量异常检测技术.</li>
       <li><b>张晗</b>, 武志衡, 耿彦涛. 基于内核态与用户态双路径协议特征解析的分布式请求追踪方法.</li>
@@ -1047,7 +1672,7 @@
   </details>
 
   <details class="patents">
-    <summary>Internet Routing （互联网路由） &nbsp;<span style="font-weight:400;color:var(--c-muted);font-size:13px">— 19 items</span></summary>
+    <summary>AI for Network （网络智能） &nbsp;<span style="font-weight:400;color:var(--c-muted);font-size:13px">— 19 items</span></summary>
     <ol class="patent-list">
       <li><b>张晗</b>, 佟瑶, 童彦图, 彭可心, 高杨宸严, 尹霞. 一种面向网络快速重路由的完美路由树构建方法.</li>
       <li><b>张晗</b>, 赵铠阳, 尹霞, 吴建平. 面向跨域分段路由的可信验证方法技术.</li>
