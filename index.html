@@ -1264,7 +1264,7 @@
         <h4 class="pf-title">Network-centric Distributed Tracing with DeepFlow: Troubleshooting Your Microservices in Zero Code</h4>
       </div>
       <p class="pf-authors">
-        <span class="stu">Junxian Shen</span>, <b>Han Zhang*</b>, Yang Xiang, Xingang Shi, Xinrui Li, Yunxi Shen, Zijian Zhang, et&nbsp;al.
+        <span class="stu">Junxian Shen</span>, <b>Han Zhang*</b>, Yang Xiang, Xingang Shi, Xinrui Li, Yunxi Shen, Zijian Zhang, Sicheng Wang, Yanhui Yang, <span class="stu">Yu Zhou</span>, Mingwei Xu, Jilong Wang
       </p>
       <p class="pf-venue">Annual Conference of the ACM Special Interest Group on Data Communication (SIGCOMM '23), pp. 420–437, 2023.</p>
       <div class="pf-links">
@@ -1277,7 +1277,7 @@
         <summary>BibTeX</summary>
 <pre>@inproceedings{shen2023deepflow,
   title     = {Network-centric Distributed Tracing with DeepFlow: Troubleshooting Your Microservices in Zero Code},
-  author    = {Shen, Junxian and Zhang, Han and Xiang, Yang and Shi, Xingang and Li, Xinrui and Shen, Yunxi and Zhang, Zijian and others},
+  author    = {Shen, Junxian and Zhang, Han and Xiang, Yang and Shi, Xingang and Li, Xinrui and Shen, Yunxi and Zhang, Zijian and Wang, Sicheng and Yang, Yanhui and Zhou, Yu and Xu, Mingwei and Wang, Jilong},
   booktitle = {ACM SIGCOMM},
   pages     = {420--437},
   year      = {2023}
@@ -1348,6 +1348,25 @@
         <details class="pf-abstract"><summary>Abstract</summary><p>
         Pinpointing latency culprits inside complex microservice call graphs traditionally requires invasive code instrumentation. This work introduces a fully non-intrusive tracing technique that infers method-level delays from network-side observations and lightweight runtime hints, eliminating the need to modify application code. Evaluation on production-scale microservice deployments demonstrates fault-localization accuracy on par with intrusive baselines at a fraction of the engineering cost.
       </p></details>
+      </div>
+    </article>
+
+    <!-- 0b. WWW'25 ACME++ -->
+    <article class="pub-feature">
+      <div class="pf-head">
+        <span class="pf-badge">WWW '25</span>
+        <h4 class="pf-title">ACME++: Secure ACME Client Verification for Web-PKI</h4>
+      </div>
+      <p class="pf-authors">
+        <span class="stu">Tianyu Zhang</span>, <b>Han Zhang*</b>, <span class="stu">Yunze Wei</span>, Yahui Li, Xingang Shi, Jilong Wang, Xia Yin
+      </p>
+      <p class="pf-venue">Proceedings of the ACM Web Conference (WWW '25), 2025.</p>
+      <div class="pf-links">
+        <a href="https://dl.acm.org/doi/abs/10.1145/3696410.3714763"><i class="fa-solid fa-file-pdf"></i>PDF</a>
+        <a href="https://dl.acm.org/doi/abs/10.1145/3696410.3714763"><i class="fa-solid fa-link"></i>ACM DL</a>
+        <details class="pf-abstract"><summary>Abstract</summary><p>
+          The Automated Certificate Management Environment (ACME) underpins today's Web-PKI by automating certificate issuance, yet its client side is widely under-verified, exposing tenants to misissuance and downgrade risks. <b>ACME++</b> adds end-to-end client verification: it cryptographically attests the requester's identity, validates challenge-response provenance, and detects subtle client-side misconfigurations at scale. Real-world deployment across multiple ACME-CA pairs demonstrates effective defense against client impersonation and silent credential drift.
+        </p></details>
       </div>
     </article>
 
