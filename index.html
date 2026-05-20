@@ -113,11 +113,20 @@
   }
   .contact-row a i { font-size: 13px; }
 
-  .hero-photo {
+  .hero-photo, .hero-photo-fallback {
     width: 200px; height: 240px; object-fit: cover;
     border-radius: 6px;
     box-shadow: var(--shadow-md);
     border: 1px solid var(--c-line);
+    display: block;
+  }
+  .hero-photo-fallback {
+    background: linear-gradient(135deg, var(--c-accent) 0%, #8a2a2a 100%);
+    color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--serif); font-weight: 700;
+    font-size: 64px; letter-spacing: -2px;
+    user-select: none;
   }
   .hero-photo-wrap {
     position: relative;
@@ -502,6 +511,144 @@
   .news-badge.talk    { background: #dcfce7; color: #14532d; }
   .news-badge.misc    { background: var(--c-tag-bg); color: var(--c-ink-soft); }
 
+  /* ─── Stats strip (hero) ─────────────────────────────────── */
+  .stats-row {
+    display: flex; flex-wrap: wrap; gap: 0;
+    margin-top: 22px;
+    border: 1px solid var(--c-line);
+    border-radius: var(--radius);
+    background: var(--c-paper);
+    overflow: hidden;
+  }
+  .stats-row .stat {
+    flex: 1 1 0; min-width: 110px;
+    padding: 12px 14px;
+    border-right: 1px solid var(--c-line-soft);
+    text-align: center;
+    transition: background .15s ease;
+  }
+  .stats-row a.stat:hover { background: var(--c-accent-soft); }
+  .stats-row a.stat:hover .num { color: var(--c-link-hover); }
+  .stats-row .stat:last-child { border-right: 0; }
+  .stats-row .stat .num {
+    font-family: var(--serif); font-weight: 700;
+    font-size: 22px; color: var(--c-accent); line-height: 1.1;
+    display: block;
+  }
+  .stats-row .stat .lbl {
+    font-size: 12px; color: var(--c-muted);
+    margin-top: 3px; letter-spacing: .2px;
+  }
+
+  /* ─── Flagship Systems cards ─────────────────────────────── */
+  .systems-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px; margin-top: 8px;
+  }
+  .system-card {
+    background: var(--c-paper);
+    border: 1px solid var(--c-line);
+    border-top: 3px solid var(--c-accent);
+    border-radius: var(--radius);
+    padding: 18px 20px 16px;
+    box-shadow: var(--shadow-sm);
+    display: flex; flex-direction: column;
+    transition: transform .15s ease, box-shadow .2s ease;
+  }
+  .system-card:hover {
+    transform: translateY(-2px); box-shadow: var(--shadow-md);
+  }
+  .system-card .sys-name {
+    font-family: var(--serif); font-weight: 700;
+    font-size: 22px; color: var(--c-ink);
+    margin: 0 0 4px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .system-card .sys-name i { color: var(--c-accent); font-size: 18px; }
+  .system-card .sys-tag {
+    font-family: var(--mono); font-size: 11px;
+    color: var(--c-muted); letter-spacing: .3px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .system-card p {
+    margin: 0 0 12px; font-size: 13.5px;
+    color: var(--c-ink-soft); line-height: 1.6;
+  }
+  .system-card .sys-meta {
+    display: flex; flex-wrap: wrap; gap: 6px;
+    margin-bottom: 10px;
+  }
+  .system-card .sys-meta span {
+    font-family: var(--mono); font-size: 11px;
+    padding: 2px 7px; border-radius: 3px;
+    background: var(--c-tag-bg); color: var(--c-ink-soft);
+  }
+  .system-card .sys-meta span.hot {
+    background: var(--c-accent-soft); color: var(--c-accent);
+    font-weight: 600;
+  }
+  .system-card .sys-links {
+    margin-top: auto;
+    display: flex; flex-wrap: wrap; gap: 6px;
+  }
+  .system-card .sys-links a {
+    display: inline-flex; align-items: center; gap: 5px;
+    font-size: 12.5px; padding: 4px 10px;
+    border: 1px solid var(--c-line); border-radius: 4px;
+    color: var(--c-link); background: var(--c-bg);
+    text-decoration: none; transition: all .15s ease;
+  }
+  .system-card .sys-links a:hover {
+    background: var(--c-accent); color: #fff; border-color: var(--c-accent);
+  }
+
+  /* ─── Deployments / Industry impact ──────────────────────── */
+  .deploy-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 12px; margin-top: 8px;
+  }
+  .deploy-card {
+    background: linear-gradient(145deg, var(--c-paper) 0%, #fdfbf6 100%);
+    border: 1px solid var(--c-line);
+    border-radius: var(--radius);
+    padding: 14px 16px;
+    box-shadow: var(--shadow-sm);
+    transition: all .15s ease;
+  }
+  .deploy-card:hover { border-color: var(--c-accent); box-shadow: var(--shadow-md); }
+  .deploy-card .dep-tier {
+    font-family: var(--mono); font-size: 10.5px;
+    color: var(--c-accent); font-weight: 600; letter-spacing: .5px;
+    text-transform: uppercase;
+  }
+  .deploy-card .dep-name {
+    font-family: var(--serif); font-weight: 600;
+    font-size: 16px; color: var(--c-ink);
+    margin: 4px 0 6px; line-height: 1.3;
+  }
+  .deploy-card .dep-desc {
+    font-size: 13px; color: var(--c-ink-soft);
+    line-height: 1.55; margin: 0;
+  }
+
+  /* ─── Awards tiered ──────────────────────────────────────── */
+  .awards-tier {
+    margin-top: 14px;
+  }
+  .awards-tier .tier-label {
+    font-family: var(--mono); font-size: 11.5px;
+    color: var(--c-accent); font-weight: 600; letter-spacing: .6px;
+    text-transform: uppercase;
+    padding: 4px 0; margin-bottom: 4px;
+    border-bottom: 1px dashed var(--c-line);
+  }
+  .awards-tier .tier-label .tier-tag {
+    display: inline-block; margin-right: 8px; padding: 1px 7px;
+    background: var(--c-accent-soft); color: var(--c-accent);
+    border-radius: 3px; font-size: 10.5px;
+  }
+
   /* ─── Students grid ──────────────────────────────────────── */
   .students-grid {
     display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
@@ -568,12 +715,11 @@
       <a href="#about">About</a>
       <a href="#news">News</a>
       <a href="#research">Research</a>
+      <a href="#systems">Systems</a>
+      <a href="#deployments">Impact</a>
       <a href="#publications">Publications</a>
-      <a href="#patents">Patents</a>
       <a href="#projects">Projects</a>
-      <a href="#service">Service</a>
       <a href="#awards">Awards</a>
-      <a href="#teaching">Teaching</a>
       <a href="#students">Students</a>
     </div>
   </div>
@@ -595,10 +741,20 @@
       <a href="#publications"><i class="fa-solid fa-file-lines"></i> Publications</a>
       <a href="https://github.com/netsyscode"><i class="fa-brands fa-github"></i> GitHub</a>
     </div>
+
+    <!-- Stats are sourced from Google Scholar (May 2026). To refresh, run scripts/refresh_scholar.sh -->
+    <div class="stats-row" aria-label="Research metrics at a glance">
+      <a class="stat" href="https://scholar.google.com/citations?user=2_wPPU0AAAAJ&hl=en" style="text-decoration:none;color:inherit"><span class="num">1,475</span><span class="lbl">Citations</span></a>
+      <a class="stat" href="https://scholar.google.com/citations?user=2_wPPU0AAAAJ&hl=en" style="text-decoration:none;color:inherit"><span class="num">17</span><span class="lbl">h-index</span></a>
+      <a class="stat" href="https://scholar.google.com/citations?user=2_wPPU0AAAAJ&hl=en" style="text-decoration:none;color:inherit"><span class="num">28</span><span class="lbl">i10-index</span></a>
+      <a class="stat" href="#publications" style="text-decoration:none;color:inherit"><span class="num">79</span><span class="lbl">Scholar Papers</span></a>
+      <a class="stat" href="#students" style="text-decoration:none;color:inherit"><span class="num">13</span><span class="lbl">Active Students</span></a>
+    </div>
   </div>
   <div class="hero-photo-wrap">
+    <!-- TODO: place a real headshot at images/face.jpg; falls back to initials placeholder if missing -->
     <img src="images/face.jpg" alt="Han Zhang" class="hero-photo"
-         onerror="this.style.background='var(--c-line-soft)';this.style.display='flex';">
+         onerror="this.outerHTML='<div class=&quot;hero-photo-fallback&quot; aria-label=&quot;Han Zhang&quot;>HZ</div>';">
   </div>
 </header>
 
@@ -866,6 +1022,121 @@
   </div>
 </section>
 
+<!-- ═══════════════════════ Flagship Systems ═══════════════════════ -->
+<section class="section" id="systems">
+  <h2><i class="fa-solid fa-cubes icon"></i>Flagship Systems</h2>
+  <p style="font-size:14px;color:var(--c-ink-soft);margin:-4px 0 14px">
+    Systems that have moved beyond papers — open-sourced, deployed at scale, or adopted by international communities.
+  </p>
+
+  <div class="systems-grid">
+
+    <div class="system-card">
+      <div class="sys-name"><i class="fa-solid fa-network-wired"></i>DeepFlow</div>
+      <div class="sys-tag">eBPF · Zero-Code Observability · SIGCOMM '23</div>
+      <p>Network-centric distributed tracing that reconstructs causal traces across Kubernetes, service mesh and serverless platforms <em>without any application code change</em>. Open-sourced as an industry de-facto standard.</p>
+      <p style="margin:0 0 10px;display:flex;flex-wrap:wrap;gap:4px">
+        <a href="https://github.com/deepflowio/deepflow"><img src="https://img.shields.io/github/stars/deepflowio/deepflow?style=flat-square&logo=github&label=Stars&color=6b1f1f" alt="GitHub Stars"></a>
+        <a href="https://github.com/deepflowio/deepflow/network/members"><img src="https://img.shields.io/github/forks/deepflowio/deepflow?style=flat-square&logo=github&label=Forks&color=4a4a4a" alt="GitHub Forks"></a>
+        <a href="https://github.com/deepflowio/deepflow/releases"><img src="https://img.shields.io/github/v/release/deepflowio/deepflow?style=flat-square&label=Release&color=6b1f1f" alt="Latest Release"></a>
+        <img src="https://img.shields.io/badge/CNCF-Sandbox-7c3aed?style=flat-square" alt="CNCF Sandbox">
+      </p>
+      <div class="sys-meta">
+        <span class="hot">CNCF Sandbox</span>
+        <span>eBPF / WASM</span>
+        <span>K8s · Service Mesh</span>
+        <span>SIGCOMM '23</span>
+      </div>
+      <div class="sys-links">
+        <a href="https://github.com/deepflowio/deepflow"><i class="fa-brands fa-github"></i>GitHub</a>
+        <a href="https://deepflow.io"><i class="fa-solid fa-globe"></i>deepflow.io</a>
+        <a href="https://dl.acm.org/doi/pdf/10.1145/3603269.3604823"><i class="fa-solid fa-file-pdf"></i>Paper</a>
+      </div>
+    </div>
+
+    <div class="system-card">
+      <div class="sys-name"><i class="fa-solid fa-magnifying-glass-chart"></i>DeepTrace</div>
+      <div class="sys-tag">Production Tracing · SIGCOMM '25 · ICSE '26</div>
+      <p>Low-overhead, non-intrusive distributed application observation. Dual-path kernel + user-space protocol parsing achieves accurate method-level delay estimation in production clusters at <strong>~10× less</strong> instrumentation overhead.</p>
+      <div class="sys-meta">
+        <span class="hot">Production-deployed</span>
+        <span>Method-level delay</span>
+        <span>SIGCOMM '25</span>
+        <span>ICSE '26</span>
+      </div>
+      <div class="sys-links">
+        <a href="https://dl.acm.org/doi/abs/10.1145/3718958.3750477"><i class="fa-solid fa-file-pdf"></i>SIGCOMM Paper</a>
+        <a href="#publications"><i class="fa-solid fa-list"></i>Pub list</a>
+      </div>
+    </div>
+
+    <div class="system-card">
+      <div class="sys-name"><i class="fa-solid fa-shield-halved"></i>DeepShield</div>
+      <div class="sys-tag">ISP-Centric IDS · SIGCOMM '26</div>
+      <p>Carrier-scale intrusion detection on programmable switches: data-plane lightweight feature extraction + control-plane adaptive learning. Sustains <strong>Tbps-class</strong> detection while staying robust to traffic drift and adversarial evasion. <strong>Validated in real ISP backbones.</strong></p>
+      <div class="sys-meta">
+        <span class="hot">Tbps line-rate</span>
+        <span>Programmable switches</span>
+        <span>P4 · adaptive ML</span>
+        <span>SIGCOMM '26</span>
+      </div>
+      <div class="sys-links">
+        <a href="https://conferences.sigcomm.org/sigcomm/2026/" title="SIGCOMM 2026 conference site"><i class="fa-solid fa-clock"></i>SIGCOMM '26 — to appear</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════ Deployments / Industry Impact ═══════════════════════ -->
+<section class="section" id="deployments">
+  <h2><i class="fa-solid fa-tower-broadcast icon"></i>Real-World Deployments &amp; Industry Impact</h2>
+  <p style="font-size:14px;color:var(--c-ink-soft);margin:-4px 0 14px">
+    Research outcomes integrated into national network infrastructures and tier-1 industry products,
+    serving telecom operators, education networks, public clouds, and security vendors.
+  </p>
+
+  <div class="deploy-grid">
+
+    <div class="deploy-card">
+      <div class="dep-tier">National Backbone</div>
+      <div class="dep-name">China Telecom Backbone</div>
+      <p class="dep-desc">Encrypted-traffic anomaly detection at line rate; large-scale WAN sensing &amp; optimization.</p>
+    </div>
+
+    <div class="deploy-card">
+      <div class="dep-tier">National Infrastructure</div>
+      <div class="dep-name">FITI &mdash; Future Internet Test Infrastructure</div>
+      <p class="dep-desc">Programmable-switch IDS &amp; segment-routing diagnosis deployed on the national next-generation Internet testbed.</p>
+    </div>
+
+    <div class="deploy-card">
+      <div class="dep-tier">Education Network</div>
+      <div class="dep-name">CERNET / CERNET2</div>
+      <p class="dep-desc">DeepFlow-based observability and routing-anomaly analysis across the China Education and Research Network.</p>
+    </div>
+
+    <div class="deploy-card">
+      <div class="dep-tier">Public Cloud</div>
+      <div class="dep-name">Tencent Cloud</div>
+      <p class="dep-desc">Observability for large-scale microservice systems; co-designed traffic engineering for inter-DC WAN.</p>
+    </div>
+
+    <div class="deploy-card">
+      <div class="dep-tier">Enterprise WAN</div>
+      <div class="dep-name">Sangfor (深信服)</div>
+      <p class="dep-desc">Application-aware WAN transmission optimization for enterprise SD-WAN products.</p>
+    </div>
+
+    <div class="deploy-card">
+      <div class="dep-tier">Security Vendor</div>
+      <div class="dep-name">NSFOCUS (绿盟)</div>
+      <p class="dep-desc">Key technologies for security-testing facilities and large-scale traffic analysis.</p>
+    </div>
+
+  </div>
+</section>
+
 <!-- ═══════════════════════ Publications ═══════════════════════ -->
 <section class="section" id="publications">
   <h2><i class="fa-solid fa-file-lines icon"></i>Selected Publications</h2>
@@ -889,7 +1160,8 @@
       </p>
       <p class="pf-venue">Annual Conference of the ACM Special Interest Group on Data Communication (SIGCOMM '26), 2026. <em>To appear.</em></p>
       <div class="pf-links">
-        <a href="#"><i class="fa-solid fa-clock"></i>Coming soon</a>
+        <!-- TODO: replace with SIGCOMM'26 PDF once camera-ready is public -->
+        <a href="https://conferences.sigcomm.org/sigcomm/2026/"><i class="fa-solid fa-clock"></i>SIGCOMM '26 — to appear</a>
         <details class="pf-abstract"><summary>Abstract</summary><p>
           Internet Service Providers are uniquely positioned to deliver intrusion detection at the network's choke points, but operating an IDS at carrier scale faces stringent throughput, accuracy, and robustness constraints that conventional middlebox or host-based solutions cannot meet. This work proposes an <b>ISP-centric IDS architecture</b> built on programmable switches: it co-designs lightweight feature extraction in the data plane with adaptive learning in the control plane to sustain Tbps-class detection while remaining robust to traffic drift and adversarial evasion. The system has been validated in real ISP backbones and demonstrates orders-of-magnitude resource savings over CPU/GPU baselines without sacrificing detection quality.
         </p></details>
@@ -1040,7 +1312,8 @@
       </p>
       <p class="pf-venue">ACM/IEEE International Conference on Software Engineering (ICSE '26). <em>To appear.</em></p>
       <div class="pf-links">
-        <a href="#"><i class="fa-solid fa-clock"></i>Coming soon</a>
+        <!-- TODO: replace with ICSE'26 PDF once camera-ready is public -->
+        <a href="https://conf.researchr.org/home/icse-2026"><i class="fa-solid fa-clock"></i>ICSE '26 — to appear</a>
         <details class="pf-abstract"><summary>Abstract</summary><p>
         Pinpointing latency culprits inside complex microservice call graphs traditionally requires invasive code instrumentation. This work introduces a fully non-intrusive tracing technique that infers method-level delays from network-side observations and lightweight runtime hints, eliminating the need to modify application code. Evaluation on production-scale microservice deployments demonstrates fault-localization accuracy on par with intrusive baselines at a fraction of the engineering cost.
       </p></details>
@@ -1748,14 +2021,36 @@
 
 <!-- ═══════════════════════ Awards ═══════════════════════ -->
 <section class="section" id="awards">
-  <h2><i class="fa-solid fa-trophy icon"></i>Selected Awards</h2>
-  <ul class="info-list">
-    <li><b>First Prize, Science and Technology Award</b>, China Institute of Communications — "Key Technologies and Large-Scale Applications of Metropolitan Area Cloud Networks" (城域云网关键技术及规模应用), 2025.</li>
-    <li><b>NSGA Best Researcher Award</b>, 2025.</li>
-    <li><b>Applied Networking Research Prize</b>, Certificate of Award, 2023.</li>
-    <li><b>ACM TURC SIGCSE China Rising Star Award</b>, 2023.</li>
-    <li><b>Excellent Service Award</b>, ICA3PP 2023.</li>
-  </ul>
+  <h2><i class="fa-solid fa-trophy icon"></i>Selected Awards &amp; Honors</h2>
+
+  <div class="awards-tier">
+    <div class="tier-label"><span class="tier-tag">International</span>Recognition by international research communities</div>
+    <ul class="info-list">
+      <li><b>Applied Networking Research Prize (ANRP)</b>, IRTF / Internet Society — Certificate of Award, 2023.</li>
+    </ul>
+  </div>
+
+  <div class="awards-tier">
+    <div class="tier-label"><span class="tier-tag">National</span>National-level science &amp; technology awards</div>
+    <ul class="info-list">
+      <li><b>First Prize, Science and Technology Award</b>, China Institute of Communications &mdash; <em>"Key Technologies and Large-Scale Applications of Metropolitan Area Cloud Networks"</em> (城域云网关键技术及规模应用), 2025.</li>
+    </ul>
+  </div>
+
+  <div class="awards-tier">
+    <div class="tier-label"><span class="tier-tag">Community</span>Peer-recognized rising-star &amp; researcher awards</div>
+    <ul class="info-list">
+      <li><b>NSGA Best Researcher Award</b>, 2025.</li>
+      <li><b>ACM TURC SIGCSE China Rising Star Award</b>, 2023.</li>
+    </ul>
+  </div>
+
+  <div class="awards-tier">
+    <div class="tier-label"><span class="tier-tag">Service</span>Recognition for academic service &amp; reviewing</div>
+    <ul class="info-list">
+      <li><b>Excellent Service Award</b>, ICA3PP 2023.</li>
+    </ul>
+  </div>
 </section>
 
 <!-- ═══════════════════════ Teaching ═══════════════════════ -->
