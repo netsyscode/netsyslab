@@ -603,6 +603,30 @@
     background: var(--c-accent); color: #fff; border-color: var(--c-accent);
   }
 
+  /* ─── Static GitHub badges (shields.io look-alike) ───────── */
+  .gh-badges {
+    display: flex; flex-wrap: wrap; gap: 6px;
+    margin: 0 0 12px;
+  }
+  .gh-badge {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-family: var(--mono); font-size: 11.5px; font-weight: 500;
+    padding: 3px 9px; border-radius: 4px;
+    background: #2a2a2a; color: #fff !important;
+    text-decoration: none !important;
+    border: 1px solid #2a2a2a;
+    line-height: 1.4;
+    transition: all .15s ease;
+  }
+  .gh-badge i { font-size: 11px; color: #fbbf24; }
+  .gh-badge:hover {
+    background: var(--c-accent); border-color: var(--c-accent);
+    transform: translateY(-1px);
+  }
+  .gh-badge.cncf { background: #7c3aed; border-color: #7c3aed; }
+  .gh-badge.cncf i { color: #fff; }
+  .gh-badge.cncf:hover { background: #6d28d9; border-color: #6d28d9; }
+
   /* ─── Deployments / Industry impact ──────────────────────── */
   .deploy-grid {
     display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -1035,12 +1059,12 @@
       <div class="sys-name"><i class="fa-solid fa-network-wired"></i>DeepFlow</div>
       <div class="sys-tag">eBPF · Zero-Code Observability · SIGCOMM '23</div>
       <p>Network-centric distributed tracing that reconstructs causal traces across Kubernetes, service mesh and serverless platforms <em>without any application code change</em>. Open-sourced as an industry de-facto standard.</p>
-      <p style="margin:0 0 10px;display:flex;flex-wrap:wrap;gap:4px">
-        <a href="https://github.com/deepflowio/deepflow"><img src="https://img.shields.io/github/stars/deepflowio/deepflow?style=flat-square&logo=github&label=Stars&color=6b1f1f" alt="GitHub Stars"></a>
-        <a href="https://github.com/deepflowio/deepflow/network/members"><img src="https://img.shields.io/github/forks/deepflowio/deepflow?style=flat-square&logo=github&label=Forks&color=4a4a4a" alt="GitHub Forks"></a>
-        <a href="https://github.com/deepflowio/deepflow/releases"><img src="https://img.shields.io/github/v/release/deepflowio/deepflow?style=flat-square&label=Release&color=6b1f1f" alt="Latest Release"></a>
-        <img src="https://img.shields.io/badge/CNCF-Sandbox-7c3aed?style=flat-square" alt="CNCF Sandbox">
-      </p>
+      <!-- Static badges (snapshot May 2026); refresh via scripts/refresh_scholar.sh or by hand -->
+      <div class="gh-badges">
+        <a href="https://github.com/deepflowio/deepflow" class="gh-badge"><i class="fa-solid fa-star"></i> 4,084 Stars</a>
+        <a href="https://github.com/deepflowio/deepflow/network/members" class="gh-badge"><i class="fa-solid fa-code-fork"></i> 456 Forks</a>
+        <span class="gh-badge cncf"><i class="fa-solid fa-cube"></i> CNCF Sandbox</span>
+      </div>
       <div class="sys-meta">
         <span class="hot">CNCF Sandbox</span>
         <span>eBPF / WASM</span>
@@ -1058,6 +1082,10 @@
       <div class="sys-name"><i class="fa-solid fa-magnifying-glass-chart"></i>DeepTrace</div>
       <div class="sys-tag">Production Tracing · SIGCOMM '25 · ICSE '26</div>
       <p>Low-overhead, non-intrusive distributed application observation. Dual-path kernel + user-space protocol parsing achieves accurate method-level delay estimation in production clusters at <strong>~10× less</strong> instrumentation overhead.</p>
+      <div class="gh-badges">
+        <a href="https://github.com/DeepShield-AI/DeepTrace" class="gh-badge"><i class="fa-solid fa-star"></i> 173 Stars</a>
+        <a href="https://github.com/DeepShield-AI/DeepTrace/network/members" class="gh-badge"><i class="fa-solid fa-code-fork"></i> 17 Forks</a>
+      </div>
       <div class="sys-meta">
         <span class="hot">Production-deployed</span>
         <span>Method-level delay</span>
@@ -1065,6 +1093,7 @@
         <span>ICSE '26</span>
       </div>
       <div class="sys-links">
+        <a href="https://github.com/DeepShield-AI/DeepTrace"><i class="fa-brands fa-github"></i>GitHub</a>
         <a href="https://dl.acm.org/doi/abs/10.1145/3718958.3750477"><i class="fa-solid fa-file-pdf"></i>SIGCOMM Paper</a>
         <a href="#publications"><i class="fa-solid fa-list"></i>Pub list</a>
       </div>
