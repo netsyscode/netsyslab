@@ -20,7 +20,7 @@
     --c-line-soft: #f0ece4;
     --c-accent: #6b1f1f;       /* Tsinghua紫 / 学术红 */
     --c-accent-soft: #f3e9e7;
-    --c-link: #6b1f1f;
+    --c-link: #878787;
     --c-link-hover: #8a2a2a;
     --c-tag-bg: #efeae0;
     --c-highlight: #fef9c3;
@@ -603,6 +603,50 @@
     background: var(--c-accent); color: #fff; border-color: var(--c-accent);
   }
 
+  /* ─── Highlighted flagship paper inside system card ──────── */
+  .sys-paper-highlight {
+    display: flex; align-items: center; gap: 10px;
+    margin: 0 0 10px;
+    padding: 10px 12px;
+    background: linear-gradient(135deg, var(--c-accent-soft) 0%, #fff5f3 100%);
+    border: 1px solid var(--c-accent-soft);
+    border-left: 3px solid var(--c-accent);
+    border-radius: 6px;
+    text-decoration: none !important;
+    transition: all .2s ease;
+  }
+  .sys-paper-highlight:hover {
+    background: var(--c-accent); border-color: var(--c-accent);
+    transform: translateX(2px);
+    box-shadow: var(--shadow-sm);
+  }
+  .sys-paper-highlight:hover .sph-tag,
+  .sys-paper-highlight:hover .sph-title,
+  .sys-paper-highlight:hover i { color: #fff !important; }
+  .sys-paper-highlight .sph-tag {
+    flex-shrink: 0;
+    font-family: var(--mono); font-size: 10.5px; font-weight: 700;
+    letter-spacing: .4px;
+    padding: 2px 7px;
+    background: var(--c-accent); color: #fff;
+    border-radius: 3px;
+    transition: all .2s ease;
+  }
+  .sys-paper-highlight:hover .sph-tag {
+    background: #fff; color: var(--c-accent) !important;
+  }
+  .sys-paper-highlight .sph-title {
+    flex: 1; min-width: 0;
+    font-family: var(--serif); font-size: 13px; font-weight: 600;
+    color: var(--c-ink); line-height: 1.4;
+    transition: color .2s ease;
+  }
+  .sys-paper-highlight i {
+    color: var(--c-accent); font-size: 11px;
+    flex-shrink: 0;
+    transition: color .2s ease;
+  }
+
   /* ─── Static GitHub badges (shields.io look-alike) ───────── */
   .gh-badges {
     display: flex; flex-wrap: wrap; gap: 6px;
@@ -1071,10 +1115,14 @@
         <span>K8s · Service Mesh</span>
         <span>SIGCOMM '23</span>
       </div>
+      <a class="sys-paper-highlight" href="https://dl.acm.org/doi/pdf/10.1145/3603269.3604823">
+        <span class="sph-tag">SIGCOMM '23</span>
+        <span class="sph-title">Network-centric Distributed Tracing with DeepFlow: Troubleshooting Your Microservices in Zero Code</span>
+        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+      </a>
       <div class="sys-links">
         <a href="https://github.com/deepflowio/deepflow"><i class="fa-brands fa-github"></i>GitHub</a>
         <a href="https://deepflow.io"><i class="fa-solid fa-globe"></i>deepflow.io</a>
-        <a href="https://dl.acm.org/doi/pdf/10.1145/3603269.3604823"><i class="fa-solid fa-file-pdf"></i>Paper</a>
       </div>
     </div>
 
@@ -1092,9 +1140,13 @@
         <span>SIGCOMM '25</span>
         <span>ICSE '26</span>
       </div>
+      <a class="sys-paper-highlight" href="https://dl.acm.org/doi/abs/10.1145/3718958.3750477">
+        <span class="sph-tag">SIGCOMM '25</span>
+        <span class="sph-title">Low-Overhead Distributed Application Observation with DeepTrace: Achieving Accurate Tracing in Production Systems</span>
+        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+      </a>
       <div class="sys-links">
         <a href="https://github.com/DeepShield-AI/DeepTrace"><i class="fa-brands fa-github"></i>GitHub</a>
-        <a href="https://dl.acm.org/doi/abs/10.1145/3718958.3750477"><i class="fa-solid fa-file-pdf"></i>SIGCOMM Paper</a>
         <a href="#publications"><i class="fa-solid fa-list"></i>Pub list</a>
       </div>
     </div>
@@ -1109,8 +1161,14 @@
         <span>P4 · adaptive ML</span>
         <span>SIGCOMM '26</span>
       </div>
+      <!-- TODO: replace href with SIGCOMM'26 PDF link once camera-ready is public (Aug 2026) -->
+      <a class="sys-paper-highlight" href="https://conferences.sigcomm.org/sigcomm/2026/" title="SIGCOMM 2026 conference site">
+        <span class="sph-tag">SIGCOMM '26</span>
+        <span class="sph-title">Providing Efficient and Robust ISP-Centric Intrusion Detection Service with Programmable Switches <em style="font-weight:400;color:var(--c-muted)">— to appear</em></span>
+        <i class="fa-solid fa-clock"></i>
+      </a>
       <div class="sys-links">
-        <a href="https://conferences.sigcomm.org/sigcomm/2026/" title="SIGCOMM 2026 conference site"><i class="fa-solid fa-clock"></i>SIGCOMM '26 — to appear</a>
+        <a href="#publications"><i class="fa-solid fa-list"></i>Pub list</a>
       </div>
     </div>
 
