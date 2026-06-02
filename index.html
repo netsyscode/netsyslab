@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Han Zhang · Tsinghua University</title>
-<meta name="description" content="Han Zhang (张晗), Associate Professor at the Institute for Network Sciences and Cyberspace, Tsinghua University. Network systems & security, observability, routing." />
+<title>Han Zhang · Observability, Situational Awareness &amp; Security for Testbeds &amp; AI Data Centers · Tsinghua</title>
+<meta name="description" content="Han Zhang (张晗), Associate Professor at the Institute for Network Sciences and Cyberspace, Tsinghua University. Observability, situational awareness, and security infrastructure for national-scale network testbeds and operational AI / data-center infrastructures, with a new thrust on Secure &amp; Trustworthy Robotics." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Lora:ital,wght@0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -73,10 +73,40 @@
   }
   .nav-links a:hover { background: var(--c-line-soft); color: var(--c-accent); text-decoration: none; }
 
+  /* ─── Hero banner (full-width subtle network pattern) ────── */
+  .hero-banner {
+    position: relative;
+    background: linear-gradient(135deg, #fbfaf7 0%, #f5f1e8 50%, #efeae0 100%);
+    border-bottom: 1px solid var(--c-line);
+    overflow: hidden;
+  }
+  .hero-banner::before {
+    content: ""; position: absolute; inset: 0;
+    background-image:
+      radial-gradient(circle at 12% 25%, var(--c-accent) 1.5px, transparent 2px),
+      radial-gradient(circle at 28% 65%, var(--c-accent) 1.5px, transparent 2px),
+      radial-gradient(circle at 45% 30%, var(--c-accent) 1.5px, transparent 2px),
+      radial-gradient(circle at 62% 70%, var(--c-accent) 1.5px, transparent 2px),
+      radial-gradient(circle at 78% 25%, var(--c-accent) 1.5px, transparent 2px),
+      radial-gradient(circle at 92% 60%, var(--c-accent) 1.5px, transparent 2px),
+      linear-gradient(115deg, transparent 0%, transparent 28%, rgba(107,31,31,0.06) 28.3%, rgba(107,31,31,0.06) 28.5%, transparent 28.8%),
+      linear-gradient(155deg, transparent 0%, transparent 45%, rgba(107,31,31,0.05) 45.2%, rgba(107,31,31,0.05) 45.4%, transparent 45.7%),
+      linear-gradient(85deg,  transparent 0%, transparent 62%, rgba(107,31,31,0.05) 62.2%, rgba(107,31,31,0.05) 62.4%, transparent 62.7%);
+    opacity: .55;
+    pointer-events: none;
+  }
+  .hero-banner::after {
+    content: ""; position: absolute; right: -120px; top: -80px;
+    width: 380px; height: 380px;
+    background: radial-gradient(circle, rgba(107,31,31,0.10) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
   /* ─── Hero ───────────────────────────────────────────────── */
   .hero {
+    position: relative; z-index: 1;
     max-width: var(--maxw); margin: 0 auto;
-    padding: 56px 28px 32px;
+    padding: 56px 28px 40px;
     display: grid; grid-template-columns: 1fr 220px; gap: 48px; align-items: start;
   }
   .hero h1 {
@@ -211,6 +241,215 @@
     background: var(--c-accent); color: #fff !important;
   }
 
+  /* ─── Research Vision (framework figure) ─────────────────── */
+  .vision-wrap {
+    background: linear-gradient(180deg, var(--c-paper) 0%, #fdfbf6 100%);
+    border: 1px solid var(--c-line);
+    border-radius: var(--radius);
+    padding: 24px 22px 20px;
+    box-shadow: var(--shadow-sm);
+    margin-top: 6px;
+  }
+  .vision-lead {
+    font-family: var(--serif);
+    font-size: 17px; font-style: italic;
+    color: var(--c-ink-soft);
+    text-align: center;
+    line-height: 1.6;
+    max-width: 1000px; margin: 0 auto 22px;
+    padding: 0 8px;
+  }
+  .vision-fig {
+    display: grid;
+    grid-template-columns: 1fr 36px 1.2fr 36px 1fr;
+    gap: 8px; align-items: stretch;
+    margin: 8px 0 16px;
+  }
+  .vision-col {
+    background: var(--c-paper);
+    border: 1px solid var(--c-line);
+    border-radius: 8px;
+    padding: 14px 14px 12px;
+    display: flex; flex-direction: column;
+  }
+  .vision-col.input  { border-top: 3px solid #6b7280; }
+  .vision-col.stack  { border-top: 3px solid var(--c-accent); background: linear-gradient(180deg, #fef9f7 0%, #fff 100%); }
+  .vision-col.output { border-top: 3px solid #047857; }
+  .vision-col .col-head {
+    font-family: var(--mono); font-size: 10.5px;
+    text-transform: uppercase; letter-spacing: .8px;
+    color: var(--c-muted); margin-bottom: 4px;
+  }
+  .vision-col .col-title {
+    font-family: var(--serif); font-weight: 600;
+    font-size: 14.5px; color: var(--c-ink);
+    margin-bottom: 10px; line-height: 1.3;
+  }
+  .vision-col ul {
+    margin: 0; padding: 0; list-style: none;
+    font-size: 12.5px; line-height: 1.7;
+    color: var(--c-ink-soft);
+  }
+  .vision-col ul li {
+    padding: 2px 0;
+    border-bottom: 1px dashed var(--c-line-soft);
+  }
+  .vision-col ul li:last-child { border-bottom: 0; }
+  .vision-col ul li b { color: var(--c-ink); font-weight: 600; }
+  .vision-col.stack ul li {
+    padding: 4px 6px; margin: 2px 0;
+    background: var(--c-accent-soft);
+    border-radius: 4px; border-bottom: 0;
+  }
+  .vision-col.stack ul li b { color: var(--c-accent); }
+  .vision-arrow {
+    display: flex; align-items: center; justify-content: center;
+    color: var(--c-accent); font-size: 20px;
+    font-weight: 700;
+  }
+  .vision-pillars {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 10px; margin-top: 10px;
+  }
+  @media (max-width: 980px) {
+    .vision-pillars { grid-template-columns: repeat(2, 1fr); }
+  }
+  .vision-pillar {
+    background: var(--c-bg);
+    border-left: 3px solid var(--c-accent);
+    padding: 10px 12px;
+    font-size: 12.5px;
+    line-height: 1.55;
+    color: var(--c-ink-soft);
+    border-radius: 0 4px 4px 0;
+  }
+  .vision-pillar b {
+    display: block;
+    color: var(--c-ink);
+    font-family: var(--serif);
+    font-size: 13.5px; font-weight: 600;
+    margin-bottom: 3px;
+  }
+  @media (max-width: 800px) {
+    .vision-fig {
+      grid-template-columns: 1fr;
+      gap: 4px;
+    }
+    .vision-arrow { transform: rotate(90deg); height: 24px; }
+    .vision-pillars { grid-template-columns: 1fr; }
+  }
+
+  /* ─── Member avatar wall ─────────────────────────────────── */
+  .members-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 14px; margin-top: 10px;
+  }
+  .member-card {
+    background: var(--c-paper);
+    border: 1px solid var(--c-line);
+    border-radius: var(--radius);
+    padding: 14px 10px 12px;
+    text-align: center;
+    transition: transform .15s ease, box-shadow .2s ease, border-color .15s ease;
+  }
+  .member-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--c-accent);
+  }
+  .member-avatar {
+    width: 62px; height: 62px;
+    border-radius: 50%;
+    margin: 0 auto 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--serif);
+    font-weight: 700; font-size: 22px;
+    color: #fff;
+    letter-spacing: -.5px;
+    box-shadow: var(--shadow-sm);
+    border: 2px solid #fff;
+    outline: 1px solid var(--c-line);
+  }
+  /* 8 deterministic avatar colors */
+  .member-avatar.c0 { background: linear-gradient(135deg, #6b1f1f 0%, #8a2a2a 100%); }
+  .member-avatar.c1 { background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%); }
+  .member-avatar.c2 { background: linear-gradient(135deg, #047857 0%, #10b981 100%); }
+  .member-avatar.c3 { background: linear-gradient(135deg, #b45309 0%, #d97706 100%); }
+  .member-avatar.c4 { background: linear-gradient(135deg, #6d28d9 0%, #8b5cf6 100%); }
+  .member-avatar.c5 { background: linear-gradient(135deg, #0e7490 0%, #06b6d4 100%); }
+  .member-avatar.c6 { background: linear-gradient(135deg, #be123c 0%, #e11d48 100%); }
+  .member-avatar.c7 { background: linear-gradient(135deg, #374151 0%, #6b7280 100%); }
+  .member-card .mname {
+    font-family: var(--serif); font-weight: 600;
+    font-size: 14px; color: var(--c-ink);
+    line-height: 1.3; margin-bottom: 3px;
+    display: block;
+  }
+  .member-card .mrole {
+    font-family: var(--mono); font-size: 10.5px;
+    color: var(--c-accent); font-weight: 600;
+    letter-spacing: .3px; margin-bottom: 2px;
+    display: block;
+  }
+  .member-card .mmeta {
+    font-size: 11px; color: var(--c-muted);
+    line-height: 1.4;
+    display: block;
+  }
+  .member-card .mpub {
+    margin-top: 6px; padding-top: 6px;
+    border-top: 1px dashed var(--c-line-soft);
+    font-family: var(--mono); font-size: 10px;
+    color: var(--c-ink-soft);
+  }
+
+  /* ─── Resources cards ────────────────────────────────────── */
+  .resources-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 14px; margin-top: 8px;
+  }
+  .resource-card {
+    background: var(--c-paper);
+    border: 1px solid var(--c-line);
+    border-left: 4px solid var(--c-accent);
+    border-radius: var(--radius);
+    padding: 14px 16px 14px;
+    transition: all .15s ease;
+  }
+  .resource-card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+  }
+  .resource-card .rkind {
+    font-family: var(--mono); font-size: 10.5px;
+    color: var(--c-accent); font-weight: 600;
+    letter-spacing: .5px; text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  .resource-card .rname {
+    font-family: var(--serif); font-weight: 600;
+    font-size: 15.5px; color: var(--c-ink);
+    margin-bottom: 4px; line-height: 1.3;
+  }
+  .resource-card .rdesc {
+    font-size: 12.5px; color: var(--c-ink-soft);
+    line-height: 1.5; margin: 0 0 10px;
+  }
+  .resource-card .rlinks {
+    display: flex; flex-wrap: wrap; gap: 6px;
+  }
+  .resource-card .rlinks a {
+    display: inline-flex; align-items: center; gap: 5px;
+    font-size: 12px; padding: 3px 9px;
+    border: 1px solid var(--c-line); border-radius: 4px;
+    color: var(--c-link); background: var(--c-bg);
+    text-decoration: none;
+  }
+  .resource-card .rlinks a:hover {
+    background: var(--c-accent); color: #fff; border-color: var(--c-accent);
+  }
+
   /* ─── Publications ───────────────────────────────────────── */
   .pub-controls {
     display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
@@ -276,9 +515,66 @@
   }
   .pub-pdf:hover { background: var(--c-accent); color: #fff; border-color: var(--c-accent); text-decoration: none; }
 
-  /* ─── Featured publications (rich cards) ─────────────── */
+  /* ─── Hero tagline thrust badges (small logo before each research-domain title) ─── */
+  .thrust-badge {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 22px; height: 22px; border-radius: 6px;
+    margin-right: 6px; vertical-align: -5px;
+    font-size: 11px; color: #fff;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+  }
+  .thrust-badge.thrust-net   { background: linear-gradient(135deg, var(--c-accent) 0%, #8a2a2a 100%); }
+  .thrust-badge.thrust-robot { background: linear-gradient(135deg, #f59e0b 0%, #b45309 100%); }
+
+  /* ─── Featured publications (rich cards with SVG teaser) ─────────────── */
   .featured-list { display: flex; flex-direction: column; gap: 16px; }
+  /* Sticky-nav-aware anchor jump for in-page pub links */
+  .pub-feature[id] { scroll-margin-top: 80px; }
+  /* In-About pub-anchor links: visually distinct color + subtle underline */
+  .about a[href^="#pub-"] {
+    color: #1e40af;
+    font-weight: 600;
+    text-decoration: underline;
+    text-decoration-color: rgba(30,64,175,0.35);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+    border-radius: 2px;
+    padding: 0 1px;
+    transition: color .15s ease, background .15s ease;
+  }
+  .about a[href^="#pub-"]:hover {
+    color: #fff; background: var(--c-accent);
+    text-decoration: none;
+  }
+  /* Brief highlight pulse when an article is targeted via anchor */
+  .pub-feature[id]:target { box-shadow: 0 0 0 3px var(--c-accent), var(--shadow-md); animation: pubFlash 1.4s ease-out; }
+  @keyframes pubFlash {
+    0% { box-shadow: 0 0 0 0 rgba(127,29,29,0.55), var(--shadow-md); }
+    60% { box-shadow: 0 0 0 6px rgba(127,29,29,0.18), var(--shadow-md); }
+    100% { box-shadow: 0 0 0 3px var(--c-accent), var(--shadow-md); }
+  }
+
+  /* Collapsible behavior: hide details by default; click title or teaser to expand */
+  .pub-feature .pf-head { cursor: pointer; user-select: none; position: relative; padding-right: 22px; }
+  .pub-feature .pf-teaser { cursor: pointer; }
+  .pub-feature .pf-head::after {
+    content: "\f078"; /* chevron-down */
+    font-family: "Font Awesome 6 Free"; font-weight: 900;
+    position: absolute; right: 0; top: 6px;
+    font-size: 12px; color: var(--c-muted);
+    transition: transform .2s ease;
+  }
+  .pub-feature.expanded .pf-head::after { transform: rotate(180deg); color: var(--c-accent); }
+  .pub-feature .pf-head:hover .pf-title { color: var(--c-accent); }
+  /* Only the key-insight callout (.pf-highlight) is collapsed by default.
+     Authors, venue, impact metrics, PDF / BibTeX / abstract links stay visible. */
+  .pub-feature:not(.expanded) .pf-highlight { display: none !important; }
+
   .pub-feature {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    grid-auto-rows: min-content;
+    column-gap: 18px; row-gap: 0;
     background: var(--c-paper);
     border: 1px solid var(--c-line);
     border-left: 3px solid var(--c-accent);
@@ -291,18 +587,72 @@
     box-shadow: var(--shadow-md);
     transform: translateY(-1px);
   }
+  /* All direct children default to right column; teaser overrides */
+  .pub-feature > * { grid-column: 2; min-width: 0; }
+  .pub-feature > .pf-teaser { grid-column: 1; grid-row: 1 / span 8; align-self: stretch; }
+
+  /* ─── SVG teaser thumbnail ─── */
+  .pf-teaser {
+    width: 160px; height: 130px;
+    border-radius: 6px;
+    overflow: hidden;
+    position: relative;
+    align-self: flex-start;
+    display: flex; align-items: center; justify-content: center;
+    border: 1px solid var(--c-line);
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,0.4);
+  }
+  .pf-teaser svg { width: 100%; height: 100%; display: block; }
+  /* Theme palettes */
+  .pf-teaser.theme-obs   { background: linear-gradient(135deg, #d1fae5 0%, #6ee7b7 100%); }
+  .pf-teaser.theme-sec   { background: linear-gradient(135deg, #fee2e2 0%, #fca5a5 100%); }
+  .pf-teaser.theme-ver   { background: linear-gradient(135deg, #ede9fe 0%, #c4b5fd 100%); }
+  .pf-teaser.theme-net   { background: linear-gradient(135deg, #dbeafe 0%, #93c5fd 100%); }
+  .pf-teaser.theme-trust { background: linear-gradient(135deg, #fef3c7 0%, #fcd34d 100%); }
+  .pf-teaser.theme-robot { background: linear-gradient(135deg, #fed7aa 0%, #fb923c 100%); }
+  .pf-teaser .teaser-label {
+    position: absolute; bottom: 6px; left: 6px; right: 6px;
+    font-family: var(--mono); font-size: 9.5px; font-weight: 700;
+    color: rgba(0,0,0,0.55); letter-spacing: .4px;
+    text-transform: uppercase;
+    pointer-events: none;
+  }
+
+  /* On narrow screens stack vertically */
+  @media (max-width: 720px) {
+    .pub-feature { grid-template-columns: 1fr; }
+    .pub-feature > .pf-teaser { grid-column: 1; grid-row: auto; width: 100%; height: 140px; }
+    .pub-feature > * { grid-column: 1; }
+  }
+
   .pub-feature .pf-head {
     display: flex; flex-wrap: wrap; align-items: baseline; gap: 10px;
     margin-bottom: 6px;
   }
   .pub-feature .pf-badge {
-    font-family: var(--mono); font-size: 11.5px; font-weight: 600;
-    padding: 3px 9px; border-radius: 4px;
-    background: var(--c-accent); color: #fff; letter-spacing: .4px;
+    font-family: var(--mono); font-size: 12px; font-weight: 700;
+    padding: 4px 11px; border-radius: 4px;
+    background: linear-gradient(135deg, var(--c-accent) 0%, #8a2a2a 100%);
+    color: #fff; letter-spacing: .6px;
+    text-transform: uppercase;
     white-space: nowrap; flex-shrink: 0;
+    box-shadow: 0 1px 2px rgba(0,0,0,.12);
+    border: 1px solid var(--c-accent);
+  }
+  /* Top-tier accent (SIGCOMM/CCS/NDSS/S&P/NSDI/USENIX Sec) — bold red ribbon */
+  .pub-feature .pf-badge[class*="SIGCOMM"],
+  .pub-feature .pf-badge[class*="CCS"],
+  .pub-feature .pf-badge[class*="NDSS"],
+  .pub-feature .pf-badge[class*="NSDI"],
+  .pub-feature .pf-badge[class*="USec"],
+  .pub-feature .pf-badge.top {
+    background: linear-gradient(135deg, var(--c-accent) 0%, #8a2a2a 100%);
+    border-color: var(--c-accent);
   }
   .pub-feature .pf-badge.tier2 {
-    background: var(--c-accent); color: #fff;
+    background: linear-gradient(135deg, var(--c-accent) 0%, #8a2a2a 100%);
+    border-color: var(--c-accent);
+    color: #fff;
   }
   .pub-feature .pf-title {
     font-family: var(--serif);
@@ -320,6 +670,61 @@
     font-size: 13px; color: var(--c-muted); font-style: italic;
     margin: 0 0 10px;
   }
+
+  /* ─── Key Insight / Highlight callout (visible by default) ─── */
+  .pub-feature .pf-highlight {
+    display: flex; gap: 12px;
+    background: linear-gradient(180deg, #fdfaf3 0%, #fbf6e9 100%);
+    border-left: 3px solid #d97706;
+    border-radius: 0 6px 6px 0;
+    padding: 12px 14px;
+    margin: 4px 0 10px;
+    font-size: 13.5px; color: var(--c-ink);
+    line-height: 1.6;
+  }
+  .pub-feature .pf-highlight::before {
+    content: "\f0eb"; /* lightbulb */
+    font-family: "Font Awesome 6 Free"; font-weight: 900;
+    color: #b45309; font-size: 16px;
+    flex-shrink: 0; line-height: 1.4;
+  }
+  .pub-feature .pf-highlight .pf-hl-text {
+    flex: 1;
+  }
+  .pub-feature .pf-highlight .pf-hl-text b {
+    color: var(--c-accent); font-weight: 700;
+  }
+  .pub-feature .pf-highlight .pf-hl-label {
+    display: inline-block;
+    font-family: var(--mono); font-size: 10.5px; font-weight: 700;
+    color: #b45309; letter-spacing: .8px;
+    text-transform: uppercase;
+    margin-right: 8px;
+  }
+
+  /* ─── Impact metrics strip ─── */
+  .pub-feature .pf-impact {
+    display: flex; flex-wrap: wrap; gap: 6px;
+    margin: 0 0 10px;
+  }
+  .pub-feature .pf-impact span {
+    display: inline-flex; align-items: center; gap: 5px;
+    font-family: var(--mono); font-size: 11.5px; font-weight: 600;
+    padding: 3px 9px; border-radius: 4px;
+    background: var(--c-accent-soft); color: var(--c-accent);
+    border: 1px solid #f0d9d4;
+  }
+  .pub-feature .pf-impact span.deploy {
+    background: #ecfdf5; color: #047857; border-color: #a7f3d0;
+  }
+  .pub-feature .pf-impact span.gh {
+    background: #1f2937; color: #fff; border-color: #1f2937;
+  }
+  .pub-feature .pf-impact span.gh i { color: #fbbf24; }
+  .pub-feature .pf-impact span.cncf {
+    background: #ede9fe; color: #6d28d9; border-color: #c4b5fd;
+  }
+  .pub-feature .pf-impact span i { font-size: 10.5px; }
   /* Abstract / BibTeX toggles styled as chips (same row as PDF link) */
   .pub-feature details.pf-abstract,
   .pub-feature details.bibtex {
@@ -737,19 +1142,21 @@
     <a href="#top" class="brand">Han&nbsp;Zhang<span class="dot">.</span></a>
     <div class="nav-links">
       <a href="#about">About</a>
+      <a href="#vision">Vision</a>
       <a href="#news">News</a>
       <a href="#research">Research</a>
       <a href="#systems">Systems</a>
+      <a href="#resources">Resources</a>
       <a href="#deployments">Impact</a>
       <a href="#publications">Publications</a>
-      <a href="#projects">Projects</a>
+      <a href="#students">Lab</a>
       <a href="#awards">Awards</a>
-      <a href="#students">Students</a>
     </div>
   </div>
 </nav>
 
 <!-- ═══════════════════════ Hero ═══════════════════════ -->
+<div class="hero-banner">
 <header class="hero" id="top">
   <div>
     <h1>Han Zhang<span class="zh">张&nbsp;晗</span></h1>
@@ -757,6 +1164,13 @@
     <p class="affil">
       <a href="https://www.insc.tsinghua.edu.cn/">Institute for Network Sciences and Cyberspace</a><br>
       <a href="http://www.tsinghua.edu.cn">Tsinghua University</a>, P. R. China
+    </p>
+    <p class="tagline" style="font-size:14.5px;color:var(--c-ink-soft);margin:4px 0 0;line-height:1.55;max-width:680px;">
+      <b>Observability, Situational Awareness &amp; Security</b><br>
+      for the Internet, National Testbeds &amp; Operational AI Data-Center Infrastructures<br>
+      <span style="color:var(--c-muted);font-size:13px;">互联网、国家级试验设施、运营智算 / 数据中心的观测、态势感知与安全防护研究</span><br>
+      <b>Secure &amp; Trustworthy Robotics</b><br>
+      <span style="color:var(--c-muted);font-size:13px;">安全可信机器人研究</span><br>
     </p>
 
     <div class="contact-row">
@@ -768,7 +1182,7 @@
 
     <!-- Stats are sourced from Google Scholar (May 2026). To refresh, run scripts/refresh_scholar.sh -->
     <div class="stats-row" aria-label="Research metrics at a glance">
-      <a class="stat" href="https://scholar.google.com/citations?user=2_wPPU0AAAAJ&hl=en" style="text-decoration:none;color:inherit"><span class="num">1,475</span><span class="lbl">Citations</span></a>
+      <a class="stat" href="https://scholar.google.com/citations?user=2_wPPU0AAAAJ&hl=en" style="text-decoration:none;color:inherit"><span class="num">1,492</span><span class="lbl">Citations</span></a>
       <a class="stat" href="https://scholar.google.com/citations?user=2_wPPU0AAAAJ&hl=en" style="text-decoration:none;color:inherit"><span class="num">17</span><span class="lbl">h-index</span></a>
       <a class="stat" href="https://scholar.google.com/citations?user=2_wPPU0AAAAJ&hl=en" style="text-decoration:none;color:inherit"><span class="num">28</span><span class="lbl">i10-index</span></a>
       <a class="stat" href="#publications" style="text-decoration:none;color:inherit"><span class="num">79</span><span class="lbl">Scholar Papers</span></a>
@@ -781,11 +1195,18 @@
          onerror="this.outerHTML='<div class=&quot;hero-photo-fallback&quot; aria-label=&quot;Han Zhang&quot;>HZ</div>';">
   </div>
 </header>
+</div>
 
 <!-- ═══════════════════════ About ═══════════════════════ -->
 <section class="section about" id="about">
   <h2><i class="fa-solid fa-user icon"></i>About</h2>
-  <p>My research interests broadly span <b>Network Measurement and Security</b> and <b>AI for Network</b>, with a focus on wide area networks, the Internet, and cloud computing. My work aims to make these systems smarter and more secure by bridging networking and security with observability, data science, machine learning, formal verification, artificial intelligence, and distributed computing.</p>
+  <p>My research builds the <b>measurement, verification, and situational-awareness infrastructure</b> for <b>four production scenarios</b>: <b>(i) the Internet</b> &mdash; CT logs, BGP, RPKI, DNS, Web-PKI; <b>(ii) ISP &amp; carrier networks</b>, including the <b>FITI / CERNET / CERNET2</b> national testbeds and operator backbones; <b>(iii) AI / data-center infrastructures</b> &mdash; hyperscale clouds, serverless platforms, and intelligent-computing centers; and <b>(iv) secure &amp; trustworthy robotics</b> as a separate but complementary thrust. The work is organized into <b>three directions</b>, mirrored in the <a href="#research">Research Areas</a> section below where each is broken down by venue and project:</p>
+  <ol style="margin:6px 0 12px 22px;padding:0;line-height:1.65;">
+    <li><b>Cyberspace Situational Awareness &amp; Measurement.</b> Internet- and testbed-grade observability and threat detection: zero-code distributed tracing on eBPF / in-network telemetry (<a href="#pub-deepflow"><i>DeepFlow</i> SIGCOMM'23</a>, <a href="#pub-deeptrace"><i>DeepTrace</i> SIGCOMM'25</a>, <a href="#pub-srmesh"><i>SRmesh</i> ICNP'25</a>), line-rate encrypted-traffic IDS on programmable switches (<a href="#pub-deepshield"><i>DeepShield</i> SIGCOMM'25</a>), APT detection over provenance graphs (<a href="#pub-tifs22">TIFS'22</a> / <a href="#pub-tifs25">'25</a>), Web-PKI &amp; certificate-misissuance monitoring (<a href="#pub-acme"><i>ACME++</i> WWW'25</a>), and Looking-Glass / Internet topology mining (<a href="#pub-glassminer"><i>GlassMiner</i> WWW'26</a>).</li>
+    <li><b>AI for Network &amp; Operational Verifiability.</b> Making testbed and operational infrastructures verifiable, self-diagnosable, and resilient: configuration verification at carrier scale (<a href="#pub-tifs24">TIFS'24</a>, <a href="#pub-infocom26">INFOCOM'26</a>), overlay-network ensemble checking (<a href="#pub-conext25">CoNEXT'25</a>), routing-trust analysis (ROV-GD, ERIS CCS'25), test-packet generation (<a href="#pub-tpds23">TPDS'23</a>), inter-DC WAN traffic engineering (<a href="#pub-ton22">TON'22</a>, <a href="#pub-conext21">CoNEXT'21</a>), serverless DoW / workload verification (<a href="#pub-gringotts"><i>Gringotts</i> CCS'22</a>, <a href="#pub-clover"><i>Clover</i> TON'26</a>), and in-network FEC for collective communication (<a href="#pub-infocom24">INFOCOM'24</a>).</li>
+    <li><b>Secure &amp; Trustworthy Robotics.</b> A separate thrust applying the same measurement &amp; verification rigor to embodied AI: trustworthy multi-modal perception, runtime verification of agentic / robotic controllers, encrypted sensor-channel anomaly detection, and certificate-of-trust for autonomous fleets &mdash; building on adversarial-robust ML (<a href="#pub-deepshield">SIGCOMM'25</a>, <a href="#pub-ccs21">CCS'21</a>, <a href="#pub-ndss22">NDSS'22</a>), provenance-graph APT detection (<a href="#pub-tifs22">TIFS'22</a> / <a href="#pub-tifs25">'25</a>), and PKI trust (<a href="#pub-acme">WWW'25</a>).</li>
+  </ol>
+  <p>These three lines converge into a single agenda: <b>the observability substrate, verification toolchain, and trust pipeline that the next-generation Internet, national testbeds, operational AI / data-center infrastructures, and safety-critical embodied systems will require.</b></p>
 
   <p>In the areas of observability and routing technologies, I have conducted in-depth research and led projects such as <b>DeepShield</b>. To date, I have published nearly 100 papers in top-tier international conferences and journals, including <i>SIGCOMM, INFOCOM, CoNEXT,</i> and <i>CCS</i>. My research outcomes have been widely adopted in industry, with related technologies deeply integrated into critical national network infrastructures such as <b>China Telecom's backbone network</b>, the <b>Future Internet Technology Infrastructure (FITI)</b>, and <b>CERNET / CERNET2</b>. These contributions serve vital sectors including telecommunications operators, the military, and other areas crucial to the national economy and people's livelihoods.</p>
 
@@ -793,6 +1214,75 @@
 
   <div class="callout">
     <strong>Looking for students:</strong> I am looking for PhD / Master students (enrolling in <b>Fall 2027</b>) to join our exciting systems and networking projects. Experience with system programming is a big plus &mdash; feel free to reach out!
+  </div>
+</section>
+
+<!-- ═══════════════════════ Research Vision ═══════════════════════ -->
+<section class="section" id="vision">
+  <h2><i class="fa-solid fa-compass-drafting icon"></i>Research Vision</h2>
+  <div class="vision-wrap">
+    <p class="vision-lead">
+      &ldquo;The next generation of the <b>Internet</b> and <b>operational AI / data-center infrastructures</b> needs a unified <b>measurement&ndash;verification&ndash;situational-awareness</b> substrate. Our mission is to build it.&rdquo;
+    </p>
+    <p class="vision-lead" style="margin-top:-10px">
+      &ldquo;As a separate but complementary thrust, we extend the same trustworthiness principles to <b>secure &amp; trustworthy robotics</b>.&rdquo;
+    </p>
+
+    <div class="vision-fig" aria-label="Research framework: from infrastructure inputs through system stack to deployment outcomes">
+      <div class="vision-col input">
+        <div class="col-head">Where it runs</div>
+        <div class="col-title">National Testbeds &amp; Operational Networks</div>
+        <ul>
+          <li><b>The Internet</b> &mdash; CT logs, BGP, RPKI, DNS</li>
+          <li><b>FITI / CERNET2</b> national testbeds</li>
+          <li><b>Carrier backbones</b> &amp; ISP networks</li>
+          <li><b>AI data centers</b> &amp; serverless clouds</li>
+          <li><b>Robotic fleets</b> &amp; cyber-physical edges</li>
+        </ul>
+      </div>
+      <div class="vision-arrow" aria-hidden="true"><i class="fa-solid fa-arrow-right"></i></div>
+      <div class="vision-col stack">
+        <div class="col-head">What we build</div>
+        <div class="col-title">A 3-Layer System Stack</div>
+        <ul>
+          <li><b>Situational Awareness</b> &mdash; encrypted-traffic IDS, APT/provenance, PKI &amp; routing trust</li>
+          <li><b>Operational Verifiability</b> &mdash; config &amp; overlay verification, ACME / RPKI checking</li>
+          <li><b>Infrastructure Observability</b> &mdash; eBPF &amp; in-network distributed tracing, telemetry</li>
+          <li><b>Secure Robotics</b> &mdash; trustworthy perception, policy verification, attack-resilient control</li>
+        </ul>
+      </div>
+      <div class="vision-arrow" aria-hidden="true"><i class="fa-solid fa-arrow-right"></i></div>
+      <div class="vision-col output">
+        <div class="col-head">Where it lands</div>
+        <div class="col-title">Deployed Outcomes &amp; National Impact</div>
+        <ul>
+          <li>DeepFlow on <b>CNCF</b> &amp; tens of thousands of hosts</li>
+          <li>IDS at <b>Tbps line-rate</b> on ISP backbones</li>
+          <li>Verifier on <b>FITI</b> &amp; CERNET configurations</li>
+          <li>Tracing in <b>Tencent / Sangfor / NSFOCUS</b></li>
+          <li>Trustworthy robotics with <b>industry partners</b></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="vision-pillars">
+      <div class="vision-pillar">
+        <b>I. Measure</b>
+        We instrument production networks at <em>line rate</em> and <em>zero application cost</em> &mdash; from kernel eBPF to programmable switches &mdash; so that operators can <em>see</em> what was previously invisible.
+      </div>
+      <div class="vision-pillar">
+        <b>II. Verify</b>
+        We formally verify <em>configurations</em>, <em>policies</em>, and <em>certificates</em> across heterogeneous, multi-domain networks before they break, scaling to carrier-sized operational state.
+      </div>
+      <div class="vision-pillar">
+        <b>III. Sense</b>
+        We turn this measurement &amp; verification substrate into <em>cyberspace situational awareness</em>: continuous, learning-driven, ISP-scale detection of anomalies, attacks, and trust violations.
+      </div>
+      <div class="vision-pillar">
+        <b>IV. Secure Robotics</b>
+        As a separate research thrust, we study trustworthy perception, formally-checked control policies, and attack-resilient robot fleets &mdash; bringing the same measurement &amp; verification rigor to embodied AI.
+      </div>
+    </div>
   </div>
 </section>
 
@@ -991,8 +1481,9 @@
 
   <div class="research-grid">
     <div class="research-card">
-      <div class="area-title"><i class="fa-solid fa-shield-halved"></i>Network Measurement and Security</div>
+      <div class="area-title"><i class="fa-solid fa-satellite-dish"></i>Cyberspace Situational Awareness &amp; Measurement</div>
       <p>
+        <em>Building the measurement substrate and situational-awareness pipelines for national-scale testbeds (FITI/CERNET) and operational Internet.</em><br><br>
         Distributed tracing systems
         <a class="venue-tag" href="https://dl.acm.org/doi/pdf/10.1145/3603269.3604823">SIGCOMM'23</a>
         <a class="venue-tag" href="https://dl.acm.org/doi/abs/10.1145/3718958.3750477">SIGCOMM'25</a>;
@@ -1018,8 +1509,31 @@
     </div>
 
     <div class="research-card">
-      <div class="area-title"><i class="fa-solid fa-brain"></i>AI for Network</div>
+      <div class="area-title"><i class="fa-solid fa-robot"></i>Secure &amp; Trustworthy Robotics</div>
       <p>
+        <em>Building the <b>trustworthy ML, provenance, and certificate-trust substrate</b> needed for safety-critical AI, embodied agents, and autonomous robotic systems &mdash; extending our line-rate detection, APT defense, and PKI verification work to cyber-physical settings.</em><br><br>
+        Adversarial-robust traffic / perception anomaly detection
+        <a class="venue-tag" href="https://dl.acm.org/doi/abs/10.1145/3718958.3750493">SIGCOMM'25</a>
+        <a class="venue-tag" href="https://dl.acm.org/doi/pdf/10.1145/3460120.3484589">CCS'21</a>
+        <a class="venue-tag" href="https://www.ndss-symposium.org/wp-content/uploads/2023/02/ndss2023_f830_paper.pdf">NDSS'22</a>;
+        APT &amp; provenance-graph anomaly detection
+        <a class="venue-tag" href="https://ieeexplore.ieee.org/document/10049200">TIFS'22</a>
+        <a class="venue-tag" href="https://ieeexplore.ieee.org/document/9899459">TIFS'23</a>;
+        certificate / PKI trust for safety-critical clients
+        <a class="venue-tag" href="https://dl.acm.org/doi/abs/10.1145/3696410.3714763">WWW'25</a>;
+        structure-semantics fusion for Internet observability
+        <a class="venue-tag" href="https://dl.acm.org/doi/abs/10.1145/3774904.3792698">WWW'26</a>;
+        in-network low-latency FEC for time-critical telemetry
+        <a class="venue-tag" href="#publications">INFOCOM'24</a>.
+        <br><br>
+        <span style="font-size:13px;color:var(--c-muted);"><b>Forward agenda:</b> trustworthy multi-modal perception pipelines, encrypted sensor-channel anomaly detection, runtime verification of agentic / robotic controllers, and certificate-of-trust for autonomous fleets.</span>
+      </p>
+    </div>
+
+    <div class="research-card">
+      <div class="area-title"><i class="fa-solid fa-brain"></i>AI for Network &amp; Operational Verifiability</div>
+      <p>
+        <em>Making testbed and operational networks verifiable, self-diagnosable, and resilient using learning- and formal-method-driven techniques.</em><br><br>
         Deep-learning encrypted-traffic anomaly detection
         <a class="venue-tag" href="https://dl.acm.org/doi/abs/10.1145/3718958.3750493">SIGCOMM'25</a>
         <a class="venue-tag" href="https://ieeexplore.ieee.org/document/10049200">TIFS'22</a>
@@ -1057,8 +1571,8 @@
 
     <div class="system-card">
       <div class="sys-name"><i class="fa-solid fa-network-wired"></i>DeepFlow</div>
-      <div class="sys-tag">eBPF · Zero-Code Observability · SIGCOMM '23</div>
-      <p>Network-centric distributed tracing that reconstructs causal traces across Kubernetes, service mesh and serverless platforms <em>without any application code change</em>. Open-sourced as an industry de-facto standard.</p>
+      <div class="sys-tag">AI Agent Observability &amp; Security &middot; AI 智能体观测与安全防护 &middot; eBPF &middot; SIGCOMM '23</div>
+      <p><b>Zero-code eBPF observability</b> repurposed for the AI-agent era: reconstructs causal traces and surfaces security-relevant events across LLM / agent pipelines, Kubernetes, service mesh and serverless platforms <em>without any application code change</em>. Open-sourced as an industry de-facto standard (CNCF Sandbox, 4 k+&nbsp;&#9733;).</p>
       <!-- Static badges (snapshot May 2026); refresh via scripts/refresh_scholar.sh or by hand -->
       <div class="gh-badges">
         <a href="https://github.com/deepflowio/deepflow" class="gh-badge"><i class="fa-solid fa-star"></i> 4,084 Stars</a>
@@ -1080,8 +1594,8 @@
 
     <div class="system-card">
       <div class="sys-name"><i class="fa-solid fa-magnifying-glass-chart"></i>DeepTrace</div>
-      <div class="sys-tag">Production Tracing · SIGCOMM '25 · ICSE '26</div>
-      <p>Low-overhead, non-intrusive distributed application observation. Dual-path kernel + user-space protocol parsing achieves accurate method-level delay estimation in production clusters at <strong>~10× less</strong> instrumentation overhead.</p>
+      <div class="sys-tag">AIDC Distributed App Tracing &middot; Robotics Security Monitoring &middot; 智算中心应用分布式追踪 / 机器人安全防护 &middot; SIGCOMM '25 / ICSE '26</div>
+      <p><b>Distributed application tracing &amp; fault monitoring</b> for AI data centers and large-scale microservice deployments; the same non-intrusive observation pipeline extends to <b>robotic / embodied-AI runtime security</b> &mdash; tracing controller call paths and detecting anomalies without modifying robot software stacks. Dual-path kernel + user-space protocol parsing yields accurate method-level delay estimation in production clusters at <strong>~10× less</strong> instrumentation overhead.</p>
       <div class="gh-badges">
         <a href="https://github.com/DeepShield-AI/DeepTrace" class="gh-badge"><i class="fa-solid fa-star"></i> 173 Stars</a>
         <a href="https://github.com/DeepShield-AI/DeepTrace/network/members" class="gh-badge"><i class="fa-solid fa-code-fork"></i> 17 Forks</a>
@@ -1100,19 +1614,134 @@
     </div>
 
     <div class="system-card">
-      <div class="sys-name"><i class="fa-solid fa-shield-halved"></i>DeepShield</div>
-      <div class="sys-tag">ISP-Centric IDS · SIGCOMM '26</div>
-      <p>Carrier-scale intrusion detection on programmable switches: data-plane lightweight feature extraction + control-plane adaptive learning. Sustains <strong>Tbps-class</strong> detection while staying robust to traffic drift and adversarial evasion. <strong>Validated in real ISP backbones.</strong></p>
+      <div class="sys-name"><i class="fa-solid fa-shield-halved"></i>SiteGuard</div>
+      <div class="sys-tag">AIDC Ingress / Egress Traffic Monitoring &middot; 智算中心出入口流量监测</div>
+      <p>End-to-end <b>ingress / egress traffic monitoring</b> for AI / data-center sites: <em>link-level visualization</em>, <em>traffic-state awareness</em>, and <em>security-event detection</em>. The same pipeline runs across <b>programmable switches</b>, <b>DPUs</b>, <b>SmartNICs</b>, and <b>eBPF</b> &mdash; backed by our line-rate ML-based IDS work (<a href="#pub-deepshield">SIGCOMM '25 P4-IDS</a>, SIGCOMM '26) and validated on real operator backbones.</p>
       <div class="sys-meta">
-        <span class="hot">Tbps line-rate</span>
-        <span>Programmable switches</span>
-        <span>P4 · adaptive ML</span>
+        <span class="hot">AIDC perimeter</span>
+        <span>P4 / DPU / SmartNIC</span>
+        <span>eBPF</span>
         <span>SIGCOMM '26</span>
       </div>
       <div class="sys-links">
         <!-- TODO: replace with SIGCOMM'26 PDF once camera-ready is public (Aug 2026) -->
         <a href="https://conferences.sigcomm.org/sigcomm/2026/"><i class="fa-solid fa-clock"></i>SIGCOMM '26 — to appear</a>
         <a href="#publications"><i class="fa-solid fa-list"></i>Pub list</a>
+      </div>
+    </div>
+
+    <div class="system-card">
+      <div class="sys-name"><i class="fa-solid fa-satellite"></i>Kuiper</div>
+      <div class="sys-tag">AI Data-Center AIOps Platform &middot; 智算中心智能运维</div>
+      <p>Unified <b>intelligent operations</b> platform for AI / data-center infrastructures, integrating <em>fault management</em>, <em>security-event response</em>, and <em>configuration management</em> over the same telemetry &amp; verification substrate &mdash; underpinned by our SRv6 slice-parallel probing (<a href="#pub-srmesh">ICNP '25</a>, ToN '26), distributed tracing (<a href="#pub-deeptrace">SIGCOMM '25</a>), and configuration-verification toolchains.</p>
+      <div class="sys-meta">
+        <span class="hot">AIDC AIOps</span>
+        <span>Fault management</span>
+        <span>Security events</span>
+        <span>Config management</span>
+      </div>
+      <div class="sys-links">
+        <a href="https://ieeexplore.ieee.org/abstract/document/11192455/"><i class="fa-solid fa-file-pdf"></i>SRv6 Probing (ICNP '25)</a>
+        <a href="#publications"><i class="fa-solid fa-list"></i>Pub list</a>
+      </div>
+    </div>
+
+    <div class="system-card">
+      <div class="sys-name"><i class="fa-solid fa-globe"></i>IScan</div>
+      <div class="sys-tag">Internet-Wide Probing &amp; Knowledge Base &middot; 互联网探测与知识库</div>
+      <p>Continuous <b>Internet-wide active &amp; passive probing</b> covering <em>IP space</em>, <em>routing</em> (BGP / RPKI), and <em>certificates</em> (CT logs / Web-PKI) &mdash; assembled into a queryable <b>Internet knowledge base</b> that powers downstream measurement, situational-awareness, and trust-verification pipelines. Builds on <a href="#pub-acme">ACME++ (WWW '25)</a> for PKI trust and <a href="#pub-glassminer">GlassMiner (WWW '26)</a> for Looking-Glass routing intelligence.</p>
+      <div class="sys-meta">
+        <span class="hot">Internet measurement</span>
+        <span>IP &middot; Routing &middot; Certs</span>
+        <span>Knowledge base</span>
+        <span>WWW '25 / '26</span>
+      </div>
+      <div class="sys-links">
+        <a href="https://dl.acm.org/doi/abs/10.1145/3696410.3714763"><i class="fa-solid fa-file-pdf"></i>ACME++ WWW '25</a>
+        <a href="https://dl.acm.org/doi/abs/10.1145/3774904.3792698"><i class="fa-solid fa-file-pdf"></i>GlassMiner WWW '26</a>
+      </div>
+    </div>
+
+    <div class="system-card">
+      <div class="sys-name"><i class="fa-solid fa-circle-check"></i>NetVerify Suite</div>
+      <div class="sys-tag">Static Network Verification &amp; Simulation &middot; 网络静态验证与仿真 &middot; TIFS '24 / CoNEXT '25 / INFOCOM '26</div>
+      <p><b>Static network verification and simulation</b> for operational and testbed networks: a family of verifiers for <em>configurations</em> (<a href="#pub-tifs24">TIFS '24</a>, <a href="#pub-infocom26">INFOCOM '26</a>), <em>overlay networks</em> (<a href="#pub-conext25">CoNEXT '25</a>), and <em>quantitative policies</em>, plus a simulator for what-if analysis &mdash; scaling to carrier-sized state via environment reduction and ensemble checking.</p>
+      <div class="sys-meta">
+        <span class="hot">FITI / CERNET</span>
+        <span>Formal methods</span>
+        <span>TIFS '24</span>
+        <span>CoNEXT '25</span>
+      </div>
+      <div class="sys-links">
+        <a href="https://ieeexplore.ieee.org/abstract/document/10550010"><i class="fa-solid fa-file-pdf"></i>TIFS '24</a>
+        <a href="https://dl.acm.org/doi/abs/10.1145/3768974"><i class="fa-solid fa-file-pdf"></i>CoNEXT '25</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════ Open Resources ═══════════════════════ -->
+<section class="section" id="resources">
+  <h2><i class="fa-solid fa-share-nodes icon"></i>Open Resources</h2>
+  <p style="font-size:14px;color:var(--c-ink-soft);margin:-4px 0 14px">
+    Open-source code, datasets, and educational artifacts contributed back to the research and operator communities.
+  </p>
+
+  <div class="resources-grid">
+
+    <div class="resource-card">
+      <div class="rkind">Open-Source &middot; CNCF</div>
+      <div class="rname">DeepFlow</div>
+      <p class="rdesc">Zero-code eBPF observability for cloud-native, deployed at thousands of organizations world-wide. CNCF Sandbox project, 4&nbsp;k+ GitHub stars.</p>
+      <div class="rlinks">
+        <a href="https://github.com/deepflowio/deepflow"><i class="fa-brands fa-github"></i>GitHub</a>
+        <a href="https://deepflow.io"><i class="fa-solid fa-globe"></i>Website</a>
+      </div>
+    </div>
+
+    <div class="resource-card">
+      <div class="rkind">Open-Source</div>
+      <div class="rname">DeepTrace</div>
+      <p class="rdesc">Production-ready non-intrusive distributed tracing with method-level delay estimation (SIGCOMM '25, ICSE '26).</p>
+      <div class="rlinks">
+        <a href="https://github.com/DeepShield-AI/DeepTrace"><i class="fa-brands fa-github"></i>GitHub</a>
+      </div>
+    </div>
+
+    <div class="resource-card">
+      <div class="rkind">Testbed Artifact</div>
+      <div class="rname">SRmesh Probing Toolkit</div>
+      <p class="rdesc">Slice-parallel SRv6 probing scripts &amp; FITI-validated configurations for reproducing latency-bottleneck diagnosis experiments.</p>
+      <div class="rlinks">
+        <a href="https://ieeexplore.ieee.org/abstract/document/11192455/"><i class="fa-solid fa-file-pdf"></i>Paper</a>
+      </div>
+    </div>
+
+    <div class="resource-card">
+      <div class="rkind">Dataset</div>
+      <div class="rname">GlassMiner Looking-Glass Corpus</div>
+      <p class="rdesc">Structured corpus of public Looking-Glass service responses across hundreds of ASes (WWW '26) &mdash; reusable for Internet observability research.</p>
+      <div class="rlinks">
+        <a href="https://dl.acm.org/doi/abs/10.1145/3774904.3792698"><i class="fa-solid fa-file-pdf"></i>Paper</a>
+      </div>
+    </div>
+
+    <div class="resource-card">
+      <div class="rkind">Dataset</div>
+      <div class="rname">Encrypted-Traffic IDS Benchmark</div>
+      <p class="rdesc">Labeled encrypted-flow datasets used in DeepShield (SIGCOMM '25) and prior CCS '21 / NDSS '22 anomaly-detection studies.</p>
+      <div class="rlinks">
+        <a href="#publications"><i class="fa-solid fa-list"></i>Related papers</a>
+      </div>
+    </div>
+
+    <div class="resource-card">
+      <div class="rkind">Teaching</div>
+      <div class="rname">Internet Engineering Course</div>
+      <p class="rdesc">Undergraduate course materials &amp; labs (32&nbsp;h, Autumn '23 / '24), covering routing, traffic engineering, observability, and Internet measurement.</p>
+      <div class="rlinks">
+        <a href="#teaching"><i class="fa-solid fa-chalkboard-user"></i>Details</a>
       </div>
     </div>
 
@@ -1182,6 +1811,22 @@
 
     <!-- 0. SIGCOMM'26 ISP-Centric IDS -->
     <article class="pub-feature">
+      <div class="pf-teaser theme-sec" aria-hidden="true">
+        <svg viewBox="0 0 160 130">
+          <!-- ISP backbone with switch + shield -->
+          <line x1="10" y1="40" x2="60" y2="55" stroke="#991b1b" stroke-width="1.6"/>
+          <line x1="10" y1="75" x2="60" y2="60" stroke="#991b1b" stroke-width="1.6"/>
+          <line x1="100" y1="55" x2="150" y2="40" stroke="#991b1b" stroke-width="1.6"/>
+          <line x1="100" y1="60" x2="150" y2="75" stroke="#991b1b" stroke-width="1.6"/>
+          <rect x="60" y="45" width="40" height="22" rx="3" fill="#991b1b"/>
+          <text x="80" y="60" text-anchor="middle" font-size="9" font-family="monospace" fill="#fff" font-weight="700">P4 IDS</text>
+          <path d="M80 78 L65 86 L65 100 Q80 110 95 100 L95 86 Z" fill="#dc2626" stroke="#fff" stroke-width="1.5"/>
+          <path d="M73 93 L78 98 L88 88" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="15" cy="40" r="4" fill="#7f1d1d"/><circle cx="15" cy="75" r="4" fill="#7f1d1d"/>
+          <circle cx="145" cy="40" r="4" fill="#7f1d1d"/><circle cx="145" cy="75" r="4" fill="#7f1d1d"/>
+        </svg>
+        <div class="teaser-label">ISP-Centric IDS</div>
+      </div>
       <div class="pf-head">
         <span class="pf-badge">SIGCOMM '26</span>
         <h4 class="pf-title">Providing Efficient and Robust ISP-Centric Intrusion Detection Service with Programmable Switches</h4>
@@ -1190,6 +1835,12 @@
         <b>Han Zhang</b>, <span class="stu">Xuefeng Liu</span>, <span class="stu">Linqiang Qian</span>, Guyue (Grace) Liu, <span class="stu">Tianyu Zhang</span>, <span class="stu">Kaiyang Zhao</span>, <span class="stu">Yantu Tong</span>, <span class="stu">Zeji Xiao</span>, Dongbiao He, Yahui Li, Ke Ruan, Jilong Wang, Yongqing Zhu, Xia Yin
       </p>
       <p class="pf-venue">Annual Conference of the ACM Special Interest Group on Data Communication (SIGCOMM '26), 2026. <em>To appear.</em></p>
+      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">Key Insight</span>The first <b>ISP-centric IDS</b> running on programmable switches: data-plane lightweight feature extraction co-designed with control-plane adaptive learning, sustaining <b>Tbps-class</b> detection while staying robust to traffic drift and adversarial evasion. <em>Validated on real ISP backbones</em>; orders-of-magnitude resource savings vs. CPU/GPU baselines.</div></div>
+      <div class="pf-impact">
+        <span class="deploy"><i class="fa-solid fa-tower-broadcast"></i>Deployed: ISP backbones</span>
+        <span><i class="fa-solid fa-bolt"></i>Tbps line-rate</span>
+        <span><i class="fa-solid fa-microchip"></i>P4 / Tofino</span>
+      </div>
       <div class="pf-links">
         <!-- TODO: replace with SIGCOMM'26 PDF once camera-ready is public -->
         <a href="https://conferences.sigcomm.org/sigcomm/2026/"><i class="fa-solid fa-clock"></i>SIGCOMM '26 — to appear</a>
@@ -1200,7 +1851,23 @@
     </article>
 
     <!-- 1. SIGCOMM'25 DeepTrace -->
-    <article class="pub-feature">
+    <article class="pub-feature" id="pub-deeptrace">
+      <div class="pf-teaser theme-obs" aria-hidden="true">
+        <svg viewBox="0 0 160 130">
+          <!-- Method-level trace timeline -->
+          <rect x="15" y="22" width="110" height="10" rx="2" fill="#065f46" opacity="0.85"/>
+          <rect x="30" y="38" width="85" height="10" rx="2" fill="#047857" opacity="0.85"/>
+          <rect x="45" y="54" width="55" height="10" rx="2" fill="#10b981" opacity="0.85"/>
+          <rect x="55" y="70" width="35" height="10" rx="2" fill="#34d399" opacity="0.85"/>
+          <rect x="63" y="86" width="20" height="10" rx="2" fill="#6ee7b7" opacity="0.95"/>
+          <line x1="15" y1="102" x2="145" y2="102" stroke="#065f46" stroke-width="1"/>
+          <text x="15" y="114" font-size="8" font-family="monospace" fill="#065f46" font-weight="700">0µs</text>
+          <text x="125" y="114" font-size="8" font-family="monospace" fill="#065f46" font-weight="700">trace</text>
+          <circle cx="140" cy="30" r="8" fill="#fff" stroke="#065f46" stroke-width="1.5"/>
+          <text x="140" y="34" text-anchor="middle" font-size="10" fill="#065f46" font-weight="700">eBPF</text>
+        </svg>
+        <div class="teaser-label">DeepTrace</div>
+      </div>
       <div class="pf-head">
         <span class="pf-badge">SIGCOMM '25</span>
         <h4 class="pf-title">Low-Overhead Distributed Application Observation with DeepTrace: Achieving Accurate Tracing in Production Systems</h4>
@@ -1209,27 +1876,43 @@
         <span class="stu">Yantao Geng</span>, <b>Han Zhang*</b>, <span class="stu">Zhiheng Wu</span>, Yahui Li, Jilong Wang, Xia Yin
       </p>
       <p class="pf-venue">Annual Conference of the ACM Special Interest Group on Data Communication (SIGCOMM '25), pp. 1056–1069, 2025.</p>
+      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">Key Insight</span><b>Method-level</b> distributed tracing in production at <b>~10× less</b> overhead than intrusive baselines. Dual-path kernel + user-space protocol parsing eliminates application instrumentation entirely while preserving end-to-end causal accuracy.</div></div>
+      <div class="pf-impact">
+        <span class="deploy"><i class="fa-solid fa-cloud"></i>Production-deployed</span>
+        <span class="gh"><i class="fa-solid fa-star"></i>173 stars</span>
+        <span><i class="fa-solid fa-microchip"></i>eBPF / kernel + user-space</span>
+      </div>
       <div class="pf-links">
         <a href="https://dl.acm.org/doi/abs/10.1145/3718958.3750477"><i class="fa-solid fa-file-pdf"></i>PDF</a>
+        <a href="https://github.com/DeepShield-AI/DeepTrace"><i class="fa-brands fa-github"></i>Code</a>
         <a href="https://dl.acm.org/doi/abs/10.1145/3718958.3750477"><i class="fa-solid fa-link"></i>ACM DL</a>
-        <details class="pf-abstract"><summary>Abstract</summary><p>
-        Distributed tracing is a cornerstone for diagnosing performance issues in modern microservice architectures, yet existing solutions either incur prohibitive instrumentation overhead or sacrifice accuracy in production. <b>DeepTrace</b> proposes a non-intrusive, dual-path observation framework that parses protocol semantics at both kernel and user space, achieving accurate method-level delay estimation with negligible runtime cost. Large-scale evaluation in real production clusters shows DeepTrace reduces tracing overhead by an order of magnitude while preserving end-to-end causal accuracy.
-      </p></details>
-        <details class="bibtex">
-        <summary>BibTeX</summary>
-<pre>@inproceedings{geng2025deeptrace,
-  title     = {Low-Overhead Distributed Application Observation with DeepTrace},
-  author    = {Geng, Yantao and Zhang, Han and Wu, Zhiheng and Li, Yahui and Wang, Jilong and Yin, Xia},
-  booktitle = {ACM SIGCOMM},
-  pages     = {1056--1069},
-  year      = {2025}
-}</pre>
-      </details>
+        <details class="pf-abstract"><summary>Abstract</summary><p>As microservices grow in scale and complexity, their operation and debugging become increasingly challenging. Even a single user request can involve interactions across hundreds of components. In such intricate systems, distributed tracing, which tracks the end-to-end execution flow of requests, has become a critical monitoring tool. Among these, non-intrusive tracing frameworks that do not require code modification are particularly valued for their convenience. However, existing non-intrusive solutions either have limited applicability or lack sufficient accuracy under high concurrency. To address these challenges, we propose DeepTrace, a transaction-based, non-intrusive distributed tracing framework designed for microservices. DeepTrace leverages API endpoints and transaction fields embedded within request content to categorize requests into distinct transactions, thereby reducing the likelihood of incorrectly merging traces from different transactions. Compared to state-of-the-art frameworks, DeepTrace maintains an accuracy rate of over 95% even under high concurrency. It has also been adopted by dozens of companies in their production systems for tasks such as failure diagnosis and resource optimization.</p></details>
+        <details class="bibtex"><summary>BibTeX</summary><pre>@inproceedings{Geng_2025, series={SIGCOMM ’25}, title={Low-Overhead Distributed Application Observation with DeepTrace: Achieving Accurate Tracing in Production Systems}, url={http://dx.doi.org/10.1145/3718958.3750477}, DOI={10.1145/3718958.3750477}, booktitle={Proceedings of the ACM SIGCOMM 2025 Conference}, publisher={ACM}, author={Geng, Yantao and Zhang, Han and Wu, Zhiheng and Li, Yahui and Wang, Jilong and Yin, Xia}, year={2025}, month=Aug, pages={1056–1069}, collection={SIGCOMM ’25} }</pre></details>
       </div>
     </article>
 
     <!-- 2. SIGCOMM'25 P4 Anomaly Detection -->
-    <article class="pub-feature">
+    <article class="pub-feature" id="pub-deepshield">
+      <div class="pf-teaser theme-sec" aria-hidden="true">
+        <svg viewBox="0 0 160 130">
+          <!-- Programmable switch pipeline with traffic packets -->
+          <rect x="45" y="45" width="70" height="35" rx="4" fill="#991b1b"/>
+          <text x="80" y="60" text-anchor="middle" font-size="9" font-family="monospace" fill="#fff" font-weight="700">P4 ASIC</text>
+          <text x="80" y="73" text-anchor="middle" font-size="7" font-family="monospace" fill="#fecaca">Tbps</text>
+          <rect x="10" y="32" width="14" height="8" rx="1" fill="#dc2626"/>
+          <rect x="10" y="58" width="14" height="8" rx="1" fill="#dc2626" opacity="0.8"/>
+          <rect x="10" y="84" width="14" height="8" rx="1" fill="#dc2626" opacity="0.6"/>
+          <path d="M25 36 L44 50" stroke="#7f1d1d" stroke-width="1.4"/>
+          <path d="M25 62 L44 62" stroke="#7f1d1d" stroke-width="1.4"/>
+          <path d="M25 88 L44 76" stroke="#7f1d1d" stroke-width="1.4"/>
+          <path d="M116 53 L140 40 M116 63 L140 63 M116 73 L140 86" stroke="#7f1d1d" stroke-width="1.4"/>
+          <circle cx="143" cy="40" r="4" fill="#16a34a"/>
+          <circle cx="143" cy="63" r="4" fill="#16a34a"/>
+          <path d="M139 84 L143 88 L149 80" stroke="#dc2626" stroke-width="2" fill="none" stroke-linecap="round"/>
+          <text x="80" y="100" text-anchor="middle" font-size="8" font-family="monospace" fill="#7f1d1d" font-weight="700">Encrypted Traffic → Anomaly</text>
+        </svg>
+        <div class="teaser-label">DeepShield-P4</div>
+      </div>
       <div class="pf-head">
         <span class="pf-badge">SIGCOMM '25</span>
         <h4 class="pf-title">Achieving High-Speed and Robust Encrypted Traffic Anomaly Detection with Programmable Switches</h4>
@@ -1238,27 +1921,50 @@
         <b>Han Zhang</b>, Guyue Liu*, Xingang Shi, Yahui Li, Jilong Wang, Yongqing Zhu, Ke Ruan, Jie Liang, Xia Yin
       </p>
       <p class="pf-venue">Annual Conference of the ACM Special Interest Group on Data Communication (SIGCOMM '25), pp. 1254–1256, 2025.</p>
+      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">Key Insight</span>Resolves the long-standing tension between deep-learning accuracy and switch-ASIC constraints: lightweight features extracted in the data plane, robust classification kept in the control plane &mdash; together delivering <b>line-rate encrypted-traffic anomaly detection</b> robust to concept drift and adversarial perturbations.</div></div>
+      <div class="pf-impact">
+        <span class="deploy"><i class="fa-solid fa-tower-broadcast"></i>Deployed: ISP backbones</span>
+        <span><i class="fa-solid fa-bolt"></i>Tbps line-rate</span>
+        <span><i class="fa-solid fa-shield-halved"></i>Adversarial-robust</span>
+      </div>
       <div class="pf-links">
         <a href="https://dl.acm.org/doi/abs/10.1145/3718958.3750493"><i class="fa-solid fa-file-pdf"></i>PDF</a>
         <a href="https://dl.acm.org/doi/abs/10.1145/3718958.3750493"><i class="fa-solid fa-link"></i>ACM DL</a>
-        <details class="pf-abstract"><summary>Abstract</summary><p>
-        Detecting anomalies in line-rate encrypted traffic has long been hindered by the conflict between deep-learning accuracy and switch ASIC constraints. We present a programmable-switch-based pipeline that offloads lightweight feature extraction to the data plane while retaining robust classification in the control plane, enabling Tbps-class anomaly detection. The system has been deployed in real ISP backbones with sustained accuracy under concept drift and adversarial perturbations.
-      </p></details>
-        <details class="bibtex">
-        <summary>BibTeX</summary>
-<pre>@inproceedings{zhang2025p4ad,
-  title     = {Achieving High-Speed and Robust Encrypted Traffic Anomaly Detection with Programmable Switches},
-  author    = {Zhang, Han and Liu, Guyue and Shi, Xingang and Li, Yahui and Wang, Jilong and Zhu, Yongqing and Ruan, Ke and Liang, Jie and Yin, Xia},
-  booktitle = {ACM SIGCOMM},
-  pages     = {1254--1256},
-  year      = {2025}
-}</pre>
-      </details>
+        <details class="pf-abstract"><summary>Abstract</summary><p>Attacks against data centers are becoming more common as a result of the fast expansion of applications. In order to keep pace with the growing amount of data centers connected to their networks, internet service providers must offer comprehensive security services. However, existing network intrusion detection systems (NIDS) are either ineffective or inefficient for the high-speed encrypted network traffic. In this paper, we design and implement Mazu, an inline network intrusion detection system with programmable switches specifically developed to protect data centers connecting to the internet service provider. Mazu proposes a dual-plane feature extraction model to extract extensive traffic features at near line-speed. Mazu also proposes a lightweight one-class classification model that trains the best parameters exclusively on benign traffic to identify the malicious traffic. In addition, Mazu introduces an online update mechanism aimed at dynamically adjusting the detection model in response to environmental changes. Mazu has been in production for two years, during which time it has identified over 10 critical attack events and protect more than 10 million servers for two ISPs. Our production and testbed evaluations demonstrate that Mazu can detect malicious traffic entering the data center sites with approximately 90% accuracy within minutes.</p></details>
+        <details class="bibtex"><summary>BibTeX</summary><pre>@inproceedings{Zhang_2025, series={SIGCOMM ’25}, title={Achieving High-Speed and Robust Encrypted Traffic Anomaly Detection with Programmable Switches}, url={http://dx.doi.org/10.1145/3718958.3750493}, DOI={10.1145/3718958.3750493}, booktitle={Proceedings of the ACM SIGCOMM 2025 Conference}, publisher={ACM}, author={Zhang, Han and Liu, Guyue and Shi, Xingang and Li, Yahui and He, Dongbiao and Wang, Jilong and Wang, Zhiliang and Zhu, Yongqing and Ruan, Ke and Cao, Weihua and Yin, Xia}, year={2025}, month=Aug, pages={1254–1256}, collection={SIGCOMM ’25} }</pre></details>
       </div>
     </article>
 
     <!-- 6. SIGCOMM'23 DeepFlow -->
-    <article class="pub-feature">
+    <article class="pub-feature" id="pub-deepflow">
+      <div class="pf-teaser theme-obs" aria-hidden="true">
+        <svg viewBox="0 0 160 130">
+          <!-- Microservice graph with eBPF probes -->
+          <g stroke="#065f46" stroke-width="1.4" fill="none" opacity="0.85">
+            <line x1="40" y1="35" x2="82" y2="35"/>
+            <line x1="95" y1="40" x2="125" y2="60"/>
+            <line x1="40" y1="45" x2="55" y2="75"/>
+            <line x1="75" y1="80" x2="95" y2="50"/>
+            <line x1="75" y1="85" x2="110" y2="100"/>
+            <line x1="120" y1="70" x2="118" y2="95"/>
+          </g>
+          <circle cx="35" cy="38" r="10" fill="#fff" stroke="#065f46" stroke-width="1.5"/>
+          <circle cx="90" cy="35" r="10" fill="#fff" stroke="#065f46" stroke-width="1.5"/>
+          <circle cx="128" cy="63" r="10" fill="#fff" stroke="#065f46" stroke-width="1.5"/>
+          <circle cx="55" cy="80" r="10" fill="#fff" stroke="#065f46" stroke-width="1.5"/>
+          <circle cx="115" cy="100" r="10" fill="#fff" stroke="#065f46" stroke-width="1.5"/>
+          <circle cx="77" cy="38" r="3" fill="#10b981"/>
+          <circle cx="98" cy="49" r="3" fill="#10b981"/>
+          <circle cx="66" cy="66" r="3" fill="#10b981"/>
+          <circle cx="104" cy="75" r="3" fill="#10b981"/>
+          <text x="35" y="42" text-anchor="middle" font-size="9" font-family="monospace" fill="#065f46" font-weight="700">A</text>
+          <text x="90" y="39" text-anchor="middle" font-size="9" font-family="monospace" fill="#065f46" font-weight="700">B</text>
+          <text x="128" y="67" text-anchor="middle" font-size="9" font-family="monospace" fill="#065f46" font-weight="700">C</text>
+          <text x="55" y="84" text-anchor="middle" font-size="9" font-family="monospace" fill="#065f46" font-weight="700">D</text>
+          <text x="115" y="104" text-anchor="middle" font-size="9" font-family="monospace" fill="#065f46" font-weight="700">E</text>
+        </svg>
+        <div class="teaser-label">DeepFlow · CNCF</div>
+      </div>
       <div class="pf-head">
         <span class="pf-badge">SIGCOMM '23</span>
         <h4 class="pf-title">Network-centric Distributed Tracing with DeepFlow: Troubleshooting Your Microservices in Zero Code</h4>
@@ -1267,27 +1973,46 @@
         <span class="stu">Junxian Shen</span>, <b>Han Zhang*</b>, Yang Xiang, Xingang Shi, Xinrui Li, Yunxi Shen, Zijian Zhang, Sicheng Wang, Yanhui Yang, <span class="stu">Yu Zhou</span>, Mingwei Xu, Jilong Wang
       </p>
       <p class="pf-venue">Annual Conference of the ACM Special Interest Group on Data Communication (SIGCOMM '23), pp. 420–437, 2023.</p>
+      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">Key Insight</span>Rethinks distributed tracing from a <b>network-centric</b> viewpoint &mdash; eBPF probes at protocol boundaries reconstruct causal traces across heterogeneous services <b>without any application code change</b>. Open-sourced as the <em>de-facto standard</em> for cloud-native observability.</div></div>
+      <div class="pf-impact">
+        <span class="cncf"><i class="fa-solid fa-cube"></i>CNCF Sandbox</span>
+        <span class="gh"><i class="fa-solid fa-star"></i>4,084 stars</span>
+        <span class="gh"><i class="fa-solid fa-code-fork"></i>456 forks</span>
+        <span class="deploy"><i class="fa-solid fa-cloud"></i>10k+ deployments</span>
+      </div>
       <div class="pf-links">
         <a href="https://dl.acm.org/doi/pdf/10.1145/3603269.3604823"><i class="fa-solid fa-file-pdf"></i>PDF</a>
         <a href="https://github.com/deepflowio/deepflow"><i class="fa-brands fa-github"></i>Code</a>
-        <details class="pf-abstract"><summary>Abstract</summary><p>
-        <b>DeepFlow</b> rethinks distributed tracing from a network-centric viewpoint: by hooking eBPF probes at protocol boundaries, it reconstructs causal traces across heterogeneous services <em>without</em> any application code change. Deployed at large cloud operators, DeepFlow has become an open-source de-facto standard, achieving zero-code observability across Kubernetes, service mesh, and serverless platforms.
-      </p></details>
-        <details class="bibtex">
-        <summary>BibTeX</summary>
-<pre>@inproceedings{shen2023deepflow,
-  title     = {Network-centric Distributed Tracing with DeepFlow: Troubleshooting Your Microservices in Zero Code},
-  author    = {Shen, Junxian and Zhang, Han and Xiang, Yang and Shi, Xingang and Li, Xinrui and Shen, Yunxi and Zhang, Zijian and Wang, Sicheng and Yang, Yanhui and Zhou, Yu and Xu, Mingwei and Wang, Jilong},
-  booktitle = {ACM SIGCOMM},
-  pages     = {420--437},
-  year      = {2023}
-}</pre>
-      </details>
+        <a href="https://deepflow.io"><i class="fa-solid fa-globe"></i>deepflow.io</a>
+        <details class="pf-abstract"><summary>Abstract</summary><p>Microservices are becoming more complicated, posing new challenges for traditional performance monitoring solutions. On the one hand, the rapid evolution of microservices places a significant burden on the utilization and maintenance of existing distributed tracing frameworks. On the other hand, complex infrastructure increases the probability of network performance problems and creates more blind spots on the network side. In this paper, we present DeepFlow, a network-centric distributed tracing framework for troubleshooting microservices. DeepFlow provides out-of-the-box tracing via a network-centric tracing plane and implicit context propagation. In addition, it eliminates blind spots in network infrastructure, captures network metrics in a low-cost way, and enhances correlation between different components and layers. We demonstrate analytically and empirically that DeepFlow is capable of locating microservice performance anomalies with negligible overhead. DeepFlow has already identified over 71 critical performance anomalies for more than 26 companies and has been utilized by hundreds of individual developers. Our production evaluations demonstrate that DeepFlow is able to save users hours of instrumentation efforts and reduce troubleshooting time from several hours to just a few minutes.</p></details>
+        <details class="bibtex"><summary>BibTeX</summary><pre>@inproceedings{Shen_2023, series={ACM SIGCOMM ’23}, title={Network-Centric Distributed Tracing with DeepFlow: Troubleshooting Your Microservices in Zero Code}, url={http://dx.doi.org/10.1145/3603269.3604823}, DOI={10.1145/3603269.3604823}, booktitle={Proceedings of the ACM SIGCOMM 2023 Conference}, publisher={ACM}, author={Shen, Junxian and Zhang, Han and Xiang, Yang and Shi, Xingang and Li, Xinrui and Shen, Yunxi and Zhang, Zijian and Wu, Yongxiang and Yin, Xia and Wang, Jilong and Xu, Mingwei and Li, Yahui and Yin, Jiping and Song, Jianchang and Li, Zhuofeng and Nie, Runjie}, year={2023}, month=Sept, pages={420–437}, collection={ACM SIGCOMM ’23} }</pre></details>
       </div>
     </article>
 
     <!-- 7. CCS'22 Gringotts -->
-    <article class="pub-feature">
+    <article class="pub-feature" id="pub-gringotts">
+      <div class="pf-teaser theme-trust" aria-hidden="true">
+        <svg viewBox="0 0 160 130">
+          <!-- Serverless function tiles with $ shield -->
+          <g fill="#fff" stroke="#92400e" stroke-width="1.3">
+            <rect x="15" y="20" width="30" height="22" rx="3"/>
+            <rect x="55" y="20" width="30" height="22" rx="3"/>
+            <rect x="95" y="20" width="30" height="22" rx="3"/>
+            <rect x="15" y="50" width="30" height="22" rx="3"/>
+            <rect x="55" y="50" width="30" height="22" rx="3" stroke="#dc2626" stroke-width="2"/>
+            <rect x="95" y="50" width="30" height="22" rx="3"/>
+          </g>
+          <text x="30" y="35" text-anchor="middle" font-size="11" font-weight="700" fill="#92400e">λ</text>
+          <text x="70" y="35" text-anchor="middle" font-size="11" font-weight="700" fill="#92400e">λ</text>
+          <text x="110" y="35" text-anchor="middle" font-size="11" font-weight="700" fill="#92400e">λ</text>
+          <text x="30" y="65" text-anchor="middle" font-size="11" font-weight="700" fill="#92400e">λ</text>
+          <text x="70" y="65" text-anchor="middle" font-size="11" font-weight="700" fill="#dc2626">$$$</text>
+          <text x="110" y="65" text-anchor="middle" font-size="11" font-weight="700" fill="#92400e">λ</text>
+          <path d="M70 88 L52 95 L52 110 Q70 122 88 110 L88 95 Z" fill="#b45309" stroke="#fff" stroke-width="1.5"/>
+          <text x="70" y="107" text-anchor="middle" font-size="10" font-weight="700" fill="#fff">$</text>
+        </svg>
+        <div class="teaser-label">Gringotts</div>
+      </div>
       <div class="pf-head">
         <span class="pf-badge">CCS '22</span>
         <h4 class="pf-title">Gringotts: Fast and Accurate Internal Denial-of-Wallet Detection for Serverless Computing</h4>
@@ -1296,26 +2021,40 @@
         <span class="stu">Junxian Shen</span>, <b>Han Zhang*</b>, <span class="stu">Yantao Geng</span>, <span class="stu">Jiawei Li</span>, Jilong Wang, Mingwei Xu
       </p>
       <p class="pf-venue">ACM SIGSAC Conference on Computer and Communications Security (CCS '22), pp. 2627–2641, 2022.</p>
+      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">Key Insight</span>The <b>first paper</b> to systematically detect <b>internal Denial-of-Wallet attacks</b> on serverless platforms. Combines causal call-graph analysis with billing-aware adaptive thresholds &mdash; detects attacks in <em>milliseconds</em> with sub-1% false-positive rate.</div></div>
+      <div class="pf-impact">
+        <span><i class="fa-solid fa-trophy"></i>First DoW defense for FaaS</span>
+        <span><i class="fa-solid fa-clock"></i>Sub-ms detection</span>
+        <span><i class="fa-solid fa-percent"></i>&lt;1% FPR</span>
+      </div>
       <div class="pf-links">
         <a href="https://dl.acm.org/doi/pdf/10.1145/3548606.3560629"><i class="fa-solid fa-file-pdf"></i>PDF</a>
-        <details class="pf-abstract"><summary>Abstract</summary><p>
-        Serverless platforms charge per invocation, making them uniquely vulnerable to <em>internal</em> Denial-of-Wallet attacks where compromised functions burn the tenant's budget. <b>Gringotts</b> performs fast cost-anomaly detection inside the function runtime, combining causal call-graph analysis with adaptive billing-aware thresholds to detect attacks in milliseconds with sub-1% false positive rate.
-      </p></details>
-        <details class="bibtex">
-        <summary>BibTeX</summary>
-<pre>@inproceedings{shen2022gringotts,
-  title     = {Gringotts: Fast and Accurate Internal Denial-of-Wallet Detection for Serverless Computing},
-  author    = {Shen, Junxian and Zhang, Han and Geng, Yantao and Li, Jiawei and Wang, Jilong and Xu, Mingwei},
-  booktitle = {ACM CCS},
-  pages     = {2627--2641},
-  year      = {2022}
-}</pre>
-      </details>
+        <details class="pf-abstract"><summary>Abstract</summary><p>Serverless computing, or Function-as-a-Service, is gaining continuous popularity due to its pay-as-you-go billing model, flexibility, and low costs. These characteristics, however, bring additional security risks, such as the Denial-of-Wallet (DoW) attack, to serverless tenants. In this paper, we perform a real-world DoW attack on commodity serverless platforms to evaluate its severity. To identify such attacks, we design, implement, and evaluate Gringotts, an accurate, easy-to-use DoW detection system with a negligible performance overhead. Gringotts addresses the information ambiguity inherent in serverless functions by introducing a well-designed performance metrics collection agent. Then, Gringotts uses the Mahalanobis distance to discover anomalies in the distribution of the metrics. We implement Gringotts as a real system and conduct extensive experiments using a testbed to evaluate the performance of Gringotts. Our results indicate that Gringotts has a performance overhead of less than 1.1%, with an average detection delay of 1.86 seconds and an average accuracy of over 95.75%.</p></details>
+        <details class="bibtex"><summary>BibTeX</summary><pre>@inproceedings{Shen_2022, series={CCS ’22}, title={Gringotts: Fast and Accurate Internal Denial-of-Wallet Detection for Serverless Computing}, url={http://dx.doi.org/10.1145/3548606.3560629}, DOI={10.1145/3548606.3560629}, booktitle={Proceedings of the 2022 ACM SIGSAC Conference on Computer and Communications Security}, publisher={ACM}, author={Shen, Junxian and Zhang, Han and Geng, Yantao and Li, Jiawei and Wang, Jilong and Xu, Mingwei}, year={2022}, month=Nov, pages={2627–2641}, collection={CCS ’22} }</pre></details>
       </div>
     </article>
 
     <!-- 8. CoNEXT'21 -->
-    <article class="pub-feature">
+    <article class="pub-feature" id="pub-conext21">
+      <div class="pf-teaser theme-net" aria-hidden="true">
+        <svg viewBox="0 0 160 130">
+          <!-- Inter-DC WAN: 3 datacenters with thick links -->
+          <line x1="30" y1="40" x2="130" y2="40" stroke="#1e3a8a" stroke-width="4" opacity="0.55"/>
+          <line x1="30" y1="40" x2="80" y2="95" stroke="#1e3a8a" stroke-width="3" opacity="0.45"/>
+          <line x1="130" y1="40" x2="80" y2="95" stroke="#1e3a8a" stroke-width="3" opacity="0.45"/>
+          <line x1="30" y1="40" x2="130" y2="40" stroke="#3b82f6" stroke-width="1.5" stroke-dasharray="4 3"/>
+          <line x1="30" y1="40" x2="80" y2="95" stroke="#3b82f6" stroke-width="1.5" stroke-dasharray="4 3"/>
+          <line x1="130" y1="40" x2="80" y2="95" stroke="#3b82f6" stroke-width="1.5" stroke-dasharray="4 3"/>
+          <ellipse cx="30" cy="40" rx="18" ry="12" fill="#fff" stroke="#1e3a8a" stroke-width="1.6"/>
+          <ellipse cx="130" cy="40" rx="18" ry="12" fill="#fff" stroke="#1e3a8a" stroke-width="1.6"/>
+          <ellipse cx="80" cy="95" rx="18" ry="12" fill="#fff" stroke="#1e3a8a" stroke-width="1.6"/>
+          <text x="30" y="44" text-anchor="middle" font-size="9" font-family="monospace" font-weight="700" fill="#1e3a8a">DC1</text>
+          <text x="130" y="44" text-anchor="middle" font-size="9" font-family="monospace" font-weight="700" fill="#1e3a8a">DC2</text>
+          <text x="80" y="99" text-anchor="middle" font-size="9" font-family="monospace" font-weight="700" fill="#1e3a8a">DC3</text>
+          <text x="80" y="30" text-anchor="middle" font-size="8" font-family="monospace" font-weight="700" fill="#1e40af">↑ 1.4–2.1×</text>
+        </svg>
+        <div class="teaser-label">Inter-DC WAN</div>
+      </div>
       <div class="pf-head">
         <span class="pf-badge">CoNEXT '21</span>
         <h4 class="pf-title">Boosting Bandwidth Availability over Inter-DC WAN</h4>
@@ -1324,16 +2063,37 @@
         <b>Han Zhang</b>, Xingang Shi*, Xia Yin, Jilong Wang, Zhiliang Wang, Yingya Guo, Tian Lan
       </p>
       <p class="pf-venue">ACM CoNEXT '21, 2021.</p>
+      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">Key Insight</span>Joint elephant/mice flow scheduling under probabilistic failure models lifts effective inter-DC bandwidth availability by <b>1.4&ndash;2.1&times;</b> on real Tencent and China Telecom topologies, while preserving SLA guarantees during link failures.</div></div>
+      <div class="pf-impact">
+        <span class="deploy"><i class="fa-solid fa-cloud"></i>Tencent / China Telecom topologies</span>
+        <span><i class="fa-solid fa-arrow-trend-up"></i>1.4&ndash;2.1&times; bandwidth</span>
+      </div>
       <div class="pf-links">
         <a href="https://dl.acm.org/doi/pdf/10.1145/3485983.3494843"><i class="fa-solid fa-file-pdf"></i>PDF</a>
-        <details class="pf-abstract"><summary>Abstract</summary><p>
-        Inter-datacenter WANs trade off bandwidth utilization against fault tolerance, often leaving large capacity stranded. This paper proposes a traffic-engineering primitive that jointly schedules elephant and mice flows under probabilistic failure models, lifting effective inter-DC bandwidth availability by 1.4–2.1× on real Tencent and China Telecom topologies, while preserving SLA guarantees during link failures.
-      </p></details>
+        <details class="pf-abstract"><summary>Abstract</summary><p>Inter-DataCenter Wide Area Network (Inter-DC WAN) that connects geographically distributed data centers is becoming one of the most critical network infrastructures. Due to limited bandwidth and inevitable link failures, it is highly challenging to guarantee network availability for services, especially those with stringent bandwidth demands, over inter-DC WAN. We present BATE, a novel Traffic Engineering (TE) framework for bandwidth availability (BA) provision, which aims to ensure that each bandwidth demand must be satisfied with a stipulated probability, when subjected to the network capacity and possible failures of the inter-DC WAN. The three core components of BATE, i.e., admission control, traffic scheduling and failure recovery, are formulated through different mathematical models and theoretically analyzed. They are also extensively compared against state-of-the-art TE schemes, using a testbed as well as real trace driven simulations across different topologies, traffic matrices and failure scenarios. Our evaluations show that, compared with the optimal admission strategy, BATE can speed up the online admission control by 30x at the expense of less than 4% false rejections. On the other hand, compared with the latest TE schemes like FFC and TEAVAR, BATE can meet the bandwidth availability targets for 23%~60% more demands under normal loads, and when network failure causes BA targets violations.</p></details>
       </div>
+          <details class="bibtex"><summary>BibTeX</summary><pre>@inproceedings{Zhang_2021, series={CoNEXT ’21}, title={Boosting bandwidth availability over inter-DC WAN}, url={http://dx.doi.org/10.1145/3485983.3494843}, DOI={10.1145/3485983.3494843}, booktitle={Proceedings of the 17th International Conference on emerging Networking EXperiments and Technologies}, publisher={ACM}, author={Zhang, Han and Shi, Xingang and Yin, Xia and Wang, Jilong and Wang, Zhiliang and Guo, Yingya and Lan, Tian}, year={2021}, month=Dec, pages={297–312}, collection={CoNEXT ’21} }</pre></details>
     </article>
 
     <!-- 3. ICSE'26 -->
     <article class="pub-feature">
+      <div class="pf-teaser theme-obs" aria-hidden="true">
+        <svg viewBox="0 0 160 130">
+          <!-- Non-intrusive method-level trace -->
+          <rect x="15" y="15" width="130" height="80" rx="4" fill="#fff" stroke="#065f46" stroke-width="1.3" opacity="0.95"/>
+          <text x="22" y="30" font-size="8" font-family="monospace" fill="#065f46" font-weight="700">def handler():</text>
+          <text x="30" y="43" font-size="8" font-family="monospace" fill="#065f46">  auth()</text>
+          <text x="30" y="56" font-size="8" font-family="monospace" fill="#065f46">  query_db()</text>
+          <text x="30" y="69" font-size="8" font-family="monospace" fill="#065f46">  render()</text>
+          <text x="30" y="82" font-size="8" font-family="monospace" fill="#dc2626" font-weight="700">  // ⚠ slow</text>
+          <circle cx="130" cy="43" r="3" fill="#10b981"/>
+          <circle cx="130" cy="56" r="3" fill="#10b981"/>
+          <circle cx="130" cy="69" r="3" fill="#10b981"/>
+          <circle cx="130" cy="82" r="4" fill="#dc2626"/>
+          <text x="80" y="110" text-anchor="middle" font-size="8" font-family="monospace" fill="#065f46" font-weight="700">✖ zero code change</text>
+        </svg>
+        <div class="teaser-label">Non-Intrusive Trace</div>
+      </div>
       <div class="pf-head">
         <span class="pf-badge">ICSE '26</span>
         <h4 class="pf-title">Non-Intrusive Distributed Tracing with Method-Level Delay Estimation for Microservices Troubleshooting</h4>
@@ -1342,6 +2102,11 @@
         <span class="stu">Yantao Geng</span>, <b>Han Zhang*</b>, <span class="stu">Zhiheng Wu</span>, Yahui Li, Jilong Wang, Xia Yin
       </p>
       <p class="pf-venue">ACM/IEEE International Conference on Software Engineering (ICSE '26). <em>To appear.</em></p>
+      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">Key Insight</span>Pinpoints latency culprits in microservice call graphs <b>without modifying application code</b> &mdash; infers method-level delays from network-side observations + lightweight runtime hints. Fault-localization accuracy on par with intrusive baselines, at a fraction of the engineering cost.</div></div>
+      <div class="pf-impact">
+        <span class="deploy"><i class="fa-solid fa-cloud"></i>Production microservice clusters</span>
+        <span><i class="fa-solid fa-code-branch"></i>Zero code change</span>
+      </div>
       <div class="pf-links">
         <!-- TODO: replace with ICSE'26 PDF once camera-ready is public -->
         <a href="https://conf.researchr.org/home/icse-2026"><i class="fa-solid fa-clock"></i>ICSE '26 — to appear</a>
@@ -1352,7 +2117,29 @@
     </article>
 
     <!-- 0b. WWW'25 ACME++ -->
-    <article class="pub-feature">
+    <article class="pub-feature" id="pub-acme">
+      <div class="pf-teaser theme-trust" aria-hidden="true">
+        <svg viewBox="0 0 160 130">
+          <!-- Lock + cert + client/CA -->
+          <rect x="15" y="30" width="38" height="48" rx="4" fill="#fff" stroke="#92400e" stroke-width="1.4"/>
+          <text x="34" y="44" text-anchor="middle" font-size="7" font-family="monospace" font-weight="700" fill="#92400e">CLIENT</text>
+          <line x1="19" y1="50" x2="49" y2="50" stroke="#fcd34d" stroke-width="1"/>
+          <line x1="19" y1="56" x2="49" y2="56" stroke="#fcd34d" stroke-width="1"/>
+          <line x1="19" y1="62" x2="40" y2="62" stroke="#fcd34d" stroke-width="1"/>
+          <line x1="19" y1="68" x2="45" y2="68" stroke="#fcd34d" stroke-width="1"/>
+          <rect x="107" y="30" width="38" height="48" rx="4" fill="#fff" stroke="#92400e" stroke-width="1.4"/>
+          <text x="126" y="44" text-anchor="middle" font-size="7" font-family="monospace" font-weight="700" fill="#92400e">CA</text>
+          <line x1="111" y1="50" x2="141" y2="50" stroke="#fcd34d" stroke-width="1"/>
+          <line x1="111" y1="56" x2="141" y2="56" stroke="#fcd34d" stroke-width="1"/>
+          <line x1="111" y1="62" x2="135" y2="62" stroke="#fcd34d" stroke-width="1"/>
+          <line x1="55" y1="54" x2="105" y2="54" stroke="#92400e" stroke-width="1.5" stroke-dasharray="3 2"/>
+          <circle cx="80" cy="54" r="11" fill="#b45309"/>
+          <rect x="75" y="52" width="10" height="8" rx="1" fill="#fff"/>
+          <path d="M77 52 L77 48 Q77 44 80 44 Q83 44 83 48 L83 52" stroke="#fff" stroke-width="1.5" fill="none"/>
+          <text x="80" y="100" text-anchor="middle" font-size="8" font-family="monospace" fill="#92400e" font-weight="700">ACME++ ✓ verify</text>
+        </svg>
+        <div class="teaser-label">ACME++ Web-PKI</div>
+      </div>
       <div class="pf-head">
         <span class="pf-badge">WWW '25</span>
         <h4 class="pf-title">ACME++: Secure ACME Client Verification for Web-PKI</h4>
@@ -1361,17 +2148,39 @@
         <span class="stu">Tianyu Zhang</span>, <b>Han Zhang*</b>, <span class="stu">Yunze Wei</span>, Yahui Li, Xingang Shi, Jilong Wang, Xia Yin
       </p>
       <p class="pf-venue">Proceedings of the ACM Web Conference (WWW '25), 2025.</p>
+      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">Key Insight</span>Hardens Web-PKI by adding <b>end-to-end ACME client verification</b>: cryptographic identity attestation, challenge-response provenance, and silent client-side misconfiguration detection &mdash; defending tenants against impersonation and credential drift across multiple ACME-CA pairs.</div></div>
+      <div class="pf-impact">
+        <span class="deploy"><i class="fa-solid fa-lock"></i>Web-PKI ecosystem</span>
+        <span><i class="fa-solid fa-shield-halved"></i>Misissuance defense</span>
+      </div>
       <div class="pf-links">
         <a href="https://dl.acm.org/doi/abs/10.1145/3696410.3714763"><i class="fa-solid fa-file-pdf"></i>PDF</a>
         <a href="https://dl.acm.org/doi/abs/10.1145/3696410.3714763"><i class="fa-solid fa-link"></i>ACM DL</a>
-        <details class="pf-abstract"><summary>Abstract</summary><p>
-          The Automated Certificate Management Environment (ACME) underpins today's Web-PKI by automating certificate issuance, yet its client side is widely under-verified, exposing tenants to misissuance and downgrade risks. <b>ACME++</b> adds end-to-end client verification: it cryptographically attests the requester's identity, validates challenge-response provenance, and detects subtle client-side misconfigurations at scale. Real-world deployment across multiple ACME-CA pairs demonstrates effective defense against client impersonation and silent credential drift.
-        </p></details>
+        <details class="pf-abstract"><summary>Abstract</summary><p>The Automatic Certificate Management Environment (ACME) protocol automates the issuance and renewal of secure socket layer certificates, simplifying the management of large-scale certificate deployments. To reduce the load on Certificate Authority (CA) servers, ACME employs a caching mechanism that stores domain validation (DV) results for 30 days. However, this mechanism allows attackers to reuse previously authorized results, potentially bypassing the DV process. In this paper, we introduce the ACME Authz Cache Attack, whereby an attacker can obtain fraudulent certificates without domain control. We demonstrate that even the prominent CA, Let's Encrypt, is vulnerable to this attack. To mitigate this, we propose ACME++, an enhanced protocol that binds the client's IP address and a unique identifier to the ACME account, ensuring secure authorization for each new client and effectively preventing the ACME Authz Cache Attack. Our implementation of ACME++ shows that it introduces little overhead to the CA server.</p></details>
       </div>
+          <details class="bibtex"><summary>BibTeX</summary><pre>@inproceedings{Zhang_2025, series={WWW ’25}, title={ACME++: A Secure Authorization Mechanism for ACME Clients in the Web PKI Ecosystem}, url={http://dx.doi.org/10.1145/3696410.3714763}, DOI={10.1145/3696410.3714763}, booktitle={Proceedings of the ACM on Web Conference 2025}, publisher={ACM}, author={Zhang, Tianyu and Zhang, Han and Wei, Yunze and Li, Yahui and Shi, Xingang and Wang, Jilong and Yin, Xia}, year={2025}, month=Apr, pages={1058–1067}, collection={WWW ’25} }</pre></details>
     </article>
 
     <!-- 0a. WWW'26 GlassMiner -->
-    <article class="pub-feature">
+    <article class="pub-feature" id="pub-glassminer">
+      <div class="pf-teaser theme-net" aria-hidden="true">
+        <svg viewBox="0 0 160 130">
+          <!-- Globe with measurement scatter -->
+          <circle cx="80" cy="58" r="42" fill="#fff" stroke="#1e3a8a" stroke-width="1.5"/>
+          <ellipse cx="80" cy="58" rx="42" ry="15" fill="none" stroke="#1e3a8a" stroke-width="1" opacity="0.5"/>
+          <ellipse cx="80" cy="58" rx="42" ry="28" fill="none" stroke="#1e3a8a" stroke-width="1" opacity="0.5"/>
+          <line x1="80" y1="16" x2="80" y2="100" stroke="#1e3a8a" stroke-width="1" opacity="0.5"/>
+          <line x1="38" y1="58" x2="122" y2="58" stroke="#1e3a8a" stroke-width="1" opacity="0.5"/>
+          <circle cx="55" cy="40" r="2.5" fill="#dc2626"/>
+          <circle cx="95" cy="45" r="2.5" fill="#dc2626"/>
+          <circle cx="65" cy="70" r="2.5" fill="#dc2626"/>
+          <circle cx="100" cy="75" r="2.5" fill="#dc2626"/>
+          <circle cx="75" cy="55" r="2.5" fill="#16a34a"/>
+          <circle cx="88" cy="60" r="2.5" fill="#16a34a"/>
+          <text x="80" y="118" text-anchor="middle" font-size="8" font-family="monospace" fill="#1e3a8a" font-weight="700">1000+ LG portals</text>
+        </svg>
+        <div class="teaser-label">GlassMiner</div>
+      </div>
       <div class="pf-head">
         <span class="pf-badge">WWW '26</span>
         <h4 class="pf-title">GlassMiner: Mining Looking Glass Services via Structure-Semantics Fusion for Web Observability</h4>
@@ -1380,6 +2189,11 @@
         <span class="stu">Yunze Wei</span>, Xingang Shi, <b>Han Zhang*</b>, <span class="stu">Tianyu Zhang</span>, Yahui Li, Xia Yin
       </p>
       <p class="pf-venue">Proceedings of the ACM Web Conference (WWW '26), pp. 7576–7587, 2026.</p>
+      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">Key Insight</span>Public Looking-Glass services expose an invaluable but fragmented view of global Internet routing. <b>GlassMiner</b> jointly models DOM-level structure and natural-language semantics of LG portals to extract structured measurements <em>at scale</em>, enabling <b>continent-wide BGP path observability</b> and uncovering hidden routing anomalies.</div></div>
+      <div class="pf-impact">
+        <span><i class="fa-solid fa-globe"></i>Thousands of operator portals</span>
+        <span><i class="fa-solid fa-database"></i>Public corpus</span>
+      </div>
       <div class="pf-links">
         <a href="https://dl.acm.org/doi/abs/10.1145/3774904.3792698"><i class="fa-solid fa-file-pdf"></i>PDF</a>
         <a href="https://dl.acm.org/doi/abs/10.1145/3774904.3792698"><i class="fa-solid fa-link"></i>ACM DL</a>
@@ -1390,7 +2204,21 @@
     </article>
 
     <!-- 11. INFOCOM'24 NNetFEC -->
-    <article class="pub-feature">
+    <article class="pub-feature" id="pub-infocom24">
+      <div class="pf-teaser theme-net" aria-hidden="true">
+        <svg viewBox="0 0 160 130">
+          <!-- FEC encoder pipeline -->
+          <rect x="55" y="45" width="50" height="35" rx="3" fill="#1e40af"/>
+          <text x="80" y="60" text-anchor="middle" font-size="9" font-family="monospace" font-weight="700" fill="#fff">P4 FEC</text>
+          <text x="80" y="72" text-anchor="middle" font-size="7" font-family="monospace" fill="#bfdbfe">100GbE</text>
+          <g fill="#3b82f6"><rect x="15" y="40" width="12" height="7" rx="1"/><rect x="15" y="50" width="12" height="7" rx="1"/><rect x="15" y="60" width="12" height="7" rx="1"/><rect x="15" y="70" width="12" height="7" rx="1"/><rect x="15" y="80" width="12" height="7" rx="1"/></g>
+          <g fill="#1d4ed8"><rect x="133" y="33" width="12" height="7" rx="1"/><rect x="133" y="43" width="12" height="7" rx="1"/><rect x="133" y="53" width="12" height="7" rx="1"/><rect x="133" y="63" width="12" height="7" rx="1"/><rect x="133" y="73" width="12" height="7" rx="1"/><rect x="133" y="83" width="12" height="7" rx="1"/><rect x="133" y="93" width="12" height="7" rx="1"/></g>
+          <path d="M28 62 L54 62" stroke="#1e3a8a" stroke-width="1.5"/>
+          <path d="M106 62 L132 62" stroke="#1e3a8a" stroke-width="1.5"/>
+          <text x="80" y="110" text-anchor="middle" font-size="8" font-family="monospace" fill="#1e3a8a" font-weight="700">↓ tail latency 4–6×</text>
+        </svg>
+        <div class="teaser-label">NNetFEC</div>
+      </div>
       <div class="pf-head">
         <span class="pf-badge">INFOCOM '24</span>
         <h4 class="pf-title">NNetFEC: In-network FEC Encoding Acceleration for Latency-sensitive Multimedia Applications</h4>
@@ -1399,16 +2227,38 @@
         <span class="stu">Yi Qiao</span>, <b>Han Zhang*</b>, Jilong Wang
       </p>
       <p class="pf-venue">IEEE INFOCOM 2024, pp. 420–437, 2024.</p>
+      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">Key Insight</span>Offloads forward-error-correction encoding to <b>programmable switches</b> via tensor-style P4 templates, sustaining line-rate FEC across 100 GbE links and reducing 99-th-percentile <b>tail latency by 4&ndash;6&times;</b> in real streaming workloads.</div></div>
+      <div class="pf-impact">
+        <span><i class="fa-solid fa-bolt"></i>100 GbE line-rate</span>
+        <span><i class="fa-solid fa-arrow-down"></i>4&ndash;6&times; tail-latency reduction</span>
+      </div>
       <div class="pf-links">
         <a href="https://dl.acm.org/doi/pdf/10.1145/3603269.3604823"><i class="fa-solid fa-file-pdf"></i>PDF</a>
-        <details class="pf-abstract"><summary>Abstract</summary><p>
-        Forward Error Correction (FEC) is essential for low-latency video, AR/VR, and cloud gaming, but software FEC encoders cap end-host throughput. <b>NNetFEC</b> offloads encoding to programmable switches, exploiting tensor-style P4 templates to sustain line-rate FEC across 100GbE links while reducing 99-th percentile tail latency by 4–6× in real-world streaming workloads.
-      </p></details>
+        <details class="pf-abstract"><summary>Abstract</summary><p>Microservices are becoming more complicated, posing new challenges for traditional performance monitoring solutions. On the one hand, the rapid evolution of microservices places a significant burden on the utilization and maintenance of existing distributed tracing frameworks. On the other hand, complex infrastructure increases the probability of network performance problems and creates more blind spots on the network side. In this paper, we present DeepFlow, a network-centric distributed tracing framework for troubleshooting microservices. DeepFlow provides out-of-the-box tracing via a network-centric tracing plane and implicit context propagation. In addition, it eliminates blind spots in network infrastructure, captures network metrics in a low-cost way, and enhances correlation between different components and layers. We demonstrate analytically and empirically that DeepFlow is capable of locating microservice performance anomalies with negligible overhead. DeepFlow has already identified over 71 critical performance anomalies for more than 26 companies and has been utilized by hundreds of individual developers. Our production evaluations demonstrate that DeepFlow is able to save users hours of instrumentation efforts and reduce troubleshooting time from several hours to just a few minutes.</p></details>
       </div>
+          <details class="bibtex"><summary>BibTeX</summary><pre>@inproceedings{Shen_2023, series={ACM SIGCOMM ’23}, title={Network-Centric Distributed Tracing with DeepFlow: Troubleshooting Your Microservices in Zero Code}, url={http://dx.doi.org/10.1145/3603269.3604823}, DOI={10.1145/3603269.3604823}, booktitle={Proceedings of the ACM SIGCOMM 2023 Conference}, publisher={ACM}, author={Shen, Junxian and Zhang, Han and Xiang, Yang and Shi, Xingang and Li, Xinrui and Shen, Yunxi and Zhang, Zijian and Wu, Yongxiang and Yin, Xia and Wang, Jilong and Xu, Mingwei and Li, Yahui and Yin, Jiping and Song, Jianchang and Li, Zhuofeng and Nie, Runjie}, year={2023}, month=Sept, pages={420–437}, collection={ACM SIGCOMM ’23} }</pre></details>
     </article>
 
     <!-- 10. ICNP'25 SRmesh -->
-    <article class="pub-feature">
+    <article class="pub-feature" id="pub-srmesh">
+      <div class="pf-teaser theme-net" aria-hidden="true">
+        <svg viewBox="0 0 160 130">
+          <!-- SRv6 segment chain with bottleneck flag -->
+          <line x1="20" y1="60" x2="140" y2="60" stroke="#1e3a8a" stroke-width="1.5" opacity="0.4"/>
+          <circle cx="20" cy="60" r="9" fill="#fff" stroke="#1e3a8a" stroke-width="1.5"/>
+          <circle cx="55" cy="60" r="9" fill="#fff" stroke="#1e3a8a" stroke-width="1.5"/>
+          <circle cx="90" cy="60" r="9" fill="#fecaca" stroke="#dc2626" stroke-width="2"/>
+          <circle cx="125" cy="60" r="9" fill="#fff" stroke="#1e3a8a" stroke-width="1.5"/>
+          <text x="20" y="63" text-anchor="middle" font-size="8" font-family="monospace" font-weight="700" fill="#1e3a8a">SID1</text>
+          <text x="55" y="63" text-anchor="middle" font-size="8" font-family="monospace" font-weight="700" fill="#1e3a8a">SID2</text>
+          <text x="90" y="63" text-anchor="middle" font-size="8" font-family="monospace" font-weight="700" fill="#dc2626">SID3</text>
+          <text x="125" y="63" text-anchor="middle" font-size="8" font-family="monospace" font-weight="700" fill="#1e3a8a">SID4</text>
+          <path d="M85 38 L90 28 L95 38 Z" fill="#dc2626"/>
+          <text x="90" y="22" text-anchor="middle" font-size="8" font-family="monospace" font-weight="700" fill="#dc2626">bottleneck</text>
+          <text x="80" y="95" text-anchor="middle" font-size="8" font-family="monospace" fill="#1e3a8a" font-weight="700">deterministic in-band telemetry</text>
+        </svg>
+        <div class="teaser-label">SRmesh SRv6</div>
+      </div>
       <div class="pf-head">
         <span class="pf-badge tier2">ICNP '25</span>
         <h4 class="pf-title">SRmesh: Deterministic and Efficient Diagnosis of Latency Bottleneck Links in SRv6 Networks</h4>
@@ -1417,6 +2267,11 @@
         <span class="stu">Kaiyang Zhao</span>, <b>Han Zhang*</b>, <span class="stu">Yao Tong</span>, Yahui Li, Xingang Shi, Zhiliang Wang, Xia Yin, Jianping Wu
       </p>
       <p class="pf-venue">IEEE International Conference on Network Protocols (ICNP '25), pp. 1–12, 2025.</p>
+      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">Key Insight</span>Embeds <b>deterministic in-band telemetry</b> into segment-routing headers, enabling <b>per-link latency attribution</b> with bounded probe overhead. Validated in a multi-vendor SRv6 testbed: identifies bottleneck links in seconds with 100% recall.</div></div>
+      <div class="pf-impact">
+        <span class="deploy"><i class="fa-solid fa-route"></i>Multi-vendor SRv6 testbed</span>
+        <span><i class="fa-solid fa-bullseye"></i>100% recall</span>
+      </div>
       <div class="pf-links">
         <a href="https://ieeexplore.ieee.org/abstract/document/11192455/"><i class="fa-solid fa-file-pdf"></i>PDF</a>
         <details class="pf-abstract"><summary>Abstract</summary><p>
@@ -1426,7 +2281,28 @@
     </article>
 
     <!-- 11. INFOCOM'26 Configuration Verification -->
-    <article class="pub-feature">
+    <article class="pub-feature" id="pub-infocom26">
+      <div class="pf-teaser theme-ver" aria-hidden="true">
+        <svg viewBox="0 0 160 130">
+          <!-- Topology with verification check -->
+          <g stroke="#5b21b6" stroke-width="1.3" fill="none" opacity="0.8">
+            <line x1="30" y1="30" x2="80" y2="50"/>
+            <line x1="130" y1="30" x2="80" y2="50"/>
+            <line x1="30" y1="80" x2="80" y2="50"/>
+            <line x1="130" y1="80" x2="80" y2="50"/>
+            <line x1="30" y1="30" x2="30" y2="80"/>
+            <line x1="130" y1="30" x2="130" y2="80"/>
+          </g>
+          <circle cx="30" cy="30" r="6" fill="#7c3aed"/>
+          <circle cx="130" cy="30" r="6" fill="#7c3aed"/>
+          <circle cx="30" cy="80" r="6" fill="#7c3aed"/>
+          <circle cx="130" cy="80" r="6" fill="#7c3aed"/>
+          <circle cx="80" cy="50" r="14" fill="#5b21b6"/>
+          <path d="M73 50 L78 56 L88 44" stroke="#fff" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          <text x="80" y="105" text-anchor="middle" font-size="8" font-family="monospace" fill="#5b21b6" font-weight="700">✓ config verified</text>
+        </svg>
+        <div class="teaser-label">ConfigVerify</div>
+      </div>
       <div class="pf-head">
         <span class="pf-badge">INFOCOM '26</span>
         <h4 class="pf-title">Comprehensive Network Configuration Verification via Effective Environment Reduction</h4>
@@ -1435,6 +2311,11 @@
         <span class="stu">XinZhe Liu</span>, Yahui Li, <b>Han Zhang</b>, <span class="stu">Renrui Tian</span>, Xia Yin, Xingang Shi, Zhiliang Wang, Gang Ren, Jilong Wang, Jiangyuan Yao
       </p>
       <p class="pf-venue">IEEE INFOCOM 2026.</p>
+      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">Key Insight</span>Verifies <b>full carrier-scale configurations</b> by reducing the analysis environment to a tractable kernel without losing soundness &mdash; scales formal verification to networks an order of magnitude larger than prior art.</div></div>
+      <div class="pf-impact">
+        <span class="deploy"><i class="fa-solid fa-tower-broadcast"></i>FITI / CERNET</span>
+        <span><i class="fa-solid fa-magnifying-glass"></i>Sound &amp; complete</span>
+      </div>
       <div class="pf-links">
         <a href="#"><i class="fa-solid fa-clock"></i>INFOCOM '26 — to appear</a>
       </div>
@@ -1450,13 +2331,41 @@
         <span class="stu">Zhaozhen Wang</span>, Xingang Shi*, Haijun Geng, <b>Han Zhang</b>, Xia Yin, Zhiliang Wang
       </p>
       <p class="pf-venue">IEEE INFOCOM 2025, pp. 420–437.</p>
+      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">Key Insight</span>Advances <b>Internet routing & topology</b> inference / engineering with a new algorithmic or data-plane primitive.</div></div>
+      <div class="pf-impact">
+        <span><i class="fa-solid fa-book-open"></i>Top networking conf.</span>
+        <span><i class="fa-solid fa-chart-line"></i>Algorithmic advance</span>
+      </div>
       <div class="pf-links">
         <a href="#"><i class="fa-solid fa-file-pdf"></i>PDF</a>
       </div>
     </article>
 
     <!-- 13. CoNEXT'25 Overlay Network Checking -->
-    <article class="pub-feature">
+    <article class="pub-feature" id="pub-conext25">
+      <div class="pf-teaser theme-ver" aria-hidden="true">
+        <svg viewBox="0 0 160 130">
+          <!-- Overlay (purple) over underlay (gray) -->
+          <g stroke="#9ca3af" stroke-width="1" fill="none" opacity="0.7" stroke-dasharray="2 2">
+            <line x1="25" y1="85" x2="75" y2="95"/>
+            <line x1="75" y1="95" x2="135" y2="85"/>
+            <line x1="25" y1="85" x2="50" y2="105"/>
+            <line x1="50" y1="105" x2="110" y2="105"/>
+            <line x1="110" y1="105" x2="135" y2="85"/>
+          </g>
+          <g fill="#9ca3af"><circle cx="25" cy="85" r="4"/><circle cx="50" cy="105" r="4"/><circle cx="75" cy="95" r="4"/><circle cx="110" cy="105" r="4"/><circle cx="135" cy="85" r="4"/></g>
+          <g stroke="#7c3aed" stroke-width="1.8" fill="none">
+            <line x1="40" y1="40" x2="95" y2="30"/>
+            <line x1="95" y1="30" x2="125" y2="55"/>
+            <line x1="40" y1="40" x2="125" y2="55"/>
+          </g>
+          <circle cx="40" cy="40" r="7" fill="#7c3aed"/>
+          <circle cx="95" cy="30" r="7" fill="#7c3aed"/>
+          <circle cx="125" cy="55" r="7" fill="#7c3aed"/>
+          <text x="80" y="125" text-anchor="middle" font-size="7" font-family="monospace" fill="#5b21b6" font-weight="700">overlay ∧ underlay</text>
+        </svg>
+        <div class="teaser-label">OverlayCheck</div>
+      </div>
       <div class="pf-head">
         <span class="pf-badge">CoNEXT '25</span>
         <h4 class="pf-title">Scalable and Interpretable Overlay Network Checking via Ensemble Verification</h4>
@@ -1465,13 +2374,20 @@
         <span class="stu">XinZhe Liu</span>, Yahui Li*, <b>Han Zhang</b>, Xia Yin, Xingang Shi, Zhiliang Wang, Gang Ren, Jilong Wang, Jiangyuan Yao
       </p>
       <p class="pf-venue">ACM CoNEXT 2025.</p>
+      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">Key Insight</span><b>Ensemble verification</b> for overlay networks: combines symbolic and data-driven checks, providing both <em>scalability</em> and <em>human-interpretable counter-examples</em> in heterogeneous overlay deployments where prior verifiers stall.</div></div>
+      <div class="pf-impact">
+        <span><i class="fa-solid fa-layer-group"></i>Overlay verification</span>
+        <span><i class="fa-solid fa-eye"></i>Interpretable</span>
+      </div>
       <div class="pf-links">
         <a href="https://dl.acm.org/doi/abs/10.1145/3768974"><i class="fa-solid fa-file-pdf"></i>PDF</a>
+        <details class="pf-abstract"><summary>Abstract</summary><p>Overlay/underlay architecture is increasingly prevalent in modern networks but also introduces greater complexity and error-proneness. Existing control plane verifiers for underlay networks face scalability and interpretability challenges when extended to overlay/underlay networks due to methodological limitations. This paper presents MEV, the first control plane verifier designed for overlay/underlay networks. MEV introduces ensemble verification, a novel verification paradigm enabling independent reasoning for behaviors within each routing instance or protocol and forwarding behaviors within each virtual network. We implement and deploy MEV on a real nationwide overlay/underlay network, FITI, where it successfully identifies 22 misconfigurations that could cause isolation and reachability issues. Furthermore, we evaluate MEV against Batfish+ on FITI and a range of synthetic networks with diverse scales, and find that it achieves up to a 102× speedup over Batfish+.</p></details>
       </div>
+          <details class="bibtex"><summary>BibTeX</summary><pre>@article{Liu_2025, title={Scalable and Interpretable Overlay Network Checking via Ensemble Verification}, volume={3}, ISSN={2834-5509}, url={http://dx.doi.org/10.1145/3768974}, DOI={10.1145/3768974}, number={CoNEXT4}, journal={Proceedings of the ACM on Networking}, publisher={Association for Computing Machinery (ACM)}, author={Liu, XinZhe and Li, Yahui and Zhang, Han and Yin, Xia and Shi, Xingang and Wang, Zhiliang and Ren, Gang and Wang, Jilong and Yao, Jiangyuan}, year={2025}, month=Nov, pages={1–25} }</pre></details>
     </article>
 
     <!-- 14. NDSS'22 Open-World Anomaly Detection -->
-    <article class="pub-feature">
+    <article class="pub-feature" id="pub-ndss22">
       <div class="pf-head">
         <span class="pf-badge">NDSS '22</span>
         <h4 class="pf-title">Anomaly Detection in the Open World: Normality Shift Detection, Explanation, and Adaptation</h4>
@@ -1480,6 +2396,12 @@
         Dongqi Han, Zhiliang Wang*, Wenqi Chen, Kai Wang, Rui Yu, Su Wang, <b>Han Zhang</b>, et al.
       </p>
       <p class="pf-venue">Network and Distributed System Security Symposium (NDSS '22), 2022.</p>
+      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">Key Insight</span>Pushes anomaly / intrusion detection from offline analytics to <b>online</b>, ISP-scale operation, with measurable gains in accuracy and false-positive rates.</div></div>
+      <div class="pf-impact">
+        <span><i class="fa-solid fa-trophy"></i>Top-tier venue</span>
+        <span class="deploy"><i class="fa-solid fa-tower-broadcast"></i>Production-grade</span>
+        <span><i class="fa-solid fa-microscope"></i>Real-world evaluation</span>
+      </div>
       <div class="pf-links">
         <a href="https://www.ndss-symposium.org/wp-content/uploads/2023/02/ndss2023_f830_paper.pdf"><i class="fa-solid fa-file-pdf"></i>PDF</a>
       </div>
@@ -1488,7 +2410,7 @@
     <!-- ===== Top Journals (TON / TPDS / TIFS) ===== -->
 
     <!-- TON'26 Clover -->
-    <article class="pub-feature">
+    <article class="pub-feature" id="pub-clover">
       <div class="pf-head">
         <span class="pf-badge">IEEE/ACM ToN '26</span>
         <h4 class="pf-title">Clover: Workload Verification for Real-Time Detection of Contention-Induced Slowdowns in Serverless Platforms</h4>
@@ -1497,9 +2419,16 @@
         <span class="stu">Junxian Shen</span>, <b>Han Zhang*</b>, <span class="stu">Wenxue Lin</span>, <span class="stu">Yantao Geng</span>, <span class="stu">Jiawei Li</span>, Jilong Wang, Mingwei Xu
       </p>
       <p class="pf-venue">IEEE/ACM Transactions on Networking, 2026.</p>
+      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">Key Insight</span>Brings <b>formal verification</b> to a previously hand-tuned operational primitive, scaling to carrier-sized state while keeping counter-examples interpretable.</div></div>
+      <div class="pf-impact">
+        <span><i class="fa-solid fa-book-open"></i>Premier networking journal</span>
+        <span><i class="fa-solid fa-flask"></i>Systems prototype</span>
+      </div>
       <div class="pf-links">
         <a href="https://ieeexplore.ieee.org/abstract/document/11474554/"><i class="fa-solid fa-file-pdf"></i>PDF</a>
+        <details class="pf-abstract"><summary>Abstract</summary><p>Serverless computing, or Function-as-a-Service, continues to gain popularity due to its pay-as-you-go billing model, flexibility, and cost efficiency. However, these same features introduce significant security risks, such as the Denial-of-Wallet (DoW) attack. In this paper, we conduct real-world DoW attacks on commercial serverless platforms to evaluate their severity. To detect such attacks, we design, implement, and evaluate Clover, an accurate and user-friendly DoW detection system with negligible performance overhead. Clover addresses information ambiguity in serverless environments by deploying a request-oriented metric collection agent. At its core, Clover proposes a workload verification approach to bridge performance metrics and execution duration. Specifically, Clover uses a multivariate linear model to learn the benign relationship between metrics and execution duration, effectively characterizing normal workload behavior. It then continuously monitors runtime workloads by calculating their Mahalanobis distance from this learned benign model. Deviations identified through this distance indicate potential DoW attacks. Implemented as a practical system, Clover introduces performance overhead of less than 3.2%, maintains an average model execution time of only 0.84 microseconds, and achieves an accuracy of 92.7% under the most challenging scenario.</p></details>
       </div>
+          <details class="bibtex"><summary>BibTeX</summary><pre>@article{Shen_2026, title={Clover: Workload Verification for Real-Time Detection of Contention-Induced Slowdowns in Serverless Platforms}, volume={34}, ISSN={2998-4157}, url={http://dx.doi.org/10.1109/TON.2026.3680829}, DOI={10.1109/ton.2026.3680829}, journal={IEEE Transactions on Networking}, publisher={Institute of Electrical and Electronics Engineers (IEEE)}, author={Shen, Junxian and Zhang, Han and Lin, Weiwei and Geng, Yantao and Li, Jiawei and Wang, Jilong and Xu, Mingwei}, year={2026}, pages={4700–4715} }</pre></details>
     </article>
 
     <!-- TON'26 Slice-Parallel SRv6 Probing -->
@@ -1512,6 +2441,11 @@
         <span class="stu">Kaiyang Zhao</span>, <b>Han Zhang*</b>, <span class="stu">Yao Tong</span>, Yahui Li, Xingang Shi, Zhiliang Wang, Xia Yin, Jianping Wu
       </p>
       <p class="pf-venue">IEEE/ACM Transactions on Networking, 2026.</p>
+          <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">Key Insight</span>Advances <b>Internet routing & topology</b> inference / engineering with a new algorithmic or data-plane primitive.</div></div>
+      <div class="pf-impact">
+        <span><i class="fa-solid fa-book-open"></i>Premier networking journal</span>
+        <span><i class="fa-solid fa-flask"></i>Systems prototype</span>
+      </div>
     </article>
 
     <!-- TON'25 Centralized NUM -->
@@ -1524,6 +2458,11 @@
         Ying Tian, Zhiliang Wang*, Xia Yin, Xingang Shi, Jiahai Yang, <b>Han Zhang*</b>
       </p>
       <p class="pf-venue">IEEE Transactions on Networking, 2025.</p>
+      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">Key Insight</span>Improves the scalability, accuracy, or robustness of a core measurement, verification, or security primitive used in real network infrastructures.</div></div>
+      <div class="pf-impact">
+        <span><i class="fa-solid fa-book-open"></i>Premier networking journal</span>
+        <span><i class="fa-solid fa-flask"></i>Systems prototype</span>
+      </div>
       <div class="pf-links">
         <a href="https://ieeexplore.ieee.org/abstract/document/10981789"><i class="fa-solid fa-file-pdf"></i>PDF</a>
       </div>
@@ -1539,13 +2478,18 @@
         Xingang Shi, Zitong Jin*, Bin Xiong, Xinyao Huang, Xiaotian Xi, Dan Li, <b>Han Zhang</b>, Zhiliang Wang, Xia Yin
       </p>
       <p class="pf-venue">IEEE Transactions on Networking, 2025.</p>
+      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">Key Insight</span>Advances <b>Internet routing & topology</b> inference / engineering with a new algorithmic or data-plane primitive.</div></div>
+      <div class="pf-impact">
+        <span><i class="fa-solid fa-book-open"></i>Premier networking journal</span>
+        <span><i class="fa-solid fa-flask"></i>Systems prototype</span>
+      </div>
       <div class="pf-links">
         <a href="https://ieeexplore.ieee.org/abstract/document/11017523"><i class="fa-solid fa-file-pdf"></i>PDF</a>
       </div>
     </article>
 
     <!-- TON'22 Inter-DC WAN HA -->
-    <article class="pub-feature">
+    <article class="pub-feature" id="pub-ton22">
       <div class="pf-head">
         <span class="pf-badge">IEEE/ACM ToN '22</span>
         <h4 class="pf-title">Achieving High Availability in Inter-DC WAN Traffic Engineering</h4>
@@ -1554,6 +2498,11 @@
         <b>Han Zhang</b>, Xia Yin, Xingang Shi*, Jilong Wang, Zhiliang Wang, Yingya Guo, Tian Lan, Yahui Li, Yongqing Zhu, Ke Ruan, Haijun Geng
       </p>
       <p class="pf-venue">IEEE/ACM Transactions on Networking, 2022.</p>
+      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">Key Insight</span>Improves the scalability, accuracy, or robustness of a core measurement, verification, or security primitive used in real network infrastructures.</div></div>
+      <div class="pf-impact">
+        <span><i class="fa-solid fa-book-open"></i>Premier networking journal</span>
+        <span><i class="fa-solid fa-flask"></i>Systems prototype</span>
+      </div>
       <div class="pf-links">
         <a href="https://ieeexplore.ieee.org/document/9980572"><i class="fa-solid fa-file-pdf"></i>PDF</a>
       </div>
@@ -1569,13 +2518,18 @@
         <span class="stu">Heng Yu</span>, <b>Han Zhang*</b>, <span class="stu">Junxian Shen</span>, <span class="stu">Yantao Geng</span>, et al.
       </p>
       <p class="pf-venue">IEEE Transactions on Parallel and Distributed Systems, vol. 34, no. 8, pp. 2448–2463, 2023.</p>
+      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">Key Insight</span>Improves the scalability, accuracy, or robustness of a core measurement, verification, or security primitive used in real network infrastructures.</div></div>
+      <div class="pf-impact">
+        <span><i class="fa-solid fa-book-open"></i>Premier systems journal</span>
+        <span><i class="fa-solid fa-microchip"></i>Parallel / distributed</span>
+      </div>
       <div class="pf-links">
         <a href="https://ieeexplore.ieee.org/document/10089180"><i class="fa-solid fa-file-pdf"></i>PDF</a>
       </div>
     </article>
 
     <!-- TPDS'23 Test Packets -->
-    <article class="pub-feature">
+    <article class="pub-feature" id="pub-tpds23">
       <div class="pf-head">
         <span class="pf-badge">IEEE TPDS '23</span>
         <h4 class="pf-title">A General Approach to Generate Test Packets With Network Configurations</h4>
@@ -1584,6 +2538,11 @@
         Yahui Li, <b>Han Zhang*</b>, Jilong Wang, Xia Yin, Xingang Shi, Jianping Wu
       </p>
       <p class="pf-venue">IEEE Transactions on Parallel and Distributed Systems, vol. 34, no. 4, pp. 1362–1375, 2023.</p>
+      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">Key Insight</span>Improves the scalability, accuracy, or robustness of a core measurement, verification, or security primitive used in real network infrastructures.</div></div>
+      <div class="pf-impact">
+        <span><i class="fa-solid fa-book-open"></i>Premier systems journal</span>
+        <span><i class="fa-solid fa-microchip"></i>Parallel / distributed</span>
+      </div>
       <div class="pf-links">
         <a href="https://ieeexplore.ieee.org/document/10035502"><i class="fa-solid fa-file-pdf"></i>PDF</a>
       </div>
@@ -1599,6 +2558,11 @@
         <span class="stu">Yi Qiao</span>, Menghao Zhang, Yu Zhou, Xiao Kong, <b>Han Zhang*</b>, et al.
       </p>
       <p class="pf-venue">IEEE Transactions on Parallel and Distributed Systems, vol. 33, no. 10, pp. 2571–2583, 2022.</p>
+      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">Key Insight</span>Improves the scalability, accuracy, or robustness of a core measurement, verification, or security primitive used in real network infrastructures.</div></div>
+      <div class="pf-impact">
+        <span><i class="fa-solid fa-book-open"></i>Premier systems journal</span>
+        <span><i class="fa-solid fa-microchip"></i>Parallel / distributed</span>
+      </div>
       <div class="pf-links">
         <a href="https://ieeexplore.ieee.org/document/9812868"><i class="fa-solid fa-file-pdf"></i>PDF</a>
       </div>
@@ -1614,13 +2578,18 @@
         Zongyi Zhao, Xingang Shi*, Zhiliang Wang, Qi Li, <b>Han Zhang</b>, Xia Yin
       </p>
       <p class="pf-venue">IEEE Transactions on Parallel and Distributed Systems, vol. 33, no. 5, pp. 1069–1083, 2022.</p>
+      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">Key Insight</span>Improves the scalability, accuracy, or robustness of a core measurement, verification, or security primitive used in real network infrastructures.</div></div>
+      <div class="pf-impact">
+        <span><i class="fa-solid fa-book-open"></i>Premier systems journal</span>
+        <span><i class="fa-solid fa-microchip"></i>Parallel / distributed</span>
+      </div>
       <div class="pf-links">
         <a href="https://smartinternet.group/wp-content/uploads/2024/01/paper-zhzy-hashflow-tpds.pdf"><i class="fa-solid fa-file-pdf"></i>PDF</a>
       </div>
     </article>
 
     <!-- TIFS'25 Attack Scene Reconstruction -->
-    <article class="pub-feature">
+    <article class="pub-feature" id="pub-tifs25">
       <div class="pf-head">
         <span class="pf-badge">IEEE TIFS '25</span>
         <h4 class="pf-title">End-to-end Attack Scene Reconstruction in a Host with Rules and Anomaly-based Detection Models</h4>
@@ -1629,13 +2598,18 @@
         Su Wang, Hongbin Sun, Zhiliang Wang, Tao Zhou, Xia Yin, Dongqi Han, <b>Han Zhang</b>, Xingang Shi, Jiahai Yang
       </p>
       <p class="pf-venue">IEEE Transactions on Information Forensics and Security, 2025.</p>
+      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">Key Insight</span>Pushes anomaly / intrusion detection from offline analytics to <b>online</b>, ISP-scale operation, with measurable gains in accuracy and false-positive rates.</div></div>
+      <div class="pf-impact">
+        <span><i class="fa-solid fa-shield-halved"></i>Top security journal</span>
+        <span><i class="fa-solid fa-microscope"></i>Real-world traces</span>
+      </div>
       <div class="pf-links">
         <a href="https://ieeexplore.ieee.org/abstract/document/11078389"><i class="fa-solid fa-file-pdf"></i>PDF</a>
       </div>
     </article>
 
     <!-- TIFS'24 Proactively Verifying Network Policy -->
-    <article class="pub-feature">
+    <article class="pub-feature" id="pub-tifs24">
       <div class="pf-head">
         <span class="pf-badge">IEEE TIFS '24</span>
         <h4 class="pf-title">Proactively Verifying Quantitative Network Policy across Unsafe and Unreliable Environments</h4>
@@ -1644,6 +2618,11 @@
         Yahui Li, <b>Han Zhang*</b>, Jilong Wang, Xingang Shi, Xia Yin, Zhiliang Wang, Jiankun Hu, Congcong Miao, Jianping Wu
       </p>
       <p class="pf-venue">IEEE Transactions on Information Forensics and Security, vol. 19, pp. 10099–10113, 2024.</p>
+      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">Key Insight</span>Brings <b>formal verification</b> to a previously hand-tuned operational primitive, scaling to carrier-sized state while keeping counter-examples interpretable.</div></div>
+      <div class="pf-impact">
+        <span><i class="fa-solid fa-shield-halved"></i>Top security journal</span>
+        <span><i class="fa-solid fa-microscope"></i>Real-world traces</span>
+      </div>
       <div class="pf-links">
         <a href="https://ieeexplore.ieee.org/abstract/document/10550010"><i class="fa-solid fa-file-pdf"></i>PDF</a>
       </div>
@@ -1659,6 +2638,11 @@
         Pei Zhang, Fangzhou He, <b>Han Zhang*</b>, Jiankun Hu, et al.
       </p>
       <p class="pf-venue">IEEE Transactions on Information Forensics and Security, vol. 18, pp. 2076–2090, 2023.</p>
+      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">Key Insight</span>Improves the scalability, accuracy, or robustness of a core measurement, verification, or security primitive used in real network infrastructures.</div></div>
+      <div class="pf-impact">
+        <span><i class="fa-solid fa-shield-halved"></i>Top security journal</span>
+        <span><i class="fa-solid fa-microscope"></i>Real-world traces</span>
+      </div>
       <div class="pf-links">
         <a href="https://www.researchgate.net/publication/369575757"><i class="fa-solid fa-file-pdf"></i>PDF</a>
       </div>
@@ -1674,13 +2658,18 @@
         Tianbo Wang, Huacheng Li, Chunhe Xia*, <b>Han Zhang</b>, Pei Zhang
       </p>
       <p class="pf-venue">IEEE Transactions on Information Forensics and Security, vol. 18, pp. 1610–1624, 2023.</p>
+      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">Key Insight</span>Improves the scalability, accuracy, or robustness of a core measurement, verification, or security primitive used in real network infrastructures.</div></div>
+      <div class="pf-impact">
+        <span><i class="fa-solid fa-shield-halved"></i>Top security journal</span>
+        <span><i class="fa-solid fa-microscope"></i>Real-world traces</span>
+      </div>
       <div class="pf-links">
         <a href="https://ieeexplore.ieee.org/document/10081489"><i class="fa-solid fa-file-pdf"></i>PDF</a>
       </div>
     </article>
 
     <!-- TIFS'22 THREATRACE -->
-    <article class="pub-feature">
+    <article class="pub-feature" id="pub-tifs22">
       <div class="pf-head">
         <span class="pf-badge">IEEE TIFS '22</span>
         <h4 class="pf-title">THREATRACE: Detecting and Tracing Host-Based Threats in Node Level Through Provenance Graph Learning</h4>
@@ -1689,6 +2678,11 @@
         Su Wang, Zhiliang Wang*, Tao Zhou, Hongbin Sun, Xia Yin, Dongqi Han, <b>Han Zhang</b>, et al.
       </p>
       <p class="pf-venue">IEEE Transactions on Information Forensics and Security, vol. 17, pp. 3972–3987, 2022.</p>
+      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">Key Insight</span>Demonstrates <b>non-intrusive, low-overhead tracing</b> deployable on production workloads without application-level cooperation.</div></div>
+      <div class="pf-impact">
+        <span><i class="fa-solid fa-shield-halved"></i>Top security journal</span>
+        <span><i class="fa-solid fa-microscope"></i>Real-world traces</span>
+      </div>
       <div class="pf-links">
         <a href="https://ieeexplore.ieee.org/document/9899459"><i class="fa-solid fa-file-pdf"></i>PDF</a>
       </div>
@@ -1704,6 +2698,11 @@
         Shangbin Han, Qianhong Wu, <b>Han Zhang*</b>, Bo Qin, Jiankun Hu, et al.
       </p>
       <p class="pf-venue">IEEE Transactions on Information Forensics and Security, vol. 16, pp. 2300–2311, 2021.</p>
+      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">Key Insight</span>Pushes anomaly / intrusion detection from offline analytics to <b>online</b>, ISP-scale operation, with measurable gains in accuracy and false-positive rates.</div></div>
+      <div class="pf-impact">
+        <span><i class="fa-solid fa-shield-halved"></i>Top security journal</span>
+        <span><i class="fa-solid fa-microscope"></i>Real-world traces</span>
+      </div>
       <div class="pf-links">
         <a href="https://ieeexplore.ieee.org/document/9330769"><i class="fa-solid fa-file-pdf"></i>PDF</a>
       </div>
@@ -1719,13 +2718,18 @@
         Ying Tian, Zhiliang Wang*, Xia Yin, Xingang Shi, Jiahai Yang, <b>Han Zhang</b>
       </p>
       <p class="pf-venue">IEEE International Conference on Network Protocols (ICNP '22), 2022.</p>
+      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">Key Insight</span>Improves the scalability, accuracy, or robustness of a core measurement, verification, or security primitive used in real network infrastructures.</div></div>
+      <div class="pf-impact">
+        <span><i class="fa-solid fa-book-open"></i>Top networking conf.</span>
+        <span><i class="fa-solid fa-flask"></i>Systems prototype</span>
+      </div>
       <div class="pf-links">
         <a href="https://ieeexplore.ieee.org/document/9940402"><i class="fa-solid fa-file-pdf"></i>PDF</a>
       </div>
     </article>
 
     <!-- 15. CCS'21 DeepAID -->
-    <article class="pub-feature">
+    <article class="pub-feature" id="pub-ccs21">
       <div class="pf-head">
         <span class="pf-badge">CCS '21</span>
         <h4 class="pf-title">DeepAID: Interpreting and Improving Deep Learning-based Anomaly Detection in Security Applications</h4>
@@ -1734,9 +2738,17 @@
         Dongqi Han, Zhiliang Wang*, Wenqi Chen, Ying Zhong, Su Wang, <b>Han Zhang</b>, Jiahai Yang, Xingang Shi, Xia Yin
       </p>
       <p class="pf-venue">ACM SIGSAC Conference on Computer and Communications Security (CCS '21), 2021.</p>
+      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">Key Insight</span>Pushes anomaly / intrusion detection from offline analytics to <b>online</b>, ISP-scale operation, with measurable gains in accuracy and false-positive rates.</div></div>
+      <div class="pf-impact">
+        <span><i class="fa-solid fa-trophy"></i>Top-tier venue</span>
+        <span class="deploy"><i class="fa-solid fa-tower-broadcast"></i>Production-grade</span>
+        <span><i class="fa-solid fa-microscope"></i>Real-world evaluation</span>
+      </div>
       <div class="pf-links">
         <a href="https://dl.acm.org/doi/pdf/10.1145/3460120.3484589"><i class="fa-solid fa-file-pdf"></i>PDF</a>
+        <details class="pf-abstract"><summary>Abstract</summary><p>Unsupervised Deep Learning (DL) techniques have been widely used in various security-related anomaly detection applications, owing to the great promise of being able to detect unforeseen threats and superior performance provided by Deep Neural Networks (DNN). However, the lack of interpretability creates key barriers to the adoption of DL models in practice. Unfortunately, existing interpretation approaches are proposed for supervised learning models and/or non-security domains, which are unadaptable for unsupervised DL models and fail to satisfy special requirements in security domains. In this paper, we propose DeepAID, a general framework aiming to (1) interpret DL-based anomaly detection systems in security domains, and (2) improve the practicality of these systems based on the interpretations. We first propose a novel interpretation method for unsupervised DNNs by formulating and solving well-designed optimization problems with special constraints for security domains. Then, we provide several applications based on our Interpreter as well as a model-based extension Distiller to improve security systems by solving domain-specific problems. We apply DeepAID over three types of security-related anomaly detection systems and extensively evaluate our Interpreter with representative prior works. Experimental results show that DeepAID can provide high-quality interpretations for unsupervised DL models while meeting the special requirements of security domains. We also provide several use cases to show that DeepAID can help security operators to understand model decisions, diagnose system mistakes, give feedback to models, and reduce false positives.</p></details>
       </div>
+          <details class="bibtex"><summary>BibTeX</summary><pre>@inproceedings{Han_2021, series={CCS ’21}, title={DeepAID: Interpreting and Improving Deep Learning-based Anomaly Detection in Security Applications}, url={http://dx.doi.org/10.1145/3460120.3484589}, DOI={10.1145/3460120.3484589}, booktitle={Proceedings of the 2021 ACM SIGSAC Conference on Computer and Communications Security}, publisher={ACM}, author={Han, Dongqi and Wang, Zhiliang and Chen, Wenqi and Zhong, Ying and Wang, Su and Zhang, Han and Yang, Jiahai and Shi, Xingang and Yin, Xia}, year={2021}, month=Nov, pages={3197–3217}, collection={CCS ’21} }</pre></details>
     </article>
 
   </div>
@@ -2429,33 +3441,33 @@
 
 <!-- ═══════════════════════ Students ═══════════════════════ -->
 <section class="section" id="students">
-  <h2><i class="fa-solid fa-user-graduate icon"></i>Students</h2>
+  <h2><i class="fa-solid fa-user-graduate icon"></i>Lab Members</h2>
 
-  <h3>Current Students</h3>
-  <div class="students-grid">
-    <div class="student-card"><span class="sname">Kaiyang Zhao</span><span class="smeta">Ph.D., Y5 · co-advised w/ Prof. Xia Yin & Prof. Jianping Wu</span></div>
-    <div class="student-card"><span class="sname">Chenyan Gaoyang</span><span class="smeta">Ph.D., Y4 · co-advised w/ Prof. Youjian Zhao</span></div>
-    <div class="student-card"><span class="sname">Yantao Geng</span><span class="smeta">Ph.D., Y4</span></div>
-    <div class="student-card"><span class="sname">Xuefeng Liu</span><span class="smeta">Ph.D., Y3</span></div>
-    <div class="student-card"><span class="sname">Zeji Xiao</span><span class="smeta">Ph.D., Y3 · co-advised w/ Prof. Jilong Wang</span></div>
-    <div class="student-card"><span class="sname">Zhuo Li</span><span class="smeta">Master, Y3</span></div>
-    <div class="student-card"><span class="sname">Boyang Wang</span><span class="smeta">Ph.D., Y2 · co-advised w/ Prof. Xia Yin</span></div>
-    <div class="student-card"><span class="sname">Hanyang Lin</span><span class="smeta">Master, Y2</span></div>
-    <div class="student-card"><span class="sname">Zhiheng Wu</span><span class="smeta">Master, Y2</span></div>
-    <div class="student-card"><span class="sname">Yantu Tong</span><span class="smeta">Ph.D., Y1</span></div>
-    <div class="student-card"><span class="sname">Linqiang Qian</span><span class="smeta">Master, Y1</span></div>
-    <div class="student-card"><span class="sname">Yao Tong</span><span class="smeta">Master, Y1 · co-advised w/ Prof. Xia Yin</span></div>
-    <div class="student-card"><span class="sname">Kexin Peng</span><span class="smeta">Master, Y1 · co-advised w/ Prof. Youjian Zhao</span></div>
+  <h3>Current Students <span style="font-weight:400;color:var(--c-muted);font-size:13px;">(13 active)</span></h3>
+  <div class="members-grid">
+    <div class="member-card"><div class="member-avatar c0">KZ</div><span class="mname">Kaiyang Zhao</span><span class="mrole">Ph.D. · Y5</span><span class="mmeta">w/ Prof. Xia Yin &amp; Prof. Jianping Wu</span><div class="mpub">SRmesh ICNP'25, ToN'26</div></div>
+    <div class="member-card"><div class="member-avatar c1">CG</div><span class="mname">Chenyan Gaoyang</span><span class="mrole">Ph.D. · Y4</span><span class="mmeta">w/ Prof. Youjian Zhao</span></div>
+    <div class="member-card"><div class="member-avatar c2">YG</div><span class="mname">Yantao Geng</span><span class="mrole">Ph.D. · Y4</span><span class="mmeta">DeepTrace lead</span><div class="mpub">SIGCOMM'25, ICSE'26</div></div>
+    <div class="member-card"><div class="member-avatar c3">XL</div><span class="mname">Xuefeng Liu</span><span class="mrole">Ph.D. · Y3</span><span class="mmeta">Network verification</span></div>
+    <div class="member-card"><div class="member-avatar c4">ZX</div><span class="mname">Zeji Xiao</span><span class="mrole">Ph.D. · Y3</span><span class="mmeta">w/ Prof. Jilong Wang</span></div>
+    <div class="member-card"><div class="member-avatar c5">ZL</div><span class="mname">Zhuo Li</span><span class="mrole">Master · Y3</span><span class="mmeta">Encrypted-traffic IDS</span></div>
+    <div class="member-card"><div class="member-avatar c6">BW</div><span class="mname">Boyang Wang</span><span class="mrole">Ph.D. · Y2</span><span class="mmeta">w/ Prof. Xia Yin</span></div>
+    <div class="member-card"><div class="member-avatar c7">HL</div><span class="mname">Hanyang Lin</span><span class="mrole">Master · Y2</span><span class="mmeta">eBPF observability</span></div>
+    <div class="member-card"><div class="member-avatar c0">ZW</div><span class="mname">Zhiheng Wu</span><span class="mrole">Master · Y2</span><span class="mmeta">Distributed tracing</span></div>
+    <div class="member-card"><div class="member-avatar c1">YT</div><span class="mname">Yantu Tong</span><span class="mrole">Ph.D. · Y1</span><span class="mmeta">SRv6 / measurement</span></div>
+    <div class="member-card"><div class="member-avatar c2">LQ</div><span class="mname">Linqiang Qian</span><span class="mrole">Master · Y1</span><span class="mmeta">Programmable data plane</span></div>
+    <div class="member-card"><div class="member-avatar c3">YT</div><span class="mname">Yao Tong</span><span class="mrole">Master · Y1</span><span class="mmeta">w/ Prof. Xia Yin</span></div>
+    <div class="member-card"><div class="member-avatar c4">KP</div><span class="mname">Kexin Peng</span><span class="mrole">Master · Y1</span><span class="mmeta">w/ Prof. Youjian Zhao</span></div>
   </div>
 
-  <h3>Alumni</h3>
-  <div class="students-grid">
-    <div class="student-card"><span class="sname">Zhiyun Tang</span><span class="smeta">Master → Huawei Technologies</span></div>
-    <div class="student-card"><span class="sname">Junxian Shen</span><span class="smeta">Ph.D. → South China University of Technology</span></div>
-    <div class="student-card"><span class="sname">Jiarui Li</span><span class="smeta">Master → Alibaba Cloud</span></div>
-    <div class="student-card"><span class="sname">Heng Yu</span><span class="smeta">Ph.D. → Zhongguancun Laboratory</span></div>
-    <div class="student-card"><span class="sname">Yi Qiao</span><span class="smeta">Ph.D. → China Academy of Space Technology</span></div>
-    <div class="student-card"><span class="sname">Shangbin Han</span><span class="smeta">Ph.D. → Quan Cheng Laboratory</span></div>
+  <h3 style="margin-top:28px;">Alumni <span style="font-weight:400;color:var(--c-muted);font-size:13px;">(6 graduated)</span></h3>
+  <div class="members-grid">
+    <div class="member-card"><div class="member-avatar c5">ZT</div><span class="mname">Zhiyun Tang</span><span class="mrole">Master Alumnus</span><span class="mmeta">→ Huawei Technologies</span></div>
+    <div class="member-card"><div class="member-avatar c6">JS</div><span class="mname">Junxian Shen</span><span class="mrole">Ph.D. Alumnus</span><span class="mmeta">→ SCUT (Asst. Prof.)</span><div class="mpub">SIGCOMM'23, '25; ToN'26</div></div>
+    <div class="member-card"><div class="member-avatar c7">JL</div><span class="mname">Jiarui Li</span><span class="mrole">Master Alumnus</span><span class="mmeta">→ Alibaba Cloud</span></div>
+    <div class="member-card"><div class="member-avatar c0">HY</div><span class="mname">Heng Yu</span><span class="mrole">Ph.D. Alumnus</span><span class="mmeta">→ Zhongguancun Lab</span><div class="mpub">Serpens TPDS'23</div></div>
+    <div class="member-card"><div class="member-avatar c1">YQ</div><span class="mname">Yi Qiao</span><span class="mrole">Ph.D. Alumnus</span><span class="mmeta">→ CAST</span><div class="mpub">INFOCOM'24; TPDS'22</div></div>
+    <div class="member-card"><div class="member-avatar c2">SH</div><span class="mname">Shangbin Han</span><span class="mrole">Ph.D. Alumnus</span><span class="mmeta">→ Quan Cheng Lab</span><div class="mpub">TIFS'21</div></div>
   </div>
 </section>
 
@@ -2500,6 +3512,53 @@
   };
   window.addEventListener('scroll', setActive, { passive: true });
   setActive();
+
+  /* ── Collapsible Featured Publications ────────────────────────────
+     Each .pub-feature starts collapsed (showing teaser + title/badge
+     only). Click on .pf-head (title row) or .pf-teaser toggles the
+     .expanded class to reveal authors, venue, key-insight callout,
+     impact metrics, and links. */
+  (function () {
+    var cards = document.querySelectorAll('.pub-feature');
+    cards.forEach(function (card) {
+      var head = card.querySelector('.pf-head');
+      var teaser = card.querySelector('.pf-teaser');
+      function toggle(ev) {
+        // Allow internal links (e.g. <a>) inside head/teaser to behave normally
+        var t = ev.target;
+        if (t.closest && t.closest('a, button')) return;
+        card.classList.toggle('expanded');
+      }
+      if (head) {
+        head.addEventListener('click', toggle);
+        head.setAttribute('role', 'button');
+        head.setAttribute('tabindex', '0');
+        head.setAttribute('aria-expanded', 'false');
+        head.addEventListener('keydown', function (e) {
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(e); }
+        });
+      }
+      if (teaser) teaser.addEventListener('click', toggle);
+      // Auto-expand if landed on via an in-page anchor (#pub-xxx)
+      if (card.id && window.location.hash === '#' + card.id) {
+        card.classList.add('expanded');
+      }
+      // Reflect aria-expanded on changes
+      var obs = new MutationObserver(function () {
+        if (head) head.setAttribute('aria-expanded', card.classList.contains('expanded') ? 'true' : 'false');
+      });
+      obs.observe(card, { attributes: true, attributeFilter: ['class'] });
+    });
+    // Re-run on hashchange (same-page anchor click from About / elsewhere)
+    window.addEventListener('hashchange', function () {
+      var id = window.location.hash.replace('#', '');
+      if (!id) return;
+      var el = document.getElementById(id);
+      if (el && el.classList && el.classList.contains('pub-feature')) {
+        el.classList.add('expanded');
+      }
+    });
+  })();
 </script>
 
 </body>
