@@ -614,8 +614,8 @@
     position: relative;
     align-self: flex-start;
     display: flex; align-items: center; justify-content: center;
-    border: 1px solid var(--c-line);
-    box-shadow: inset 0 0 0 1px rgba(255,255,255,0.4);
+    border: none;
+    box-shadow: none;
   }
   .pf-teaser svg { width: 100%; height: 100%; display: block; }
   .pf-teaser img { width: 100%; height: 100%; object-fit: contain; display: block; border-radius: 6px; }
@@ -627,11 +627,7 @@
   .pf-teaser.theme-trust,
   .pf-teaser.theme-robot { background: transparent; }
   .pf-teaser .teaser-label {
-    position: absolute; bottom: 6px; left: 6px; right: 6px;
-    font-family: var(--mono); font-size: 9.5px; font-weight: 700;
-    color: rgba(0,0,0,0.55); letter-spacing: .4px;
-    text-transform: uppercase;
-    pointer-events: none;
+    display: none;
   }
 
   /* On narrow screens stack vertically */
