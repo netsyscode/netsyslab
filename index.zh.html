@@ -1115,10 +1115,14 @@
   footer {
     max-width: var(--maxw); margin: 60px auto 0; padding: 28px;
     border-top: 1px solid var(--c-line);
-    display: flex; justify-content: space-between; align-items: center;
+    display: flex; justify-content: space-between; align-items: flex-end;
     font-size: 13px; color: var(--c-muted); flex-wrap: wrap; gap: 12px;
   }
   footer a { color: var(--c-muted); }
+  .footer-left { display: flex; flex-direction: column; gap: 6px; }
+  .footer-map { flex-shrink: 0; }
+  .footer-map img { border-radius: 6px; opacity: 0.85; transition: opacity .2s; }
+  .footer-map:hover img { opacity: 1; }
 
   /* ─── Responsive ─────────────────────────────────────────── */
   @media (max-width: 800px) {
@@ -3399,13 +3403,18 @@
 
 <!-- ═══════════════════════ Footer ═══════════════════════ -->
 <footer>
-  <div>
-    &copy; <span id="yr"></span> Han Zhang. Institute for Network Sciences and Cyberspace, Tsinghua University.
+  <div class="footer-left">
+    <div>&copy; <span id="yr"></span> Han Zhang. Institute for Network Sciences and Cyberspace, Tsinghua University.</div>
+    <div>
+      <span id="busuanzi_container_site_pv" style="opacity:.7">
+        Total visits: <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </div>
   </div>
-  <div>
-    <span id="busuanzi_container_site_pv" style="opacity:.7">
-      Total visits: <span id="busuanzi_value_site_pv"></span>
-    </span>
+  <div class="footer-map">
+    <a href="https://clustrmaps.com/site/1c8xx" title="Visit tracker">
+      <img src="//www.clustrmaps.com/map_v2.png?d=REPLACE_WITH_YOUR_CLUSTRMAPS_ID&cl=ffffff&w=200&t=tt" alt="Visitor Map" width="200">
+    </a>
   </div>
 </footer>
 
