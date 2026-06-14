@@ -1181,14 +1181,10 @@
   footer {
     max-width: var(--maxw); margin: 60px auto 0; padding: 28px;
     border-top: 1px solid var(--c-line);
-    display: flex; justify-content: space-between; align-items: flex-end;
+    display: flex; justify-content: space-between; align-items: center;
     font-size: 13px; color: var(--c-muted); flex-wrap: wrap; gap: 12px;
   }
   footer a { color: var(--c-muted); }
-  .footer-left { display: flex; flex-direction: column; gap: 6px; }
-  .footer-map { flex-shrink: 0; }
-  .footer-map img { border-radius: 6px; opacity: 0.85; transition: opacity .2s; }
-  .footer-map:hover img { opacity: 1; }
 
   /* ─── Responsive ─────────────────────────────────────────── */
   @media (max-width: 800px) {
@@ -3495,16 +3491,13 @@
 
 <!-- ═══════════════════════ Footer ═══════════════════════ -->
 <footer>
-  <div class="footer-left">
-    <div>&copy; <span id="yr"></span> Han Zhang. Institute for Network Sciences and Cyberspace, Tsinghua University.</div>
-    <div>
-      <span id="busuanzi_container_site_pv" style="opacity:.7">
-        Total visits: <span id="busuanzi_value_site_pv"></span>
-      </span>
-    </div>
+  <div>
+    &copy; <span id="yr"></span> Han Zhang. Institute for Network Sciences and Cyberspace, Tsinghua University.
   </div>
-  <div class="footer-map">
-    <a href="https://info.flagcounter.com/WaBV"><img src="https://s05.flagcounter.com/map/WaBV/size_t/txt_000000/border_8EC936/pageviews_1/viewers_3/flags_0/" alt="Flag Counter" border="0" style="border-radius:6px"></a>
+  <div>
+    <span id="busuanzi_container_site_pv" style="opacity:.7">
+      Total visits: <span id="busuanzi_value_site_pv"></span>
+    </span>
   </div>
 </footer>
 
