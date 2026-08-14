@@ -1377,6 +1377,38 @@
     <ul class="news-list">
 
       <li class="news-item">
+        <div class="news-date">2026 · Aug</div>
+        <div class="news-dot"></div>
+        <div class="news-text"><span class="news-badge paper">Paper</span>
+          Our paper <b>"Kuiper: Enterprise Cloud Plug-and-Play Network Management Platform"</b> is accepted by <b>USENIX NSDI 2027</b>.
+        </div>
+      </li>
+
+      <li class="news-item">
+        <div class="news-date">2026 · Aug</div>
+        <div class="news-dot"></div>
+        <div class="news-text"><span class="news-badge paper">Paper</span>
+          Our paper <b>"Parade: Unified and Data-Driven Prefix-AS Semantics for BGP Anomaly Detection"</b> is accepted by <b>ACM CCS 2026</b>.
+        </div>
+      </li>
+
+      <li class="news-item">
+        <div class="news-date">2026 · Aug</div>
+        <div class="news-dot"></div>
+        <div class="news-text"><span class="news-badge paper">Paper</span>
+          Our paper <b>"A Comparative Approach for Studying Control-Plane and Data-Plane Mismatch in Interdomain Routing"</b> is accepted by <b>IEEE ICNP 2026</b>.
+        </div>
+      </li>
+
+      <li class="news-item">
+        <div class="news-date">2026 · Aug</div>
+        <div class="news-dot"></div>
+        <div class="news-text"><span class="news-badge paper">Paper</span>
+          Our paper <b>"The Anatomy of ROV Rollout: A Sub-AS and Longitudinal Perspective"</b> is accepted by <b>IEEE ICNP 2026</b>.
+        </div>
+      </li>
+
+      <li class="news-item">
         <div class="news-date">2026 · Jun</div>
         <div class="news-dot muted"></div>
         <div class="news-text"><span class="news-badge service">Service</span>
@@ -1964,6 +1996,27 @@
 
   <!-- ─── Featured publications (rich cards) ─── -->
   <div class="featured-list">
+
+    <!-- NSDI'27 Kuiper -->
+    <article class="pub-feature" id="pub-kuiper">
+      <div class="pf-teaser theme-net" aria-hidden="true">
+        <img src="images/papers/kuiper.png" alt="Kuiper">
+        <div class="teaser-label">Kuiper</div>
+      </div>
+      <div class="pf-head">
+        <span class="pf-badge">NSDI '27</span>
+        <h4 class="pf-title">Kuiper: Enterprise Cloud Plug-and-Play Network Management Platform</h4>
+      </div>
+      <p class="pf-authors">
+        <span class="stu">Kaiyang Zhao</span>, <b>Han Zhang*</b>, Tianpeng Zhang, <span class="stu">Yantu Tong</span>, <span class="stu">Zeji Xiao</span>, <span class="stu">Xuefeng Liu</span>, Xia Yin, Jianping Wu
+      </p>
+      <p class="pf-venue">USENIX Symposium on Networked Systems Design and Implementation (NSDI '27), 2027. <em>To appear.</em></p>
+      <!-- TODO: add images/papers/kuiper.png teaser, plus pf-highlight / pf-impact /
+           pf-abstract once the camera-ready wording is settled -->
+      <div class="pf-links">
+        <a href="https://www.usenix.org/conference/nsdi27"><i class="fa-solid fa-clock"></i>NSDI '27 — to appear</a>
+      </div>
+    </article>
 
     <!-- 0. SIGCOMM'26 ISP-Centric IDS -->
     <article class="pub-feature">
@@ -2789,6 +2842,7 @@
   <div class="pub-controls">
     <div class="pub-filter" id="pubFilter">
       <button class="active" data-y="all">All</button>
+      <button data-y="2027">2027</button>
       <button data-y="2026">2026</button>
       <button data-y="2025">2025</button>
       <button data-y="2024">2024</button>
@@ -2804,6 +2858,18 @@
     </a>
   </div>
 
+  <!-- 2027 -->
+  <div class="pub-year-block" data-year="2027">
+    <div class="pub-year-label">2027</div>
+    <ol class="pub-list">
+      <li class="pub-item"><span class="pub-num">[1]</span><span class="pub-content">
+        Kaiyang Zhao, <b>Han Zhang*</b>, Tianpeng Zhang, Yantu Tong, Zeji Xiao, Xuefeng Liu, Xia Yin, Jianping Wu.
+        "Kuiper: Enterprise Cloud Plug-and-Play Network Management Platform."
+        <span class="pub-venue top">USENIX NSDI 2027</span> <em>(to appear)</em>
+      </span></li>
+    </ol>
+  </div>
+
   <!-- 2026 -->
   <div class="pub-year-block" data-year="2026">
     <div class="pub-year-label">2026</div>
@@ -2814,33 +2880,48 @@
         <span class="pub-venue top">ACM SIGCOMM 2026</span> <em>(to appear)</em>
       </span></li>
       <li class="pub-item"><span class="pub-num">[2]</span><span class="pub-content">
+        Yunze Wei, Xingang Shi, Minghao Zhang, Zhaozhen Wang, Qiang Ma, <b>Han Zhang</b>, Yahui Li, Xia Yin.
+        "Parade: Unified and Data-Driven Prefix-AS Semantics for BGP Anomaly Detection."
+        <span class="pub-venue top">ACM CCS 2026</span> <em>(to appear)</em>
+      </span></li>
+      <li class="pub-item"><span class="pub-num">[3]</span><span class="pub-content">
         Yunze Wei, Xingang Shi, <b>Han Zhang*</b>, Tianyu Zhang, Yahui Li, Xia Yin.
         "GlassMiner: Mining Looking Glass Services via Structure-Semantics Fusion for Web Observability."
         <span class="pub-venue top">ACM WWW 2026</span>, pp. 7576–7587.
         <a class="pub-pdf" href="https://dl.acm.org/doi/abs/10.1145/3774904.3792698"><i class="fa-solid fa-file-pdf"></i>PDF</a>
       </span></li>
-      <li class="pub-item"><span class="pub-num">[3]</span><span class="pub-content">
+      <li class="pub-item"><span class="pub-num">[4]</span><span class="pub-content">
         Junxian Shen, <b>Han Zhang*</b>, Wenxue Lin, Yantao Geng, Jiawei Li, Jilong Wang, Mingwei Xu.
         "Clover: Workload Verification for Real-Time Detection of Contention-Induced Slowdowns in Serverless Platforms."
         <span class="pub-venue top">IEEE/ACM Transactions on Networking</span>, 2026.
         <a class="pub-pdf" href="https://ieeexplore.ieee.org/abstract/document/11474554/"><i class="fa-solid fa-file-pdf"></i>PDF</a>
       </span></li>
-      <li class="pub-item"><span class="pub-num">[4]</span><span class="pub-content">
+      <li class="pub-item"><span class="pub-num">[5]</span><span class="pub-content">
         Yantao Geng, <b>Han Zhang*</b>, Zhiheng Wu, Yahui Li, Jilong Wang, Xia Yin.
         "Non-Intrusive Distributed Tracing with Method-Level Delay Estimation for Microservices Troubleshooting."
         <span class="pub-venue top">ACM ICSE 2026</span> <em>(to appear)</em>
       </span></li>
-      <li class="pub-item"><span class="pub-num">[5]</span><span class="pub-content">
+      <li class="pub-item"><span class="pub-num">[6]</span><span class="pub-content">
         Kaiyang Zhao, <b>Han Zhang*</b>, Yao Tong, Yahui Li, Xingang Shi, Zhiliang Wang, Xia Yin, Jianping Wu.
         "Efficient Slice-Parallel Distributed Probing in SRv6 Networks."
         <span class="pub-venue top">IEEE/ACM Transactions on Networking</span>, 2026.
       </span></li>
-      <li class="pub-item"><span class="pub-num">[6]</span><span class="pub-content">
+      <li class="pub-item"><span class="pub-num">[7]</span><span class="pub-content">
         XinZhe Liu, Yahui Li, <b>Han Zhang</b>, Renrui Tian, Xia Yin, Xingang Shi, Zhiliang Wang, Gang Ren, Jilong Wang, Jiangyuan Yao.
         "Comprehensive Network Configuration Verification via Effective Environment Reduction."
         <span class="pub-venue top">IEEE INFOCOM 2026</span>.
       </span></li>
-      <li class="pub-item"><span class="pub-num">[7]</span><span class="pub-content">
+      <li class="pub-item"><span class="pub-num">[8]</span><span class="pub-content">
+        Letong Sun, Xingang Shi, Fengyan Han, Liyuan Chang, Xia Yin, Zhiliang Wang, <b>Han Zhang</b>.
+        "A Comparative Approach for Studying Control-Plane and Data-Plane Mismatch in Interdomain Routing."
+        <span class="pub-venue">IEEE ICNP 2026</span> <em>(to appear)</em>
+      </span></li>
+      <li class="pub-item"><span class="pub-num">[9]</span><span class="pub-content">
+        Letong Sun, Xingang Shi, Fengyan Han, Xia Yin, Zhiliang Wang, <b>Han Zhang</b>.
+        "The Anatomy of ROV Rollout: A Sub-AS and Longitudinal Perspective."
+        <span class="pub-venue">IEEE ICNP 2026</span> <em>(to appear)</em>
+      </span></li>
+      <li class="pub-item"><span class="pub-num">[10]</span><span class="pub-content">
         Shuhuan Wang, Zhiyu Wang, Hao Sun, Zhi Jiang, Xia Yin, Dongbin Han, <b>Han Zhang</b>, Xingang Shi, Jiahai Yang.
         "The Evolution of Provenance-Based Intrusion Detection Systems: A Review of Approaches, Limitations, and Future Directions."
         <span class="pub-venue">IEEE Network</span>, 2026.
