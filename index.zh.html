@@ -1554,7 +1554,7 @@
         <div class="news-dot"></div>
         <div class="news-text"><span class="news-badge paper">论文</span>
           <b>"NNetFEC: In-network FEC Encoding Acceleration for Latency-sensitive Multimedia Applications"</b> 被 <b>IEEE INFOCOM 2024</b> 录用。
-          <a href="https://dl.acm.org/doi/pdf/10.1145/3603269.3604823">[PDF]</a>
+          <a href="https://ieeexplore.ieee.org/document/10621183">[PDF]</a>
         </div>
       </li>
 
@@ -1745,7 +1745,7 @@
         <span>SIGCOMM '23</span>
       </div>
       <div class="sys-links">
-        <a href="https://dl.acm.org/doi/pdf/10.1145/3603269.3604823"><i class="fa-solid fa-file-pdf"></i>SIGCOMM '23 论文</a>
+        <a href="papers/deepflow.pdf"><i class="fa-solid fa-file-pdf"></i>SIGCOMM '23 论文</a>
         <a href="https://github.com/deepflowio/deepflow"><i class="fa-brands fa-github"></i>GitHub</a>
         <a href="https://deepflow.io"><i class="fa-solid fa-globe"></i>deepflow.io</a>
       </div>
@@ -1951,7 +1951,7 @@
     <!-- NSDI'27 Kuiper -->
     <article class="pub-feature" id="pub-kuiper">
       <div class="pf-teaser theme-net" aria-hidden="true">
-        <img src="images/papers/kuiper.png" alt="Kuiper">
+        <img src="images/papers/kuiper.svg" alt="Kuiper">
         <div class="teaser-label">Kuiper</div>
       </div>
       <div class="pf-head">
@@ -1962,7 +1962,7 @@
         <span class="stu">Kaiyang Zhao</span>, <b>Han Zhang*</b>, Tianpeng Zhang, <span class="stu">Yantu Tong</span>, <span class="stu">Zeji Xiao</span>, <span class="stu">Xuefeng Liu</span>, Xia Yin, Jianping Wu
       </p>
       <p class="pf-venue">USENIX 网络系统设计与实现研讨会 (NSDI '27), 2027. <em>即将发表。</em></p>
-      <!-- TODO: add images/papers/kuiper.png teaser, plus pf-highlight / pf-impact /
+      <!-- TODO: add images/papers/kuiper.svg teaser, plus pf-highlight / pf-impact /
            pf-abstract once the camera-ready wording is settled -->
       <div class="pf-links">
         <a href="https://www.usenix.org/conference/nsdi27"><i class="fa-solid fa-clock"></i>NSDI '27 — 即将发表</a>
@@ -2075,7 +2075,7 @@
         <span class="deploy"><i class="fa-solid fa-cloud"></i>10k+ deployments</span>
       </div>
       <div class="pf-links">
-        <a href="https://dl.acm.org/doi/pdf/10.1145/3603269.3604823"><i class="fa-solid fa-file-pdf"></i>PDF</a>
+        <a href="papers/deepflow.pdf"><i class="fa-solid fa-file-pdf"></i>PDF</a>
         <a href="https://github.com/deepflowio/deepflow"><i class="fa-brands fa-github"></i>Code</a>
         <a href="https://deepflow.io"><i class="fa-solid fa-globe"></i>deepflow.io</a>
         <details class="pf-abstract"><summary>摘要</summary><p>Microservices are becoming more complicated, posing new challenges for traditional performance monitoring solutions. On the one hand, the rapid evolution of microservices places a significant burden on the utilization and maintenance of existing distributed tracing frameworks. On the other hand, complex infrastructure increases the probability of network performance problems and creates more blind spots on the network side. In this paper, we present DeepFlow, a network-centric distributed tracing framework for troubleshooting microservices. DeepFlow provides out-of-the-box tracing via a network-centric tracing plane and implicit context propagation. In addition, it eliminates blind spots in network infrastructure, captures network metrics in a low-cost way, and enhances correlation between different components and layers. We demonstrate analytically and empirically that DeepFlow is capable of locating microservice performance anomalies with negligible overhead. DeepFlow has already identified over 71 critical performance anomalies for more than 26 companies and has been utilized by hundreds of individual developers. Our production evaluations demonstrate that DeepFlow is able to save users hours of instrumentation efforts and reduce troubleshooting time from several hours to just a few minutes.</p></details>
@@ -2235,7 +2235,7 @@
         <span><i class="fa-solid fa-arrow-down"></i>4&ndash;6&times; tail-latency reduction</span>
       </div>
       <div class="pf-links">
-        <a href="https://dl.acm.org/doi/pdf/10.1145/3603269.3604823"><i class="fa-solid fa-file-pdf"></i>PDF</a>
+        <a href="https://ieeexplore.ieee.org/document/10621183"><i class="fa-solid fa-file-pdf"></i>PDF</a>
         <details class="pf-abstract"><summary>摘要</summary><p>In face of packet loss, latency-sensitive multimedia applications cannot afford re-transmission because loss detection and re-transmission could lead to extra latency or otherwise compromised media quality. Alternatively, forward error correction (FEC) ensures reliability by adding redundancy and it is able to achieve lower latency at the cost of bandwidth and computational overheads. We propose to re-locate FEC encoding to hardware that better suits the computational pattern of FEC encoding than CPUs. In this paper, we present NetFEC, an in-network acceleration system that offloads the entire FEC encoding process on the emergent programmable switching ASICs, eliminating all CPU involvement. We design the ghost packet mechanism so that NetFEC can be compatible with important media transport functionalities, including congestion control, pacing and statistics. We integrate NetFEC with WebRTC and conduct extensive experiments with real hardwares. Our evaluations demonstrate that NetFEC is able to eliminate server CPU burden and adds negligible overheads.</p></details>
         <details class="bibtex"><summary>BibTeX</summary><pre>@inproceedings{Shen_2023, series={ACM SIGCOMM ’23}, title={Network-Centric Distributed Tracing with DeepFlow: Troubleshooting Your Microservices in Zero Code}, url={http://dx.doi.org/10.1145/3603269.3604823}, DOI={10.1145/3603269.3604823}, booktitle={Proceedings of the ACM SIGCOMM 2023 Conference}, publisher={ACM}, author={Shen, Junxian and Zhang, Han and Xiang, Yang and Shi, Xingang and Li, Xinrui and Shen, Yunxi and Zhang, Zijian and Wu, Yongxiang and Yin, Xia and Wang, Jilong and Xu, Mingwei and Li, Yahui and Yin, Jiping and Song, Jianchang and Li, Zhuofeng and Nie, Runjie}, year={2023}, month=Sept, pages={420–437}, collection={ACM SIGCOMM ’23} }</pre></details>
       </div>
@@ -3037,7 +3037,7 @@
       <li class="pub-item"><span class="pub-num">[1]</span><span class="pub-content">
         Yi Qiao, <b>Han Zhang*</b>, Jilong Wang. "NNetFEC: In-network FEC Encoding Acceleration for Latency-sensitive Multimedia Applications."
         <span class="pub-venue top">IEEE INFOCOM 2024</span>, pp. 420–437.
-        <a class="pub-pdf" href="https://dl.acm.org/doi/pdf/10.1145/3603269.3604823"><i class="fa-solid fa-file-pdf"></i>PDF</a>
+        <a class="pub-pdf" href="https://ieeexplore.ieee.org/document/10621183"><i class="fa-solid fa-file-pdf"></i>PDF</a>
       </span></li>
       <li class="pub-item"><span class="pub-num">[2]</span><span class="pub-content">
         Xinzhe Liu, Yahui Li*, <b>Han Zhang</b>, Xia Yin, Xingang Shi, Zhiliang Wang, Gang Ren, Jiangyuan Yao.
@@ -3078,7 +3078,7 @@
         Junxian Shen, <b>Han Zhang*</b>, Yang Xiang, Xingang Shi, Xinrui Li, Yunxi Shen, Zijian Zhang, et al.
         "Network-centric distributed tracing with DeepFlow: Troubleshooting your microservices in zero code."
         <span class="pub-venue top">ACM SIGCOMM 2023</span>, pp. 420–437.
-        <a class="pub-pdf" href="https://dl.acm.org/doi/pdf/10.1145/3603269.3604823"><i class="fa-solid fa-file-pdf"></i>PDF</a>
+        <a class="pub-pdf" href="papers/deepflow.pdf"><i class="fa-solid fa-file-pdf"></i>PDF</a>
       </span></li>
       <li class="pub-item"><span class="pub-num">[2]</span><span class="pub-content">
         Ming Wang, Yahui Li, <b>Han Zhang</b>, Anlun Hong, Jun He, Jilong Wang.

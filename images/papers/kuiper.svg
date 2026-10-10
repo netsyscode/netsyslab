@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="620" viewBox="0 0 960 620" fill="none">
+  <defs>
+    <linearGradient id="panel" x1="140" y1="120" x2="840" y2="520" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#12365A" stop-opacity=".82"/>
+      <stop offset="1" stop-color="#0B1C31" stop-opacity=".62"/>
+    </linearGradient>
+    <linearGradient id="line" x1="180" y1="130" x2="800" y2="500" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#38BDF8" stop-opacity=".9"/>
+      <stop offset=".55" stop-color="#2DD4BF" stop-opacity=".8"/>
+      <stop offset="1" stop-color="#F59E0B" stop-opacity=".82"/>
+    </linearGradient>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="10" result="blur"/>
+      <feColorMatrix in="blur" type="matrix" values="0 0 0 0 0.06 0 0 0 0 0.72 0 0 0 0 0.64 0 0 0 .65 0"/>
+      <feBlend in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <rect width="960" height="620" rx="0" fill="transparent"/>
+  <g opacity=".24">
+    <path d="M80 92H900M80 164H900M80 236H900M80 308H900M80 380H900M80 452H900M80 524H900" stroke="#60A5FA"/>
+    <path d="M116 62V556M208 62V556M300 62V556M392 62V556M484 62V556M576 62V556M668 62V556M760 62V556M852 62V556" stroke="#14B8A6"/>
+  </g>
+  <g opacity=".85">
+    <rect x="186" y="106" width="620" height="392" rx="28" fill="url(#panel)" stroke="#7DD3FC" stroke-opacity=".22"/>
+    <path d="M238 182L366 260L493 197L615 318L746 244" stroke="url(#line)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M252 395L371 338L486 397L620 258L738 374" stroke="#2DD4BF" stroke-opacity=".58" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M323 158L323 443M493 134L493 426M670 166L670 462" stroke="#94A3B8" stroke-opacity=".22" stroke-dasharray="7 10"/>
+  </g>
+  <g filter="url(#glow)">
+    <circle cx="238" cy="182" r="15" fill="#38BDF8"/>
+    <circle cx="366" cy="260" r="15" fill="#2DD4BF"/>
+    <circle cx="493" cy="197" r="15" fill="#F59E0B"/>
+    <circle cx="615" cy="318" r="15" fill="#38BDF8"/>
+    <circle cx="746" cy="244" r="15" fill="#2DD4BF"/>
+    <circle cx="252" cy="395" r="12" fill="#2DD4BF"/>
+    <circle cx="371" cy="338" r="12" fill="#60A5FA"/>
+    <circle cx="486" cy="397" r="12" fill="#F59E0B"/>
+    <circle cx="620" cy="258" r="12" fill="#2DD4BF"/>
+    <circle cx="738" cy="374" r="12" fill="#60A5FA"/>
+  </g>
+  <g font-family="Arial, sans-serif" font-weight="700">
+    <rect x="332" y="280" width="188" height="72" rx="14" fill="#0F9F87" fill-opacity=".94" stroke="#A7F3D0" stroke-opacity=".34"/>
+    <text x="426" y="311" text-anchor="middle" fill="#FFFFFF" font-size="22">Kuiper</text>
+    <text x="426" y="334" text-anchor="middle" fill="#D1FAE5" font-size="13">Controller Plane</text>
+    <rect x="598" y="154" width="138" height="52" rx="10" fill="#0F172A" fill-opacity=".82" stroke="#38BDF8" stroke-opacity=".28"/>
+    <text x="667" y="186" text-anchor="middle" fill="#DBEAFE" font-size="14">Northbound</text>
+    <rect x="622" y="430" width="140" height="52" rx="10" fill="#0F172A" fill-opacity=".82" stroke="#2DD4BF" stroke-opacity=".28"/>
+    <text x="692" y="462" text-anchor="middle" fill="#CCFBF1" font-size="14">Southbound</text>
+    <rect x="152" y="314" width="134" height="52" rx="10" fill="#0F172A" fill-opacity=".82" stroke="#F59E0B" stroke-opacity=".3"/>
+    <text x="219" y="346" text-anchor="middle" fill="#FEF3C7" font-size="14">Fabric</text>
+  </g>
+</svg>
