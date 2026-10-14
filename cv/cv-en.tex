@@ -1,0 +1,742 @@
+% !TeX program = xelatex
+% =====================================================================
+%  Curriculum Vitae -- Han Zhang (English)
+%
+%  Compile with:  xelatex cv-en.tex  (run twice for page refs)
+%  On Overleaf: set Menu -> Compiler to XeLaTeX (Overleaf ignores the
+%  magic comment above and only honours the project setting).
+%
+%  Content sourced from https://netsyscode.github.io/netsyslab/
+%  Education follows the official INSC faculty page
+%  (https://www.insc.tsinghua.edu.cn/info/1157/4066.htm).
+% =====================================================================
+\documentclass[11pt]{article}
+
+\newcommand{\cvfooter}{Han Zhang \textbullet\ Curriculum Vitae}
+\usepackage{cvstyle}
+\setcounter{secnumdepth}{0}
+
+% A handful of Chinese names/terms appear inline. xeCJK (not ctex) is used
+% so that Chinese typesetting conventions are NOT imposed on this English
+% document. Fandol ships with TeX Live / Overleaf, so no system font needed.
+\usepackage{xeCJK}
+\setCJKmainfont{FandolSong-Regular.otf}[BoldFont=FandolSong-Bold.otf]
+\newcommand{\cn}[1]{#1}
+
+\begin{document}
+
+% ---------------------------------------------------------------- header
+\begin{center}
+  {\Huge\bfseries\color{accent} Han Zhang}\quad{\LARGE\bfseries\color{accent}\cn{张\,晗}}\\[5pt]
+  {\large Associate Professor}\\[3pt]
+  Institute for Network Sciences and Cyberspace (INSC)\\
+  Tsinghua University, Beijing, P.\,R.\ China\\[5pt]
+  \small
+  \href{mailto:zhhan@tsinghua.edu.cn}{zhhan@tsinghua.edu.cn}\ \textbullet\
+  \href{https://netsyscode.github.io/netsyslab/}{netsyscode.github.io/netsyslab}\ \textbullet\
+  \href{https://scholar.google.com/citations?user=2_wPPU0AAAAJ}{Google Scholar}\ \textbullet\
+  \href{https://github.com/netsyscode}{github.com/netsyscode}
+\end{center}
+\vspace{2pt}
+
+% ------------------------------------------------------------- statement
+\section*{Research Statement}
+\noindent
+My research builds the \textbf{measurement, verification and situational-awareness
+infrastructure} required by production-scale networked systems, across four
+deployment settings: \textbf{(i) the Internet} (CT logs, BGP, RPKI, DNS, Web-PKI);
+\textbf{(ii) ISP and carrier networks}, including the \textbf{FITI / CERNET / CERNET2}
+national testbeds and operator backbones; \textbf{(iii) AI and data-center
+infrastructures} (hyperscale clouds, serverless platforms, intelligent-computing
+centers); and \textbf{(iv) secure and trustworthy robotics} as a separate but
+complementary thrust.
+
+\smallskip
+\noindent
+The work is organised along three directions that converge on a single agenda ---
+\emph{the observability substrate, verification toolchain and trust pipeline that the
+next-generation Internet, national testbeds, operational AI infrastructures and
+safety-critical embodied systems will require}:
+
+\begin{enumerate}[leftmargin=1.6em,label=\textbf{\arabic*.}]
+  \item \textbf{Cyberspace Situational Awareness \& Measurement.} Internet- and
+  testbed-grade observability and threat detection: zero-code distributed tracing over
+  eBPF and in-network telemetry (SIGCOMM'23, SIGCOMM'25, ICNP'25); line-rate
+  encrypted-traffic intrusion detection on programmable switches (SIGCOMM'25,
+  SIGCOMM'26); APT detection over provenance graphs (TIFS'22, TIFS'25); Web-PKI and
+  certificate-misissuance monitoring (WWW'25); Internet topology and Looking-Glass
+  mining (WWW'26).
+  \item \textbf{AI for Network \& Operational Verifiability.} Making operational
+  infrastructures verifiable, self-diagnosable and resilient: carrier-scale
+  configuration verification (TIFS'24, INFOCOM'26), overlay-network ensemble checking
+  (CoNEXT'25), routing-trust analysis (CCS'25, ICNP'26), test-packet generation
+  (TPDS'23), inter-DC WAN traffic engineering (ToN'22, CoNEXT'21), serverless
+  Denial-of-Wallet and workload verification (CCS'22, ToN'26), and in-network FEC for
+  collective communication (INFOCOM'24).
+  \item \textbf{Secure \& Trustworthy Robotics.} Applying the same measurement and
+  verification rigour to embodied AI: trustworthy multi-modal perception, runtime
+  verification of agentic and robotic controllers, encrypted sensor-channel anomaly
+  detection, and certificate-of-trust for autonomous fleets --- building on
+  adversarially robust ML (SIGCOMM'25, CCS'21, NDSS'23), provenance-graph APT
+  detection and PKI trust.
+\end{enumerate}
+
+% ----------------------------------------------------------- bibliometrics
+\section*{Bibliometrics}
+\metricrow{%
+  \metric{1{,}730}{Citations}\hfill
+  \metric{17}{h-index}\hfill
+  \metric{29}{i10-index}\hfill
+  \metric{$\sim$100}{Papers}\hfill
+  \metric{13}{Advisees}}
+\vspace{6pt}
+
+\noindent\note{Google Scholar, 2026. Nearly 100 papers in top-tier venues including ACM
+SIGCOMM, USENIX NSDI, ACM CCS, NDSS, ACM CoNEXT, ACM WWW, ACM ICSE, IEEE INFOCOM,
+IEEE/ACM Transactions on Networking, IEEE TIFS and IEEE TPDS.}
+
+% -------------------------------------------------------------- education
+\section{Education}
+\begin{kvlist}
+  \kvitem{Sep.\ 2013 -- Jul.\ 2018}{\textbf{Ph.D.}, Computer Science and Technology \\ Tsinghua University, Beijing, China \quad \note{Advisor: Prof.\ Xia Yin}}
+  \kvitem{Sep.\ 2009 -- Jul.\ 2013}{\textbf{B.Eng.}, Computer Science and Technology \\ Jilin University, Changchun, China}
+\end{kvlist}
+
+% ----------------------------------------------------------- appointments
+\section{Academic Appointments}
+\begin{kvlist}
+  \kvitem{Current}{\textbf{Associate Professor}, Doctoral Supervisor \\ Institute for Network Sciences and Cyberspace, Tsinghua University}
+  \kvitem{Previously}{\textbf{Assistant Professor} \\ Institute for Network Sciences and Cyberspace, Tsinghua University}
+\end{kvlist}
+
+% ---------------------------------------------------------------- awards
+\section{Selected Awards \& Honours}
+\begin{itemize}
+  \item \textbf{Applied Networking Research Prize (ANRP)}, IRTF / Internet Society ---
+        Certificate of Award, 2023. \note{International}
+  \item \textbf{First Prize, Science and Technology Award}, China Institute of
+        Communications --- \emph{``Key Technologies and Large-Scale Applications of
+        Metropolitan Area Cloud Networks''} (\cn{城域云网关键技术及规模应用}), 2025.
+        \note{National}
+  \item \textbf{NSGA Best Researcher Award}, 2025.
+  \item \textbf{ACM TURC SIGCSE China Rising Star Award}, 2023.
+  \item \textbf{Excellent Service Award}, IEEE/ACM ICA3PP 2023.
+\end{itemize}
+
+% --------------------------------------------------- selected publications
+\section{Selected Publications}
+\note{\me{Bold} = author; \corr{} = corresponding author. Full list by year follows.}
+\begin{publist}
+
+\item \me{Han Zhang}, Xuefeng Liu, Linqiang Qian, Guyue Liu, Tianyu Zhang, Kaiyang
+Zhao, Yantu Tong, Zeji Xiao, Dongbiao He, Yahui Li, Ke Ruan, Jilong Wang, Yongqing
+Zhu, Xia Yin. ``Towards High-Performance Intrusion Detection with Robustness
+Guarantees on Programmable Switches at ISP Scale.'' \venue{ACM SIGCOMM 2026},
+pp.~1282--1298.
+\insight{First \emph{ISP-centric} IDS on programmable switches: data-plane lightweight
+feature extraction co-designed with control-plane adaptive learning; Tbps-class
+detection robust to traffic drift and adversarial evasion; validated on real ISP
+backbones with orders-of-magnitude resource savings over CPU/GPU baselines.}
+
+\item Kaiyang Zhao, \me{Han Zhang}\corr, Tianpeng Zhang, Yantu Tong, Zeji Xiao,
+Xuefeng Liu, Xia Yin, Jianping Wu. ``Kuiper: Enterprise Cloud Plug-and-Play Network
+Management Platform.'' \venue{USENIX NSDI 2027}.
+\insight{Unified AIOps control plane for enterprise clouds --- fault management,
+security-event response and configuration management over one telemetry and
+verification substrate.}
+
+\item Yantao Geng, \me{Han Zhang}\corr, Zhiheng Wu, Yahui Li, Jilong Wang, Xia Yin.
+``Low-Overhead Distributed Application Observation with DeepTrace: Achieving Accurate
+Tracing in Production Systems.'' \venue{ACM SIGCOMM 2025}, pp.~1056--1069.
+\insight{Method-level non-intrusive tracing at ${\sim}10\times$ less overhead than
+intrusive baselines; $>$95\% accuracy under high concurrency; adopted by dozens of
+companies in production.}
+
+\item \me{Han Zhang}, Guyue Liu\corr, Xingang Shi, Yahui Li, Jilong Wang, Yongqing
+Zhu, Ke Ruan, Jie Liang, Xia Yin. ``Achieving High-Speed and Robust Encrypted Traffic
+Anomaly Detection with Programmable Switches.'' \venue{ACM SIGCOMM 2025},
+pp.~1254--1256.
+\insight{Dual-plane feature extraction plus a lightweight one-class model resolves the
+tension between deep-learning accuracy and switch-ASIC constraints; two years in
+production, 10+ critical attack events found, 10M+ servers protected for two ISPs.}
+
+\item Junxian Shen, \me{Han Zhang}\corr, Yang Xiang, Xingang Shi, Xinrui Li, Yunxi
+Shen, Zijian Zhang, Sicheng Wang, Yanhui Yang, Yu Zhou, Mingwei Xu, Jilong Wang.
+``Network-Centric Distributed Tracing with DeepFlow: Troubleshooting Your
+Microservices in Zero Code.'' \venue{ACM SIGCOMM 2023}, pp.~420--437.
+\insight{Network-centric tracing plane with implicit context propagation --- zero
+application code change. Open-sourced as a de-facto standard for cloud-native
+observability (CNCF Sandbox, 4{,}000+ stars, tens of thousands of hosts).}
+
+\item Yunze Wei, Xingang Shi, Minghao Zhang, Zhaozhen Wang, Qiang Ma, \me{Han Zhang},
+Yahui Li, Xia Yin. ``Parade: Unified and Data-Driven Prefix-AS Semantics for BGP
+Anomaly Detection.'' \venue{ACM CCS 2026}.
+\insight{A unified, data-driven prefix-to-AS semantic model that turns fragmented BGP
+observations into consistent ground truth for anomaly detection.}
+
+\item Junxian Shen, \me{Han Zhang}\corr, Yantao Geng, Jiawei Li, Jilong Wang, Mingwei
+Xu. ``Gringotts: Fast and Accurate Internal Denial-of-Wallet Detection for Serverless
+Computing.'' \venue{ACM CCS 2022}, pp.~2627--2641.
+\insight{First systematic treatment of internal Denial-of-Wallet attacks on serverless
+platforms; $<$1.1\% overhead, 1.86\,s mean detection delay, $>$95.75\% accuracy.}
+
+\item Dongqi Han, Zhiliang Wang\corr, Wenqi Chen, Ying Zhong, Su Wang, \me{Han Zhang},
+Jiahai Yang, Xingang Shi, Xia Yin. ``DeepAID: Interpreting and Improving Deep
+Learning-based Anomaly Detection in Security Applications.'' \venue{ACM CCS 2021},
+pp.~3197--3217.
+\insight{Interpretation framework for \emph{unsupervised} deep anomaly detectors in
+security domains, enabling operators to diagnose model mistakes and cut false
+positives.}
+
+\item Dongqi Han, Zhiliang Wang\corr, Wenqi Chen, Kai Wang, Rui Yu, Su Wang, \me{Han
+Zhang}, et al. ``Anomaly Detection in the Open World: Normality Shift Detection,
+Explanation, and Adaptation.'' \venue{NDSS 2023}.
+\insight{Moves intrusion detection from offline analytics to online, ISP-scale
+operation under normality shift.}
+
+\item Yantao Geng, \me{Han Zhang}\corr, Zhiheng Wu, Yahui Li, Jilong Wang, Xia Yin.
+``Non-Intrusive Distributed Tracing with Method-Level Delay Estimation for
+Microservices Troubleshooting.'' \venue{ACM/IEEE ICSE 2026}, pp.~1661--1673.
+\insight{Infers method-level delays from network-side observations plus lightweight
+runtime hints; fault-localisation accuracy on par with intrusive baselines at a
+fraction of the engineering cost.}
+
+\item Tianyu Zhang, \me{Han Zhang}\corr, Yunze Wei, Yahui Li, Xingang Shi, Jilong
+Wang, Xia Yin. ``ACME++: A Secure Authorization Mechanism for ACME Clients in the Web PKI
+Ecosystem.''
+\venue{ACM WWW 2025}, pp.~1058--1067.
+\insight{Discloses the \emph{ACME Authz Cache Attack} --- fraudulent certificates
+without domain control, demonstrated against Let's Encrypt --- and proposes an
+account-binding mitigation with negligible CA-side overhead.}
+
+\item Yunze Wei, Xingang Shi, \me{Han Zhang}\corr, Tianyu Zhang, Yahui Li, Xia Yin.
+``GlassMiner: Mining Looking Glass Services via Structure-Semantics Fusion for Web
+Observability.'' \venue{ACM WWW 2026}, pp.~7576--7587.
+\insight{Joint DOM-structure and natural-language modelling of heterogeneous Looking
+Glass portals yields continent-wide BGP path observability across thousands of
+operator portals.}
+
+\item XinZhe Liu, Yahui Li\corr, \me{Han Zhang}, Xia Yin, Xingang Shi, Zhiliang Wang,
+Gang Ren, Jilong Wang, Jiangyuan Yao. ``Scalable and Interpretable Overlay Network
+Checking via Ensemble Verification.'' \venue{ACM CoNEXT 2025}.
+\insight{First control-plane verifier for overlay/underlay networks; deployed on the
+nationwide FITI testbed where it found 22 misconfigurations, with up to $102\times$
+speedup over Batfish+.}
+
+\item \me{Han Zhang}, Xingang Shi\corr, Xia Yin, Jilong Wang, Zhiliang Wang, Yingya
+Guo, Tian Lan. ``Boosting Bandwidth Availability over Inter-DC WAN.''
+\venue{ACM CoNEXT 2021}, pp.~297--312.
+\insight{Probabilistic bandwidth-availability traffic engineering: $30\times$ faster
+online admission control and 23--60\% more demands meeting availability targets than
+FFC and TEAVAR, on real Tencent and China Telecom topologies.}
+
+\item Kaiyang Zhao, \me{Han Zhang}\corr, Yao Tong, Yahui Li, Xingang Shi, Zhiliang
+Wang, Xia Yin, Jianping Wu. ``SRmesh: Deterministic and Efficient Diagnosis of Latency
+Bottleneck Links in SRv6 Networks.'' \venue{IEEE ICNP 2025}, pp.~1--12.
+\insight{Deterministic in-band telemetry embedded in segment-routing headers gives
+per-link latency attribution with bounded probe overhead; 100\% recall in a
+multi-vendor SRv6 testbed.}
+
+\item Yahui Li, \me{Han Zhang}\corr, Jilong Wang, Xingang Shi, Xia Yin, Zhiliang Wang,
+Jiankun Hu, Congcong Miao, Jianping Wu. ``Proactively Verifying Quantitative Network
+Policy across Unsafe and Unreliable Environments.'' \venue{IEEE Transactions on
+Information Forensics and Security}, vol.~19, pp.~10099--10113, 2024.
+\insight{Brings formal verification to quantitative policies that were previously
+hand-tuned, scaling to carrier-sized state while keeping counter-examples
+interpretable.}
+
+\end{publist}
+
+% ------------------------------------------------------ full publications
+\section{Publications by Year}
+\note{\me{Bold} = author; \corr{} = corresponding author.}
+
+\subsection*{2027}
+\begin{publist}
+\item Kaiyang Zhao, \me{Han Zhang}\corr, Tianpeng Zhang, Yantu Tong, Zeji Xiao,
+Xuefeng Liu, Xia Yin, Jianping Wu. ``Kuiper: Enterprise Cloud Plug-and-Play Network
+Management Platform.'' \venue{USENIX NSDI 2027}. \note{(to appear)}
+\end{publist}
+
+\subsection*{2026}
+\begin{publist}
+\item \me{Han Zhang}, Xuefeng Liu, Linqiang Qian, Guyue Liu, Tianyu Zhang, Kaiyang
+Zhao, Yantu Tong, Zeji Xiao, Dongbiao He, Yahui Li, Ke Ruan, Jilong Wang, Yongqing
+Zhu, Xia Yin. ``Towards High-Performance Intrusion Detection with Robustness
+Guarantees on Programmable Switches at ISP Scale.'' \venue{ACM SIGCOMM 2026},
+pp.~1282--1298.
+\item Yunze Wei, Xingang Shi, Minghao Zhang, Zhaozhen Wang, Qiang Ma, \me{Han Zhang},
+Yahui Li, Xia Yin. ``Parade: Unified and Data-Driven Prefix-AS Semantics for BGP
+Anomaly Detection.'' \venue{ACM CCS 2026}. \note{(to appear)}
+\item Yunze Wei, Xingang Shi, \me{Han Zhang}\corr, Tianyu Zhang, Yahui Li, Xia Yin.
+``GlassMiner: Mining Looking Glass Services via Structure-Semantics Fusion for Web
+Observability.'' \venue{ACM WWW 2026}, pp.~7576--7587.
+\item Yantao Geng, \me{Han Zhang}\corr, Zhiheng Wu, Yahui Li, Jilong Wang, Xia Yin.
+``Non-Intrusive Distributed Tracing with Method-Level Delay Estimation for
+Microservices Troubleshooting.'' \venue{ACM/IEEE ICSE 2026}, pp.~1661--1673.
+\item Junxian Shen, \me{Han Zhang}\corr, Wenxue Lin, Yantao Geng, Jiawei Li, Jilong
+Wang, Mingwei Xu. ``Clover: Workload Verification for Real-Time Detection of
+Contention-Induced Slowdowns in Serverless Platforms.'' \venue{IEEE/ACM Transactions
+on Networking}, vol.~34, pp.~4700--4715, 2026.
+\item Kaiyang Zhao, \me{Han Zhang}\corr, Yao Tong, Yahui Li, Xingang Shi, Zhiliang
+Wang, Xia Yin, Jianping Wu. ``Efficient Slice-Parallel Distributed Probing in SRv6
+Networks.'' \venue{IEEE/ACM Transactions on Networking}, 2026.
+\item XinZhe Liu, Yahui Li, \me{Han Zhang}, Renrui Tian, Xia Yin, Xingang Shi,
+Zhiliang Wang, Gang Ren, Jilong Wang, Jiangyuan Yao. ``Comprehensive Network
+Configuration Verification via Effective Environment Reduction.''
+\venue{IEEE INFOCOM 2026}, pp.~1--10.
+\item Letong Sun, Xingang Shi, Fengyan Han, Liyuan Chang, Xia Yin, Zhiliang Wang,
+\me{Han Zhang}. ``A Comparative Approach for Studying Control-Plane and Data-Plane
+Mismatch in Interdomain Routing.'' \venue{IEEE ICNP 2026}. \note{(to appear)}
+\item Letong Sun, Xingang Shi, Fengyan Han, Xia Yin, Zhiliang Wang, \me{Han Zhang}.
+``The Anatomy of ROV Rollout: A Sub-AS and Longitudinal Perspective.''
+\venue{IEEE ICNP 2026}. \note{(to appear)}
+\item Weihan Chen, Zhiliang Wang, \me{Han Zhang}, Xia Yin, Xingang Shi.
+``Delay-Aware Service Function Chain Embedding and Scheduling in Edge Clouds.''
+\venue{IEEE Transactions on Parallel and Distributed Systems}, vol.~37, no.~11,
+pp.~2539--2553, 2026.
+\item Shuhuan Wang, Zhiyu Wang, Hao Sun, Zhi Jiang, Xia Yin, Dongbin Han, \me{Han
+Zhang}, Xingang Shi, Jiahai Yang. ``The Evolution of Provenance-Based Intrusion
+Detection Systems: A Review of Approaches, Limitations, and Future Directions.''
+\venue{IEEE Network}, 2026.
+\item Qiuxiang Li, \me{Han Zhang}\corr, Yubin Qu, Jianping Wu. ``MASTER: A Large
+Language Model Framework for Proof of Concept Generation Via Knowledge Injection and
+Intention Reinforcement.'' \venue{Acta Electronica Sinica} (in Chinese), vol.~54,
+no.~4, pp.~1802--1822, 2026.
+\end{publist}
+
+\subsection*{2025}
+\begin{publist}
+\item Tianyu Zhang, \me{Han Zhang}\corr, Yunze Wei, Yahui Li, Xingang Shi, Jilong
+Wang, Xia Yin. ``ACME++: A Secure Authorization Mechanism for ACME Clients in the Web PKI
+Ecosystem.''
+\venue{ACM WWW 2025}, pp.~1058--1067.
+\item Yantao Geng, \me{Han Zhang}\corr, Zhiheng Wu, Yahui Li, Jilong Wang, Xia Yin.
+``Low-Overhead Distributed Application Observation with DeepTrace: Achieving Accurate
+Tracing in Production Systems.'' \venue{ACM SIGCOMM 2025}, pp.~1056--1069.
+\item \me{Han Zhang}, Guyue Liu\corr, Xingang Shi, Yahui Li, Jilong Wang, Yongqing
+Zhu, Ke Ruan, Jie Liang, Xia Yin. ``Achieving High-Speed and Robust Encrypted Traffic
+Anomaly Detection with Programmable Switches.'' \venue{ACM SIGCOMM 2025},
+pp.~1254--1256.
+\item XinZhe Liu, Yahui Li\corr, \me{Han Zhang}, Xia Yin, Xingang Shi, Zhiliang Wang,
+Gang Ren, Jilong Wang, Jiangyuan Yao. ``Scalable and Interpretable Overlay Network
+Checking via Ensemble Verification.'' \venue{ACM CoNEXT 2025}.
+\item Renrui Tian, Yahui Li\corr, \me{Han Zhang}, XinZhe Liu, Xia Yin, Xingang Shi,
+Zhiliang Wang, Jilong Wang. ``Poster: ERIS --- Evaluating ROV via ICMPv6 Rate Limiting
+Side Channels.'' \venue{ACM CCS 2025}.
+\item Kaiyang Zhao, \me{Han Zhang}\corr, Yao Tong, Yahui Li, Xingang Shi, Zhiliang
+Wang, Xia Yin, Jianping Wu. ``SRmesh: Deterministic and Efficient Diagnosis of Latency
+Bottleneck Links in SRv6 Networks.'' \venue{IEEE ICNP 2025}, pp.~1--12.
+\item Zhaozhen Wang, Xingang Shi\corr, Haijun Geng, \me{Han Zhang}, Xia Yin, Zhiliang
+Wang. ``On Non-Commutative Routing.'' \venue{IEEE INFOCOM 2025}, pp.~1--10.
+\item Zhiyun Tang, Yahui Li, Xingang Shi, Jilong Wang, Yongqing Zhu, Ke Ruan, Xia Yin,
+\me{Han Zhang}\corr. ``Probabilistic Analysis of Overload-Free Property for Critical
+Traffic.'' \venue{IEEE/ACM IWQoS 2025}, pp.~1--6.
+\item Su Wang, Hongbin Sun, Zhiliang Wang, Tao Zhou, Xia Yin, Dongqi Han, \me{Han
+Zhang}, Xingang Shi, Jiahai Yang. ``End-to-End Attack Scene Reconstruction in a Host
+with Rules and Anomaly-Based Detection Models.'' \venue{IEEE Transactions on
+Information Forensics and Security}, 2025.
+\item Ying Tian, Zhiliang Wang\corr, Xia Yin, Xingang Shi, Jiahai Yang, \me{Han
+Zhang}\corr. ``Centralized Network Utility Maximization with Accelerated Gradient
+Method.'' \venue{IEEE Transactions on Networking}, 2025.
+\item Xingang Shi, Zitong Jin\corr, Bin Xiong, Xinyao Huang, Xiaotian Xi, Dan Li,
+\me{Han Zhang}, Zhiliang Wang, Xia Yin. ``HELA: Inferring AS Relationships with a
+Hybrid of Empirical and Learning Algorithms.'' \venue{IEEE Transactions on
+Networking}, 2025.
+\item Weiting Zhang, Jiadong Ren, Tao Zheng, Ruibin Guo, \me{Han Zhang}, Shiwen Mao,
+Hongke Zhang\corr. ``GenNet: Computing-Efficient Generative AI for Deterministic
+Transmission Scheduling in 6G Networks.'' \venue{IEEE Communications Magazine},
+vol.~63, no.~8, pp.~48--55, 2025.
+\item Yanxu Fu, Pei Zhang\corr, \me{Han Zhang}, Xiaohong Huang, Kun Xie, Dandan Li.
+``BGPFlow: Flow-Based Feature Extraction for BGP Anomaly Detection.''
+\venue{ACM SIGCOMM NGNO Workshop 2025}, pp.~13--20.
+\end{publist}
+
+\subsection*{2024}
+\begin{publist}
+\item Yi Qiao, \me{Han Zhang}\corr, Jilong Wang. ``NetFEC: In-Network FEC Encoding
+Acceleration for Latency-Sensitive Multimedia Applications.''
+\venue{IEEE INFOCOM 2024}, pp.~2348--2357.
+\item Yahui Li, \me{Han Zhang}\corr, Jilong Wang, Xingang Shi, Xia Yin, Zhiliang Wang,
+Jiankun Hu, Congcong Miao, Jianping Wu. ``Proactively Verifying Quantitative Network
+Policy across Unsafe and Unreliable Environments.'' \venue{IEEE Transactions on
+Information Forensics and Security}, vol.~19, pp.~10099--10113, 2024.
+\item XinZhe Liu, Yahui Li\corr, \me{Han Zhang}, Xia Yin, Xingang Shi, Zhiliang Wang,
+Gang Ren, Jiangyuan Yao. ``Poster: Scalable and Interpretable Multilayer Overlay
+Network Checking via Ensemble Verification.'' \venue{ACM SIGCOMM 2024 Posters \&
+Demos}.
+\item Weihan Chen, Zhiliang Wang\corr, \me{Han Zhang}, Xia Yin, Xingang Shi.
+``Cost-Efficient Flow Migration for SFC Dynamical Scheduling in Geo-Distributed
+Clouds.'' \venue{Computer Networks}, vol.~249, 2024.
+\item Jun He, Yahui Li\corr, \me{Han Zhang}\corr, Changqing An, Jilong Wang. ``ROV-GD:
+Improving the Measurement of ROV Deployment Using Graph Difference.''
+\venue{IEEE ISCC 2024}, pp.~1--7.
+\item Kunling He, Fenghua Li, Jessie Hui Wang, \me{Han Zhang}, Yiren Zhao. ``AB-TCAD:
+An Access Behavior-Based Two-Stage Compromised Account Detection Framework.''
+\venue{IFIP Networking 2024}, pp.~104--112.
+\end{publist}
+
+\subsection*{2023}
+\begin{publist}
+\item Junxian Shen, \me{Han Zhang}\corr, Yang Xiang, Xingang Shi, Xinrui Li, Yunxi
+Shen, Zijian Zhang, et al. ``Network-Centric Distributed Tracing with DeepFlow:
+Troubleshooting Your Microservices in Zero Code.'' \venue{ACM SIGCOMM 2023},
+pp.~420--437.
+\item Dongqi Han, Zhiliang Wang\corr, Wenqi Chen, Kai Wang, Rui Yu, Su Wang, \me{Han
+Zhang}, et al. ``Anomaly Detection in the Open World: Normality Shift Detection,
+Explanation, and Adaptation.'' \venue{NDSS 2023}.
+\item Heng Yu, \me{Han Zhang}\corr, Junxian Shen, Yantao Geng, et al. ``Serpens: A
+High-Performance FaaS Platform for Network Functions.'' \venue{IEEE Transactions on
+Parallel and Distributed Systems}, vol.~34, no.~8, pp.~2448--2463, 2023.
+\item Yahui Li, \me{Han Zhang}\corr, Jilong Wang, Xia Yin, Xingang Shi, Jianping Wu.
+``A General Approach to Generate Test Packets with Network Configurations.''
+\venue{IEEE Transactions on Parallel and Distributed Systems}, vol.~34, no.~4,
+pp.~1362--1375, 2023.
+\item Pei Zhang, Fangzhou He, \me{Han Zhang}\corr, Jiankun Hu, et al. ``Real-Time
+Malicious Traffic Detection with Online Isolation Forest over SD-WAN.''
+\venue{IEEE Transactions on Information Forensics and Security}, vol.~18,
+pp.~2076--2090, 2023.
+\item Tianbo Wang, Huacheng Li, Chunhe Xia\corr, \me{Han Zhang}, Pei Zhang. ``From the
+Dialectical Perspective: Modeling and Exploiting of Hybrid Worm Propagation.''
+\venue{IEEE Transactions on Information Forensics and Security}, vol.~18,
+pp.~1610--1624, 2023.
+\item Yantao Geng, \me{Han Zhang}\corr, Jilong Wang. ``Delay-Based Congestion Control
+for Cross-Datacenter Networks.'' \venue{IEEE/ACM IWQoS 2023}.
+\item Jiawei Li, \me{Han Zhang}\corr, Jilong Wang. ``PUVAR: Minimize Idle Resource SLO
+Violations by Uncertainty-Aware Scheduling in Cloud Platforms.''
+\venue{IEEE ICWS 2023}.
+\item Ming Wang, Yahui Li, \me{Han Zhang}, Anlun Hong, Jun He, Jilong Wang. ``Knocking
+Cells: Latency-Based Identification of IPv6 Cellular Addresses on the Internet.''
+\venue{IEEE ISCC 2023}.
+\item Allen Hong, Yahui Li\corr, \me{Han Zhang}\corr, Ming Wang, Changqing An, Jilong
+Wang. ``A Cheap and Accurate Delay-Based IP Geolocation Method Using Machine Learning
+and Looking Glass.'' \venue{IFIP Networking 2023}.
+\item Jun He, Yahui Li\corr, \me{Han Zhang}\corr, Ming Wang, Changqing An, Jilong
+Wang. ``Be Careful of Your Neighbors: Injected Sub-Prefix Hijacking Invisible to
+Public Monitors.'' \venue{IEEE ICC 2023}.
+\item Shuanghong Yu, Fenghua Li\corr, \me{Han Zhang}, Kunling He, Xingkun Yao.
+``GapReplay: A High-Accuracy Packet Replayer.'' \venue{IEEE ICC 2023}.
+\end{publist}
+
+\subsection*{2022}
+\begin{publist}
+\item Junxian Shen, \me{Han Zhang}\corr, Yantao Geng, Jiawei Li, Jilong Wang, Mingwei
+Xu. ``Gringotts: Fast and Accurate Internal Denial-of-Wallet Detection for Serverless
+Computing.'' \venue{ACM CCS 2022}, pp.~2627--2641.
+\item \me{Han Zhang}, Xia Yin, Xingang Shi\corr, Jilong Wang, Zhiliang Wang, Yingya
+Guo, Tian Lan, Yahui Li, Yongqing Zhu, Ke Ruan, Haijun Geng. ``Achieving High
+Availability in Inter-DC WAN Traffic Engineering.'' \venue{IEEE/ACM Transactions on
+Networking}, 2022.
+\item Su Wang, Zhiliang Wang\corr, Tao Zhou, Hongbin Sun, Xia Yin, Dongqi Han,
+\me{Han Zhang}, et al. ``THREATRACE: Detecting and Tracing Host-Based Threats in Node
+Level through Provenance Graph Learning.'' \venue{IEEE Transactions on Information
+Forensics and Security}, vol.~17, pp.~3972--3987, 2022.
+\item Yi Qiao, Menghao Zhang, Yu Zhou, Xiao Kong, \me{Han Zhang}\corr, et al. ``NetEC:
+Accelerating Erasure Coding Reconstruction with In-Network Aggregation.''
+\venue{IEEE Transactions on Parallel and Distributed Systems}, vol.~33, no.~10,
+pp.~2571--2583, 2022.
+\item Zongyi Zhao, Xingang Shi\corr, Zhiliang Wang, Qi Li, \me{Han Zhang}, Xia Yin.
+``Efficient and Accurate Flow Record Collection with HashFlow.'' \venue{IEEE
+Transactions on Parallel and Distributed Systems}, vol.~33, no.~5, pp.~1069--1083,
+2022.
+\item Ying Tian, Zhiliang Wang\corr, Xia Yin, Xingang Shi, Jiahai Yang, \me{Han
+Zhang}. ``Centralized Network Utility Maximization with Accelerated Gradient Method.''
+\venue{IEEE ICNP 2022}.
+\item Heng Yu, Junxian Shen, \me{Han Zhang}\corr, Jilong Wang, Congcong Miao, Mingwei
+Xu. ``Scorpius: Proactive Code Preparation to Accelerate Function Startup.''
+\venue{IEEE/ACM IWQoS 2022}.
+\item Shangbin Han, Qianhong Wu, \me{Han Zhang}\corr, Bo Qin. ``Light-Weight
+Unsupervised Anomaly Detection for Encrypted Malware Traffic.'' \venue{IEEE DSC 2022}.
+\item Shangbin Han, Qianhong Wu, \me{Han Zhang}, Bo Qin, Jiangyuan Yao, Willy Susilo.
+``Autoperman: Automatic Network Traffic Anomaly Detection with Ensemble Learning.''
+\venue{ICAIS 2022}.
+\item Yongkang Chen, Ming Zhang\corr, Jin Li, Xiaohui Kuang, Xurong Zhang, \me{Han
+Zhang}. ``Dynamic and Diverse Transformations for Defending against Adversarial
+Examples.'' \venue{IEEE TrustCom 2022}.
+\end{publist}
+
+\subsection*{2021}
+\begin{publist}
+\item \me{Han Zhang}, Xingang Shi\corr, Xia Yin, Jilong Wang, Zhiliang Wang, Yingya
+Guo, Tian Lan. ``Boosting Bandwidth Availability over Inter-DC WAN.''
+\venue{ACM CoNEXT 2021}, pp.~297--312.
+\item Dongqi Han, Zhiliang Wang\corr, Wenqi Chen, Ying Zhong, Su Wang, \me{Han Zhang},
+Jiahai Yang, Xingang Shi, Xia Yin. ``DeepAID: Interpreting and Improving Deep
+Learning-Based Anomaly Detection in Security Applications.'' \venue{ACM CCS 2021},
+pp.~3197--3217.
+\item Shangbin Han, Qianhong Wu, \me{Han Zhang}\corr, Bo Qin, Jiankun Hu, et al.
+``Log-Based Anomaly Detection with Robust Feature Extraction and Online Learning.''
+\venue{IEEE Transactions on Information Forensics and Security}, vol.~16,
+pp.~2300--2311, 2021.
+\item Yingya Guo, Weipeng Wang, \me{Han Zhang}, Wenzhong Guo, Zhiliang Wang, Ying
+Tian, et al. ``Traffic Engineering in Hybrid Software-Defined Network via
+Reinforcement Learning.'' \venue{Journal of Network and Computer Applications},
+vol.~189, 2021.
+\item Weihan Chen, Zhiliang Wang\corr, \me{Han Zhang}, Xia Yin, Xingang Shi.
+``Cost-Efficient Dynamic Service Function Chain Embedding in Edge Clouds.''
+\venue{IEEE CNSM 2021}.
+\item Ying Tian, Zhiliang Wang\corr, Xia Yin, Xingang Shi, Jiahai Yang, \me{Han
+Zhang}, Yingya Guo, et al. ``Traffic Engineering with Segment Routing Considering
+Probabilistic Failures.'' \venue{IEEE CNSM 2021}.
+\item Haijun Geng, \me{Han Zhang}\corr, Yangyang Zhang. ``Efficient Routing Protection
+Algorithm in Large-Scale Networks.'' \venue{Computers, Materials \& Continua},
+vol.~66, no.~2, pp.~1733--1744, 2021.
+\end{publist}
+
+\subsection*{2020}
+\begin{publist}
+\item Yahui Li, Zhiliang Wang\corr, Xia Yin, Xingang Shi, Jianping Wu, Fangdan Ye,
+Jiangyuan Yao, \me{Han Zhang}. ``Assisting Reachability Verification of Network
+Configurations Updates with NUV.'' \venue{Computer Networks}, vol.~177, 2020.
+\item Haijun Geng, \me{Han Zhang}, Xingang Shi\corr, Zhiliang Wang, Xia Yin.
+``Efficient Computation of Loop-Free Alternates.'' \venue{Journal of Network and
+Computer Applications}, vol.~151, 2020.
+\item Haijun Geng, \me{Han Zhang}, Xingang Shi\corr, et al. ``A Hybrid Link Protection
+Scheme for Ensuring Network Service Availability in Link-State Routing Networks.''
+\venue{Journal of Communications and Networks}, vol.~22, no.~1, pp.~46--60, 2020.
+\item Weihan Chen, Zhiliang Wang, \me{Han Zhang}, Xia Yin, Xingang Shi, Lei Sun.
+``Joint Optimization of Service Function Chain Elastic Scaling and Routing.''
+\venue{IEEE INFOCOM Workshops 2020}.
+\end{publist}
+
+\subsection*{2019}
+\begin{publist}
+\item \me{Han Zhang}, Haijun Geng, Yahui Li, et al. ``DA\&FD: Deadline-Aware and Flow
+Duration-Based Rate Control for Mixed Flows in DCNs.'' \venue{IEEE/ACM Transactions on
+Networking}, vol.~27, no.~6, pp.~2458--2471, 2019.
+\item Zhiliang Wang, \me{Han Zhang}\corr, Xingang Shi, et al. ``Efficient Scheduling of
+Weighted Coflows in Data Centers.'' \venue{IEEE Transactions on Parallel and
+Distributed Systems}, vol.~30, no.~9, pp.~2003--2017, 2019.
+\item Yahui Li, Xia Yin, Zhiliang Wang\corr, Jiangyuan Yao, Xingang Shi, Jianping Wu,
+\me{Han Zhang}, et al. ``A Survey on Network Verification and Testing with Formal
+Methods: Approaches and Challenges.'' \venue{IEEE Communications Surveys \&
+Tutorials}, vol.~21, no.~1, pp.~940--969, 2019.
+\item Yahui Li, Zhiliang Wang\corr, Jiangyuan Yao, Xia Yin, Xingang Shi, Jianping Wu,
+\me{Han Zhang}. ``MSAID: Automated Detection of Interference in Multiple SDN
+Applications.'' \venue{Computer Networks}, vol.~153, 2019.
+\item Yingya Guo, Zhiliang Wang\corr, \me{Han Zhang}, Xia Yin, Xingang Shi, Jianping
+Wu. ``Joint Optimization of Tasks Placement and Routing to Minimize Coflow Completion
+Time.'' \venue{Journal of Network and Computer Applications}, vol.~135, 2019.
+\end{publist}
+
+\subsection*{2018 and Earlier}
+\begin{publist}
+\item Xiao Ma, Chuang Lin, \me{Han Zhang}\corr, Jianwei Liu. ``Energy-Aware
+Computation Offloading of IoT Sensors in Cloudlet-Based Mobile Edge Computing.''
+\venue{Sensors}, 2018.
+\item Zhifeng Liu, Xia Yin, Zhiliang Wang, Xingang Shi, Yiqiang Hua, Xiaohong Huang,
+Liang Wei, Jiangyuan Yao, \me{Han Zhang}, et al. ``Design and Construction of
+Hierarchical and Cross-Regional SDN Verification and Demonstration System.''
+\venue{Telecommunications Science}, 2018.
+\item \me{Han Zhang}, Xingang Shi\corr, Xia Yin, Zhiliang Wang. ``Yosemite: Efficient
+Scheduling of Weighted Coflows in Data Centers.'' \venue{IEEE ICNP 2017}.
+\item \me{Han Zhang}, Xingang Shi\corr, Yingya Guo, Zhiliang Wang, Xia Yin. ``More
+Load, More Differentiation --- Let More Flows Finish before Deadline in Data Center
+Networks.'' \venue{Computer Networks}, vol.~127, 2017.
+\item \me{Han Zhang}, Xingang Shi, Yingya Guo, Haijun Geng, Zhiliang Wang, Xia Yin.
+``Joint Source Selection and Transfer Optimization for Erasure Coding Storage
+System.'' \venue{IEEE IPCCC 2017}.
+\item \me{Han Zhang}, Xingang Shi, Xia Yin, Zhiliang Wang, Yingya Guo. ``FDRC: Flow
+Duration Time Based Rate Control in Data Center Networks.'' \venue{IEEE/ACM IWQoS
+2016}.
+\item M. Gharaibeh, \me{Han Zhang}, C. Papadopoulos, J. Heidemann. ``Assessing
+Co-Locality of IP Blocks.'' \venue{IEEE INFOCOM Workshops 2016}.
+\item Zongyi Zhao, Qi Li, Mingwei Xu, Xingang Shi, \me{Han Zhang}. ``Reduce Completion
+Time and Guarantee Throughput by Transport with Slight Congestion.''
+\venue{IEEE ICC 2016}.
+\item \me{Han Zhang}, Xingang Shi, Xia Yin, Fengyuan Ren, Zhiliang Wang. ``More Load,
+More Differentiation --- A Design Principle for Deadline-Aware Congestion Control.''
+\venue{IEEE INFOCOM 2015}.
+\item Haijun Geng, Xingang Shi, Xia Yin, Zhiliang Wang, \me{Han Zhang}. ``Algebra and
+Algorithms for Efficient and Correct Multipath QoS Routing in Link State Networks.''
+\venue{IEEE/ACM IWQoS 2015}.
+\item Haijun Geng, Xingang Shi, Xia Yin, Zhiliang Wang, \me{Han Zhang}. ``An Efficient
+Link Protection Scheme for Link-State Routing Networks.'' \venue{IEEE ICC 2015}.
+\item Yingya Guo, Zhiliang Wang, Xia Yin, Xingang Shi, Jianping Wu, \me{Han Zhang}.
+``Incremental Deployment for Traffic Engineering in Hybrid SDN Network.''
+\venue{IEEE IPCCC 2015}.
+\item \me{Han Zhang}, C. Papadopoulos. ``BotTalker: Generating Encrypted, Customizable
+C\&C Traces.'' \venue{IEEE HST 2015}.
+\item Haijun Geng, Xingang Shi, Xia Yin, Zhiliang Wang, \me{Han Zhang}, Jiangyuan Yao.
+``A Hybrid Link Protection Scheme for Link-State Routing Networks.''
+\venue{IEEE IPCCC 2014}.
+\item Haijun Geng, Xingang Shi, Xia Yin, Zhiliang Wang, \me{Han Zhang}, Jiangyuan Yao.
+``Let More Nodes Have a Second Choice.'' \venue{IEEE IPCCC 2014}.
+\end{publist}
+
+% --------------------------------------------------------------- funding
+\section{Research Funding}
+\begin{itemize}
+  \item \textbf{NSFC General Program} (\cn{国家自然科学基金面上项目}), No.~62572269 ---
+        \emph{Network-Behaviour-Based Anomaly Detection for Distributed Microservice
+        Applications}. \textbf{PI}.
+  \item \textbf{NSFC Youth Program} (\cn{国家自然科学基金青年项目}), No.~62002009 ---
+        \emph{Resource Allocation for Bulk Transfer in Inter-Datacenter WANs}.
+        \textbf{PI}.
+  \item \textbf{NSFC Major Program} (\cn{国家自然科学基金重大项目}), No.~62394322 ---
+        \emph{Key Technologies for Intelligent-Computing Convergence Network
+        Construction and Routing}. \textbf{Sub-project PI}.
+  \item \textbf{NSFC Key Program} (\cn{国家自然科学基金重点项目}), No.~61932011 ---
+        \emph{Blockchain-Based IoT Security}. \textbf{Sub-project PI}.
+  \item \textbf{MIIT Key R\&D Program}, No.~TC220A04A-78 --- \emph{High-Precision
+        BeiDou Automotive-Grade Positioning Chip and Terminal Positioning System}.
+        \textbf{PI}.
+  \item \textbf{MOST National Key R\&D Program} (\cn{国家重点研发计划}), No.~2018YFB1800400
+        --- \emph{Key Technologies for Large-Scale Secure and Trustworthy Addressing
+        and Routing}. Participant.
+  \item \textbf{Industry-funded projects} (all as \textbf{PI}): China Telecom ---
+        large-scale WAN sensing and optimisation; Tencent --- observability for
+        large-scale microservice systems; Sangfor --- application-aware WAN
+        transmission optimisation; NSFOCUS --- key technologies for security-testing
+        facilities.
+\end{itemize}
+
+% ---------------------------------------------------- systems & artifacts
+\section{Production Systems \& Open-Source Artifacts}
+\begin{itemize}
+  \item \textbf{DeepFlow} --- zero-code eBPF observability for cloud-native and
+        AI-agent pipelines. \textbf{CNCF Sandbox project}; 4{,}000+ GitHub stars,
+        450+ forks; deployed on tens of thousands of hosts. \note{SIGCOMM'23}
+  \item \textbf{DeepTrace} --- non-intrusive distributed application tracing for AI
+        data centers and large microservice deployments; the same pipeline extends to
+        robotic/embodied-AI runtime security. 170+ stars.
+        \note{SIGCOMM'25, ICSE'26}
+  \item \textbf{SiteGuard / AIDC Protector} --- ingress/egress traffic monitoring and
+        ML-based threat detection for AI data-center perimeters, running on
+        programmable switches (P4/Tofino), DPUs, SmartNICs and eBPF at Tbps-class line
+        rate. \note{SIGCOMM'25, SIGCOMM'26}
+  \item \textbf{Kuiper / AIDC Manager} --- full-stack AIOps platform unifying fault
+        management, security-event response, configuration management and network
+        verification; $5\times$ MTTR reduction in production GPU clusters.
+        \note{NSDI'27, ICNP'25, ToN'26}
+  \item \textbf{NetVerify Suite} --- static verification and simulation for
+        configurations, overlay networks and quantitative policies; applied to FITI and
+        CERNET. \note{TIFS'24, CoNEXT'25, INFOCOM'26}
+  \item \textbf{SRmesh Probing Toolkit} --- slice-parallel SRv6 probing achieving
+        $O(1)$-round full-mesh latency maps; validated on the national FITI testbed.
+        \note{ICNP'25, ToN'26}
+  \item \textbf{IScan} --- continuous Internet-wide active and passive probing (IP
+        space, BGP/RPKI routing, CT logs/Web-PKI) assembled into a queryable Internet
+        knowledge base. \note{WWW'25, WWW'26}
+  \item \textbf{STRobot} --- security-first runtime observation and protection
+        framework for autonomous robots and embodied-AI agents. \note{ICSE'26}
+  \item \textbf{Public datasets} --- GlassMiner Looking-Glass corpus (WWW'26);
+        labelled encrypted-flow IDS benchmark (SIGCOMM'25/'26, CCS'21, NDSS'23).
+\end{itemize}
+
+% -------------------------------------------------------------- transfer
+\section{Technology Transfer \& National Impact}
+\begin{itemize}
+  \item \textbf{China Telecom backbone} --- line-rate encrypted-traffic anomaly
+        detection; large-scale WAN sensing and optimisation.
+  \item \textbf{FITI (Future Internet Technology Infrastructure)} --- programmable-switch
+        IDS and segment-routing diagnosis deployed on the national next-generation
+        Internet testbed; configuration and overlay verification.
+  \item \textbf{CERNET / CERNET2} --- DeepFlow-based observability and routing-anomaly
+        analysis across the China Education and Research Network.
+  \item \textbf{Tencent Cloud} --- observability for large-scale microservice systems;
+        co-designed inter-DC WAN traffic engineering.
+  \item \textbf{Sangfor} (\cn{深信服}) --- application-aware WAN transmission
+        optimisation for enterprise SD-WAN products.
+  \item \textbf{NSFOCUS} (\cn{绿盟科技}) --- key technologies for security-testing
+        facilities and large-scale traffic analysis.
+  \item Cumulatively, the resulting technologies serve telecom operators, national
+        defence, the education network and public clouds, reaching \textbf{hundreds of
+        millions of end users}.
+\end{itemize}
+
+% --------------------------------------------------------------- patents
+\section{Patents}
+\note{Two portfolios of Chinese invention patents --- \textbf{Network Measurement \&
+Security} (27 entries) and \textbf{AI for Networking} (19 entries) --- first inventor on
+the large majority. Selected entries:}
+\begin{itemize}
+  \item Dual-plane feature extraction for high-speed encrypted traffic on programmable
+        switches. (\cn{基于可编程交换机的高速加密流量双平面特征提取技术})
+  \item Encrypted-traffic anomaly detection via frequency-domain enhancement and
+        one-class adaptive learning.
+        (\cn{基于频域增强与单类自适应学习的加密流量异常检测技术})
+  \item Distributed request tracing based on dual-path kernel/user-space protocol
+        feature parsing. (\cn{基于内核态与用户态双路径协议特征解析的分布式请求追踪方法})
+  \item Metadata-driven distributed request tracing with local anomaly awareness.
+        (\cn{基于本地异常感知的元数据驱动型分布式请求追踪方法})
+  \item Two-stage adaptive anomalous-traffic detection for SD-WAN based on AE-DQN.
+        (\cn{面向 SD-WAN 的基于 AE-DQN 的双阶段自适应异常流量检测系统})
+  \item Pre-training data-source auditing for deep-learning malicious-traffic
+        detection. (\cn{深度学习恶意流量检测的预训练数据源审计方法})
+  \item Secure verification method and system based on the ACME protocol.
+        (\cn{基于 ACME 协议的安全验证方法、系统及相关装置})
+  \item Trusted verification for cross-domain segment routing.
+        (\cn{面向跨域分段路由的可信验证方法技术})
+  \item OSPF routing-anomaly detection based on in-band network telemetry.
+        (\cn{基于带内网络遥测的 OSPF 路由异常检测方法技术})
+  \item Perfect routing-tree construction for fast network re-routing.
+        (\cn{一种面向网络快速重路由的完美路由树构建方法})
+  \item Internet measurement-service mining; Internet router geolocation.
+        (\cn{互联网测量服务挖掘方法；互联网路由器地理定位方法})
+  \item SLO-violation diagnosis for cloud platforms.
+        (\cn{服务等级目标违规诊断方法、装置、设备及介质})
+\end{itemize}
+
+% --------------------------------------------------------------- service
+\section{Academic Service}
+\begin{itemize}
+  \item \textbf{TPC Co-Chair} --- ACM SIGCOMM NGNO Workshop 2025.
+  \item \textbf{Travel Grant Co-Chair} --- ACM APNet 2025.
+  \item \textbf{TPC Member} --- USENIX NSDI 2027 (Spring); USENIX Security 2027;
+        IEEE INFOCOM 2023, 2024, 2025, 2027; ACM CoNEXT 2025, 2026;
+        IEEE ICNP 2024, 2025.
+  \item \textbf{Editorial Board} --- \emph{Communication Technology}
+        \cn{《通信技术》}. \textbf{Guest Editor} --- MDPI \emph{Electronics};
+        \emph{IEEE Journal on Selected Areas in Communications} (JSAC).
+  \item \textbf{Reviewer} --- IEEE/ACM Transactions on Networking; IEEE Transactions
+        on Parallel and Distributed Systems; IEEE Transactions on Information
+        Forensics and Security.
+\end{itemize}
+
+% -------------------------------------------------------------- teaching
+\section{Teaching}
+\begin{kvlist}
+  \kvitem{Autumn 2023, 2024}{\textbf{Internet Engineering} --- undergraduate, 32 hours.
+    \note{Routing, traffic engineering, observability, Internet measurement; with labs.}}
+  \kvitem{Autumn 2022--2024}{\textbf{Network Optimization Theory and Methods} ---
+    graduate, 32 hours.}
+  \kvitem{Spring 2022--2025}{\textbf{Network Anomaly Detection} --- graduate, 32 hours.}
+\end{kvlist}
+
+% -------------------------------------------------------------- students
+\section{Students Advised}
+\subsection*{Current (13)}
+\noindent\small
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{3.7cm}>{\raggedright\arraybackslash}p{2.1cm}X@{}}
+Kaiyang Zhao & Ph.D., Y5 & SRv6 probing (ICNP'25, ToN'26); co-advised with Prof.\ Xia Yin \& Prof.\ Jianping Wu \\
+Yantao Geng & Ph.D., Y4 & DeepTrace lead (SIGCOMM'25, ICSE'26) \\
+Chenyan Gaoyang & Ph.D., Y4 & co-advised with Prof.\ Youjian Zhao \\
+Xuefeng Liu & Ph.D., Y3 & network verification \\
+Zeji Xiao & Ph.D., Y3 & co-advised with Prof.\ Jilong Wang \\
+Boyang Wang & Ph.D., Y2 & co-advised with Prof.\ Xia Yin \\
+Yantu Tong & Ph.D., Y1 & SRv6 / measurement \\
+Zhuo Li & Master, Y3 & encrypted-traffic IDS \\
+Hanyang Lin & Master, Y2 & eBPF observability \\
+Zhiheng Wu & Master, Y2 & distributed tracing \\
+Linqiang Qian & Master, Y1 & programmable data plane \\
+Yao Tong & Master, Y1 & co-advised with Prof.\ Xia Yin \\
+Kexin Peng & Master, Y1 & co-advised with Prof.\ Youjian Zhao \\
+\end{tabularx}
+
+\subsection*{Alumni (6)}
+\noindent\small
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{3.7cm}>{\raggedright\arraybackslash}p{2.1cm}X@{}}
+Junxian Shen & Ph.D. & Assistant Professor, South China University of Technology \note{(SIGCOMM'23, '25; ToN'26)} \\
+Heng Yu & Ph.D. & Zhongguancun Laboratory \note{(TPDS'23)} \\
+Yi Qiao & Ph.D. & China Academy of Space Technology \note{(INFOCOM'24; TPDS'22)} \\
+Shangbin Han & Ph.D. & Quan Cheng Laboratory \note{(TIFS'21)} \\
+Zhiyun Tang & Master & Huawei Technologies \\
+Jiarui Li & Master & Alibaba Cloud \\
+\end{tabularx}
+
+\vspace{8pt}
+\noindent\note{Recruiting Ph.D.\ and Master's students for Fall 2027 enrolment;
+systems-programming experience is a strong plus.}
+
+\end{document}

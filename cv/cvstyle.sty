@@ -1,0 +1,100 @@
+% cvstyle.sty -- shared style for the bilingual academic CV
+\ProvidesPackage{cvstyle}
+
+\usepackage[a4paper,top=1.7cm,bottom=1.7cm,left=2.0cm,right=2.0cm]{geometry}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{fontspec}
+\usepackage{microtype}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage[hidelinks]{hyperref}
+
+% Long author lists and paper titles leave TeX little room to break lines;
+% without this it silently prefers overfull boxes over looser interword
+% spacing. Keep justified text but allow a little slack.
+\tolerance=1800
+\emergencystretch=1.6em
+\hyphenpenalty=80
+\hbadness=2500
+
+\definecolor{accent}{HTML}{15396B}
+\definecolor{rule}{HTML}{15396B}
+\definecolor{muted}{HTML}{555555}
+\definecolor{chip}{HTML}{EEF2F8}
+
+\hypersetup{colorlinks=true,urlcolor=accent,linkcolor=accent}
+
+% ---------- section headings ----------
+% No bare \color in the format argument or in vertical mode: it puts a colour
+% whatsit on the vertical list, and the glue that follows a whatsit is a legal
+% page break. With the colour in the format, a section heading directly
+% followed by a subsection and an unbreakable table (Students Advised) was
+% left alone at the bottom of a page. \textcolor starts the paragraph first,
+% and the rule is coloured inside its own \titleline box.
+\titleformat{\section}
+  {\normalfont\large\bfseries}
+  {}{0pt}{\textcolor{accent}}[{\vspace{1pt}\titleline{\color{rule}\titlerule[1pt]}}\nobreak]
+\titlespacing*{\section}{0pt}{10pt plus 2pt minus 2pt}{5pt}
+
+\titleformat{\subsection}
+  {\normalfont\normalsize\bfseries}
+  {}{0pt}{\textcolor{accent}}
+\titlespacing*{\subsection}{0pt}{7pt plus 1pt}{3pt}
+
+% ---------- list environments ----------
+\setlist[itemize]{leftmargin=1.1em,itemsep=1.5pt,topsep=2pt,parsep=0pt,label=\textcolor{accent}{\textbullet}}
+\setlist[enumerate]{leftmargin=1.9em,itemsep=1.5pt,topsep=2pt,parsep=0pt}
+
+% publication list: newest first, numbering fixed per section
+\newlist{publist}{enumerate}{1}
+\setlist[publist]{leftmargin=2.1em,itemsep=2.5pt,topsep=3pt,parsep=0pt,
+                  label=[\arabic*],labelsep=0.5em}
+
+% ---------- helpers ----------
+\newcommand{\me}[1]{\textbf{#1}}                        % author self
+\newcommand{\corr}{\textsuperscript{*}}                 % corresponding author
+\newcommand{\venue}[1]{\textit{#1}}
+\newcommand{\chipbox}[1]{%
+  \colorbox{chip}{\small\vphantom{Ij}#1}}
+\newcommand{\note}[1]{{\color{muted}\small #1}}
+% Must be \textcolor, not {\color{red}...}: a bare \color at the start of a
+% p-column/parbox emits a whatsit that opens an empty first line, pushing the
+% whole cell down one baseline relative to its row.
+\newcommand{\todofill}[1]{\textcolor{red}{\textbf{[#1]}}}
+
+% two-column key/value rows used for education & appointments
+\newenvironment{kvlist}
+  {\begin{list}{}{%
+     \setlength{\leftmargin}{0pt}\setlength{\itemindent}{0pt}
+     \setlength{\labelwidth}{0pt}\setlength{\labelsep}{0pt}
+     \setlength{\itemsep}{4pt}\setlength{\topsep}{3pt}\setlength{\parsep}{0pt}}}
+  {\end{list}}
+\newcommand{\kvitem}[2]{\item \makebox[4.6cm][l]{\small\color{muted}#1}\parbox[t]{\dimexpr\linewidth-4.6cm\relax}{#2}}
+
+% Bibliometrics strip. The row must live in its own horizontal box: if the
+% \metric boxes and the \hfill glue share a paragraph with the explanatory
+% note that follows, the glue collapses and the row wraps.
+\newcommand{\metric}[2]{%
+  \begin{minipage}[t]{0.185\linewidth}\centering
+    \textcolor{accent}{\Large\bfseries#1}\\[1pt]\textcolor{muted}{\footnotesize#2}
+  \end{minipage}}
+\newcommand{\metricrow}[1]{%
+  \par\noindent\begin{minipage}{\linewidth}#1\end{minipage}\par}
+
+% highlighted "key insight" block under a selected publication.
+% Set as its own paragraph (not a \\ break) so that \small's \baselineskip
+% applies to every line and the text justifies properly.
+\newcommand{\insight}[1]{%
+  \par\vspace{1.5pt}\noindent
+  {\small\color{muted}$\hookrightarrow$\ #1\par}}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[C]{\footnotesize\color{muted}\cvfooter\ \textemdash\ \thepage/\pageref{LastPage}}
+
+\endinput
