@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Han Zhang · Observability, Situational Awareness &amp; Security for Testbeds &amp; AI Data Centers · Tsinghua</title>
-<meta name="description" content="Han Zhang (张晗), Associate Professor at the Institute for Network Sciences and Cyberspace, Tsinghua University. Observability, situational awareness, and security infrastructure for national-scale network testbeds and operational AI / data-center infrastructures, with a new thrust on Secure &amp; Trustworthy Robotics." />
+<title>Han Zhang · Measurement, Resource Scheduling &amp; Security for AI and Network Infrastructure · Tsinghua</title>
+<meta name="description" content="Han Zhang (张晗), Associate Professor at the Institute for Network Sciences and Cyberspace, Tsinghua University. Research on measurement, resource scheduling, and security for AI and network infrastructure: the Internet, carrier backbones, the FITI / CERNET national testbeds, and AI data centers." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Lora:ital,wght@0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -224,7 +224,10 @@
 
   /* ─── Research areas (cards) ─────────────────────────────── */
   .research-grid {
-    display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 8px;
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 8px;
+  }
+  @media (max-width: 980px) {
+    .research-grid { grid-template-columns: 1fr; }
   }
   .research-card {
     background: var(--c-paper);
@@ -323,11 +326,8 @@
     font-weight: 700;
   }
   .vision-pillars {
-    display: grid; grid-template-columns: repeat(4, 1fr);
+    display: grid; grid-template-columns: repeat(3, 1fr);
     gap: 10px; margin-top: 10px;
-  }
-  @media (max-width: 980px) {
-    .vision-pillars { grid-template-columns: repeat(2, 1fr); }
   }
   .vision-pillar {
     background: var(--c-bg);
@@ -539,7 +539,6 @@
     box-shadow: 0 1px 2px rgba(0,0,0,0.15);
   }
   .thrust-badge.thrust-net   { background: linear-gradient(135deg, var(--c-accent) 0%, #8a2a2a 100%); }
-  .thrust-badge.thrust-robot { background: linear-gradient(135deg, #f59e0b 0%, #b45309 100%); }
 
   /* ─── Featured publications (rich cards with SVG teaser) ─────────────── */
   .featured-list { display: flex; flex-direction: column; gap: 16px; }
@@ -624,8 +623,7 @@
   .pf-teaser.theme-sec,
   .pf-teaser.theme-ver,
   .pf-teaser.theme-net,
-  .pf-teaser.theme-trust,
-  .pf-teaser.theme-robot { background: transparent; }
+  .pf-teaser.theme-trust { background: transparent; }
   .pf-teaser .teaser-label {
     display: none;
   }
@@ -1248,13 +1246,12 @@
       <a href="http://www.tsinghua.edu.cn">Tsinghua University</a>, P. R. China
     </p>
     <p class="tagline" style="font-size:14.5px;color:var(--c-ink-soft);margin:4px 0 0;line-height:1.55;max-width:680px;">
-      <b>Observability, Situational Awareness &amp; Security</b><br>
-      for the Internet, National Testbeds &amp; Operational AI Data-Center Infrastructures<br>
-      <span style="color:var(--c-muted);font-size:13px;">互联网、国家级试验设施、运营智算 / 数据中心的观测、态势感知与安全防护研究</span><br>
-      <b>AI for Network</b><br>
-      <span style="color:var(--c-muted);font-size:13px;">网络智能化研究</span><br>
-      <b>Secure &amp; Trustworthy Robotics</b><br>
-      <span style="color:var(--c-muted);font-size:13px;">安全可信机器人研究</span>
+      <b>AI &amp; Network Infrastructure Measurement</b><br>
+      <span style="color:var(--c-muted);font-size:13px;">AI / 网络基础设施测量</span><br>
+      <b>AI &amp; Network Infrastructure Resource Scheduling</b><br>
+      <span style="color:var(--c-muted);font-size:13px;">AI / 网络基础设施资源调度</span><br>
+      <b>AI &amp; Network Infrastructure Security</b><br>
+      <span style="color:var(--c-muted);font-size:13px;">AI / 网络基础设施安全</span>
     </p>
 
     <div class="contact-row">
@@ -1285,20 +1282,20 @@
 <!-- ═══════════════════════ About ═══════════════════════ -->
 <section class="section about" id="about">
   <h2><i class="fa-solid fa-user icon"></i>About</h2>
-  <p>My research builds the <b>measurement, verification, and situational-awareness infrastructure</b> for <b>four production scenarios</b>: <b>(i) the Internet</b> &mdash; CT logs, BGP, RPKI, DNS, Web-PKI; <b>(ii) ISP &amp; carrier networks</b>, including the <b>FITI / CERNET / CERNET2</b> national testbeds and operator backbones; <b>(iii) AI / data-center infrastructures</b> &mdash; hyperscale clouds, serverless platforms, and intelligent-computing centers; and <b>(iv) secure &amp; trustworthy robotics</b> as a separate but complementary thrust. The work is organized into <b>three directions</b>, mirrored in the <a href="#research">Research Areas</a> section below where each is broken down by venue and project:</p>
+  <p>My research develops <b>measurement, resource-scheduling, and security</b> technologies for <b>AI and network infrastructure</b>: the Internet (BGP, RPKI, DNS, Web PKI), ISP and carrier backbones, the <b>FITI / CERNET / CERNET2</b> national testbeds, and AI data centers, from intelligent-computing clusters to hyperscale and serverless clouds. The work is organized into <b>three directions</b>, detailed in <a href="#research">Research Areas</a> below:</p>
   <ol style="margin:6px 0 12px 22px;padding:0;line-height:1.65;">
-    <li><b>Cyberspace Situational Awareness &amp; Measurement.</b> Internet- and testbed-grade observability and threat detection: zero-code distributed tracing on eBPF / in-network telemetry (<a href="#pub-deepflow"><i>DeepFlow</i> SIGCOMM'23</a>, <a href="#pub-deeptrace"><i>DeepTrace</i> SIGCOMM'25</a>, <a href="#pub-srmesh"><i>SRmesh</i> ICNP'25</a>), line-rate encrypted-traffic IDS on programmable switches (<a href="#pub-deepshield"><i>DeepShield</i> SIGCOMM'25</a>), APT detection over provenance graphs (<a href="#pub-tifs22">TIFS'22</a> / <a href="#pub-tifs25">'25</a>), Web-PKI &amp; certificate-misissuance monitoring (<a href="#pub-acme"><i>ACME++</i> WWW'25</a>), and Looking-Glass / Internet topology mining (<a href="#pub-glassminer"><i>GlassMiner</i> WWW'26</a>).</li>
-    <li><b>AI for Network &amp; Operational Verifiability.</b> Making testbed and operational infrastructures verifiable, self-diagnosable, and resilient: configuration verification at carrier scale (<a href="#pub-tifs24">TIFS'24</a>, <a href="#pub-infocom26">INFOCOM'26</a>), overlay-network ensemble checking (<a href="#pub-conext25">CoNEXT'25</a>), routing-trust analysis (ROV-GD, ERIS CCS'25), test-packet generation (<a href="#pub-tpds23">TPDS'23</a>), inter-DC WAN traffic engineering (<a href="#pub-ton22">TON'22</a>, <a href="#pub-conext21">CoNEXT'21</a>), serverless DoW / workload verification (<a href="#pub-gringotts"><i>Gringotts</i> CCS'22</a>, <a href="#pub-clover"><i>Clover</i> TON'26</a>), and in-network FEC for collective communication (<a href="#pub-infocom24">INFOCOM'24</a>).</li>
-    <li><b>Secure &amp; Trustworthy Robotics.</b> A separate thrust applying the same measurement &amp; verification rigor to embodied AI: trustworthy multi-modal perception, runtime verification of agentic / robotic controllers, encrypted sensor-channel anomaly detection, and certificate-of-trust for autonomous fleets &mdash; building on adversarial-robust ML (<a href="#pub-deepshield">SIGCOMM'25</a>, <a href="#pub-ccs21">CCS'21</a>, <a href="#pub-ndss23">NDSS'23</a>), provenance-graph APT detection (<a href="#pub-tifs22">TIFS'22</a> / <a href="#pub-tifs25">'25</a>), and PKI trust (<a href="#pub-acme">WWW'25</a>).</li>
+    <li><b>AI &amp; Network Infrastructure Measurement.</b> Making production infrastructure observable at line rate and with zero application changes: zero-code distributed tracing with eBPF (<a href="#pub-deepflow"><i>DeepFlow</i> SIGCOMM'23</a>, <a href="#pub-deeptrace"><i>DeepTrace</i> SIGCOMM'25</a>, <a href="#pub-icse26"><i>FlowScope</i> ICSE'26</a>), SRv6 probing and latency-bottleneck diagnosis (<a href="#pub-srmesh"><i>SRmesh</i> ICNP'25</a>, <a href="#pub-srv6">ToN'26</a>), flow measurement on programmable switches (<a href="#pub-hashflow"><i>HashFlow</i> TPDS'22</a>), and Internet-scale measurement of Looking-Glass services, AS relationships, and interdomain routing (<a href="#pub-glassminer"><i>GlassMiner</i> WWW'26</a>, <a href="#pub-hela"><i>HELA</i> ToN'25</a>, ICNP'26).</li>
+    <li><b>AI &amp; Network Infrastructure Resource Scheduling.</b> Turning measurements into efficient, failure-resilient use of bandwidth and compute: inter-DC WAN traffic engineering with availability guarantees (<a href="#pub-conext21"><i>BATE</i> CoNEXT'21</a>, <a href="#pub-ton22"><i>TEDAT</i> ToN'22</a>), centralized network utility maximization (<a href="#pub-num">ToN'25</a>), routing algebra (<a href="#pub-infocom25">INFOCOM'25</a>), in-network acceleration on programmable switches (<a href="#pub-infocom24"><i>NetFEC</i> INFOCOM'24</a>, <a href="#pub-netec"><i>NetEC</i> TPDS'22</a>), FaaS platforms for network functions (<a href="#pub-serpens"><i>Serpens</i> TPDS'23</a>), service-function-chain embedding and scheduling (<a href="#pub-sfc"><i>SFCES</i> TPDS'26</a>), and plug-and-play network management for enterprise clouds (<a href="#pub-kuiper"><i>Kuiper</i> NSDI'27</a>).</li>
+    <li><b>AI &amp; Network Infrastructure Security.</b> Detecting attacks and misconfigurations before they spread: inline intrusion detection on programmable switches, in production at ISPs (<a href="#pub-deepshield"><i>DeepShield</i> SIGCOMM'25</a>, <a href="#pub-sigcomm26"><i>SiteGuard</i> SIGCOMM'26</a>), interpretable and shift-aware anomaly detection (<a href="#pub-ccs21"><i>DeepAID</i> CCS'21</a>, <a href="#pub-ndss23"><i>OWAD</i> NDSS'23</a>), provenance-based APT detection (<a href="#pub-tifs22"><i>THREATRACE</i> TIFS'22</a>, <a href="#pub-tifs25">TIFS'25</a>), serverless Denial-of-Wallet detection (<a href="#pub-gringotts"><i>Gringotts</i> CCS'22</a>, <a href="#pub-clover"><i>Clover</i> ToN'26</a>), routing and Web-PKI security (<i>Parade</i> CCS'26, <a href="#pub-acme"><i>ACME++</i> WWW'25</a>), and configuration verification at carrier scale (<a href="#pub-tifs24">TIFS'24</a>, <a href="#pub-conext25"><i>MEV</i> CoNEXT'25</a>, <a href="#pub-infocom26"><i>Bulwark</i> INFOCOM'26</a>).</li>
   </ol>
-  <p>These three lines converge into a single agenda: <b>the observability substrate, verification toolchain, and trust pipeline that the next-generation Internet, national testbeds, operational AI / data-center infrastructures, and safety-critical embodied systems will require.</b></p>
+  <p>Together, the three directions serve one goal: <b>AI and network infrastructure that is observable, efficiently scheduled, and secure by design</b>, from the kernel and the programmable data plane up to national backbones and AI data centers.</p>
 
-  <p>In the areas of observability and routing technologies, I have conducted in-depth research and led projects such as <b>DeepShield</b>. To date, I have published nearly 100 papers in top-tier international conferences and journals, including <i>SIGCOMM, INFOCOM, CoNEXT,</i> and <i>CCS</i>. My research outcomes have been widely adopted in industry, with related technologies deeply integrated into critical national network infrastructures such as <b>China Telecom's backbone network</b>, the <b>Future Internet Technology Infrastructure (FITI)</b>, and <b>CERNET / CERNET2</b>. These contributions serve vital sectors including telecommunications operators, the military, and other areas crucial to the national economy and people's livelihoods.</p>
+  <p>I have led projects such as <b>DeepShield</b> and published nearly 100 papers in top-tier international conferences and journals, including <i>SIGCOMM, NSDI, CCS, NDSS, CoNEXT, INFOCOM,</i> and <i>IEEE/ACM ToN</i>. The resulting technologies are widely adopted in industry and deployed in critical national network infrastructure, including <b>China Telecom's backbone network</b>, the <b>Future Internet Technology Infrastructure (FITI)</b>, and <b>CERNET / CERNET2</b>, serving telecom operators, national defense, and other sectors vital to the national economy and people's livelihoods.</p>
 
-  <p>I have received the <b>ACM SIGCSE China Rising Star Award</b> and serve as an editorial board member for domestic journals such as <i>Communication Technology</i>, as well as a guest editor for international journals including <i>MDPI Electronics</i> and <i>IEEE JSAC</i>. I also regularly review for prestigious international journals such as <i>IEEE/ACM TON, IEEE TPDS,</i> and <i>IEEE TIFS</i>. In addition, I have been actively involved in organizing and serving on program committees for major international conferences, including <i>ACM SIGCOMM, ACM CoNEXT,</i> and <i>IEEE INFOCOM</i>. The technologies developed through my research have been applied to serve hundreds of millions of users.</p>
+  <p>I received the <b>ACM SIGCSE China Rising Star Award</b>. I serve on the editorial board of <i>Communication Technology</i>, as a guest editor for <i>MDPI Electronics</i> and <i>IEEE JSAC</i>, and as a regular reviewer for <i>IEEE/ACM ToN, IEEE TPDS,</i> and <i>IEEE TIFS</i>. I have served on the program committees of <i>USENIX NSDI, USENIX Security, IEEE INFOCOM, ACM CoNEXT,</i> and <i>IEEE ICNP</i>, and co-chaired the program committee of the <i>ACM SIGCOMM NGNO</i> workshop. Technologies from my research serve hundreds of millions of users.</p>
 
   <div class="callout">
-    <strong>Looking for students:</strong> I am looking for PhD / Master students (enrolling in <b>Fall 2027</b>) to join our exciting systems and networking projects. Experience with system programming is a big plus &mdash; feel free to reach out!
+    <strong>Looking for students:</strong> I am recruiting Ph.D. and Master's students for <b>Fall 2027</b> to work on measurement, scheduling, and security for AI and network infrastructure. Systems-programming experience is a big plus &mdash; feel free to email me!
   </div>
 </section>
 
@@ -1307,33 +1304,29 @@
   <h2><i class="fa-solid fa-compass-drafting icon"></i>Research Vision</h2>
   <div class="vision-wrap">
     <p class="vision-lead">
-      &ldquo;The next generation of the <b>Internet</b> and <b>operational AI / data-center infrastructures</b> needs a unified <b>measurement&ndash;verification&ndash;situational-awareness</b> substrate. Our mission is to build it.&rdquo;
-    </p>
-    <p class="vision-lead" style="margin-top:-10px">
-      &ldquo;As a separate but complementary thrust, we extend the same trustworthiness principles to <b>secure &amp; trustworthy robotics</b>.&rdquo;
+      &ldquo;The next-generation Internet and AI data centers need infrastructure that can be <b>measured</b> precisely, <b>scheduled</b> efficiently, and <b>secured</b> by design. Our mission is to build the systems that make this possible.&rdquo;
     </p>
 
-    <div class="vision-fig" aria-label="Research framework: from infrastructure inputs through system stack to deployment outcomes">
+    <div class="vision-fig" aria-label="Research framework: from infrastructure, through three research directions, to deployed outcomes">
       <div class="vision-col input">
         <div class="col-head">Where it runs</div>
-        <div class="col-title">National Testbeds &amp; Operational Networks</div>
+        <div class="col-title">AI &amp; Network Infrastructure</div>
         <ul>
-          <li><b>The Internet</b> &mdash; CT logs, BGP, RPKI, DNS</li>
-          <li><b>FITI / CERNET2</b> national testbeds</li>
+          <li><b>The Internet</b> &mdash; BGP, RPKI, DNS, Web PKI</li>
           <li><b>Carrier backbones</b> &amp; ISP networks</li>
-          <li><b>AI data centers</b> &amp; serverless clouds</li>
-          <li><b>Robotic fleets</b> &amp; cyber-physical edges</li>
+          <li><b>FITI / CERNET2</b> national testbeds</li>
+          <li><b>AI data centers</b> &amp; GPU clusters</li>
+          <li><b>Hyperscale &amp; serverless</b> clouds</li>
         </ul>
       </div>
       <div class="vision-arrow" aria-hidden="true"><i class="fa-solid fa-arrow-right"></i></div>
       <div class="vision-col stack">
         <div class="col-head">What we build</div>
-        <div class="col-title">A 3-Layer System Stack</div>
+        <div class="col-title">Three Research Directions</div>
         <ul>
-          <li><b>Situational Awareness</b> &mdash; encrypted-traffic IDS, APT/provenance, PKI &amp; routing trust</li>
-          <li><b>Operational Verifiability</b> &mdash; config &amp; overlay verification, ACME / RPKI checking</li>
-          <li><b>Infrastructure Observability</b> &mdash; eBPF &amp; in-network distributed tracing, telemetry</li>
-          <li><b>Secure Robotics</b> &mdash; trustworthy perception, policy verification, attack-resilient control</li>
+          <li><b>Measurement</b> &mdash; zero-code eBPF tracing, SRv6 probing &amp; diagnosis, Internet-scale measurement</li>
+          <li><b>Resource Scheduling</b> &mdash; WAN traffic engineering, in-network acceleration, serverless &amp; SFC scheduling</li>
+          <li><b>Security</b> &mdash; line-rate intrusion detection, APT detection, routing &amp; PKI security, configuration verification</li>
         </ul>
       </div>
       <div class="vision-arrow" aria-hidden="true"><i class="fa-solid fa-arrow-right"></i></div>
@@ -1341,11 +1334,11 @@
         <div class="col-head">Where it lands</div>
         <div class="col-title">Deployed Outcomes &amp; National Impact</div>
         <ul>
-          <li>DeepFlow on <b>CNCF</b> &amp; tens of thousands of hosts</li>
+          <li>DeepFlow in <b>CNCF</b>, on tens of thousands of hosts</li>
+          <li>Inter-DC traffic engineering co-designed with <b>Tencent Cloud</b></li>
           <li>IDS at <b>Tbps line-rate</b> on ISP backbones</li>
-          <li>Verifier on <b>FITI</b> &amp; CERNET configurations</li>
-          <li>Tracing in <b>Tencent / Sangfor / NSFOCUS</b></li>
-          <li>Trustworthy robotics with <b>industry partners</b></li>
+          <li>Verifiers on <b>FITI</b> &amp; CERNET configurations</li>
+          <li><b>5&times;</b> lower MTTR in production GPU clusters</li>
         </ul>
       </div>
     </div>
@@ -1353,19 +1346,15 @@
     <div class="vision-pillars">
       <div class="vision-pillar">
         <b>I. Measure</b>
-        We instrument production networks at <em>line rate</em> and <em>zero application cost</em> &mdash; from kernel eBPF to programmable switches &mdash; so that operators can <em>see</em> what was previously invisible.
+        We instrument production infrastructure at <em>line rate</em> and with <em>zero application changes</em> &mdash; from kernel eBPF to programmable switches and SRv6 probing &mdash; so that operators can <em>see</em> what was previously invisible.
       </div>
       <div class="vision-pillar">
-        <b>II. Verify</b>
-        We formally verify <em>configurations</em>, <em>policies</em>, and <em>certificates</em> across heterogeneous, multi-domain networks before they break, scaling to carrier-sized operational state.
+        <b>II. Schedule</b>
+        We turn measurements into decisions: <em>traffic engineering</em>, <em>routing</em>, <em>in-network acceleration</em>, and <em>serverless / SFC scheduling</em> that keep bandwidth and compute efficiently used and available under failures.
       </div>
       <div class="vision-pillar">
-        <b>III. Sense</b>
-        We turn this measurement &amp; verification substrate into <em>cyberspace situational awareness</em>: continuous, learning-driven, ISP-scale detection of anomalies, attacks, and trust violations.
-      </div>
-      <div class="vision-pillar">
-        <b>IV. Secure Robotics</b>
-        As a separate research thrust, we study trustworthy perception, formally-checked control policies, and attack-resilient robot fleets &mdash; bringing the same measurement &amp; verification rigor to embodied AI.
+        <b>III. Secure</b>
+        We detect and contain <em>attacks</em>, <em>intrusions</em>, and <em>misconfigurations</em> at ISP scale &mdash; with in-network, learning-based detection and formal verification of configurations and policies.
       </div>
     </div>
   </div>
@@ -1638,80 +1627,96 @@
 
   <div class="research-grid">
     <div class="research-card">
-      <div class="area-title"><i class="fa-solid fa-satellite-dish"></i>Cyberspace Situational Awareness &amp; Measurement</div>
+      <div class="area-title"><i class="fa-solid fa-satellite-dish"></i>AI &amp; Network Infrastructure Measurement</div>
       <p>
-        <em>Building the measurement substrate and situational-awareness pipelines for national-scale testbeds (FITI/CERNET) and operational Internet.</em><br><br>
-        Distributed tracing systems
+        <em>Observing production infrastructure end to end &mdash; from the kernel and the data plane to the global routing system &mdash; at line rate and with zero application changes.</em><br><br>
+        Zero-code distributed tracing
         <a class="venue-tag" href="papers/deepflow.pdf">SIGCOMM'23</a>
-        <a class="venue-tag" href="https://dl.acm.org/doi/abs/10.1145/3718958.3750477">SIGCOMM'25</a>;
-        SSL/TLS certificate analysis
-        <a class="venue-tag" href="https://dl.acm.org/doi/abs/10.1145/3696410.3714763">WWW'25</a>;
-        configuration verification
-        <a class="venue-tag" href="https://ieeexplore.ieee.org/abstract/document/10550010">TIFS'24</a>;
-        malicious container detection
-        <a class="venue-tag" href="https://dl.acm.org/doi/pdf/10.1145/3548606.3560629">CCS'22</a>;
-        malicious traffic detection
-        <a class="venue-tag" href="https://ieeexplore.ieee.org/document/10049200">TIFS'23</a>
-        <a class="venue-tag" href="papers/sd-wan-ids.pdf">TIFS'23</a>
+        <a class="venue-tag" href="https://dl.acm.org/doi/abs/10.1145/3718958.3750477">SIGCOMM'25</a>
+        <a class="venue-tag" href="https://dl.acm.org/doi/10.1145/3744916.3764518">ICSE'26</a>;
+        SRv6 probing &amp; latency diagnosis
+        <a class="venue-tag" href="https://ieeexplore.ieee.org/abstract/document/11192455/">ICNP'25</a>
+        <a class="venue-tag" href="#pub-srv6">ToN'26</a>;
+        flow measurement on programmable switches
+        <a class="venue-tag" href="papers/hashflow.pdf">TPDS'22</a>;
+        Looking-Glass discovery &amp; web-infrastructure observability
+        <a class="venue-tag" href="https://dl.acm.org/doi/abs/10.1145/3774904.3792698">WWW'26</a>;
+        AS-relationship inference
+        <a class="venue-tag" href="https://ieeexplore.ieee.org/abstract/document/11017523">ToN'25</a>;
+        interdomain control- / data-plane mismatch
+        <a class="venue-tag" href="#publications">ICNP'26</a>;
+        IPv6 &amp; IP-geolocation measurement
+        <a class="venue-tag" href="https://ieeexplore.ieee.org/document/10218257">ISCC'23</a>
+        <a class="venue-tag" href="https://ieeexplore.ieee.org/document/10186436">IFIP Networking'23</a>;
+        test-packet generation for data-plane faults
+        <a class="venue-tag" href="https://ieeexplore.ieee.org/document/10035502">TPDS'23</a>.
+      </p>
+    </div>
+
+    <div class="research-card">
+      <div class="area-title"><i class="fa-solid fa-diagram-project"></i>AI &amp; Network Infrastructure Resource Scheduling</div>
+      <p>
+        <em>Turning measurements into efficient, failure-resilient use of bandwidth and compute across WANs, data centers, and serverless platforms.</em><br><br>
+        Inter-DC WAN traffic engineering
+        <a class="venue-tag" href="https://dl.acm.org/doi/pdf/10.1145/3485983.3494843">CoNEXT'21</a>
+        <a class="venue-tag" href="https://ieeexplore.ieee.org/document/9980572">ToN'22</a>;
+        network utility maximization
+        <a class="venue-tag" href="papers/num-icnp22.pdf">ICNP'22</a>
+        <a class="venue-tag" href="https://ieeexplore.ieee.org/abstract/document/10981789">ToN'25</a>;
+        routing algebra &amp; failure-aware traffic engineering
+        <a class="venue-tag" href="https://ieeexplore.ieee.org/document/11044753">INFOCOM'25</a>
+        <a class="venue-tag" href="https://ieeexplore.ieee.org/abstract/document/11143368">IWQoS'25</a>
+        <a class="venue-tag" href="https://ieeexplore.ieee.org/document/9615559">CNSM'21</a>;
+        in-network acceleration on programmable switches
+        <a class="venue-tag" href="https://ieeexplore.ieee.org/document/10621183">INFOCOM'24</a>
+        <a class="venue-tag" href="https://ieeexplore.ieee.org/document/9693136">TPDS'22</a>;
+        serverless &amp; cloud resource management
+        <a class="venue-tag" href="https://ieeexplore.ieee.org/document/10089180">TPDS'23</a>
+        <a class="venue-tag" href="https://ieeexplore.ieee.org/document/9812868">IWQoS'22</a>
+        <a class="venue-tag" href="https://ieeexplore.ieee.org/document/10248271">ICWS'23</a>;
+        service-function-chain embedding &amp; scheduling
+        <a class="venue-tag" href="https://ieeexplore.ieee.org/document/11720163">TPDS'26</a>
+        <a class="venue-tag" href="https://ieeexplore.ieee.org/document/9615590">CNSM'21</a>;
+        congestion control &amp; coflow scheduling
+        <a class="venue-tag" href="https://ieeexplore.ieee.org/document/10188700">IWQoS'23</a>
+        <a class="venue-tag" href="https://ieeexplore.ieee.org/document/8668552">TPDS'19</a>;
+        plug-and-play enterprise network management
+        <a class="venue-tag" href="#pub-kuiper">NSDI'27</a>.
+      </p>
+    </div>
+
+    <div class="research-card">
+      <div class="area-title"><i class="fa-solid fa-shield-halved"></i>AI &amp; Network Infrastructure Security</div>
+      <p>
+        <em>Detecting attacks and intrusions at ISP scale, and verifying configurations before they reach production.</em><br><br>
+        Inline encrypted-traffic IDS on programmable switches
+        <a class="venue-tag" href="https://dl.acm.org/doi/abs/10.1145/3718958.3750493">SIGCOMM'25</a>
+        <a class="venue-tag" href="https://dl.acm.org/doi/10.1145/3789240.3829107">SIGCOMM'26</a>;
+        interpretable &amp; shift-aware anomaly detection
         <a class="venue-tag" href="papers/deepaid.pdf">CCS'21</a>
         <a class="venue-tag" href="papers/owad.pdf">NDSS'23</a>
-        <a class="venue-tag" href="https://dl.acm.org/doi/abs/10.1145/3718958.3750493">SIGCOMM'25</a>;
-        log analysis
-        <a class="venue-tag" href="https://ieeexplore.ieee.org/document/9330769">TIFS'21</a>;
-        APT detection
-        <a class="venue-tag" href="papers/threatrace.pdf">TIFS'22</a>;
-        flow measurement
-        <a class="venue-tag" href="papers/hashflow.pdf">TPDS'22</a>.
-      </p>
-    </div>
-
-    <div class="research-card">
-      <div class="area-title"><i class="fa-solid fa-robot"></i>Secure &amp; Trustworthy Robotics</div>
-      <p>
-        <em>Building the <b>trustworthy ML, provenance, and certificate-trust substrate</b> needed for safety-critical AI, embodied agents, and autonomous robotic systems &mdash; extending our line-rate detection, APT defense, and PKI verification work to cyber-physical settings.</em><br><br>
-        Adversarial-robust traffic / perception anomaly detection
-        <a class="venue-tag" href="https://dl.acm.org/doi/abs/10.1145/3718958.3750493">SIGCOMM'25</a>
-        <a class="venue-tag" href="papers/deepaid.pdf">CCS'21</a>
-        <a class="venue-tag" href="papers/owad.pdf">NDSS'23</a>;
-        APT &amp; provenance-graph anomaly detection
-        <a class="venue-tag" href="https://ieeexplore.ieee.org/document/10049200">TIFS'23</a>
-        <a class="venue-tag" href="papers/threatrace.pdf">TIFS'22</a>;
-        certificate / PKI trust for safety-critical clients
-        <a class="venue-tag" href="https://dl.acm.org/doi/abs/10.1145/3696410.3714763">WWW'25</a>;
-        structure-semantics fusion for Internet observability
-        <a class="venue-tag" href="https://dl.acm.org/doi/abs/10.1145/3774904.3792698">WWW'26</a>;
-        in-network low-latency FEC for time-critical telemetry
-        <a class="venue-tag" href="https://ieeexplore.ieee.org/document/10621183">INFOCOM'24</a>.
-        <br><br>
-        <span style="font-size:13px;color:var(--c-muted);"><b>Forward agenda:</b> trustworthy multi-modal perception pipelines, encrypted sensor-channel anomaly detection, runtime verification of agentic / robotic controllers, and certificate-of-trust for autonomous fleets.</span>
-      </p>
-    </div>
-
-    <div class="research-card">
-      <div class="area-title"><i class="fa-solid fa-brain"></i>AI for Network &amp; Operational Verifiability</div>
-      <p>
-        <em>Making testbed and operational networks verifiable, self-diagnosable, and resilient using learning- and formal-method-driven techniques.</em><br><br>
-        Deep-learning encrypted-traffic anomaly detection
-        <a class="venue-tag" href="https://dl.acm.org/doi/abs/10.1145/3718958.3750493">SIGCOMM'25</a>
-        <a class="venue-tag" href="https://ieeexplore.ieee.org/document/10049200">TIFS'23</a>
-        <a class="venue-tag" href="papers/deepaid.pdf">CCS'21</a>
-        <a class="venue-tag" href="papers/owad.pdf">NDSS'23</a>;
-        AI-assisted distributed tracing
-        <a class="venue-tag" href="papers/deepflow.pdf">SIGCOMM'23</a>
-        <a class="venue-tag" href="https://dl.acm.org/doi/abs/10.1145/3718958.3750477">SIGCOMM'25</a>;
-        structure-semantics fusion for web observability
-        <a class="venue-tag" href="https://dl.acm.org/doi/abs/10.1145/3774904.3792698">WWW'26</a>;
-        online learning for SD-WAN
         <a class="venue-tag" href="papers/sd-wan-ids.pdf">TIFS'23</a>;
-        APT detection with provenance graphs
+        provenance-based APT detection
         <a class="venue-tag" href="papers/threatrace.pdf">TIFS'22</a>
+        <a class="venue-tag" href="https://ieeexplore.ieee.org/abstract/document/11078389">TIFS'25</a>
         <a class="venue-tag" href="https://ieeexplore.ieee.org/abstract/document/11400546">IEEE Network'26</a>;
-        log analysis with NLP
+        log anomaly detection
         <a class="venue-tag" href="https://ieeexplore.ieee.org/document/9330769">TIFS'21</a>;
-        learning-driven malicious container detection
-        <a class="venue-tag" href="https://dl.acm.org/doi/pdf/10.1145/3548606.3560629">CCS'22</a>;
-        in-network ML acceleration
-        <a class="venue-tag" href="https://ieeexplore.ieee.org/document/10621183">INFOCOM'24</a>.
+        serverless Denial-of-Wallet detection
+        <a class="venue-tag" href="https://dl.acm.org/doi/pdf/10.1145/3548606.3560629">CCS'22</a>
+        <a class="venue-tag" href="https://ieeexplore.ieee.org/abstract/document/11474554/">ToN'26</a>;
+        BGP &amp; RPKI routing security
+        <a class="venue-tag" href="#publications">CCS'26</a>
+        <a class="venue-tag" href="#publications">ICNP'26</a>
+        <a class="venue-tag" href="https://dl.acm.org/doi/abs/10.1145/3719027.3760707">CCS'25</a>;
+        Web PKI / ACME security
+        <a class="venue-tag" href="https://dl.acm.org/doi/abs/10.1145/3696410.3714763">WWW'25</a>;
+        configuration &amp; policy verification
+        <a class="venue-tag" href="https://ieeexplore.ieee.org/abstract/document/10550010">TIFS'24</a>
+        <a class="venue-tag" href="https://dl.acm.org/doi/abs/10.1145/3768974">CoNEXT'25</a>
+        <a class="venue-tag" href="https://ieeexplore.ieee.org/document/11571533">INFOCOM'26</a>;
+        LLM-assisted vulnerability PoC generation
+        <a class="venue-tag" href="papers/master-2026.pdf">Acta Electronica Sinica'26</a>.
       </p>
     </div>
   </div>
@@ -1721,7 +1726,7 @@
 <section class="section" id="production">
   <h2><i class="fa-solid fa-rocket icon"></i>Production Systems</h2>
   <p style="font-size:14px;color:var(--c-ink-soft);margin:-4px 0 14px">
-    End-to-end systems deployed in production environments — powering observability, security, and intelligent operations at scale.
+    End-to-end systems deployed in production &mdash; measuring, operating, and securing AI and network infrastructure at scale.
   </p>
 
   <div class="systems-grid">
@@ -1771,23 +1776,7 @@
       </div>
       <div class="sys-links">
         <a href="https://ieeexplore.ieee.org/abstract/document/11192455/"><i class="fa-solid fa-file-pdf"></i>ICNP '25</a>
-        <a href="#"><i class="fa-solid fa-file-pdf"></i>ToN '26</a>
-      </div>
-    </div>
-
-    <div class="system-card">
-      <div class="sys-name"><i class="fa-solid fa-robot"></i>STRobot</div>
-      <div class="sys-tag">Secure &amp; Trustworthy Robotics Runtime &middot; 安全可信机器人运行时 &middot; ICSE '26</div>
-      <p>A <b>security-first runtime observation and protection framework</b> for autonomous robots and embodied-AI agents. Monitors controller call paths, detects anomalous behavior patterns, and enforces safety invariants in real-time &mdash; <em>without modifying the robot software stack</em>. Designed for industrial manipulators, autonomous vehicles, and multi-agent swarm deployments.</p>
-      <div class="sys-meta">
-        <span class="hot">Production-deployed</span>
-        <span>Embodied AI</span>
-        <span>Runtime safety</span>
-        <span>ICSE '26</span>
-      </div>
-      <div class="sys-links">
-        <a href="#"><i class="fa-solid fa-file-pdf"></i>ICSE '26</a>
-        <a href="#"><i class="fa-solid fa-clock"></i>More coming</a>
+        <a href="https://ieeexplore.ieee.org/document/11533551"><i class="fa-solid fa-file-pdf"></i>ToN '26</a>
       </div>
     </div>
 
@@ -1805,8 +1794,8 @@
 
     <div class="system-card">
       <div class="sys-name"><i class="fa-solid fa-network-wired"></i>DeepFlow</div>
-      <div class="sys-tag">AI Agent Observability &amp; Security &middot; AI 智能体观测与安全防护 &middot; eBPF &middot; SIGCOMM '23</div>
-      <p><b>Zero-code eBPF observability</b> repurposed for the AI-agent era: reconstructs causal traces and surfaces security-relevant events across LLM / agent pipelines, Kubernetes, service mesh and serverless platforms <em>without any application code change</em>. Open-sourced as an industry de-facto standard (CNCF Sandbox, 4 k+&nbsp;&#9733;).</p>
+      <div class="sys-tag">Cloud-Native &amp; AI Infrastructure Observability &middot; 云原生与 AI 基础设施可观测性 &middot; eBPF &middot; SIGCOMM '23</div>
+      <p><b>Zero-code eBPF observability</b> for cloud-native and AI infrastructure: a network-centric tracing plane reconstructs end-to-end causal traces and surfaces performance and security events across Kubernetes, service meshes, serverless platforms, and LLM / AI-agent pipelines &mdash; <em>without any application code change</em>. Open-sourced as an industry de-facto standard (CNCF Sandbox, 4k+&nbsp;&#9733;).</p>
       <div class="gh-badges">
         <a href="https://github.com/deepflowio/deepflow" class="gh-badge"><i class="fa-solid fa-star"></i> 4,084 Stars</a>
         <a href="https://github.com/deepflowio/deepflow/network/members" class="gh-badge"><i class="fa-solid fa-code-fork"></i> 456 Forks</a>
@@ -1827,8 +1816,8 @@
 
     <div class="system-card">
       <div class="sys-name"><i class="fa-solid fa-magnifying-glass-chart"></i>DeepTrace</div>
-      <div class="sys-tag">AIDC Distributed App Tracing &middot; Robotics Security Monitoring &middot; 智算中心应用分布式追踪 / 机器人安全防护 &middot; SIGCOMM '25 / ICSE '26</div>
-      <p><b>Distributed application tracing &amp; fault monitoring</b> for AI data centers and large-scale microservice deployments; the same non-intrusive observation pipeline extends to <b>robotic / embodied-AI runtime security</b> &mdash; tracing controller call paths and detecting anomalies without modifying robot software stacks. Dual-path kernel + user-space protocol parsing yields accurate method-level delay estimation in production clusters at <strong>~10× less</strong> instrumentation overhead.</p>
+      <div class="sys-tag">AIDC Distributed Application Tracing &middot; 智算中心应用分布式追踪 &middot; SIGCOMM '25 / ICSE '26</div>
+      <p><b>Distributed application tracing and fault monitoring</b> for AI data centers and large-scale microservice deployments. Transaction-aware, non-intrusive tracing stays <strong>above 95% accurate</strong> under high concurrency, and method-level delay estimation (ICSE '26) improves tracing accuracy by a further 51% over DeepFlow and TraceWeaver; used in production by dozens of companies for failure diagnosis and resource optimization.</p>
       <div class="gh-badges">
         <a href="https://github.com/DeepShield-AI/DeepTrace" class="gh-badge"><i class="fa-solid fa-star"></i> 173 Stars</a>
         <a href="https://github.com/DeepShield-AI/DeepTrace/network/members" class="gh-badge"><i class="fa-solid fa-code-fork"></i> 17 Forks</a>
@@ -2044,7 +2033,7 @@
     </article>
 
     <!-- 0. SIGCOMM'26 ISP-Centric IDS -->
-    <article class="pub-feature">
+    <article class="pub-feature" id="pub-sigcomm26">
       <div class="pf-teaser theme-sec" aria-hidden="true">
         <img src="images/papers/isp-centric-ids.png" alt="ISP-Centric IDS">
         <div class="teaser-label">ISP-Centric IDS</div>
@@ -2057,7 +2046,7 @@
         <b>Han Zhang</b>, <span class="stu">Xuefeng Liu</span>, <span class="stu">Linqiang Qian</span>, Guyue (Grace) Liu, <span class="stu">Tianyu Zhang</span>, <span class="stu">Kaiyang Zhao</span>, <span class="stu">Yantu Tong</span>, <span class="stu">Zeji Xiao</span>, Dongbiao He, Yahui Li, Ke Ruan, Jilong Wang, Yongqing Zhu, Xia Yin
       </p>
       <p class="pf-venue">Annual Conference of the ACM Special Interest Group on Data Communication (SIGCOMM '26), pp. 1282–1298, 2026.</p>
-      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">Key Insight</span>The first <b>ISP-centric IDS</b> running on programmable switches: data-plane lightweight feature extraction co-designed with control-plane adaptive learning, sustaining <b>Tbps-class</b> detection while staying robust to traffic drift and adversarial evasion. <em>Validated on real ISP backbones</em>; orders-of-magnitude resource savings vs. CPU/GPU baselines.</div></div>
+      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">Key Insight</span>An inline network IDS on programmable switches that protects enterprise campus sites connected to ISPs: <b>dual-plane feature extraction</b> at near line speed, a lightweight one-class model trained only on benign traffic, and online model updates as conditions change. <em>In production for more than three years</em>, it detects malicious traffic with about 90% accuracy within minutes.</div></div>
       <div class="pf-impact">
         <span class="deploy"><i class="fa-solid fa-tower-broadcast"></i>Deployed: ISP backbones</span>
         <span><i class="fa-solid fa-bolt"></i>Tbps line-rate</span>
@@ -2084,7 +2073,7 @@
         <span class="stu">Yantao Geng</span>, <b>Han Zhang*</b>, <span class="stu">Zhiheng Wu</span>, Yahui Li, Jilong Wang, Xia Yin
       </p>
       <p class="pf-venue">Annual Conference of the ACM Special Interest Group on Data Communication (SIGCOMM '25), pp. 1056–1069, 2025.</p>
-      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">Key Insight</span><b>Method-level</b> distributed tracing in production at <b>~10× less</b> overhead than intrusive baselines. Dual-path kernel + user-space protocol parsing eliminates application instrumentation entirely while preserving end-to-end causal accuracy.</div></div>
+      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">Key Insight</span>A <b>transaction-based</b>, non-intrusive tracing framework for microservices: API endpoints and transaction fields in request content group requests into transactions, so traces from different transactions are not merged by mistake. Stays <b>over 95% accurate under high concurrency</b> and is used in production by dozens of companies for failure diagnosis and resource optimization.</div></div>
       <div class="pf-impact">
         <span class="deploy"><i class="fa-solid fa-cloud"></i>Production-deployed</span>
         <span class="gh"><i class="fa-solid fa-star"></i>173 stars</span>
@@ -2113,7 +2102,7 @@
         <b>Han Zhang</b>, Guyue Liu*, Xingang Shi, Yahui Li, Jilong Wang, Yongqing Zhu, Ke Ruan, Jie Liang, Xia Yin
       </p>
       <p class="pf-venue">Annual Conference of the ACM Special Interest Group on Data Communication (SIGCOMM '25), pp. 1254–1256, 2025.</p>
-      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">Key Insight</span>Resolves the long-standing tension between deep-learning accuracy and switch-ASIC constraints: lightweight features extracted in the data plane, robust classification kept in the control plane &mdash; together delivering <b>line-rate encrypted-traffic anomaly detection</b> robust to concept drift and adversarial perturbations.</div></div>
+      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">Key Insight</span>An inline network IDS on programmable switches that protects data centers connected to ISPs: <b>dual-plane feature extraction</b> at near line speed, a lightweight one-class model trained only on benign traffic, and online updates as the environment changes. <em>Two years in production</em>: more than 10 critical attack events caught and over 10 million servers protected for two ISPs, with about 90% accuracy within minutes.</div></div>
       <div class="pf-impact">
         <span class="deploy"><i class="fa-solid fa-tower-broadcast"></i>Deployed: ISP backbones</span>
         <span><i class="fa-solid fa-bolt"></i>Tbps line-rate</span>
@@ -2141,7 +2130,7 @@
         <span class="stu">Junxian Shen</span>, <b>Han Zhang*</b>, Yang Xiang, Xingang Shi, Xinrui Li, Yunxi Shen, Zijian Zhang, Sicheng Wang, Yanhui Yang, <span class="stu">Yu Zhou</span>, Mingwei Xu, Jilong Wang
       </p>
       <p class="pf-venue">Annual Conference of the ACM Special Interest Group on Data Communication (SIGCOMM '23), pp. 420–437, 2023.</p>
-      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">Key Insight</span>Rethinks distributed tracing from a <b>network-centric</b> viewpoint &mdash; eBPF probes at protocol boundaries reconstruct causal traces across heterogeneous services <b>without any application code change</b>. Open-sourced as the <em>de-facto standard</em> for cloud-native observability.</div></div>
+      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">Key Insight</span>A <b>network-centric tracing plane</b> with implicit context propagation provides distributed tracing out of the box, <em>without any application code change</em>, and removes blind spots in the network infrastructure. It has located more than 71 critical performance anomalies for over 26 companies, cutting troubleshooting from hours to minutes; open-sourced as a de-facto standard for cloud-native observability.</div></div>
       <div class="pf-impact">
         <span class="cncf"><i class="fa-solid fa-cube"></i>CNCF Sandbox</span>
         <span class="gh"><i class="fa-solid fa-star"></i>4,084 stars</span>
@@ -2171,11 +2160,11 @@
         <span class="stu">Junxian Shen</span>, <b>Han Zhang*</b>, <span class="stu">Yantao Geng</span>, <span class="stu">Jiawei Li</span>, Jilong Wang, Mingwei Xu
       </p>
       <p class="pf-venue">ACM SIGSAC Conference on Computer and Communications Security (CCS '22), pp. 2627–2641, 2022.</p>
-      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">Key Insight</span>The <b>first paper</b> to systematically detect <b>internal Denial-of-Wallet attacks</b> on serverless platforms. Combines causal call-graph analysis with billing-aware adaptive thresholds &mdash; detects attacks in <em>milliseconds</em> with sub-1% false-positive rate.</div></div>
+      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">Key Insight</span>Demonstrates real <b>Denial-of-Wallet</b> attacks on commodity serverless platforms and detects them with a lightweight metrics-collection agent plus Mahalanobis-distance anomaly analysis: <b>&lt;1.1% overhead</b>, 1.86&nbsp;s average detection delay, and over 95.75% accuracy.</div></div>
       <div class="pf-impact">
         <span><i class="fa-solid fa-trophy"></i>First DoW defense for FaaS</span>
-        <span><i class="fa-solid fa-clock"></i>Sub-ms detection</span>
-        <span><i class="fa-solid fa-percent"></i>&lt;1% FPR</span>
+        <span><i class="fa-solid fa-clock"></i>1.86 s avg. detection</span>
+        <span><i class="fa-solid fa-percent"></i>&gt;95.75% accuracy</span>
       </div>
       <div class="pf-links">
         <a href="https://dl.acm.org/doi/pdf/10.1145/3548606.3560629"><i class="fa-solid fa-file-pdf"></i>PDF</a>
@@ -2198,10 +2187,10 @@
         <b>Han Zhang</b>, Xingang Shi*, Xia Yin, Jilong Wang, Zhiliang Wang, Yingya Guo, Tian Lan
       </p>
       <p class="pf-venue">ACM CoNEXT '21, 2021.</p>
-      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">Key Insight</span>Joint elephant/mice flow scheduling under probabilistic failure models lifts effective inter-DC bandwidth availability by <b>1.4&ndash;2.1&times;</b> on real Tencent and China Telecom topologies, while preserving SLA guarantees during link failures.</div></div>
+      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">Key Insight</span>BATE provisions <b>bandwidth availability</b> over inter-DC WANs, guaranteeing that each demand is met with a stipulated probability despite limited capacity and link failures, through jointly designed admission control, traffic scheduling, and failure recovery. Online admission control runs <b>30&times; faster</b> than the optimal strategy with under 4% false rejections, and 23&ndash;60% more demands meet their availability targets than with FFC or TEAVAR.</div></div>
       <div class="pf-impact">
         <span class="deploy"><i class="fa-solid fa-cloud"></i>Tencent / China Telecom topologies</span>
-        <span><i class="fa-solid fa-arrow-trend-up"></i>1.4&ndash;2.1&times; bandwidth</span>
+        <span><i class="fa-solid fa-arrow-trend-up"></i>30&times; faster admission control</span>
       </div>
       <div class="pf-links">
         <a href="https://dl.acm.org/doi/pdf/10.1145/3485983.3494843"><i class="fa-solid fa-file-pdf"></i>PDF</a>
@@ -2211,7 +2200,7 @@
     </article>
 
     <!-- 3. ICSE'26 -->
-    <article class="pub-feature">
+    <article class="pub-feature" id="pub-icse26">
       <div class="pf-teaser theme-obs" aria-hidden="true">
         <img src="images/papers/non-intrusive-trace.png" alt="Non-Intrusive Trace">
         <div class="teaser-label">Non-Intrusive Trace</div>
@@ -2224,7 +2213,7 @@
         <span class="stu">Yantao Geng</span>, <b>Han Zhang*</b>, <span class="stu">Zhiheng Wu</span>, Yahui Li, Jilong Wang, Xia Yin
       </p>
       <p class="pf-venue">ACM/IEEE International Conference on Software Engineering (ICSE '26), pp. 1661–1673, 2026.</p>
-      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">Key Insight</span>Pinpoints latency culprits in microservice call graphs <b>without modifying application code</b> &mdash; infers method-level delays from network-side observations + lightweight runtime hints. Fault-localization accuracy on par with intrusive baselines, at a fraction of the engineering cost.</div></div>
+      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">Key Insight</span>FlowScope rebuilds traces without touching application code: it estimates <b>method-level causal delay distributions</b> between requests by cross-correlation, scores candidate causal links with them, and reconstructs traces iteratively under multiple constraints. Tracing accuracy improves by <b>51%</b> over DeepFlow and TraceWeaver, and the system has been applied in multiple real-world use cases.</div></div>
       <div class="pf-impact">
         <span class="deploy"><i class="fa-solid fa-cloud"></i>Production microservice clusters</span>
         <span><i class="fa-solid fa-code-branch"></i>Zero code change</span>
@@ -2250,7 +2239,7 @@
         <span class="stu">Tianyu Zhang</span>, <b>Han Zhang*</b>, <span class="stu">Yunze Wei</span>, Yahui Li, Xingang Shi, Jilong Wang, Xia Yin
       </p>
       <p class="pf-venue">Proceedings of the ACM Web Conference (WWW '25), 2025.</p>
-      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">Key Insight</span>Hardens Web-PKI by adding <b>end-to-end ACME client verification</b>: cryptographic identity attestation, challenge-response provenance, and silent client-side misconfiguration detection &mdash; defending tenants against impersonation and credential drift across multiple ACME-CA pairs.</div></div>
+      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">Key Insight</span>Discloses the <b>ACME Authz Cache Attack</b>: because CAs cache domain-validation results for 30 days, an attacker can obtain fraudulent certificates without controlling the domain, and even Let&#39;s Encrypt is vulnerable. ACME++ binds the client&#39;s IP address and a unique identifier to the ACME account, blocking the attack with little overhead on the CA.</div></div>
       <div class="pf-impact">
         <span class="deploy"><i class="fa-solid fa-lock"></i>Web-PKI ecosystem</span>
         <span><i class="fa-solid fa-shield-halved"></i>Misissuance defense</span>
@@ -2277,7 +2266,7 @@
         <span class="stu">Yunze Wei</span>, Xingang Shi, <b>Han Zhang*</b>, <span class="stu">Tianyu Zhang</span>, Yahui Li, Xia Yin
       </p>
       <p class="pf-venue">Proceedings of the ACM Web Conference (WWW '26), pp. 7576–7587, 2026.</p>
-      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">Key Insight</span>Public Looking-Glass services expose an invaluable but fragmented view of global Internet routing. <b>GlassMiner</b> jointly models DOM-level structure and natural-language semantics of LG portals to extract structured measurements <em>at scale</em>, enabling <b>continent-wide BGP path observability</b> and uncovering hidden routing anomalies.</div></div>
+      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">Key Insight</span>Fuses structural and semantic features, with LLM-based classification, to discover <b>Looking-Glass services</b> across the Internet: 3,867 LG webpages and 7,558 vantage points missing from public lists, i.e., 1.82&times; more discoveries at 3.43&times; higher mining efficiency than prior methods. The new vantage points expose routing performance and detours in two large CDNs.</div></div>
       <div class="pf-impact">
         <span><i class="fa-solid fa-globe"></i>Thousands of operator portals</span>
         <span><i class="fa-solid fa-database"></i>Public corpus</span>
@@ -2303,10 +2292,10 @@
         <span class="stu">Yi Qiao</span>, <b>Han Zhang*</b>, Jilong Wang
       </p>
       <p class="pf-venue">IEEE INFOCOM 2024, pp. 2348–2357, 2024.</p>
-      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">Key Insight</span>Offloads forward-error-correction encoding to <b>programmable switches</b> via tensor-style P4 templates, sustaining line-rate FEC across 100 GbE links and reducing 99-th-percentile <b>tail latency by 4&ndash;6&times;</b> in real streaming workloads.</div></div>
+      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">Key Insight</span>Offloads the <b>entire FEC encoding</b> process for latency-sensitive media to programmable switching ASICs, with no CPU involvement; a ghost-packet mechanism keeps congestion control, pacing, and statistics working. Integrated with WebRTC on real hardware, it removes the server CPU burden at negligible overhead.</div></div>
       <div class="pf-impact">
-        <span><i class="fa-solid fa-bolt"></i>100 GbE line-rate</span>
-        <span><i class="fa-solid fa-arrow-down"></i>4&ndash;6&times; tail-latency reduction</span>
+        <span><i class="fa-solid fa-bolt"></i>Switch-ASIC offload</span>
+        <span><i class="fa-solid fa-arrow-down"></i>No server CPU for FEC</span>
       </div>
       <div class="pf-links">
         <a href="https://ieeexplore.ieee.org/document/10621183"><i class="fa-solid fa-file-pdf"></i>PDF</a>
@@ -2329,10 +2318,10 @@
         <span class="stu">Kaiyang Zhao</span>, <b>Han Zhang*</b>, <span class="stu">Yao Tong</span>, Yahui Li, Xingang Shi, Zhiliang Wang, Xia Yin, Jianping Wu
       </p>
       <p class="pf-venue">IEEE International Conference on Network Protocols (ICNP '25), pp. 1–12, 2025.</p>
-      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">Key Insight</span>Embeds <b>deterministic in-band telemetry</b> into segment-routing headers, enabling <b>per-link latency attribution</b> with bounded probe overhead. Validated in a multi-vendor SRv6 testbed: identifies bottleneck links in seconds with 100% recall.</div></div>
+      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">Key Insight</span>Diagnoses <b>latency-bottleneck links</b> in SRv6 networks despite priority policies, SR multipath, and slicing: SR-based probes follow deterministic paths that emulate production traffic, latency-based inference resolves multipath ambiguity, and progressive diagnosis reuses earlier probe results. Diagnosis stays accurate while probe overhead drops by up to <b>91.9%</b>.</div></div>
       <div class="pf-impact">
-        <span class="deploy"><i class="fa-solid fa-route"></i>Multi-vendor SRv6 testbed</span>
-        <span><i class="fa-solid fa-bullseye"></i>100% recall</span>
+        <span class="deploy"><i class="fa-solid fa-route"></i>Real network topologies</span>
+        <span><i class="fa-solid fa-bullseye"></i>&minus;91.9% probe overhead</span>
       </div>
       <div class="pf-links">
         <a href="https://ieeexplore.ieee.org/abstract/document/11192455/"><i class="fa-solid fa-file-pdf"></i>PDF</a>
@@ -2354,7 +2343,7 @@
         <span class="stu">XinZhe Liu</span>, Yahui Li, <b>Han Zhang</b>, <span class="stu">Renrui Tian</span>, Xia Yin, Xingang Shi, Zhiliang Wang, Gang Ren, Jilong Wang, Jiangyuan Yao
       </p>
       <p class="pf-venue">IEEE INFOCOM 2026, pp. 1–10.</p>
-      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">Key Insight</span>Verifies <b>full carrier-scale configurations</b> by reducing the analysis environment to a tractable kernel without losing soundness &mdash; scales formal verification to networks an order of magnitude larger than prior art.</div></div>
+      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">Key Insight</span>Shows that configuration verification need not explore the full environment space: an <b>effective reduction</b> preserves every routing and forwarding behavior of the full space, backed by a theory of behavioral equivalence. The resulting verifier, Bulwark, uncovers many new misconfigurations with <b>orders-of-magnitude speedups</b> over state-of-the-art tools.</div></div>
       <div class="pf-impact">
         <span class="deploy"><i class="fa-solid fa-tower-broadcast"></i>FITI / CERNET</span>
         <span><i class="fa-solid fa-magnifying-glass"></i>Sound &amp; complete</span>
@@ -2366,7 +2355,7 @@
     </article>
 
     <!-- 12. INFOCOM'25 Non-Commutative Routing -->
-    <article class="pub-feature">
+    <article class="pub-feature" id="pub-infocom25">
       <div class="pf-teaser theme-net" aria-hidden="true">
         <img src="images/papers/non-commutative.png" alt="Non-Commutative">
         <div class="teaser-label">Non-Commutative</div>
@@ -2379,13 +2368,13 @@
         <span class="stu">Zhaozhen Wang</span>, Xingang Shi*, Haijun Geng, <b>Han Zhang</b>, Xia Yin, Zhiliang Wang
       </p>
       <p class="pf-venue">IEEE INFOCOM 2025, pp. 1–10.</p>
-      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">Key Insight</span>Advances <b>Internet routing & topology</b> inference / engineering with a new algorithmic or data-plane primitive.</div></div>
+      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">Key Insight</span>Extends <b>routing algebra</b> to non-commutative routing metrics, which existing theory overlooks: general reduction methods, a solvability analysis, and a link-state algorithm that converges quickly on the reduced partial order, supported by proofs and simulations on diverse topologies.</div></div>
       <div class="pf-impact">
         <span><i class="fa-solid fa-book-open"></i>Top networking conf.</span>
         <span><i class="fa-solid fa-chart-line"></i>Algorithmic advance</span>
       </div>
       <div class="pf-links">
-        <a href="#"><i class="fa-solid fa-file-pdf"></i>PDF</a>
+        <a href="https://ieeexplore.ieee.org/document/11044753"><i class="fa-solid fa-file-pdf"></i>PDF</a>
         <details class="pf-abstract"><summary>Abstract</summary><p>The complexity of routing requirements leads to increasingly intricate routing metrics. Existing routing algebra theories have demonstrated that convergent and optimal routing algorithms can be designed only when path metrics satisfy certain properties such as monotonicity and isotonicity. Furthermore, some non-isotonic metrics can be converted into isotonic forms on partial orders through reduction. However, practical scenarios often involve non-commutative algebraic properties, which are overlooked by existing theories. For these problems, there lacks a unified framework to study their solvability, a systematic method for their reduction, and an efficient algorithm to compute optimal routes. In this work, we extend routing algebra to accommodate non-commutative routing problems, propose general reduction methods for them, and explore their solvability. In addition, we design a link state algorithm that converge fast on a reduced partial order. All these discussions are supported by concrete examples, theoretical proofs, and simulations on various network topologies.</p></details>
       </div>
     </article>
@@ -2404,7 +2393,7 @@
         <span class="stu">XinZhe Liu</span>, Yahui Li*, <b>Han Zhang</b>, Xia Yin, Xingang Shi, Zhiliang Wang, Gang Ren, Jilong Wang, Jiangyuan Yao
       </p>
       <p class="pf-venue">ACM CoNEXT 2025.</p>
-      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">Key Insight</span><b>Ensemble verification</b> for overlay networks: combines symbolic and data-driven checks, providing both <em>scalability</em> and <em>human-interpretable counter-examples</em> in heterogeneous overlay deployments where prior verifiers stall.</div></div>
+      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">Key Insight</span>MEV, the first control-plane verifier for <b>overlay/underlay networks</b>, introduces ensemble verification: each routing instance, protocol, and virtual network is reasoned about independently. Deployed on the nationwide <b>FITI</b> network, it found 22 misconfigurations that could cause isolation and reachability problems, and runs up to <b>102&times;</b> faster than Batfish+.</div></div>
       <div class="pf-impact">
         <span><i class="fa-solid fa-layer-group"></i>Overlay verification</span>
         <span><i class="fa-solid fa-eye"></i>Interpretable</span>
@@ -2430,7 +2419,7 @@
         Dongqi Han, Zhiliang Wang*, Wenqi Chen, Kai Wang, Rui Yu, Su Wang, <b>Han Zhang</b>, et al.
       </p>
       <p class="pf-venue">Network and Distributed System Security Symposium (NDSS '23), 2023.</p>
-      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">Key Insight</span>Pushes anomaly / intrusion detection from offline analytics to <b>online</b>, ISP-scale operation, with measurable gains in accuracy and false-positive rates.</div></div>
+      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">Key Insight</span>Tackles <b>normality shift</b> in zero-positive anomaly detection: models trained only on benign data are immune to drifting attacks but suffer most when normal behavior itself changes. OWAD detects, explains, and adapts to such shifts, a setting that prior concept-drift work had largely left unexplored.</div></div>
       <div class="pf-impact">
         <span><i class="fa-solid fa-trophy"></i>Top-tier venue</span>
         <span class="deploy"><i class="fa-solid fa-tower-broadcast"></i>Production-grade</span>
@@ -2458,7 +2447,7 @@
         <span class="stu">Junxian Shen</span>, <b>Han Zhang*</b>, <span class="stu">Wenxue Lin</span>, <span class="stu">Yantao Geng</span>, <span class="stu">Jiawei Li</span>, Jilong Wang, Mingwei Xu
       </p>
       <p class="pf-venue">IEEE/ACM Transactions on Networking, 2026.</p>
-      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">Key Insight</span>Brings <b>formal verification</b> to a previously hand-tuned operational primitive, scaling to carrier-sized state while keeping counter-examples interpretable.</div></div>
+      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">Key Insight</span>Detects serverless <b>Denial-of-Wallet</b> attacks through <b>workload verification</b>: a multivariate linear model learns the benign relationship between performance metrics and execution duration, and runtime deviations, measured by Mahalanobis distance, flag attacks. Overhead stays below 3.2%, model execution takes 0.84&nbsp;&micro;s on average, and accuracy reaches 92.7% in the hardest scenario.</div></div>
       <div class="pf-impact">
         <span><i class="fa-solid fa-book-open"></i>Premier networking journal</span>
         <span><i class="fa-solid fa-flask"></i>Systems prototype</span>
@@ -2471,7 +2460,7 @@
     </article>
 
     <!-- TON'26 Slice-Parallel SRv6 Probing -->
-    <article class="pub-feature">
+    <article class="pub-feature" id="pub-srv6">
       <div class="pf-teaser theme-net" aria-hidden="true">
         <img src="images/papers/srv6-probing.png" alt="SRv6 Probing">
         <div class="teaser-label">SRv6 Probing</div>
@@ -2483,17 +2472,20 @@
       <p class="pf-authors">
         <span class="stu">Kaiyang Zhao</span>, <b>Han Zhang*</b>, <span class="stu">Yao Tong</span>, Yahui Li, Xingang Shi, Zhiliang Wang, Xia Yin, Jianping Wu
       </p>
-      <p class="pf-venue">IEEE/ACM Transactions on Networking, 2026.</p>
-          <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">Key Insight</span>Advances <b>Internet routing & topology</b> inference / engineering with a new algorithmic or data-plane primitive.</div></div>
+      <p class="pf-venue">IEEE/ACM Transactions on Networking, vol. 34, pp. 5588–5600, 2026.</p>
+      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">Key Insight</span>Turns SRmesh into a <b>distributed, slice-parallel</b> diagnosis system for SRv6 networks with many parallel slices: distributed SR probing agents emulate per-slice traffic, multipath inference runs in parallel across slices, and progressive diagnosis reuses probe results. On 247 real topologies it stays accurate while cutting probe overhead by <b>93.4%</b>.</div></div>
       <div class="pf-impact">
         <span><i class="fa-solid fa-book-open"></i>Premier networking journal</span>
         <span><i class="fa-solid fa-flask"></i>Systems prototype</span>
       </div>
-          <details class="pf-abstract"><summary>Abstract</summary><p>Segment Routing over IPv6 (SRv6) is widely deployed, where operators construct numerous parallel SR-based network slices. An accurate diagnosis of latency bottlenecks in SRv6 tunnels is essential to maintain service-level objectives. However, building a distributed, at-scale probing system is nontrivial: SRv6 priority policies, SR-aware multipath forwarding, and slice isolation collectively invalidate assumptions made by existing diagnostic methods. In this paper, we present SRmesh, a distributed system for diagnosing latency bottleneck links in SRv6 networks. First, we adopt distributed SR-based probing agents to control routing paths and ensure that probe packets emulate per-slice production traffic. Second, we employ a latency-based multipath inference that runs in parallel across slices to resolve SR-induced routing ambiguities. Third, we introduce a slice-parallel progressive diagnosis that incrementally reuses probe results to reduce redundant measurements, optimizing diagnostic overhead for large-scale SRv6 overlay networks. We implement a prototype of SRmesh and conduct extensive evaluations on 247 real network topologies. The results indicate that SRmesh achieves high diagnostic accuracy with a 93.4% reduction in probe overhead, demonstrating its practicality and scalability in large-scale SRv6 environments.</p></details>
+      <div class="pf-links">
+        <a href="https://ieeexplore.ieee.org/document/11533551"><i class="fa-solid fa-file-pdf"></i>PDF</a>
+        <details class="pf-abstract"><summary>Abstract</summary><p>Segment Routing over IPv6 (SRv6) is widely deployed, where operators construct numerous parallel SR-based network slices. An accurate diagnosis of latency bottlenecks in SRv6 tunnels is essential to maintain service-level objectives. However, building a distributed, at-scale probing system is nontrivial: SRv6 priority policies, SR-aware multipath forwarding, and slice isolation collectively invalidate assumptions made by existing diagnostic methods. In this paper, we present SRmesh, a distributed system for diagnosing latency bottleneck links in SRv6 networks. First, we adopt distributed SR-based probing agents to control routing paths and ensure that probe packets emulate per-slice production traffic. Second, we employ a latency-based multipath inference that runs in parallel across slices to resolve SR-induced routing ambiguities. Third, we introduce a slice-parallel progressive diagnosis that incrementally reuses probe results to reduce redundant measurements, optimizing diagnostic overhead for large-scale SRv6 overlay networks. We implement a prototype of SRmesh and conduct extensive evaluations on 247 real network topologies. The results indicate that SRmesh achieves high diagnostic accuracy with a 93.4% reduction in probe overhead, demonstrating its practicality and scalability in large-scale SRv6 environments.</p></details>
+      </div>
     </article>
 
     <!-- TON'25 Centralized NUM -->
-    <article class="pub-feature">
+    <article class="pub-feature" id="pub-num">
       <div class="pf-teaser theme-net" aria-hidden="true">
         <img src="images/papers/num.png" alt="NUM">
         <div class="teaser-label">NUM</div>
@@ -2506,7 +2498,7 @@
         Ying Tian, Zhiliang Wang*, Xia Yin, Xingang Shi, Jiahai Yang, <b>Han Zhang*</b>
       </p>
       <p class="pf-venue">IEEE Transactions on Networking, 2025.</p>
-      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">Key Insight</span>Improves the scalability, accuracy, or robustness of a core measurement, verification, or security primitive used in real network infrastructures.</div></div>
+      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">Key Insight</span>A centralized NUM algorithm for SDN-managed cloud and inter-DC networks: smooth utility and penalty functions make <b>Nesterov&#39;s accelerated gradient method</b> applicable, giving an O(d/t&sup2;) convergence rate that scales with the number of flows d. Handles prioritized flows on multiple paths and reaches close-to-optimal utility in fewer iterations.</div></div>
       <div class="pf-impact">
         <span><i class="fa-solid fa-book-open"></i>Premier networking journal</span>
         <span><i class="fa-solid fa-flask"></i>Systems prototype</span>
@@ -2518,7 +2510,7 @@
     </article>
 
     <!-- TON'25 HELA -->
-    <article class="pub-feature">
+    <article class="pub-feature" id="pub-hela">
       <div class="pf-teaser theme-net" aria-hidden="true">
         <img src="images/papers/hela.png" alt="HELA">
         <div class="teaser-label">HELA</div>
@@ -2531,7 +2523,7 @@
         Xingang Shi, Zitong Jin*, Bin Xiong, Xinyao Huang, Xiaotian Xi, Dan Li, <b>Han Zhang</b>, Zhiliang Wang, Xia Yin
       </p>
       <p class="pf-venue">IEEE Transactions on Networking, 2025.</p>
-      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">Key Insight</span>Advances <b>Internet routing & topology</b> inference / engineering with a new algorithmic or data-plane primitive.</div></div>
+      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">Key Insight</span>Infers <b>AS business relationships</b> with a hybrid of grouping, voting, and machine-learning algorithms, validated on a refreshed dataset (BGP communities, IRR RPSL records, OneStep communities) with 95% more labelled links. On 2021&ndash;2023 data it cuts error rates by up to <b>2.9&times;</b> versus AS-Rank, ProbLink, and TopoScope, and stays stable on incomplete and biased data.</div></div>
       <div class="pf-impact">
         <span><i class="fa-solid fa-book-open"></i>Premier networking journal</span>
         <span><i class="fa-solid fa-flask"></i>Systems prototype</span>
@@ -2556,7 +2548,7 @@
         <b>Han Zhang</b>, Xia Yin, Xingang Shi*, Jilong Wang, Zhiliang Wang, Yingya Guo, Tian Lan, Yahui Li, Yongqing Zhu, Ke Ruan, Haijun Geng
       </p>
       <p class="pf-venue">IEEE/ACM Transactions on Networking, 2022.</p>
-      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">Key Insight</span>Improves the scalability, accuracy, or robustness of a core measurement, verification, or security primitive used in real network infrastructures.</div></div>
+      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">Key Insight</span>TEDAT engineers inter-DC WAN traffic for <b>diverse availability targets</b>, each an SLA that a bandwidth demand is met with a stipulated probability despite failures. Online admission control runs <b>30&times; faster</b> than the optimal strategy with under 4% false rejections; 23&ndash;60% more demands meet their SLAs than with FFC or TEAVAR, and 10&ndash;20% more profit is retained when failures cause violations.</div></div>
       <div class="pf-impact">
         <span><i class="fa-solid fa-book-open"></i>Premier networking journal</span>
         <span><i class="fa-solid fa-flask"></i>Systems prototype</span>
@@ -2568,7 +2560,7 @@
     </article>
 
     <!-- TPDS'26 SFCES -->
-    <article class="pub-feature">
+    <article class="pub-feature" id="pub-sfc">
       <div class="pf-teaser theme-net" aria-hidden="true">
         <img src="images/papers/sfces.png" alt="SFCES">
         <div class="teaser-label">SFCES</div>
@@ -2593,7 +2585,7 @@
     </article>
 
     <!-- TPDS'23 Serpens -->
-    <article class="pub-feature">
+    <article class="pub-feature" id="pub-serpens">
       <div class="pf-teaser theme-obs" aria-hidden="true">
         <img src="images/papers/serpens.png" alt="Serpens">
         <div class="teaser-label">Serpens</div>
@@ -2606,7 +2598,7 @@
         <span class="stu">Heng Yu</span>, <b>Han Zhang*</b>, <span class="stu">Junxian Shen</span>, <span class="stu">Yantao Geng</span>, et al.
       </p>
       <p class="pf-venue">IEEE Transactions on Parallel and Distributed Systems, vol. 34, no. 8, pp. 2448–2463, 2023.</p>
-      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">Key Insight</span>Improves the scalability, accuracy, or robustness of a core measurement, verification, or security primitive used in real network infrastructures.</div></div>
+      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">Key Insight</span>A high-performance <b>FaaS platform for network functions</b>: a reusable NF runtime slashes instance startup, a new state-management mechanism keeps state access local, and advanced service chaining avoids extra packet delivery. Compared with NFs and SFCs on existing FaaS platforms, throughput rises by <b>more than 10&times;</b> and latency drops by more than 90%.</div></div>
       <div class="pf-impact">
         <span><i class="fa-solid fa-book-open"></i>Premier systems journal</span>
         <span><i class="fa-solid fa-microchip"></i>Parallel / distributed</span>
@@ -2631,7 +2623,7 @@
         Yahui Li, <b>Han Zhang*</b>, Jilong Wang, Xia Yin, Xingang Shi, Jianping Wu
       </p>
       <p class="pf-venue">IEEE Transactions on Parallel and Distributed Systems, vol. 34, no. 4, pp. 1362–1375, 2023.</p>
-      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">Key Insight</span>Improves the scalability, accuracy, or robustness of a core measurement, verification, or security primitive used in real network infrastructures.</div></div>
+      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">Key Insight</span>SWIFT generates test packets <b>directly from network configurations</b> to detect data-plane faults, avoiding unreliable device snapshots; each packet exercises multiple links, and network updates are revalidated incrementally. It covers all links and interfaces of hundreds of benchmark networks in seconds, and a deployment in a university network detected many outages.</div></div>
       <div class="pf-impact">
         <span><i class="fa-solid fa-book-open"></i>Premier systems journal</span>
         <span><i class="fa-solid fa-microchip"></i>Parallel / distributed</span>
@@ -2643,7 +2635,7 @@
     </article>
 
     <!-- TPDS'22 NetEC -->
-    <article class="pub-feature">
+    <article class="pub-feature" id="pub-netec">
       <div class="pf-teaser theme-net" aria-hidden="true">
         <img src="images/papers/netec.png" alt="NetEC">
         <div class="teaser-label">NetEC</div>
@@ -2656,7 +2648,7 @@
         <span class="stu">Yi Qiao</span>, Menghao Zhang, Yu Zhou, Xiao Kong, <b>Han Zhang*</b>, et al.
       </p>
       <p class="pf-venue">IEEE Transactions on Parallel and Distributed Systems, vol. 33, no. 10, pp. 2571–2583, 2022.</p>
-      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">Key Insight</span>Improves the scalability, accuracy, or robustness of a core measurement, verification, or security primitive used in real network infrastructures.</div></div>
+      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">Key Insight</span>Fully offloads <b>erasure-coding reconstruction</b> to programmable switches, using Explicit Buffer Size Notification, an on-switch one-to-many TCP proxy, and parallel Galois-field offloading. Integrated with HDFS, it raises the reconstruction rate by <b>2.7&ndash;6.8&times;</b>, cuts degraded-read latency, and removes host CPU overhead entirely.</div></div>
       <div class="pf-impact">
         <span><i class="fa-solid fa-book-open"></i>Premier systems journal</span>
         <span><i class="fa-solid fa-microchip"></i>Parallel / distributed</span>
@@ -2668,7 +2660,7 @@
     </article>
 
     <!-- TPDS'22 HashFlow -->
-    <article class="pub-feature">
+    <article class="pub-feature" id="pub-hashflow">
       <div class="pf-teaser theme-net" aria-hidden="true">
         <img src="images/papers/hashflow.png" alt="HashFlow">
         <div class="teaser-label">HashFlow</div>
@@ -2681,7 +2673,7 @@
         Zongyi Zhao, Xingang Shi*, Zhiliang Wang, Qi Li, <b>Han Zhang</b>, Xia Yin
       </p>
       <p class="pf-venue">IEEE Transactions on Parallel and Distributed Systems, vol. 33, no. 5, pp. 1069–1083, 2022.</p>
-      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">Key Insight</span>Improves the scalability, accuracy, or robustness of a core measurement, verification, or security primitive used in real network infrastructures.</div></div>
+      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">Key Insight</span>Keeps large flows in a main table and summarizes the rest in an ancillary table, promoting flows back with guaranteed probability as they grow. Implemented on a <b>Tofino switch</b>, it beats the best competitors by up to 21%, 60%, and 35% in flow-size estimation, flow-size-distribution estimation, and heavy-hitter detection, with almost no loss in throughput.</div></div>
       <div class="pf-impact">
         <span><i class="fa-solid fa-book-open"></i>Premier systems journal</span>
         <span><i class="fa-solid fa-microchip"></i>Parallel / distributed</span>
@@ -2706,7 +2698,7 @@
         Su Wang, Hongbin Sun, Zhiliang Wang, Tao Zhou, Xia Yin, Dongqi Han, <b>Han Zhang</b>, Xingang Shi, Jiahai Yang
       </p>
       <p class="pf-venue">IEEE Transactions on Information Forensics and Security, 2025.</p>
-      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">Key Insight</span>Pushes anomaly / intrusion detection from offline analytics to <b>online</b>, ISP-scale operation, with measurable gains in accuracy and false-positive rates.</div></div>
+      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">Key Insight</span>eaGle reconstructs <b>end-to-end attack scenarios</b> from raw host data: anomaly-based scoring plus fine-grained misuse detection feed a new anomalous-subtree detection algorithm, and coarse-grained rule matching produces an interpretable attack-scenario graph. It outperforms three state-of-the-art reconstruction systems on DARPA TC data and three deployment scenarios.</div></div>
       <div class="pf-impact">
         <span><i class="fa-solid fa-shield-halved"></i>Top security journal</span>
         <span><i class="fa-solid fa-microscope"></i>Real-world traces</span>
@@ -2731,7 +2723,7 @@
         Yahui Li, <b>Han Zhang*</b>, Jilong Wang, Xingang Shi, Xia Yin, Zhiliang Wang, Jiankun Hu, Congcong Miao, Jianping Wu
       </p>
       <p class="pf-venue">IEEE Transactions on Information Forensics and Security, vol. 19, pp. 10099–10113, 2024.</p>
-      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">Key Insight</span>Brings <b>formal verification</b> to a previously hand-tuned operational primitive, scaling to carrier-sized state while keeping counter-examples interpretable.</div></div>
+      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">Key Insight</span>Quantitative network verification (QNV) checks <b>quantitative policies</b>, such as whether a link becomes overloaded, rather than only Boolean ones like reachability: configurations are translated into a symbolic model of converged forwarding, and a logical formula matrix captures behavior under failures. It verifies such policies precisely within minutes, even on large networks.</div></div>
       <div class="pf-impact">
         <span><i class="fa-solid fa-shield-halved"></i>Top security journal</span>
         <span><i class="fa-solid fa-microscope"></i>Real-world traces</span>
@@ -2756,7 +2748,7 @@
         Pei Zhang, Fangzhou He, <b>Han Zhang*</b>, Jiankun Hu, et al.
       </p>
       <p class="pf-venue">IEEE Transactions on Information Forensics and Security, vol. 18, pp. 2076–2090, 2023.</p>
-      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">Key Insight</span>Improves the scalability, accuracy, or robustness of a core measurement, verification, or security primitive used in real network infrastructures.</div></div>
+      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">Key Insight</span>OADSD detects malicious traffic in <b>SD-WAN</b> using distributed dynamic feature extraction from raw traffic and an on-demand evolving isolation forest that adapts to the environment, with a theoretical performance analysis. It achieves up to 60% higher accuracy than state-of-the-art systems.</div></div>
       <div class="pf-impact">
         <span><i class="fa-solid fa-shield-halved"></i>Top security journal</span>
         <span><i class="fa-solid fa-microscope"></i>Real-world traces</span>
@@ -2781,7 +2773,7 @@
         Tianbo Wang, Huacheng Li, Chunhe Xia*, <b>Han Zhang</b>, Pei Zhang
       </p>
       <p class="pf-venue">IEEE Transactions on Information Forensics and Security, vol. 18, pp. 1610–1624, 2023.</p>
-      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">Key Insight</span>Improves the scalability, accuracy, or robustness of a core measurement, verification, or security primitive used in real network infrastructures.</div></div>
+      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">Key Insight</span>Models <b>hybrid worms</b> that combine scanning with social-network spreading through a hierarchical-stochastic propagation model, then derives a hierarchical-measure immunization strategy: maximum-likelihood estimation locates vulnerable hosts, and a propagation-centrality measure finds vital social nodes. The model is more accurate than prior ones, and the strategy contains the spread more effectively.</div></div>
       <div class="pf-impact">
         <span><i class="fa-solid fa-shield-halved"></i>Top security journal</span>
         <span><i class="fa-solid fa-microscope"></i>Real-world traces</span>
@@ -2806,7 +2798,7 @@
         Su Wang, Zhiliang Wang*, Tao Zhou, Hongbin Sun, Xia Yin, Dongqi Han, <b>Han Zhang</b>, et al.
       </p>
       <p class="pf-venue">IEEE Transactions on Information Forensics and Security, vol. 17, pp. 3972–3987, 2022.</p>
-      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">Key Insight</span>Demonstrates <b>non-intrusive, low-overhead tracing</b> deployable on production workloads without application-level cooperation.</div></div>
+      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">Key Insight</span>Detects host-based threats, including APTs, at <b>system-entity level</b> without prior knowledge of attack patterns: an inductive graph neural network (GraphSAGE) learns each benign entity&#39;s role in the provenance graph. It runs in real time on long-running hosts, catches intrusions early, and outperforms seven state-of-the-art host IDSs on five public datasets.</div></div>
       <div class="pf-impact">
         <span><i class="fa-solid fa-shield-halved"></i>Top security journal</span>
         <span><i class="fa-solid fa-microscope"></i>Real-world traces</span>
@@ -2831,7 +2823,7 @@
         Shangbin Han, Qianhong Wu, <b>Han Zhang*</b>, Bo Qin, Jiankun Hu, et al.
       </p>
       <p class="pf-venue">IEEE Transactions on Information Forensics and Security, vol. 16, pp. 2300–2311, 2021.</p>
-      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">Key Insight</span>Pushes anomaly / intrusion detection from offline analytics to <b>online</b>, ISP-scale operation, with measurable gains in accuracy and false-positive rates.</div></div>
+      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">Key Insight</span>ROEAD makes log-based anomaly detection <b>robust to noisy data and cheap to update</b>: a robust feature extractor removes noise, and an online evolving SVM updates its parameters as logs arrive, provably approaching the best hypothesis over time. Detection accuracy improves by more than 40% on public log datasets.</div></div>
       <div class="pf-impact">
         <span><i class="fa-solid fa-shield-halved"></i>Top security journal</span>
         <span><i class="fa-solid fa-microscope"></i>Real-world traces</span>
@@ -2856,7 +2848,7 @@
         Ying Tian, Zhiliang Wang*, Xia Yin, Xingang Shi, Jiahai Yang, <b>Han Zhang</b>
       </p>
       <p class="pf-venue">IEEE International Conference on Network Protocols (ICNP '22), 2022.</p>
-      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">Key Insight</span>Improves the scalability, accuracy, or robustness of a core measurement, verification, or security primitive used in real network infrastructures.</div></div>
+      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">Key Insight</span>A centralized, efficient, and scalable NUM algorithm for SDN: smooth utility and penalty functions enable <b>Nesterov&#39;s accelerated gradient method</b>, with an O(d/t&sup2;) convergence rate, the fastest in the number of iterations t and scalable in the number of flows d. It reaches accurate, close-to-optimal utility in fewer iterations.</div></div>
       <div class="pf-impact">
         <span><i class="fa-solid fa-book-open"></i>Top networking conf.</span>
         <span><i class="fa-solid fa-flask"></i>Systems prototype</span>
@@ -2881,7 +2873,7 @@
         Dongqi Han, Zhiliang Wang*, Wenqi Chen, Ying Zhong, Su Wang, <b>Han Zhang</b>, Jiahai Yang, Xingang Shi, Xia Yin
       </p>
       <p class="pf-venue">ACM SIGSAC Conference on Computer and Communications Security (CCS '21), 2021.</p>
-      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">Key Insight</span>Pushes anomaly / intrusion detection from offline analytics to <b>online</b>, ISP-scale operation, with measurable gains in accuracy and false-positive rates.</div></div>
+      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">Key Insight</span>A general framework to <b>interpret unsupervised deep-learning anomaly detectors</b> in security applications and to improve them with the interpretations: a constrained-optimization interpreter tailored to security requirements, plus a model-based Distiller. Applied to three kinds of detection systems, it helps operators understand decisions, diagnose mistakes, give feedback, and reduce false positives.</div></div>
       <div class="pf-impact">
         <span><i class="fa-solid fa-trophy"></i>Top-tier venue</span>
         <span class="deploy"><i class="fa-solid fa-tower-broadcast"></i>Production-grade</span>
@@ -2966,7 +2958,8 @@
       <li class="pub-item"><span class="pub-num">[6]</span><span class="pub-content">
         Kaiyang Zhao, <b>Han Zhang*</b>, Yao Tong, Yahui Li, Xingang Shi, Zhiliang Wang, Xia Yin, Jianping Wu.
         "Efficient Slice-Parallel Distributed Probing in SRv6 Networks."
-        <span class="pub-venue top">IEEE/ACM Transactions on Networking</span>, 2026.
+        <span class="pub-venue top">IEEE/ACM Transactions on Networking</span>, vol. 34, pp. 5588–5600, 2026.
+        <a class="pub-pdf" href="https://ieeexplore.ieee.org/document/11533551"><i class="fa-solid fa-file-pdf"></i>PDF</a>
       </span></li>
       <li class="pub-item"><span class="pub-num">[7]</span><span class="pub-content">
         XinZhe Liu, Yahui Li, <b>Han Zhang</b>, Renrui Tian, Xia Yin, Xingang Shi, Zhiliang Wang, Gang Ren, Jilong Wang, Jiangyuan Yao.
@@ -3019,6 +3012,7 @@
         Zhaozhen Wang, Xingang Shi*, Haijun Geng, <b>Han Zhang</b>, Xia Yin, Zhiliang Wang.
         "On Non-Commutative Routing."
         <span class="pub-venue top">IEEE INFOCOM 2025</span>, pp. 1–10.
+        <a class="pub-pdf" href="https://ieeexplore.ieee.org/document/11044753"><i class="fa-solid fa-file-pdf"></i>PDF</a>
       </span></li>
       <li class="pub-item"><span class="pub-num">[3]</span><span class="pub-content">
         Weiting Zhang, Jiadong Ren, Tao Zheng, Ruibin Guo, <b>Han Zhang</b>, Shiwen Mao, Hongke Zhang*.

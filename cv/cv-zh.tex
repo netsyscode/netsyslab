@@ -41,33 +41,28 @@
 % ------------------------------------------------------------- 研究概述
 \section*{研究概述}
 \noindent
-本人的研究致力于为生产规模的网络系统构建\textbf{测量、验证与态势感知基础设施}，覆盖四类部署场景：
-\textbf{（一）互联网}——证书透明度（CT）日志、BGP、RPKI、DNS、Web-PKI；
-\textbf{（二）ISP 与运营商网络}——包括 \textbf{FITI / CERNET / CERNET2} 国家级试验设施与运营商骨干网；
-\textbf{（三）智算与数据中心基础设施}——超大规模云、Serverless 平台、智能计算中心；
-以及\textbf{（四）安全可信机器人}，作为独立但互补的研究方向。
-
-\smallskip
-\noindent
-研究工作组织为三条主线，共同汇聚为一个统一议程：\emph{下一代互联网、国家级试验设施、
-运营智算基础设施以及安全攸关的具身智能系统所需的可观测基底、验证工具链与信任管道}。
+本人的研究面向\textbf{AI / 网络基础设施}，构建\textbf{测量、资源调度与安全}技术，
+覆盖互联网（BGP、RPKI、DNS、Web PKI）、ISP 与运营商骨干网、
+\textbf{FITI / CERNET / CERNET2} 国家级试验设施，以及从智算集群到超大规模云与
+Serverless 平台的智算 / 数据中心。研究工作分为三个方向，服务于同一个目标——
+\emph{让 AI / 网络基础设施看得清、调得优、守得住}：
 
 \begin{enumerate}[leftmargin=1.8em,label=\textbf{\arabic*.}]
-  \item \textbf{网络空间态势感知与测量。} 面向互联网与试验床的可观测性与威胁检测：
-  基于 eBPF 与网内遥测的零代码分布式追踪（SIGCOMM'23、SIGCOMM'25、ICNP'25）；
-  可编程交换机上的线速加密流量入侵检测（SIGCOMM'25、SIGCOMM'26）；
-  基于溯源图的 APT 检测（TIFS'22、TIFS'25）；Web-PKI 与证书误签发监测（WWW'25）；
-  互联网拓扑与 Looking-Glass 挖掘（WWW'26）。
-  \item \textbf{AI 赋能网络与运维可验证性。} 使运营基础设施可验证、可自诊、可韧性恢复：
-  运营商规模的配置验证（TIFS'24、INFOCOM'26）；覆盖网集成验证（CoNEXT'25）；
-  路由信任分析（CCS'25、ICNP'26）；测试报文生成（TPDS'23）；
-  跨数据中心广域网流量工程（ToN'22、CoNEXT'21）；
-  Serverless 钱包耗尽（DoW）攻击与负载验证（CCS'22、ToN'26）；
-  面向集合通信的网内前向纠错（INFOCOM'24）。
-  \item \textbf{安全可信机器人。} 将同样的测量与验证方法学迁移到具身智能：
-  可信多模态感知、智能体与机器人控制器的运行时验证、加密传感器通道异常检测、
-  自主车队的信任证书——以对抗鲁棒机器学习（SIGCOMM'25、CCS'21、NDSS'23）、
-  溯源图 APT 检测与 PKI 信任为基础。
+  \item \textbf{AI / 网络基础设施测量。}以线速、零应用改造的方式让生产基础设施可观测：
+  基于 eBPF 的零代码分布式追踪（SIGCOMM'23、SIGCOMM'25、ICSE'26）；
+  SRv6 探测与时延瓶颈诊断（ICNP'25、ToN'26）；可编程交换机上的流测量（TPDS'22）；
+  以及面向 Looking Glass 服务、AS 商业关系与域间路由的互联网级测量（WWW'26、ToN'25、ICNP'26）。
+  \item \textbf{AI / 网络基础设施资源调度。}把测量结果转化为高效、抗故障的带宽与算力调度：
+  具备可用性保障的跨数据中心广域网流量工程（CoNEXT'21、ToN'22）；
+  集中式网络效用最大化（ICNP'22、ToN'25）；路由代数（INFOCOM'25）；
+  可编程交换机上的网内加速（INFOCOM'24、TPDS'22）；面向网络功能的 FaaS 平台（TPDS'23）；
+  服务功能链部署与调度（TPDS'26）；以及面向企业云的即插即用网络管理（NSDI'27）。
+  \item \textbf{AI / 网络基础设施安全。}在攻击与配置错误扩散之前发现并阻断：
+  可编程交换机上的在线入侵检测，已在 ISP 生产环境运行（SIGCOMM'25、SIGCOMM'26）；
+  可解释、能应对正常态漂移的异常检测（CCS'21、NDSS'23）；
+  基于溯源图的 APT 检测（TIFS'22、TIFS'25）；
+  Serverless 钱包耗尽（DoW）攻击检测（CCS'22、ToN'26）；
+  路由与 Web PKI 安全（CCS'26、WWW'25）；以及运营商规模的配置验证（TIFS'24、CoNEXT'25、INFOCOM'26）。
 \end{enumerate}
 
 % ----------------------------------------------------------- 学术计量
@@ -113,16 +108,45 @@ ACM CoNEXT、ACM WWW、ACM ICSE、IEEE INFOCOM、IEEE/ACM ToN、IEEE TIFS、IEEE
 % --------------------------------------------------- 代表性论文
 \section{代表性论文}
 \note{\me{加粗}为本人；\corr{} 表示通信作者。完整列表见下一节。}
+\subsection*{AI / 网络基础设施测量}
 \begin{publist}
 
-\item \me{Han Zhang}, Xuefeng Liu, Linqiang Qian, Guyue Liu, Tianyu Zhang, Kaiyang
-Zhao, Yantu Tong, Zeji Xiao, Dongbiao He, Yahui Li, Ke Ruan, Jilong Wang, Yongqing
-Zhu, Xia Yin. ``Towards High-Performance Intrusion Detection with Robustness
-Guarantees on Programmable Switches at ISP Scale.'' \venue{ACM SIGCOMM 2026},
-pp.~1282--1298.
-\insight{首个面向 ISP 的可编程交换机入侵检测体系：数据平面轻量特征提取与
-控制平面自适应学习协同设计，在 Tbps 量级线速检测的同时对流量漂移与
-对抗性规避保持鲁棒；在真实 ISP 骨干网验证，资源开销相比 CPU/GPU 方案降低数个量级。}
+\item Junxian Shen, \me{Han Zhang}\corr, Yang Xiang, Xingang Shi, Xinrui Li, Yunxi
+Shen, Zijian Zhang, Sicheng Wang, Yanhui Yang, Yu Zhou, Mingwei Xu, Jilong Wang.
+``Network-Centric Distributed Tracing with DeepFlow: Troubleshooting Your
+Microservices in Zero Code.'' \venue{ACM SIGCOMM 2023}, pp.~420--437.
+\insight{以网络为中心的追踪平面与隐式上下文传播，完全无需修改应用代码。
+已开源并成为云原生可观测性的事实标准（CNCF Sandbox，4000+ stars，部署于数万台主机）。}
+
+\item Yantao Geng, \me{Han Zhang}\corr, Zhiheng Wu, Yahui Li, Jilong Wang, Xia Yin.
+``Low-Overhead Distributed Application Observation with DeepTrace: Achieving Accurate
+Tracing in Production Systems.'' \venue{ACM SIGCOMM 2025}, pp.~1056--1069.
+\insight{基于事务的无侵入追踪：利用请求内容中的 API 端点与事务字段将请求归入不同事务，
+避免误合并不同事务的追踪；高并发下准确率仍超过 95\%，已被数十家企业用于生产环境。}
+
+\item Yantao Geng, \me{Han Zhang}\corr, Zhiheng Wu, Yahui Li, Jilong Wang, Xia Yin.
+``Non-Intrusive Distributed Tracing with Method-Level Delay Estimation for
+Microservices Troubleshooting.'' \venue{ACM/IEEE ICSE 2026}, pp.~1661--1673.
+\insight{FlowScope 通过互相关分析估计请求间的方法级因果时延分布，并在多重约束下迭代重建追踪，
+追踪准确率相比 DeepFlow 与 TraceWeaver 提升 51\%。}
+
+\item Kaiyang Zhao, \me{Han Zhang}\corr, Yao Tong, Yahui Li, Xingang Shi, Zhiliang
+Wang, Xia Yin, Jianping Wu. ``SRmesh: Deterministic and Efficient Diagnosis of Latency
+Bottleneck Links in SRv6 Networks.'' \venue{IEEE ICNP 2025}, pp.~1--12.
+\insight{以确定性路径的 SR 探测、基于时延的多路径推断与渐进式诊断，定位 SRv6 网络中的
+时延瓶颈链路，探测开销最多降低 91.9\%。}
+
+\item Yunze Wei, Xingang Shi, \me{Han Zhang}\corr, Tianyu Zhang, Yahui Li, Xia Yin.
+``GlassMiner: Mining Looking Glass Services via Structure-Semantics Fusion for Web
+Observability.'' \venue{ACM WWW 2026}, pp.~7576--7587.
+\insight{融合结构与语义特征并借助大模型分类，发现 3867 个 Looking Glass 网页和 7558 个
+此前未被公开列表收录的观测点（发现量为已有方法的 1.82 倍、挖掘效率为 3.43 倍），
+并据此分析两家大型 CDN 的路由绕行。}
+
+\end{publist}
+
+\subsection*{AI / 网络基础设施资源调度}
+\begin{publist}[resume]
 
 \item Kaiyang Zhao, \me{Han Zhang}\corr, Tianpeng Zhang, Yantu Tong, Zeji Xiao,
 Xuefeng Liu, Xia Yin, Jianping Wu. ``Kuiper: Enterprise Cloud Plug-and-Play Network
@@ -130,11 +154,43 @@ Management Platform.'' \venue{USENIX NSDI 2027}.
 \insight{面向企业云的统一智能运维控制面：在同一套遥测与验证基底上整合
 故障管理、安全事件响应与配置管理。}
 
-\item Yantao Geng, \me{Han Zhang}\corr, Zhiheng Wu, Yahui Li, Jilong Wang, Xia Yin.
-``Low-Overhead Distributed Application Observation with DeepTrace: Achieving Accurate
-Tracing in Production Systems.'' \venue{ACM SIGCOMM 2025}, pp.~1056--1069.
-\insight{方法级无侵入追踪，开销仅为侵入式基线的约 $1/10$；
-高并发场景下准确率仍超过 95\%；已被数十家企业用于生产环境的故障诊断与资源优化。}
+\item \me{Han Zhang}, Xingang Shi\corr, Xia Yin, Jilong Wang, Zhiliang Wang, Yingya
+Guo, Tian Lan. ``Boosting Bandwidth Availability over Inter-DC WAN.''
+\venue{ACM CoNEXT 2021}, pp.~297--312.
+\insight{面向跨数据中心广域网的带宽可用性流量工程：在线准入控制比最优策略快 $30\times$
+（误拒率低于 4\%），相比 FFC 与 TEAVAR 多满足 23\%--60\% 的可用性需求。}
+
+\item Yi Qiao, \me{Han Zhang}\corr, Jilong Wang. ``NetFEC: In-Network FEC Encoding
+Acceleration for Latency-Sensitive Multimedia Applications.''
+\venue{IEEE INFOCOM 2024}, pp.~2348--2357.
+\insight{将时延敏感多媒体应用的 FEC 编码整体卸载到可编程交换芯片，以 ghost packet 机制
+兼容拥塞控制、发送节奏控制与统计功能；与 WebRTC 集成后消除服务器 CPU 负担，额外开销可忽略。}
+
+\item Heng Yu, \me{Han Zhang}\corr, Junxian Shen, Yantao Geng, et al. ``Serpens: A
+High-Performance FaaS Platform for Network Functions.'' \venue{IEEE Transactions on
+Parallel and Distributed Systems}, vol.~34, no.~8, pp.~2448--2463, 2023.
+\insight{面向网络功能的高性能 FaaS 平台：可复用的 NF 运行时、本地状态访问与改进的服务链机制，
+相比在现有 FaaS 平台上运行的 NF 与服务链，吞吐提升 10 倍以上、时延降低 90\% 以上。}
+
+\item Ying Tian, Zhiliang Wang\corr, Xia Yin, Xingang Shi, Jiahai Yang, \me{Han
+Zhang}\corr. ``Centralized Network Utility Maximization with Accelerated Gradient
+Method.'' \venue{IEEE Transactions on Networking}, 2025.
+\insight{通过光滑的效用与惩罚函数，使 Nesterov 加速梯度法可用于集中式网络效用最大化，
+收敛速率达 $O(d/t^2)$，对流数量可扩展，并支持多路径上的带优先级流。}
+
+\end{publist}
+
+\subsection*{AI / 网络基础设施安全}
+\begin{publist}[resume]
+
+\item \me{Han Zhang}, Xuefeng Liu, Linqiang Qian, Guyue Liu, Tianyu Zhang, Kaiyang
+Zhao, Yantu Tong, Zeji Xiao, Dongbiao He, Yahui Li, Ke Ruan, Jilong Wang, Yongqing
+Zhu, Xia Yin. ``Towards High-Performance Intrusion Detection with Robustness
+Guarantees on Programmable Switches at ISP Scale.'' \venue{ACM SIGCOMM 2026},
+pp.~1282--1298.
+\insight{部署于可编程交换机的在线入侵检测系统，保护接入 ISP 的企业园区：双平面特征提取、
+仅用良性流量训练的单类模型与在线更新机制；已在生产环境运行三年以上，
+可在数分钟内以约 90\% 的准确率检出恶意流量。}
 
 \item \me{Han Zhang}, Guyue Liu\corr, Xingang Shi, Yahui Li, Jilong Wang, Yongqing
 Zhu, Ke Ruan, Jie Liang, Xia Yin. ``Achieving High-Speed and Robust Encrypted Traffic
@@ -143,13 +199,6 @@ pp.~1254--1256.
 \insight{双平面特征提取 + 轻量单类分类模型，化解深度学习精度与交换芯片
 资源约束之间的长期矛盾；已在生产环境运行两年，发现 10 余起重大攻击事件，
 为两家 ISP 保护超过 1000 万台服务器。}
-
-\item Junxian Shen, \me{Han Zhang}\corr, Yang Xiang, Xingang Shi, Xinrui Li, Yunxi
-Shen, Zijian Zhang, Sicheng Wang, Yanhui Yang, Yu Zhou, Mingwei Xu, Jilong Wang.
-``Network-Centric Distributed Tracing with DeepFlow: Troubleshooting Your
-Microservices in Zero Code.'' \venue{ACM SIGCOMM 2023}, pp.~420--437.
-\insight{以网络为中心的追踪平面与隐式上下文传播，完全无需修改应用代码。
-已开源并成为云原生可观测性的事实标准（CNCF Sandbox，4000+ stars，部署于数万台主机）。}
 
 \item Yunze Wei, Xingang Shi, Minghao Zhang, Zhaozhen Wang, Qiang Ma, \me{Han Zhang},
 Yahui Li, Xia Yin. ``Parade: Unified and Data-Driven Prefix-AS Semantics for BGP
@@ -160,8 +209,8 @@ Anomaly Detection.'' \venue{ACM CCS 2026}.
 \item Junxian Shen, \me{Han Zhang}\corr, Yantao Geng, Jiawei Li, Jilong Wang, Mingwei
 Xu. ``Gringotts: Fast and Accurate Internal Denial-of-Wallet Detection for Serverless
 Computing.'' \venue{ACM CCS 2022}, pp.~2627--2641.
-\insight{首次系统性研究 Serverless 平台上的内部钱包耗尽（DoW）攻击；
-性能开销低于 1.1\%，平均检测时延 1.86 秒，准确率超过 95.75\%。}
+\insight{在商用 Serverless 平台上实测内部钱包耗尽（DoW）攻击，并以指标采集代理结合马氏距离
+异常分析进行检测：性能开销低于 1.1\%，平均检测时延 1.86 秒，准确率超过 95.75\%。}
 
 \item Dongqi Han, Zhiliang Wang\corr, Wenqi Chen, Ying Zhong, Su Wang, \me{Han Zhang},
 Jiahai Yang, Xingang Shi, Xia Yin. ``DeepAID: Interpreting and Improving Deep
@@ -173,26 +222,14 @@ pp.~3197--3217.
 \item Dongqi Han, Zhiliang Wang\corr, Wenqi Chen, Kai Wang, Rui Yu, Su Wang, \me{Han
 Zhang}, et al. ``Anomaly Detection in the Open World: Normality Shift Detection,
 Explanation, and Adaptation.'' \venue{NDSS 2023}.
-\insight{将入侵检测从离线分析推进到正常态漂移条件下的在线、ISP 规模运行。}
-
-\item Yantao Geng, \me{Han Zhang}\corr, Zhiheng Wu, Yahui Li, Jilong Wang, Xia Yin.
-``Non-Intrusive Distributed Tracing with Method-Level Delay Estimation for
-Microservices Troubleshooting.'' \venue{ACM/IEEE ICSE 2026}, pp.~1661--1673.
-\insight{从网络侧观测结合轻量运行时线索推断方法级时延，
-故障定位精度与侵入式方案持平，而工程代价大幅降低。}
+\insight{针对零正样本异常检测中的正常态漂移（仅用良性数据训练的模型在正常行为变化时受影响最大），
+实现漂移的检测、解释与自适应。}
 
 \item Tianyu Zhang, \me{Han Zhang}\corr, Yunze Wei, Yahui Li, Xingang Shi, Jilong
 Wang, Xia Yin. ``ACME++: A Secure Authorization Mechanism for ACME Clients in the Web PKI
-Ecosystem.''
-\venue{ACM WWW 2025}, pp.~1058--1067.
+Ecosystem.'' \venue{ACM WWW 2025}, pp.~1058--1067.
 \insight{披露 \emph{ACME Authz 缓存攻击}——攻击者无需控制域名即可获取
 欺诈证书（在 Let's Encrypt 上实证），并提出开销可忽略的账户绑定缓解机制。}
-
-\item Yunze Wei, Xingang Shi, \me{Han Zhang}\corr, Tianyu Zhang, Yahui Li, Xia Yin.
-``GlassMiner: Mining Looking Glass Services via Structure-Semantics Fusion for Web
-Observability.'' \venue{ACM WWW 2026}, pp.~7576--7587.
-\insight{联合建模 Looking Glass 门户的 DOM 结构与自然语言语义，
-在数千个运营商门户上实现洲际规模的 BGP 路径可观测性。}
 
 \item XinZhe Liu, Yahui Li\corr, \me{Han Zhang}, Xia Yin, Xingang Shi, Zhiliang Wang,
 Gang Ren, Jilong Wang, Jiangyuan Yao. ``Scalable and Interpretable Overlay Network
@@ -200,25 +237,12 @@ Checking via Ensemble Verification.'' \venue{ACM CoNEXT 2025}.
 \insight{首个面向 overlay/underlay 网络的控制平面验证器；
 部署于全国性 FITI 试验设施，发现 22 处配置错误，相比 Batfish+ 最高提速 $102\times$。}
 
-\item \me{Han Zhang}, Xingang Shi\corr, Xia Yin, Jilong Wang, Zhiliang Wang, Yingya
-Guo, Tian Lan. ``Boosting Bandwidth Availability over Inter-DC WAN.''
-\venue{ACM CoNEXT 2021}, pp.~297--312.
-\insight{概率化带宽可用性流量工程：在线准入控制提速 $30\times$，
-相比 FFC 与 TEAVAR 多满足 23\%--60\% 的带宽可用性需求；
-在腾讯与中国电信真实拓扑上验证。}
-
-\item Kaiyang Zhao, \me{Han Zhang}\corr, Yao Tong, Yahui Li, Xingang Shi, Zhiliang
-Wang, Xia Yin, Jianping Wu. ``SRmesh: Deterministic and Efficient Diagnosis of Latency
-Bottleneck Links in SRv6 Networks.'' \venue{IEEE ICNP 2025}, pp.~1--12.
-\insight{将确定性带内遥测嵌入分段路由报头，在探测开销有界的前提下
-实现逐链路时延归因；在多厂商 SRv6 试验床上召回率 100\%。}
-
 \item Yahui Li, \me{Han Zhang}\corr, Jilong Wang, Xingang Shi, Xia Yin, Zhiliang Wang,
 Jiankun Hu, Congcong Miao, Jianping Wu. ``Proactively Verifying Quantitative Network
 Policy across Unsafe and Unreliable Environments.'' \venue{IEEE Transactions on
 Information Forensics and Security}, vol.~19, pp.~10099--10113, 2024.
-\insight{把形式化验证引入此前依赖人工调参的定量网络策略，
-扩展到运营商规模的状态空间，同时保持反例的可解释性。}
+\insight{定量网络验证（QNV）不仅检查可达性等布尔策略，还能检查链路过载等定量策略，
+并覆盖故障场景；借助收敛转发的符号化模型，大规模网络也能在数分钟内完成验证。}
 
 \end{publist}
 
@@ -255,7 +279,7 @@ Contention-Induced Slowdowns in Serverless Platforms.'' \venue{IEEE/ACM Transact
 on Networking}, vol.~34, pp.~4700--4715, 2026.
 \item Kaiyang Zhao, \me{Han Zhang}\corr, Yao Tong, Yahui Li, Xingang Shi, Zhiliang
 Wang, Xia Yin, Jianping Wu. ``Efficient Slice-Parallel Distributed Probing in SRv6
-Networks.'' \venue{IEEE/ACM Transactions on Networking}, 2026.
+Networks.'' \venue{IEEE/ACM Transactions on Networking}, vol.~34, pp.~5588--5600, 2026.
 \item XinZhe Liu, Yahui Li, \me{Han Zhang}, Renrui Tian, Xia Yin, Xingang Shi,
 Zhiliang Wang, Gang Ren, Jilong Wang, Jiangyuan Yao. ``Comprehensive Network
 Configuration Verification via Effective Environment Reduction.''
@@ -560,26 +584,25 @@ C\&C Traces.'' \venue{IEEE HST 2015}.
 % ---------------------------------------------------- 系统与开源
 \section{生产系统与开源成果}
 \begin{itemize}
-  \item \textbf{DeepFlow}——面向云原生与 AI 智能体流水线的零代码 eBPF 可观测性平台。
+  \item \textbf{DeepFlow}——面向云原生与 AI 基础设施的零代码 eBPF 可观测性平台
+        （Kubernetes、服务网格、Serverless 平台、LLM / AI 智能体流水线）。
         \textbf{CNCF Sandbox 项目}；GitHub 4000+ stars、450+ forks；部署于数万台主机。
         \note{SIGCOMM'23}
-  \item \textbf{DeepTrace}——面向智算中心与大规模微服务的无侵入分布式应用追踪；
-        同一套观测流水线延伸至机器人 / 具身智能运行时安全。170+ stars。
+  \item \textbf{DeepTrace}——面向智算中心与大规模微服务的无侵入分布式应用追踪与故障监控；
+        高并发下准确率超过 95\%，已被数十家企业用于生产环境。170+ stars。
         \note{SIGCOMM'25、ICSE'26}
-  \item \textbf{SiteGuard / 智算中心出入口防护}——智算中心出入口流量监测与机器学习威胁检测，
-        可运行于可编程交换机（P4/Tofino）、DPU、SmartNIC 与 eBPF，达到 Tbps 量级线速。
-        \note{SIGCOMM'25、SIGCOMM'26}
-  \item \textbf{Kuiper / 智算中心智能运维}——整合故障管理、安全事件响应、配置管理与网络验证的
-        全栈 AIOps 平台；在生产 GPU 集群环境中将 MTTR 降低 $5\times$。
-        \note{NSDI'27、ICNP'25、ToN'26}
-  \item \textbf{NetVerify 套件}——面向配置、覆盖网与定量策略的静态验证与仿真工具族，
-        已应用于 FITI 与 CERNET。\note{TIFS'24、CoNEXT'25、INFOCOM'26}
   \item \textbf{SRmesh 探测工具包}——切片并行 SRv6 探测，以 $O(1)$ 轮次获得全网状时延图；
         在国家级 FITI 试验设施上验证。\note{ICNP'25、ToN'26}
   \item \textbf{IScan}——持续的互联网主动 / 被动探测（IP 空间、BGP/RPKI 路由、CT 日志与 Web-PKI），
         汇聚为可查询的互联网知识库。\note{WWW'25、WWW'26}
-  \item \textbf{STRobot}——面向自主机器人与具身智能体的安全优先运行时观测与防护框架。
-        \note{ICSE'26}
+  \item \textbf{Kuiper / 智算中心智能运维}——整合故障管理、安全事件响应、配置管理与网络验证的
+        全栈 AIOps 平台；在生产 GPU 集群环境中将 MTTR 降低 $5\times$。
+        \note{NSDI'27、ICNP'25、ToN'26}
+  \item \textbf{SiteGuard / 智算中心出入口防护}——智算中心出入口流量监测与机器学习威胁检测，
+        可运行于可编程交换机（P4/Tofino）、DPU、SmartNIC 与 eBPF，达到 Tbps 量级线速。
+        \note{SIGCOMM'25、SIGCOMM'26}
+  \item \textbf{NetVerify 套件}——面向配置、覆盖网与定量策略的静态验证与仿真工具族，
+        已应用于 FITI 与 CERNET。\note{TIFS'24、CoNEXT'25、INFOCOM'26}
   \item \textbf{公开数据集}——GlassMiner Looking-Glass 语料（WWW'26）；
         带标注的加密流量 IDS 基准数据集（SIGCOMM'25/'26、CCS'21、NDSS'23）。
 \end{itemize}

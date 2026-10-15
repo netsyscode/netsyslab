@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Han Zhang · Observability, Situational Awareness &amp; Security for Testbeds &amp; AI Data Centers · Tsinghua</title>
-<meta name="description" content="Han Zhang (张晗), Associate Professor at the Institute for Network Sciences and Cyberspace, Tsinghua University. Observability, situational awareness, and security infrastructure for national-scale network testbeds and operational AI / data-center infrastructures, with a new thrust on Secure &amp; Trustworthy Robotics." />
+<title>张晗 · AI / 网络基础设施的测量、资源调度与安全 · 清华大学</title>
+<meta name="description" content="张晗，清华大学网络科学与网络空间研究院副教授。研究 AI / 网络基础设施的测量、资源调度与安全，覆盖互联网、运营商骨干网、FITI / CERNET 国家级试验设施与智算中心。" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Lora:ital,wght@0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -224,7 +224,10 @@
 
   /* ─── Research areas (cards) ─────────────────────────────── */
   .research-grid {
-    display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 8px;
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 8px;
+  }
+  @media (max-width: 980px) {
+    .research-grid { grid-template-columns: 1fr; }
   }
   .research-card {
     background: var(--c-paper);
@@ -323,11 +326,8 @@
     font-weight: 700;
   }
   .vision-pillars {
-    display: grid; grid-template-columns: repeat(4, 1fr);
+    display: grid; grid-template-columns: repeat(3, 1fr);
     gap: 10px; margin-top: 10px;
-  }
-  @media (max-width: 980px) {
-    .vision-pillars { grid-template-columns: repeat(2, 1fr); }
   }
   .vision-pillar {
     background: var(--c-bg);
@@ -539,7 +539,6 @@
     box-shadow: 0 1px 2px rgba(0,0,0,0.15);
   }
   .thrust-badge.thrust-net   { background: linear-gradient(135deg, var(--c-accent) 0%, #8a2a2a 100%); }
-  .thrust-badge.thrust-robot { background: linear-gradient(135deg, #f59e0b 0%, #b45309 100%); }
 
   /* ─── Featured publications (rich cards with SVG teaser) ─────────────── */
   .featured-list { display: flex; flex-direction: column; gap: 16px; }
@@ -624,8 +623,7 @@
   .pf-teaser.theme-sec,
   .pf-teaser.theme-ver,
   .pf-teaser.theme-net,
-  .pf-teaser.theme-trust,
-  .pf-teaser.theme-robot { background: transparent; }
+  .pf-teaser.theme-trust { background: transparent; }
   .pf-teaser .teaser-label {
     display: none;
   }
@@ -1182,10 +1180,12 @@
       <a href="http://www.tsinghua.edu.cn">清华大学</a>
     </p>
     <p class="tagline" style="font-size:14.5px;color:var(--c-ink-soft);margin:4px 0 0;line-height:1.55;max-width:680px;">
-      <b>互联网、国家级试验设施、运营智算 / 数据中心的观测、态势感知与安全防护研究</b><br>
-      <span style="color:var(--c-muted);font-size:13px;">Observability, Situational Awareness &amp; Security &mdash; for the Internet, National Testbeds &amp; Operational AI Data-Center Infrastructures</span><br>
-      <b>网络智能化研究</b><br>
-      <span style="color:var(--c-muted);font-size:13px;">AI for Network</span><br>
+      <b>AI / 网络基础设施测量</b><br>
+      <span style="color:var(--c-muted);font-size:13px;">AI &amp; Network Infrastructure Measurement</span><br>
+      <b>AI / 网络基础设施资源调度</b><br>
+      <span style="color:var(--c-muted);font-size:13px;">AI &amp; Network Infrastructure Resource Scheduling</span><br>
+      <b>AI / 网络基础设施安全</b><br>
+      <span style="color:var(--c-muted);font-size:13px;">AI &amp; Network Infrastructure Security</span>
     </p>
 
     <div class="contact-row">
@@ -1216,20 +1216,20 @@
 <!-- ═══════════════════════ About ═══════════════════════ -->
 <section class="section about" id="about">
   <h2><i class="fa-solid fa-user icon"></i>关于我</h2>
-  <p>我的研究致力于为 <b>四类生产场景</b> 构建 <b>测量、验证与态势感知基础设施</b>：<b>(i) 互联网</b>——CT 证书透明度日志、BGP、RPKI、DNS、Web-PKI；<b>(ii) ISP / 运营商网络</b>，包括 <b>FITI / CERNET / CERNET2</b> 国家级试验设施与运营商骨干网；<b>(iii) 智算 / 数据中心基础设施</b>——超大规模云、Serverless 平台、智能计算中心；以及 <b>(iv) 安全可信机器人</b>，作为独立但互补的研究方向。研究工作组织为 <b>三大方向</b>，与下方 <a href="#research">研究方向</a> 一节一一对应：</p>
+  <p>我的研究面向 <b>AI / 网络基础设施</b>，构建 <b>测量、资源调度与安全</b> 技术，覆盖互联网（BGP、RPKI、DNS、Web PKI）、ISP 与运营商骨干网、<b>FITI / CERNET / CERNET2</b> 国家级试验设施，以及从智算集群到超大规模云与 Serverless 平台的智算 / 数据中心。研究工作分为 <b>三个方向</b>，详见下方 <a href="#research">研究方向</a>：</p>
   <ol style="margin:6px 0 12px 22px;padding:0;line-height:1.65;">
-    <li><b>网络空间态势感知与测量。</b> 面向互联网与试验床的可观测性与威胁检测：基于 eBPF / 网内遥测的零代码分布式追踪 (<a href="#pub-deepflow"><i>DeepFlow</i> SIGCOMM'23</a>, <a href="#pub-deeptrace"><i>DeepTrace</i> SIGCOMM'25</a>, <a href="#pub-srmesh"><i>SRmesh</i> ICNP'25</a>), 可编程交换机上的线速加密流量入侵检测 (<a href="#pub-deepshield"><i>DeepShield</i> SIGCOMM'25</a>), 基于溯源图的 APT 检测 (<a href="#pub-tifs22">TIFS'22</a> / <a href="#pub-tifs25">'25</a>), Web-PKI 与证书误签发监测 (<a href="#pub-acme"><i>ACME++</i> WWW'25</a>), 以及 Looking-Glass / 互联网拓扑挖掘 (<a href="#pub-glassminer"><i>GlassMiner</i> WWW'26</a>).</li>
-    <li><b>AI 赋能网络与运维可验证性。</b> 使试验床与运营基础设施可验证、可自诊、可韧性恢复：运营商规模的配置验证 (<a href="#pub-tifs24">TIFS'24</a>, <a href="#pub-infocom26">INFOCOM'26</a>), 覆盖网集成验证 (<a href="#pub-conext25">CoNEXT'25</a>), 路由信任分析（ROV-GD、ERIS CCS'25）, 测试报文生成 (<a href="#pub-tpds23">TPDS'23</a>), 跨数据中心广域网流量工程 (<a href="#pub-ton22">TON'22</a>, <a href="#pub-conext21">CoNEXT'21</a>), Serverless 钱包耗尽 (DoW) / 负载验证 (<a href="#pub-gringotts"><i>Gringotts</i> CCS'22</a>, <a href="#pub-clover"><i>Clover</i> TON'26</a>), 以及面向集合通信的网内前向纠错 (<a href="#pub-infocom24">INFOCOM'24</a>).</li>
-    <li><b>安全可信机器人。</b> 独立方向，将同样的测量与验证方法学迁移到具身智能：可信多模态感知、智能体 / 机器人控制器的运行时验证、加密传感器通道的异常检测、以及自主车队的信任证书——基于对抗鲁棒机器学习 (<a href="#pub-deepshield">SIGCOMM'25</a>, <a href="#pub-ccs21">CCS'21</a>, <a href="#pub-ndss23">NDSS'23</a>), provenance-graph APT 检测 (<a href="#pub-tifs22">TIFS'22</a> / <a href="#pub-tifs25">'25</a>), and PKI trust (<a href="#pub-acme">WWW'25</a>).</li>
+    <li><b>AI / 网络基础设施测量。</b> 以线速、零应用改造的方式让生产基础设施可观测：基于 eBPF 的零代码分布式追踪（<a href="#pub-deepflow"><i>DeepFlow</i> SIGCOMM'23</a>、<a href="#pub-deeptrace"><i>DeepTrace</i> SIGCOMM'25</a>、<a href="#pub-icse26"><i>FlowScope</i> ICSE'26</a>），SRv6 探测与时延瓶颈诊断（<a href="#pub-srmesh"><i>SRmesh</i> ICNP'25</a>、<a href="#pub-srv6">ToN'26</a>），可编程交换机上的流测量（<a href="#pub-hashflow"><i>HashFlow</i> TPDS'22</a>），以及面向 Looking Glass 服务、AS 商业关系与域间路由的互联网级测量（<a href="#pub-glassminer"><i>GlassMiner</i> WWW'26</a>、<a href="#pub-hela"><i>HELA</i> ToN'25</a>、ICNP'26）。</li>
+    <li><b>AI / 网络基础设施资源调度。</b> 把测量结果转化为高效、抗故障的带宽与算力调度：具备可用性保障的跨数据中心广域网流量工程（<a href="#pub-conext21"><i>BATE</i> CoNEXT'21</a>、<a href="#pub-ton22"><i>TEDAT</i> ToN'22</a>），集中式网络效用最大化（<a href="#pub-num">ToN'25</a>），路由代数（<a href="#pub-infocom25">INFOCOM'25</a>），可编程交换机上的网内加速（<a href="#pub-infocom24"><i>NetFEC</i> INFOCOM'24</a>、<a href="#pub-netec"><i>NetEC</i> TPDS'22</a>），面向网络功能的 FaaS 平台（<a href="#pub-serpens"><i>Serpens</i> TPDS'23</a>），服务功能链部署与调度（<a href="#pub-sfc"><i>SFCES</i> TPDS'26</a>），以及面向企业云的即插即用网络管理（<a href="#pub-kuiper"><i>Kuiper</i> NSDI'27</a>）。</li>
+    <li><b>AI / 网络基础设施安全。</b> 在攻击与配置错误扩散之前发现并阻断：可编程交换机上的在线入侵检测，已在 ISP 生产环境运行（<a href="#pub-deepshield"><i>DeepShield</i> SIGCOMM'25</a>、<a href="#pub-sigcomm26"><i>SiteGuard</i> SIGCOMM'26</a>），可解释、能应对正常态漂移的异常检测（<a href="#pub-ccs21"><i>DeepAID</i> CCS'21</a>、<a href="#pub-ndss23"><i>OWAD</i> NDSS'23</a>），基于溯源图的 APT 检测（<a href="#pub-tifs22"><i>THREATRACE</i> TIFS'22</a>、<a href="#pub-tifs25">TIFS'25</a>），Serverless 钱包耗尽（DoW）攻击检测（<a href="#pub-gringotts"><i>Gringotts</i> CCS'22</a>、<a href="#pub-clover"><i>Clover</i> ToN'26</a>），路由与 Web PKI 安全（<i>Parade</i> CCS'26、<a href="#pub-acme"><i>ACME++</i> WWW'25</a>），以及运营商规模的配置验证（<a href="#pub-tifs24">TIFS'24</a>、<a href="#pub-conext25"><i>MEV</i> CoNEXT'25</a>、<a href="#pub-infocom26"><i>Bulwark</i> INFOCOM'26</a>）。</li>
   </ol>
-  <p>这三条研究主线汇聚为一个统一议程：<b>下一代互联网、国家级试验设施、运营智算 / 数据中心基础设施以及安全攸关的具身系统所需的可观测基底、验证工具链与信任管道。</b></p>
+  <p>三个方向服务于同一个目标：<b>让 AI / 网络基础设施看得清、调得优、守得住</b>——从操作系统内核与可编程数据平面，一直延伸到国家级骨干网与智算中心。</p>
 
-  <p>在可观测性与路由技术方向，我开展了深入研究，并主导了 <b>DeepShield</b> 等项目。迄今已在 <i>SIGCOMM、INFOCOM、CoNEXT、CCS</i> 等国际顶级会议与期刊发表近百篇论文。研究成果已被工业界广泛采用，相关技术深度融入 <b>中国电信骨干网</b>、<b>未来互联网试验设施（FITI）</b>、<b>CERNET / CERNET2</b> 等国家关键网络基础设施，服务于电信运营商、国防军队及其他关乎国计民生的重要领域。</p>
+  <p>我主导了 <b>DeepShield</b> 等项目，在 <i>SIGCOMM、NSDI、CCS、NDSS、CoNEXT、INFOCOM、IEEE/ACM ToN</i> 等国际顶级会议与期刊发表论文近百篇。研究成果已被工业界广泛采用，相关技术深度融入 <b>中国电信骨干网</b>、<b>未来互联网试验设施（FITI）</b>、<b>CERNET / CERNET2</b> 等国家关键网络基础设施，服务于电信运营商、国防及其他关乎国计民生的重要领域。</p>
 
-  <p>本人荣获 <b>ACM SIGCSE 中国新星奖</b>，担任 <i>《通信技术》</i> 等国内期刊编委，以及 <i>MDPI Electronics</i>、<i>IEEE JSAC</i> 等国际期刊的客座编辑；定期为 <i>IEEE/ACM TON、IEEE TPDS、IEEE TIFS</i> 等知名国际期刊审稿。此外，我积极参与 <i>ACM SIGCOMM、ACM CoNEXT、IEEE INFOCOM</i> 等国际重要会议的组织与程序委员会工作。研究形成的技术已服务于数亿用户。</p>
+  <p>本人荣获 <b>ACM SIGCSE 中国新星奖</b>，担任 <i>《通信技术》</i> 期刊编委、<i>MDPI Electronics</i> 与 <i>IEEE JSAC</i> 客座编辑，长期为 <i>IEEE/ACM ToN、IEEE TPDS、IEEE TIFS</i> 等期刊审稿；担任 <i>USENIX NSDI、USENIX Security、IEEE INFOCOM、ACM CoNEXT、IEEE ICNP</i> 等国际会议程序委员会委员，并担任 <i>ACM SIGCOMM NGNO</i> 研讨会程序委员会共同主席。研究形成的技术已服务于数亿用户。</p>
 
   <div class="callout">
-    <strong>招生：</strong> 招收 <b>2027 年秋季入学</b> 的博士 / 硕士研究生，加入我们激动人心的系统与网络研究项目。具备系统编程经验者尤佳——欢迎邮件联系！
+    <strong>招生：</strong> 招收 <b>2027 年秋季入学</b> 的博士 / 硕士研究生，从事 AI / 网络基础设施的测量、调度与安全研究。具备系统编程经验者尤佳，欢迎邮件联系！
   </div>
 </section>
 
@@ -1237,34 +1237,30 @@
 <section class="section" id="vision">
   <h2><i class="fa-solid fa-compass-drafting icon"></i>研究愿景</h2>
   <div class="vision-wrap">
-    <p class="vision-负责人">
-      &ldquo;下一代 <b>互联网</b> 与 <b>运营智算 / 数据中心基础设施</b> 需要一个统一的 <b>测量—验证—态势感知</b> 基底。我们的使命就是把它建成。&rdquo;
-    </p>
-    <p class="vision-负责人" style="margin-top:-10px">
-      &ldquo;作为独立但互补的方向，我们将同样的可信性原则延伸到 <b>安全可信机器人</b>。&rdquo;
+    <p class="vision-lead">
+      &ldquo;下一代互联网与智算中心，需要 <b>看得清</b>、<b>调得优</b>、<b>守得住</b> 的基础设施。我们的使命，是构建让这一切成为可能的系统。&rdquo;
     </p>
 
-    <div class="vision-fig" aria-label="Research framework: from infrastructure inputs through system stack to deployment outcomes">
+    <div class="vision-fig" aria-label="研究框架：从基础设施出发，经由三大研究方向，落地为已部署成果">
       <div class="vision-col input">
         <div class="col-head">部署在哪里</div>
-        <div class="col-title">国家级试验设施与运营网络</div>
+        <div class="col-title">AI / 网络基础设施</div>
         <ul>
-          <li><b>互联网</b>——CT 日志、BGP、RPKI、DNS</li>
-          <li><b>FITI / CERNET2</b> 国家级试验设施</li>
+          <li><b>互联网</b>——BGP、RPKI、DNS、Web PKI</li>
           <li><b>运营商骨干网</b> 与 ISP 网络</li>
-          <li><b>智算中心</b> 与 Serverless 云</li>
-          <li><b>机器人车队</b> 与赛博物理边缘</li>
+          <li><b>FITI / CERNET2</b> 国家级试验设施</li>
+          <li><b>智算中心</b> 与 GPU 集群</li>
+          <li><b>超大规模云</b> 与 Serverless 平台</li>
         </ul>
       </div>
       <div class="vision-arrow" aria-hidden="true"><i class="fa-solid fa-arrow-right"></i></div>
       <div class="vision-col stack">
         <div class="col-head">我们构建什么</div>
-        <div class="col-title">三层系统栈</div>
+        <div class="col-title">三大研究方向</div>
         <ul>
-          <li><b>态势感知</b>——加密流量 IDS、APT / 溯源、PKI 与路由信任</li>
-          <li><b>运维可验证性</b>——配置与覆盖网验证、ACME / RPKI 检查</li>
-          <li><b>基础设施可观测性</b>——eBPF 与网内分布式追踪、遥测</li>
-          <li><b>安全机器人</b>——可信感知、策略验证、抗攻击控制</li>
+          <li><b>测量</b>——eBPF 零代码追踪、SRv6 探测与诊断、互联网级测量</li>
+          <li><b>资源调度</b>——广域网流量工程、网内加速、Serverless 与服务链调度</li>
+          <li><b>安全</b>——线速入侵检测、APT 检测、路由与 PKI 安全、配置验证</li>
         </ul>
       </div>
       <div class="vision-arrow" aria-hidden="true"><i class="fa-solid fa-arrow-right"></i></div>
@@ -1273,10 +1269,10 @@
         <div class="col-title">已部署成果与国家级影响</div>
         <ul>
           <li>DeepFlow 进入 <b>CNCF</b>，部署于数万台主机</li>
+          <li>与 <b>腾讯云</b> 联合设计跨数据中心流量工程</li>
           <li>在 ISP 骨干网实现 <b>Tbps 线速</b> IDS</li>
           <li>验证器用于 <b>FITI</b> 与 CERNET 配置</li>
-          <li>追踪系统在 <b>腾讯 / 深信服 / 绿盟</b> 部署</li>
-          <li>与 <b>产业伙伴</b> 联合开展可信机器人</li>
+          <li>生产 GPU 集群 MTTR 降低 <b>5 倍</b></li>
         </ul>
       </div>
     </div>
@@ -1284,19 +1280,15 @@
     <div class="vision-pillars">
       <div class="vision-pillar">
         <b>I. 测量</b>
-        我们以 <em>线速</em> 且 <em>零应用代价</em> 在生产网络中部署观测——从内核 eBPF 到可编程交换机——让运维人员看见以往不可见的部分。
+        我们以 <em>线速</em>、<em>零应用改造</em> 的方式观测生产基础设施——从内核 eBPF 到可编程交换机与 SRv6 探测——让运维人员看见以往看不见的部分。
       </div>
       <div class="vision-pillar">
-        <b>II. 验证</b>
-        我们对异构、多域网络中的 <em>配置</em>、<em>策略</em>、<em>证书</em> 进行形式化验证，在故障发生之前发现它，并扩展至运营商规模的运行状态。
+        <b>II. 调度</b>
+        我们把测量转化为决策：<em>流量工程</em>、<em>路由</em>、<em>网内加速</em> 与 <em>Serverless / 服务链调度</em>，让带宽与算力在故障下依然高效可用。
       </div>
       <div class="vision-pillar">
-        <b>III. 感知</b>
-        我们把测量与验证基底转化为 <em>网络空间态势感知</em>：持续的、学习驱动的、ISP 规模的异常、攻击和信任违规检测。
-      </div>
-      <div class="vision-pillar">
-        <b>IV. 安全机器人</b>
-        作为独立研究方向，我们研究可信感知、可形式化校验的控制策略和抗攻击机器人车队——把同样的测量与验证方法学带入具身智能。
+        <b>III. 安全</b>
+        我们在 ISP 规模上发现并遏制 <em>攻击</em>、<em>入侵</em> 与 <em>配置错误</em>：网内的学习型检测，加上对配置与策略的形式化验证。
       </div>
     </div>
   </div>
@@ -1569,80 +1561,96 @@
 
   <div class="research-grid">
     <div class="research-card">
-      <div class="area-title"><i class="fa-solid fa-satellite-dish"></i>网络空间态势感知与测量</div>
+      <div class="area-title"><i class="fa-solid fa-satellite-dish"></i>AI / 网络基础设施测量</div>
       <p>
-        <em>为国家级试验床（FITI / CERNET）与运营互联网构建测量基底与态势感知管线。</em><br><br>
-        分布式追踪系统
+        <em>从内核、数据平面到全球路由系统，以线速、零应用改造的方式端到端观测生产基础设施。</em><br><br>
+        零代码分布式追踪
         <a class="venue-tag" href="papers/deepflow.pdf">SIGCOMM'23</a>
-        <a class="venue-tag" href="https://dl.acm.org/doi/abs/10.1145/3718958.3750477">SIGCOMM'25</a>;
-        SSL / TLS 证书分析
-        <a class="venue-tag" href="https://dl.acm.org/doi/abs/10.1145/3696410.3714763">WWW'25</a>;
-        配置验证
-        <a class="venue-tag" href="https://ieeexplore.ieee.org/abstract/document/10550010">TIFS'24</a>;
-        恶意容器检测
-        <a class="venue-tag" href="https://dl.acm.org/doi/pdf/10.1145/3548606.3560629">CCS'22</a>;
-        恶意流量检测
-        <a class="venue-tag" href="https://ieeexplore.ieee.org/document/10049200">TIFS'23</a>
-        <a class="venue-tag" href="papers/sd-wan-ids.pdf">TIFS'23</a>
+        <a class="venue-tag" href="https://dl.acm.org/doi/abs/10.1145/3718958.3750477">SIGCOMM'25</a>
+        <a class="venue-tag" href="https://dl.acm.org/doi/10.1145/3744916.3764518">ICSE'26</a>；
+        SRv6 探测与时延诊断
+        <a class="venue-tag" href="https://ieeexplore.ieee.org/abstract/document/11192455/">ICNP'25</a>
+        <a class="venue-tag" href="#pub-srv6">ToN'26</a>；
+        可编程交换机流测量
+        <a class="venue-tag" href="papers/hashflow.pdf">TPDS'22</a>；
+        Looking Glass 发现与 Web 基础设施可观测
+        <a class="venue-tag" href="https://dl.acm.org/doi/abs/10.1145/3774904.3792698">WWW'26</a>；
+        AS 商业关系推断
+        <a class="venue-tag" href="https://ieeexplore.ieee.org/abstract/document/11017523">ToN'25</a>；
+        域间路由控制平面与数据平面不一致
+        <a class="venue-tag" href="#publications">ICNP'26</a>；
+        IPv6 与 IP 地理定位测量
+        <a class="venue-tag" href="https://ieeexplore.ieee.org/document/10218257">ISCC'23</a>
+        <a class="venue-tag" href="https://ieeexplore.ieee.org/document/10186436">IFIP Networking'23</a>；
+        面向数据平面故障的测试报文生成
+        <a class="venue-tag" href="https://ieeexplore.ieee.org/document/10035502">TPDS'23</a>。
+      </p>
+    </div>
+
+    <div class="research-card">
+      <div class="area-title"><i class="fa-solid fa-diagram-project"></i>AI / 网络基础设施资源调度</div>
+      <p>
+        <em>把测量转化为决策，让广域网、数据中心与 Serverless 平台上的带宽与算力高效、抗故障地运转。</em><br><br>
+        跨数据中心广域网流量工程
+        <a class="venue-tag" href="https://dl.acm.org/doi/pdf/10.1145/3485983.3494843">CoNEXT'21</a>
+        <a class="venue-tag" href="https://ieeexplore.ieee.org/document/9980572">ToN'22</a>；
+        网络效用最大化
+        <a class="venue-tag" href="papers/num-icnp22.pdf">ICNP'22</a>
+        <a class="venue-tag" href="https://ieeexplore.ieee.org/abstract/document/10981789">ToN'25</a>；
+        路由代数与故障感知的流量工程
+        <a class="venue-tag" href="https://ieeexplore.ieee.org/document/11044753">INFOCOM'25</a>
+        <a class="venue-tag" href="https://ieeexplore.ieee.org/abstract/document/11143368">IWQoS'25</a>
+        <a class="venue-tag" href="https://ieeexplore.ieee.org/document/9615559">CNSM'21</a>；
+        可编程交换机网内加速
+        <a class="venue-tag" href="https://ieeexplore.ieee.org/document/10621183">INFOCOM'24</a>
+        <a class="venue-tag" href="https://ieeexplore.ieee.org/document/9693136">TPDS'22</a>；
+        Serverless 与云资源管理
+        <a class="venue-tag" href="https://ieeexplore.ieee.org/document/10089180">TPDS'23</a>
+        <a class="venue-tag" href="https://ieeexplore.ieee.org/document/9812868">IWQoS'22</a>
+        <a class="venue-tag" href="https://ieeexplore.ieee.org/document/10248271">ICWS'23</a>；
+        服务功能链部署与调度
+        <a class="venue-tag" href="https://ieeexplore.ieee.org/document/11720163">TPDS'26</a>
+        <a class="venue-tag" href="https://ieeexplore.ieee.org/document/9615590">CNSM'21</a>；
+        拥塞控制与 Coflow 调度
+        <a class="venue-tag" href="https://ieeexplore.ieee.org/document/10188700">IWQoS'23</a>
+        <a class="venue-tag" href="https://ieeexplore.ieee.org/document/8668552">TPDS'19</a>；
+        企业云即插即用网络管理
+        <a class="venue-tag" href="#pub-kuiper">NSDI'27</a>。
+      </p>
+    </div>
+
+    <div class="research-card">
+      <div class="area-title"><i class="fa-solid fa-shield-halved"></i>AI / 网络基础设施安全</div>
+      <p>
+        <em>在 ISP 规模上发现攻击与入侵，并在配置上线之前完成验证。</em><br><br>
+        可编程交换机在线加密流量入侵检测
+        <a class="venue-tag" href="https://dl.acm.org/doi/abs/10.1145/3718958.3750493">SIGCOMM'25</a>
+        <a class="venue-tag" href="https://dl.acm.org/doi/10.1145/3789240.3829107">SIGCOMM'26</a>；
+        可解释、能应对漂移的异常检测
         <a class="venue-tag" href="papers/deepaid.pdf">CCS'21</a>
         <a class="venue-tag" href="papers/owad.pdf">NDSS'23</a>
-        <a class="venue-tag" href="https://dl.acm.org/doi/abs/10.1145/3718958.3750493">SIGCOMM'25</a>;
-        日志分析
-        <a class="venue-tag" href="https://ieeexplore.ieee.org/document/9330769">TIFS'21</a>;
-        APT 检测
-        <a class="venue-tag" href="papers/threatrace.pdf">TIFS'22</a>;
-        流量测量
-        <a class="venue-tag" href="papers/hashflow.pdf">TPDS'22</a>.
-      </p>
-    </div>
-
-    <div class="research-card">
-      <div class="area-title"><i class="fa-solid fa-robot"></i>安全可信机器人</div>
-      <p>
-        <em>为安全攸关 AI、具身智能体和自主机器人系统构建 <b>可信 ML、溯源与证书信任基底</b>——将我们的线速检测、APT 防御与 PKI 验证工作扩展至赛博物理场景。</em><br><br>
-        对抗鲁棒的流量 / 感知异常检测
-        <a class="venue-tag" href="https://dl.acm.org/doi/abs/10.1145/3718958.3750493">SIGCOMM'25</a>
-        <a class="venue-tag" href="papers/deepaid.pdf">CCS'21</a>
-        <a class="venue-tag" href="papers/owad.pdf">NDSS'23</a>;
-        APT 与溯源图异常检测
-        <a class="venue-tag" href="https://ieeexplore.ieee.org/document/10049200">TIFS'23</a>
-        <a class="venue-tag" href="papers/threatrace.pdf">TIFS'22</a>;
-        面向安全攸关客户端的证书 / PKI 信任
-        <a class="venue-tag" href="https://dl.acm.org/doi/abs/10.1145/3696410.3714763">WWW'25</a>;
-        面向互联网可观测的结构-语义融合
-        <a class="venue-tag" href="https://dl.acm.org/doi/abs/10.1145/3774904.3792698">WWW'26</a>;
-        面向时延敏感遥测的网内低延迟 FEC
-        <a class="venue-tag" href="https://ieeexplore.ieee.org/document/10621183">INFOCOM'24</a>.
-        <br><br>
-        <span style="font-size:13px;color:var(--c-muted);"><b>未来议程：</b>可信多模态感知管线、加密传感器通道的异常检测、智能体 / 机器人控制器的运行时验证、自主车队的信任证书。</span>
-      </p>
-    </div>
-
-    <div class="research-card">
-      <div class="area-title"><i class="fa-solid fa-brain"></i>AI 赋能网络与运维可验证性</div>
-      <p>
-        <em>利用学习驱动与形式化方法，使试验床和运营网络可验证、可自诊、可韧性恢复。</em><br><br>
-        深度学习加密流量异常检测
-        <a class="venue-tag" href="https://dl.acm.org/doi/abs/10.1145/3718958.3750493">SIGCOMM'25</a>
-        <a class="venue-tag" href="https://ieeexplore.ieee.org/document/10049200">TIFS'23</a>
-        <a class="venue-tag" href="papers/deepaid.pdf">CCS'21</a>
-        <a class="venue-tag" href="papers/owad.pdf">NDSS'23</a>;
-        AI 辅助的分布式追踪
-        <a class="venue-tag" href="papers/deepflow.pdf">SIGCOMM'23</a>
-        <a class="venue-tag" href="https://dl.acm.org/doi/abs/10.1145/3718958.3750477">SIGCOMM'25</a>;
-        面向 Web 可观测的结构-语义融合
-        <a class="venue-tag" href="https://dl.acm.org/doi/abs/10.1145/3774904.3792698">WWW'26</a>;
-        SD-WAN 在线学习
-        <a class="venue-tag" href="papers/sd-wan-ids.pdf">TIFS'23</a>;
-        APT 检测 with provenance graphs
+        <a class="venue-tag" href="papers/sd-wan-ids.pdf">TIFS'23</a>；
+        基于溯源图的 APT 检测
         <a class="venue-tag" href="papers/threatrace.pdf">TIFS'22</a>
-        <a class="venue-tag" href="https://ieeexplore.ieee.org/abstract/document/11400546">IEEE Network'26</a>;
-        日志分析 with NLP
-        <a class="venue-tag" href="https://ieeexplore.ieee.org/document/9330769">TIFS'21</a>;
-        learning-driven 恶意容器检测
-        <a class="venue-tag" href="https://dl.acm.org/doi/pdf/10.1145/3548606.3560629">CCS'22</a>;
-        网内 ML 加速
-        <a class="venue-tag" href="https://ieeexplore.ieee.org/document/10621183">INFOCOM'24</a>.
+        <a class="venue-tag" href="https://ieeexplore.ieee.org/abstract/document/11078389">TIFS'25</a>
+        <a class="venue-tag" href="https://ieeexplore.ieee.org/abstract/document/11400546">IEEE Network'26</a>；
+        日志异常检测
+        <a class="venue-tag" href="https://ieeexplore.ieee.org/document/9330769">TIFS'21</a>；
+        Serverless 钱包耗尽攻击检测
+        <a class="venue-tag" href="https://dl.acm.org/doi/pdf/10.1145/3548606.3560629">CCS'22</a>
+        <a class="venue-tag" href="https://ieeexplore.ieee.org/abstract/document/11474554/">ToN'26</a>；
+        BGP 与 RPKI 路由安全
+        <a class="venue-tag" href="#publications">CCS'26</a>
+        <a class="venue-tag" href="#publications">ICNP'26</a>
+        <a class="venue-tag" href="https://dl.acm.org/doi/abs/10.1145/3719027.3760707">CCS'25</a>；
+        Web PKI / ACME 安全
+        <a class="venue-tag" href="https://dl.acm.org/doi/abs/10.1145/3696410.3714763">WWW'25</a>；
+        配置与策略验证
+        <a class="venue-tag" href="https://ieeexplore.ieee.org/abstract/document/10550010">TIFS'24</a>
+        <a class="venue-tag" href="https://dl.acm.org/doi/abs/10.1145/3768974">CoNEXT'25</a>
+        <a class="venue-tag" href="https://ieeexplore.ieee.org/document/11571533">INFOCOM'26</a>；
+        大模型辅助的漏洞验证代码生成
+        <a class="venue-tag" href="papers/master-2026.pdf">电子学报'26</a>。
       </p>
     </div>
   </div>
@@ -1652,7 +1660,7 @@
 <section class="section" id="production">
   <h2><i class="fa-solid fa-rocket icon"></i>生产系统</h2>
   <p style="font-size:14px;color:var(--c-ink-soft);margin:-4px 0 14px">
-    端到端生产级系统——赋能大规模可观测性、安全防护与智能运维。
+    部署于生产环境的端到端系统——在规模化场景中测量、运维与守护 AI / 网络基础设施。
   </p>
 
   <div class="systems-grid">
@@ -1702,23 +1710,7 @@
       </div>
       <div class="sys-links">
         <a href="https://ieeexplore.ieee.org/abstract/document/11192455/"><i class="fa-solid fa-file-pdf"></i>ICNP '25</a>
-        <a href="#"><i class="fa-solid fa-file-pdf"></i>ToN '26</a>
-      </div>
-    </div>
-
-    <div class="system-card">
-      <div class="sys-name"><i class="fa-solid fa-robot"></i>STRobot</div>
-      <div class="sys-tag">安全可信机器人运行时 &middot; ICSE '26</div>
-      <p>面向自主机器人和具身 AI 智能体的<b>安全优先运行时观测与防护框架</b>。监测控制器调用路径，检测异常行为模式，实时强制执行安全不变量——<em>无需修改机器人软件栈</em>。面向工业机械臂、自动驾驶车辆和多智能体集群部署设计。</p>
-      <div class="sys-meta">
-        <span class="hot">生产环境部署</span>
-        <span>具身 AI</span>
-        <span>运行时安全</span>
-        <span>ICSE '26</span>
-      </div>
-      <div class="sys-links">
-        <a href="#"><i class="fa-solid fa-file-pdf"></i>ICSE '26</a>
-        <a href="#"><i class="fa-solid fa-clock"></i>更多即将公开</a>
+        <a href="https://ieeexplore.ieee.org/document/11533551"><i class="fa-solid fa-file-pdf"></i>ToN '26</a>
       </div>
     </div>
 
@@ -1728,12 +1720,16 @@
 <!-- ═══════════════════════ Open Resources ═══════════════════════ -->
 <section class="section" id="systems">
   <h2><i class="fa-solid fa-share-nodes icon"></i>开放资源</h2>
+  <p style="font-size:14px;color:var(--c-ink-soft);margin:-4px 0 14px">
+    开源代码、数据集与研究成果，回馈社区。
+  </p>
+
   <div class="systems-grid">
 
     <div class="system-card">
       <div class="sys-name"><i class="fa-solid fa-network-wired"></i>DeepFlow</div>
-      <div class="sys-tag">AI 智能体观测与安全防护 &middot; eBPF &middot; SIGCOMM '23</div>
-      <p>面向 AI 智能体时代的<b>零代码 eBPF 可观测性</b>：跨 LLM / 智能体流水线、Kubernetes、服务网格和无服务器平台重建因果追踪并发现安全相关事件，<em>无需任何应用代码修改</em>。已作为行业事实标准开源（CNCF Sandbox，4 k+ ★）。</p>
+      <div class="sys-tag">云原生与 AI 基础设施可观测性 &middot; eBPF &middot; SIGCOMM '23</div>
+      <p>面向云原生与 AI 基础设施的<b>零代码 eBPF 可观测性</b>：以网络为中心的追踪平面跨 Kubernetes、服务网格、Serverless 平台与 LLM / AI 智能体流水线重建端到端因果追踪，并发现性能与安全事件，<em>无需修改任何应用代码</em>。已作为行业事实标准开源（CNCF Sandbox，4k+ ★）。</p>
       <div class="gh-badges">
         <a href="https://github.com/deepflowio/deepflow" class="gh-badge"><i class="fa-solid fa-star"></i> 4,084 Stars</a>
         <a href="https://github.com/deepflowio/deepflow/network/members" class="gh-badge"><i class="fa-solid fa-code-fork"></i> 456 Forks</a>
@@ -1754,8 +1750,8 @@
 
     <div class="system-card">
       <div class="sys-name"><i class="fa-solid fa-magnifying-glass-chart"></i>DeepTrace</div>
-      <div class="sys-tag">智算中心应用分布式追踪 / 机器人安全防护 &middot; SIGCOMM '25 / ICSE '26</div>
-      <p>面向 AI 数据中心和大规模微服务部署的<b>分布式应用追踪与故障监控</b>；同一非侵入式观测管线延伸至<b>机器人 / 具身 AI 运行时安全</b>——追踪控制器调用路径并检测异常，无需修改机器人软件栈。双路径内核 + 用户态协议解析，在生产集群中以 <strong>~10 倍更少</strong>的插桩开销实现精确方法级延迟估计。</p>
+      <div class="sys-tag">智算中心应用分布式追踪 &middot; SIGCOMM '25 / ICSE '26</div>
+      <p>面向智算中心与大规模微服务部署的<b>分布式应用追踪与故障监控</b>。基于事务的无侵入追踪在高并发下准确率仍 <strong>超过 95%</strong>，方法级时延估计（ICSE '26）相比 DeepFlow 与 TraceWeaver 将追踪准确率再提升 51%；已被数十家企业用于生产环境的故障诊断与资源优化。</p>
       <div class="gh-badges">
         <a href="https://github.com/DeepShield-AI/DeepTrace" class="gh-badge"><i class="fa-solid fa-star"></i> 173 Stars</a>
         <a href="https://github.com/DeepShield-AI/DeepTrace/network/members" class="gh-badge"><i class="fa-solid fa-code-fork"></i> 17 Forks</a>
@@ -1971,7 +1967,7 @@
     </article>
 
     <!-- 0. SIGCOMM'26 ISP-Centric IDS -->
-    <article class="pub-feature">
+    <article class="pub-feature" id="pub-sigcomm26">
       <div class="pf-teaser theme-sec" aria-hidden="true">
         <img src="images/papers/isp-centric-ids.png" alt="ISP-Centric IDS">
         <div class="teaser-label">ISP-Centric IDS</div>
@@ -1984,7 +1980,7 @@
         <b>Han Zhang</b>, <span class="stu">Xuefeng Liu</span>, <span class="stu">Linqiang Qian</span>, Guyue (Grace) Liu, <span class="stu">Tianyu Zhang</span>, <span class="stu">Kaiyang Zhao</span>, <span class="stu">Yantu Tong</span>, <span class="stu">Zeji Xiao</span>, Dongbiao He, Yahui Li, Ke Ruan, Jilong Wang, Yongqing Zhu, Xia Yin
       </p>
       <p class="pf-venue">ACM 数据通信专业委员会年会 (SIGCOMM '26), pp. 1282–1298, 2026.</p>
-      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">核心洞见</span>The first <b>ISP-centric IDS</b> running on programmable switches: data-plane lightweight feature extraction co-designed with control-plane adaptive learning, sustaining <b>Tbps-class</b> detection while staying robust to traffic drift and adversarial evasion. <em>Validated on real ISP backbones</em>; orders-of-magnitude resource savings vs. CPU/GPU baselines.</div></div>
+      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">核心洞见</span>An inline network IDS on programmable switches that protects enterprise campus sites connected to ISPs: <b>dual-plane feature extraction</b> at near line speed, a lightweight one-class model trained only on benign traffic, and online model updates as conditions change. <em>In production for more than three years</em>, it detects malicious traffic with about 90% accuracy within minutes.</div></div>
       <div class="pf-impact">
         <span class="deploy"><i class="fa-solid fa-tower-broadcast"></i>已部署：ISP 骨干网</span>
         <span><i class="fa-solid fa-bolt"></i>Tbps 线速</span>
@@ -2011,7 +2007,7 @@
         <span class="stu">Yantao Geng</span>, <b>Han Zhang*</b>, <span class="stu">Zhiheng Wu</span>, Yahui Li, Jilong Wang, Xia Yin
       </p>
       <p class="pf-venue">ACM 数据通信专业委员会年会 (SIGCOMM '25), pp. 1056–1069, 2025.</p>
-      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">核心洞见</span><b>Method-level</b> distributed tracing in production at <b>~10× less</b> overhead than intrusive baselines. Dual-path kernel + user-space protocol parsing eliminates application instrumentation entirely while preserving end-to-end causal accuracy.</div></div>
+      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">核心洞见</span>A <b>transaction-based</b>, non-intrusive tracing framework for microservices: API endpoints and transaction fields in request content group requests into transactions, so traces from different transactions are not merged by mistake. Stays <b>over 95% accurate under high concurrency</b> and is used in production by dozens of companies for failure diagnosis and resource optimization.</div></div>
       <div class="pf-impact">
         <span class="deploy"><i class="fa-solid fa-cloud"></i>生产环境部署</span>
         <span class="gh"><i class="fa-solid fa-star"></i>173  stars</span>
@@ -2040,7 +2036,7 @@
         <b>Han Zhang</b>, Guyue Liu*, Xingang Shi, Yahui Li, Jilong Wang, Yongqing Zhu, Ke Ruan, Jie Liang, Xia Yin
       </p>
       <p class="pf-venue">ACM 数据通信专业委员会年会 (SIGCOMM '25), pp. 1254–1256, 2025.</p>
-      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">核心洞见</span>Resolves the long-standing tension between deep-learning accuracy and switch-ASIC constraints: lightweight features extracted in the data plane, robust classification kept in the control plane &mdash; together delivering <b>line-rate encrypted-traffic anomaly detection</b> robust to concept drift and adversarial perturbations.</div></div>
+      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">核心洞见</span>An inline network IDS on programmable switches that protects data centers connected to ISPs: <b>dual-plane feature extraction</b> at near line speed, a lightweight one-class model trained only on benign traffic, and online updates as the environment changes. <em>Two years in production</em>: more than 10 critical attack events caught and over 10 million servers protected for two ISPs, with about 90% accuracy within minutes.</div></div>
       <div class="pf-impact">
         <span class="deploy"><i class="fa-solid fa-tower-broadcast"></i>已部署：ISP 骨干网</span>
         <span><i class="fa-solid fa-bolt"></i>Tbps 线速</span>
@@ -2068,7 +2064,7 @@
         <span class="stu">Junxian Shen</span>, <b>Han Zhang*</b>, Yang Xiang, Xingang Shi, Xinrui Li, Yunxi Shen, Zijian Zhang, Sicheng Wang, Yanhui Yang, <span class="stu">Yu Zhou</span>, Mingwei Xu, Jilong Wang
       </p>
       <p class="pf-venue">ACM 数据通信专业委员会年会 (SIGCOMM '23), pp. 420–437, 2023.</p>
-      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">核心洞见</span>Rethinks distributed tracing from a <b>network-centric</b> viewpoint &mdash; eBPF probes at protocol boundaries reconstruct causal traces across heterogeneous services <b>without any application code change</b>. Open-sourced as the <em>de-facto standard</em> for cloud-native observability.</div></div>
+      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">核心洞见</span>A <b>network-centric tracing plane</b> with implicit context propagation provides distributed tracing out of the box, <em>without any application code change</em>, and removes blind spots in the network infrastructure. It has located more than 71 critical performance anomalies for over 26 companies, cutting troubleshooting from hours to minutes; open-sourced as a de-facto standard for cloud-native observability.</div></div>
       <div class="pf-impact">
         <span class="cncf"><i class="fa-solid fa-cube"></i>CNCF Sandbox</span>
         <span class="gh"><i class="fa-solid fa-star"></i>4,084  stars</span>
@@ -2098,11 +2094,11 @@
         <span class="stu">Junxian Shen</span>, <b>Han Zhang*</b>, <span class="stu">Yantao Geng</span>, <span class="stu">Jiawei Li</span>, Jilong Wang, Mingwei Xu
       </p>
       <p class="pf-venue">ACM 计算机与通信安全会议 (CCS '22), pp. 2627–2641, 2022.</p>
-      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">核心洞见</span>The <b>first paper</b> to systematically detect <b>internal Denial-of-Wallet attacks</b> on serverless platforms. Combines causal call-graph analysis with billing-aware adaptive thresholds &mdash; detects attacks in <em>milliseconds</em> with sub-1% false-positive rate.</div></div>
+      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">核心洞见</span>Demonstrates real <b>Denial-of-Wallet</b> attacks on commodity serverless platforms and detects them with a lightweight metrics-collection agent plus Mahalanobis-distance anomaly analysis: <b>&lt;1.1% overhead</b>, 1.86&nbsp;s average detection delay, and over 95.75% accuracy.</div></div>
       <div class="pf-impact">
         <span><i class="fa-solid fa-trophy"></i>FaaS 首个 DoW 防御</span>
-        <span><i class="fa-solid fa-clock"></i>亚毫秒检测</span>
-        <span><i class="fa-solid fa-percent"></i>&lt;1% FPR</span>
+        <span><i class="fa-solid fa-clock"></i>平均检测时延 1.86 秒</span>
+        <span><i class="fa-solid fa-percent"></i>准确率 &gt;95.75%</span>
       </div>
       <div class="pf-links">
         <a href="https://dl.acm.org/doi/pdf/10.1145/3548606.3560629"><i class="fa-solid fa-file-pdf"></i>PDF</a>
@@ -2125,10 +2121,10 @@
         <b>Han Zhang</b>, Xingang Shi*, Xia Yin, Jilong Wang, Zhiliang Wang, Yingya Guo, Tian Lan
       </p>
       <p class="pf-venue">ACM CoNEXT '21, 2021.</p>
-      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">核心洞见</span>Joint elephant/mice flow scheduling under probabilistic failure models lifts effective inter-DC bandwidth availability by <b>1.4&ndash;2.1&times;</b> on real Tencent and China Telecom topologies, while preserving SLA guarantees during link failures.</div></div>
+      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">核心洞见</span>BATE provisions <b>bandwidth availability</b> over inter-DC WANs, guaranteeing that each demand is met with a stipulated probability despite limited capacity and link failures, through jointly designed admission control, traffic scheduling, and failure recovery. Online admission control runs <b>30&times; faster</b> than the optimal strategy with under 4% false rejections, and 23&ndash;60% more demands meet their availability targets than with FFC or TEAVAR.</div></div>
       <div class="pf-impact">
         <span class="deploy"><i class="fa-solid fa-cloud"></i>腾讯 / 中国电信拓扑</span>
-        <span><i class="fa-solid fa-arrow-trend-up"></i>带宽 1.4&ndash;2.1&times;</span>
+        <span><i class="fa-solid fa-arrow-trend-up"></i>准入控制提速 30&times;</span>
       </div>
       <div class="pf-links">
         <a href="https://dl.acm.org/doi/pdf/10.1145/3485983.3494843"><i class="fa-solid fa-file-pdf"></i>PDF</a>
@@ -2138,7 +2134,7 @@
     </article>
 
     <!-- 3. ICSE'26 -->
-    <article class="pub-feature">
+    <article class="pub-feature" id="pub-icse26">
       <div class="pf-teaser theme-obs" aria-hidden="true">
         <img src="images/papers/non-intrusive-trace.png" alt="Non-Intrusive Trace">
         <div class="teaser-label">Non-Intrusive Trace</div>
@@ -2151,7 +2147,7 @@
         <span class="stu">Yantao Geng</span>, <b>Han Zhang*</b>, <span class="stu">Zhiheng Wu</span>, Yahui Li, Jilong Wang, Xia Yin
       </p>
       <p class="pf-venue">ACM / IEEE 国际软件工程会议 (ICSE '26), pp. 1661–1673, 2026.</p>
-      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">核心洞见</span>Pinpoints latency culprits in microservice call graphs <b>without modifying application code</b> &mdash; infers method-level delays from network-side observations + lightweight runtime hints. Fault-localization accuracy on par with intrusive baselines, at a fraction of the engineering cost.</div></div>
+      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">核心洞见</span>FlowScope rebuilds traces without touching application code: it estimates <b>method-level causal delay distributions</b> between requests by cross-correlation, scores candidate causal links with them, and reconstructs traces iteratively under multiple constraints. Tracing accuracy improves by <b>51%</b> over DeepFlow and TraceWeaver, and the system has been applied in multiple real-world use cases.</div></div>
       <div class="pf-impact">
         <span class="deploy"><i class="fa-solid fa-cloud"></i>生产微服务集群</span>
         <span><i class="fa-solid fa-code-branch"></i>零代码改动</span>
@@ -2177,7 +2173,7 @@
         <span class="stu">Tianyu Zhang</span>, <b>Han Zhang*</b>, <span class="stu">Yunze Wei</span>, Yahui Li, Xingang Shi, Jilong Wang, Xia Yin
       </p>
       <p class="pf-venue">ACM Web 会议论文集 (WWW '25), 2025.</p>
-      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">核心洞见</span>Hardens Web-PKI by adding <b>end-to-end ACME client verification</b>: cryptographic identity attestation, challenge-response provenance, and silent client-side misconfiguration detection &mdash; defending tenants against impersonation and credential drift across multiple ACME-CA pairs.</div></div>
+      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">核心洞见</span>Discloses the <b>ACME Authz Cache Attack</b>: because CAs cache domain-validation results for 30 days, an attacker can obtain fraudulent certificates without controlling the domain, and even Let&#39;s Encrypt is vulnerable. ACME++ binds the client&#39;s IP address and a unique identifier to the ACME account, blocking the attack with little overhead on the CA.</div></div>
       <div class="pf-impact">
         <span class="deploy"><i class="fa-solid fa-lock"></i>Web-PKI 生态</span>
         <span><i class="fa-solid fa-shield-halved"></i>抗误签发</span>
@@ -2204,7 +2200,7 @@
         <span class="stu">Yunze Wei</span>, Xingang Shi, <b>Han Zhang*</b>, <span class="stu">Tianyu Zhang</span>, Yahui Li, Xia Yin
       </p>
       <p class="pf-venue">ACM Web 会议论文集 (WWW '26), pp. 7576–7587, 2026.</p>
-      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">核心洞见</span>Public Looking-Glass services expose an invaluable but fragmented view of global Internet routing. <b>GlassMiner</b> jointly models DOM-level structure and natural-language semantics of LG portals to extract structured measurements <em>at scale</em>, enabling <b>continent-wide BGP path observability</b> and uncovering hidden routing anomalies.</div></div>
+      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">核心洞见</span>Fuses structural and semantic features, with LLM-based classification, to discover <b>Looking-Glass services</b> across the Internet: 3,867 LG webpages and 7,558 vantage points missing from public lists, i.e., 1.82&times; more discoveries at 3.43&times; higher mining efficiency than prior methods. The new vantage points expose routing performance and detours in two large CDNs.</div></div>
       <div class="pf-impact">
         <span><i class="fa-solid fa-globe"></i>Thousands of operator portals</span>
         <span><i class="fa-solid fa-database"></i>Public corpus</span>
@@ -2230,10 +2226,10 @@
         <span class="stu">Yi Qiao</span>, <b>Han Zhang*</b>, Jilong Wang
       </p>
       <p class="pf-venue">IEEE INFOCOM 2024, pp. 2348–2357, 2024.</p>
-      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">核心洞见</span>Offloads forward-error-correction encoding to <b>programmable switches</b> via tensor-style P4 templates, sustaining line-rate FEC across 100 GbE links and reducing 99-th-percentile <b>tail latency by 4&ndash;6&times;</b> in real streaming workloads.</div></div>
+      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">核心洞见</span>Offloads the <b>entire FEC encoding</b> process for latency-sensitive media to programmable switching ASICs, with no CPU involvement; a ghost-packet mechanism keeps congestion control, pacing, and statistics working. Integrated with WebRTC on real hardware, it removes the server CPU burden at negligible overhead.</div></div>
       <div class="pf-impact">
-        <span><i class="fa-solid fa-bolt"></i>100 GbE line-rate</span>
-        <span><i class="fa-solid fa-arrow-down"></i>4&ndash;6&times; tail-latency reduction</span>
+        <span><i class="fa-solid fa-bolt"></i>交换芯片卸载</span>
+        <span><i class="fa-solid fa-arrow-down"></i>FEC 不占服务器 CPU</span>
       </div>
       <div class="pf-links">
         <a href="https://ieeexplore.ieee.org/document/10621183"><i class="fa-solid fa-file-pdf"></i>PDF</a>
@@ -2256,10 +2252,10 @@
         <span class="stu">Kaiyang Zhao</span>, <b>Han Zhang*</b>, <span class="stu">Yao Tong</span>, Yahui Li, Xingang Shi, Zhiliang Wang, Xia Yin, Jianping Wu
       </p>
       <p class="pf-venue">IEEE 国际网络协议会议 (ICNP '25), pp. 1–12, 2025.</p>
-      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">核心洞见</span>Embeds <b>deterministic in-band telemetry</b> into segment-routing headers, enabling <b>per-link latency attribution</b> with bounded probe overhead. Validated in a multi-vendor SRv6 testbed: identifies bottleneck links in seconds with 100% recall.</div></div>
+      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">核心洞见</span>Diagnoses <b>latency-bottleneck links</b> in SRv6 networks despite priority policies, SR multipath, and slicing: SR-based probes follow deterministic paths that emulate production traffic, latency-based inference resolves multipath ambiguity, and progressive diagnosis reuses earlier probe results. Diagnosis stays accurate while probe overhead drops by up to <b>91.9%</b>.</div></div>
       <div class="pf-impact">
-        <span class="deploy"><i class="fa-solid fa-route"></i>Multi-vendor SRv6 testbed</span>
-        <span><i class="fa-solid fa-bullseye"></i>100% recall</span>
+        <span class="deploy"><i class="fa-solid fa-route"></i>真实网络拓扑</span>
+        <span><i class="fa-solid fa-bullseye"></i>探测开销 &minus;91.9%</span>
       </div>
       <div class="pf-links">
         <a href="https://ieeexplore.ieee.org/abstract/document/11192455/"><i class="fa-solid fa-file-pdf"></i>PDF</a>
@@ -2281,7 +2277,7 @@
         <span class="stu">XinZhe Liu</span>, Yahui Li, <b>Han Zhang</b>, <span class="stu">Renrui Tian</span>, Xia Yin, Xingang Shi, Zhiliang Wang, Gang Ren, Jilong Wang, Jiangyuan Yao
       </p>
       <p class="pf-venue">IEEE INFOCOM 2026, pp. 1–10.</p>
-      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">核心洞见</span>Verifies <b>full carrier-scale configurations</b> by reducing the analysis environment to a tractable kernel without losing soundness &mdash; scales formal verification to networks an order of magnitude larger than prior art.</div></div>
+      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">核心洞见</span>Shows that configuration verification need not explore the full environment space: an <b>effective reduction</b> preserves every routing and forwarding behavior of the full space, backed by a theory of behavioral equivalence. The resulting verifier, Bulwark, uncovers many new misconfigurations with <b>orders-of-magnitude speedups</b> over state-of-the-art tools.</div></div>
       <div class="pf-impact">
         <span class="deploy"><i class="fa-solid fa-tower-broadcast"></i>FITI / CERNET</span>
         <span><i class="fa-solid fa-magnifying-glass"></i>Sound &amp; complete</span>
@@ -2293,7 +2289,7 @@
     </article>
 
     <!-- 12. INFOCOM'25 Non-Commutative Routing -->
-    <article class="pub-feature">
+    <article class="pub-feature" id="pub-infocom25">
       <div class="pf-teaser theme-net" aria-hidden="true">
         <img src="images/papers/non-commutative.png" alt="Non-Commutative">
         <div class="teaser-label">Non-Commutative</div>
@@ -2306,13 +2302,13 @@
         <span class="stu">Zhaozhen Wang</span>, Xingang Shi*, Haijun Geng, <b>Han Zhang</b>, Xia Yin, Zhiliang Wang
       </p>
       <p class="pf-venue">IEEE INFOCOM 2025, pp. 1–10.</p>
-      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">核心洞见</span>Advances <b>Internet routing & topology</b> inference / engineering with a new algorithmic or data-plane primitive.</div></div>
+      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">核心洞见</span>Extends <b>routing algebra</b> to non-commutative routing metrics, which existing theory overlooks: general reduction methods, a solvability analysis, and a link-state algorithm that converges quickly on the reduced partial order, supported by proofs and simulations on diverse topologies.</div></div>
       <div class="pf-impact">
         <span><i class="fa-solid fa-book-open"></i>网络顶级会议</span>
         <span><i class="fa-solid fa-chart-line"></i>算法进展</span>
       </div>
       <div class="pf-links">
-        <a href="#"><i class="fa-solid fa-file-pdf"></i>PDF</a>
+        <a href="https://ieeexplore.ieee.org/document/11044753"><i class="fa-solid fa-file-pdf"></i>PDF</a>
         <details class="pf-abstract"><summary>摘要</summary><p>The complexity of routing requirements leads to increasingly intricate routing metrics. Existing routing algebra theories have demonstrated that convergent and optimal routing algorithms can be designed only when path metrics satisfy certain properties such as monotonicity and isotonicity. Furthermore, some non-isotonic metrics can be converted into isotonic forms on partial orders through reduction. However, practical scenarios often involve non-commutative algebraic properties, which are overlooked by existing theories. For these problems, there lacks a unified framework to study their solvability, a systematic method for their reduction, and an efficient algorithm to compute optimal routes. In this work, we extend routing algebra to accommodate non-commutative routing problems, propose general reduction methods for them, and explore their solvability. In addition, we design a link state algorithm that converge fast on a reduced partial order. All these discussions are supported by concrete examples, theoretical proofs, and simulations on various network topologies.</p></details>
       </div>
     </article>
@@ -2331,7 +2327,7 @@
         <span class="stu">XinZhe Liu</span>, Yahui Li*, <b>Han Zhang</b>, Xia Yin, Xingang Shi, Zhiliang Wang, Gang Ren, Jilong Wang, Jiangyuan Yao
       </p>
       <p class="pf-venue">ACM CoNEXT 2025.</p>
-      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">核心洞见</span><b>Ensemble verification</b> for overlay networks: combines symbolic and data-driven checks, providing both <em>scalability</em> and <em>human-interpretable counter-examples</em> in heterogeneous overlay deployments where prior verifiers stall.</div></div>
+      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">核心洞见</span>MEV, the first control-plane verifier for <b>overlay/underlay networks</b>, introduces ensemble verification: each routing instance, protocol, and virtual network is reasoned about independently. Deployed on the nationwide <b>FITI</b> network, it found 22 misconfigurations that could cause isolation and reachability problems, and runs up to <b>102&times;</b> faster than Batfish+.</div></div>
       <div class="pf-impact">
         <span><i class="fa-solid fa-layer-group"></i>覆盖网验证</span>
         <span><i class="fa-solid fa-eye"></i>可解释</span>
@@ -2357,7 +2353,7 @@
         Dongqi Han, Zhiliang Wang*, Wenqi Chen, Kai Wang, Rui Yu, Su Wang, <b>Han Zhang</b>, et al.
       </p>
       <p class="pf-venue">网络与分布式系统安全研讨会 (NDSS '23), 2023.</p>
-      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">核心洞见</span>Pushes anomaly / intrusion detection from offline analytics to <b>online</b>, ISP-scale operation, with measurable gains in accuracy and false-positive rates.</div></div>
+      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">核心洞见</span>Tackles <b>normality shift</b> in zero-positive anomaly detection: models trained only on benign data are immune to drifting attacks but suffer most when normal behavior itself changes. OWAD detects, explains, and adapts to such shifts, a setting that prior concept-drift work had largely left unexplored.</div></div>
       <div class="pf-impact">
         <span><i class="fa-solid fa-trophy"></i>Top-tier venue</span>
         <span class="deploy"><i class="fa-solid fa-tower-broadcast"></i>Production-grade</span>
@@ -2385,7 +2381,7 @@
         <span class="stu">Junxian Shen</span>, <b>Han Zhang*</b>, <span class="stu">Wenxue Lin</span>, <span class="stu">Yantao Geng</span>, <span class="stu">Jiawei Li</span>, Jilong Wang, Mingwei Xu
       </p>
       <p class="pf-venue">IEEE/ACM 网络汇刊, 2026.</p>
-      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">核心洞见</span>Brings <b>formal verification</b> to a previously hand-tuned operational primitive, scaling to carrier-sized state while keeping counter-examples interpretable.</div></div>
+      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">核心洞见</span>Detects serverless <b>Denial-of-Wallet</b> attacks through <b>workload verification</b>: a multivariate linear model learns the benign relationship between performance metrics and execution duration, and runtime deviations, measured by Mahalanobis distance, flag attacks. Overhead stays below 3.2%, model execution takes 0.84&nbsp;&micro;s on average, and accuracy reaches 92.7% in the hardest scenario.</div></div>
       <div class="pf-impact">
         <span><i class="fa-solid fa-book-open"></i>顶级网络期刊</span>
         <span><i class="fa-solid fa-flask"></i>系统原型</span>
@@ -2398,7 +2394,7 @@
     </article>
 
     <!-- TON'26 Slice-Parallel SRv6 Probing -->
-    <article class="pub-feature">
+    <article class="pub-feature" id="pub-srv6">
       <div class="pf-teaser theme-net" aria-hidden="true">
         <img src="images/papers/srv6-probing.png" alt="SRv6 Probing">
         <div class="teaser-label">SRv6 Probing</div>
@@ -2410,17 +2406,20 @@
       <p class="pf-authors">
         <span class="stu">Kaiyang Zhao</span>, <b>Han Zhang*</b>, <span class="stu">Yao Tong</span>, Yahui Li, Xingang Shi, Zhiliang Wang, Xia Yin, Jianping Wu
       </p>
-      <p class="pf-venue">IEEE/ACM 网络汇刊, 2026.</p>
-          <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">核心洞见</span>Advances <b>Internet routing & topology</b> inference / engineering with a new algorithmic or data-plane primitive.</div></div>
+      <p class="pf-venue">IEEE/ACM 网络汇刊, vol. 34, pp. 5588–5600, 2026.</p>
+      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">核心洞见</span>Turns SRmesh into a <b>distributed, slice-parallel</b> diagnosis system for SRv6 networks with many parallel slices: distributed SR probing agents emulate per-slice traffic, multipath inference runs in parallel across slices, and progressive diagnosis reuses probe results. On 247 real topologies it stays accurate while cutting probe overhead by <b>93.4%</b>.</div></div>
       <div class="pf-impact">
         <span><i class="fa-solid fa-book-open"></i>顶级网络期刊</span>
         <span><i class="fa-solid fa-flask"></i>系统原型</span>
       </div>
-          <details class="pf-abstract"><summary>摘要</summary><p>Segment Routing over IPv6 (SRv6) is widely deployed, where operators construct numerous parallel SR-based network slices. An accurate diagnosis of latency bottlenecks in SRv6 tunnels is essential to maintain service-level objectives. However, building a distributed, at-scale probing system is nontrivial: SRv6 priority policies, SR-aware multipath forwarding, and slice isolation collectively invalidate assumptions made by existing diagnostic methods. In this paper, we present SRmesh, a distributed system for diagnosing latency bottleneck links in SRv6 networks. First, we adopt distributed SR-based probing agents to control routing paths and ensure that probe packets emulate per-slice production traffic. Second, we employ a latency-based multipath inference that runs in parallel across slices to resolve SR-induced routing ambiguities. Third, we introduce a slice-parallel progressive diagnosis that incrementally reuses probe results to reduce redundant measurements, optimizing diagnostic overhead for large-scale SRv6 overlay networks. We implement a prototype of SRmesh and conduct extensive evaluations on 247 real network topologies. The results indicate that SRmesh achieves high diagnostic accuracy with a 93.4% reduction in probe overhead, demonstrating its practicality and scalability in large-scale SRv6 environments.</p></details>
+      <div class="pf-links">
+        <a href="https://ieeexplore.ieee.org/document/11533551"><i class="fa-solid fa-file-pdf"></i>PDF</a>
+        <details class="pf-abstract"><summary>摘要</summary><p>Segment Routing over IPv6 (SRv6) is widely deployed, where operators construct numerous parallel SR-based network slices. An accurate diagnosis of latency bottlenecks in SRv6 tunnels is essential to maintain service-level objectives. However, building a distributed, at-scale probing system is nontrivial: SRv6 priority policies, SR-aware multipath forwarding, and slice isolation collectively invalidate assumptions made by existing diagnostic methods. In this paper, we present SRmesh, a distributed system for diagnosing latency bottleneck links in SRv6 networks. First, we adopt distributed SR-based probing agents to control routing paths and ensure that probe packets emulate per-slice production traffic. Second, we employ a latency-based multipath inference that runs in parallel across slices to resolve SR-induced routing ambiguities. Third, we introduce a slice-parallel progressive diagnosis that incrementally reuses probe results to reduce redundant measurements, optimizing diagnostic overhead for large-scale SRv6 overlay networks. We implement a prototype of SRmesh and conduct extensive evaluations on 247 real network topologies. The results indicate that SRmesh achieves high diagnostic accuracy with a 93.4% reduction in probe overhead, demonstrating its practicality and scalability in large-scale SRv6 environments.</p></details>
+      </div>
     </article>
 
     <!-- TON'25 Centralized NUM -->
-    <article class="pub-feature">
+    <article class="pub-feature" id="pub-num">
       <div class="pf-teaser theme-net" aria-hidden="true">
         <img src="images/papers/num.png" alt="NUM">
         <div class="teaser-label">NUM</div>
@@ -2433,7 +2432,7 @@
         Ying Tian, Zhiliang Wang*, Xia Yin, Xingang Shi, Jiahai Yang, <b>Han Zhang*</b>
       </p>
       <p class="pf-venue">IEEE Transactions on Networking, 2025.</p>
-      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">核心洞见</span>Improves the scalability, accuracy, or robustness of a core measurement, verification, or security primitive used in real network infrastructures.</div></div>
+      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">核心洞见</span>A centralized NUM algorithm for SDN-managed cloud and inter-DC networks: smooth utility and penalty functions make <b>Nesterov&#39;s accelerated gradient method</b> applicable, giving an O(d/t&sup2;) convergence rate that scales with the number of flows d. Handles prioritized flows on multiple paths and reaches close-to-optimal utility in fewer iterations.</div></div>
       <div class="pf-impact">
         <span><i class="fa-solid fa-book-open"></i>顶级网络期刊</span>
         <span><i class="fa-solid fa-flask"></i>系统原型</span>
@@ -2445,7 +2444,7 @@
     </article>
 
     <!-- TON'25 HELA -->
-    <article class="pub-feature">
+    <article class="pub-feature" id="pub-hela">
       <div class="pf-teaser theme-net" aria-hidden="true">
         <img src="images/papers/hela.png" alt="HELA">
         <div class="teaser-label">HELA</div>
@@ -2458,7 +2457,7 @@
         Xingang Shi, Zitong Jin*, Bin Xiong, Xinyao Huang, Xiaotian Xi, Dan Li, <b>Han Zhang</b>, Zhiliang Wang, Xia Yin
       </p>
       <p class="pf-venue">IEEE Transactions on Networking, 2025.</p>
-      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">核心洞见</span>Advances <b>Internet routing & topology</b> inference / engineering with a new algorithmic or data-plane primitive.</div></div>
+      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">核心洞见</span>Infers <b>AS business relationships</b> with a hybrid of grouping, voting, and machine-learning algorithms, validated on a refreshed dataset (BGP communities, IRR RPSL records, OneStep communities) with 95% more labelled links. On 2021&ndash;2023 data it cuts error rates by up to <b>2.9&times;</b> versus AS-Rank, ProbLink, and TopoScope, and stays stable on incomplete and biased data.</div></div>
       <div class="pf-impact">
         <span><i class="fa-solid fa-book-open"></i>顶级网络期刊</span>
         <span><i class="fa-solid fa-flask"></i>系统原型</span>
@@ -2483,7 +2482,7 @@
         <b>Han Zhang</b>, Xia Yin, Xingang Shi*, Jilong Wang, Zhiliang Wang, Yingya Guo, Tian Lan, Yahui Li, Yongqing Zhu, Ke Ruan, Haijun Geng
       </p>
       <p class="pf-venue">IEEE/ACM 网络汇刊, 2022.</p>
-      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">核心洞见</span>Improves the scalability, accuracy, or robustness of a core measurement, verification, or security primitive used in real network infrastructures.</div></div>
+      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">核心洞见</span>TEDAT engineers inter-DC WAN traffic for <b>diverse availability targets</b>, each an SLA that a bandwidth demand is met with a stipulated probability despite failures. Online admission control runs <b>30&times; faster</b> than the optimal strategy with under 4% false rejections; 23&ndash;60% more demands meet their SLAs than with FFC or TEAVAR, and 10&ndash;20% more profit is retained when failures cause violations.</div></div>
       <div class="pf-impact">
         <span><i class="fa-solid fa-book-open"></i>顶级网络期刊</span>
         <span><i class="fa-solid fa-flask"></i>系统原型</span>
@@ -2495,7 +2494,7 @@
     </article>
 
     <!-- TPDS'26 SFCES -->
-    <article class="pub-feature">
+    <article class="pub-feature" id="pub-sfc">
       <div class="pf-teaser theme-net" aria-hidden="true">
         <img src="images/papers/sfces.png" alt="SFCES">
         <div class="teaser-label">SFCES</div>
@@ -2520,7 +2519,7 @@
     </article>
 
     <!-- TPDS'23 Serpens -->
-    <article class="pub-feature">
+    <article class="pub-feature" id="pub-serpens">
       <div class="pf-teaser theme-obs" aria-hidden="true">
         <img src="images/papers/serpens.png" alt="Serpens">
         <div class="teaser-label">Serpens</div>
@@ -2533,7 +2532,7 @@
         <span class="stu">Heng Yu</span>, <b>Han Zhang*</b>, <span class="stu">Junxian Shen</span>, <span class="stu">Yantao Geng</span>, et al.
       </p>
       <p class="pf-venue">IEEE 并行与分布式系统汇刊, vol. 34, no. 8, pp. 2448–2463, 2023.</p>
-      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">核心洞见</span>Improves the scalability, accuracy, or robustness of a core measurement, verification, or security primitive used in real network infrastructures.</div></div>
+      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">核心洞见</span>A high-performance <b>FaaS platform for network functions</b>: a reusable NF runtime slashes instance startup, a new state-management mechanism keeps state access local, and advanced service chaining avoids extra packet delivery. Compared with NFs and SFCs on existing FaaS platforms, throughput rises by <b>more than 10&times;</b> and latency drops by more than 90%.</div></div>
       <div class="pf-impact">
         <span><i class="fa-solid fa-book-open"></i>顶级系统期刊</span>
         <span><i class="fa-solid fa-microchip"></i>并行 / 分布式</span>
@@ -2558,7 +2557,7 @@
         Yahui Li, <b>Han Zhang*</b>, Jilong Wang, Xia Yin, Xingang Shi, Jianping Wu
       </p>
       <p class="pf-venue">IEEE 并行与分布式系统汇刊, vol. 34, no. 4, pp. 1362–1375, 2023.</p>
-      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">核心洞见</span>Improves the scalability, accuracy, or robustness of a core measurement, verification, or security primitive used in real network infrastructures.</div></div>
+      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">核心洞见</span>SWIFT generates test packets <b>directly from network configurations</b> to detect data-plane faults, avoiding unreliable device snapshots; each packet exercises multiple links, and network updates are revalidated incrementally. It covers all links and interfaces of hundreds of benchmark networks in seconds, and a deployment in a university network detected many outages.</div></div>
       <div class="pf-impact">
         <span><i class="fa-solid fa-book-open"></i>顶级系统期刊</span>
         <span><i class="fa-solid fa-microchip"></i>并行 / 分布式</span>
@@ -2570,7 +2569,7 @@
     </article>
 
     <!-- TPDS'22 NetEC -->
-    <article class="pub-feature">
+    <article class="pub-feature" id="pub-netec">
       <div class="pf-teaser theme-net" aria-hidden="true">
         <img src="images/papers/netec.png" alt="NetEC">
         <div class="teaser-label">NetEC</div>
@@ -2583,7 +2582,7 @@
         <span class="stu">Yi Qiao</span>, Menghao Zhang, Yu Zhou, Xiao Kong, <b>Han Zhang*</b>, et al.
       </p>
       <p class="pf-venue">IEEE 并行与分布式系统汇刊, vol. 33, no. 10, pp. 2571–2583, 2022.</p>
-      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">核心洞见</span>Improves the scalability, accuracy, or robustness of a core measurement, verification, or security primitive used in real network infrastructures.</div></div>
+      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">核心洞见</span>Fully offloads <b>erasure-coding reconstruction</b> to programmable switches, using Explicit Buffer Size Notification, an on-switch one-to-many TCP proxy, and parallel Galois-field offloading. Integrated with HDFS, it raises the reconstruction rate by <b>2.7&ndash;6.8&times;</b>, cuts degraded-read latency, and removes host CPU overhead entirely.</div></div>
       <div class="pf-impact">
         <span><i class="fa-solid fa-book-open"></i>顶级系统期刊</span>
         <span><i class="fa-solid fa-microchip"></i>并行 / 分布式</span>
@@ -2595,7 +2594,7 @@
     </article>
 
     <!-- TPDS'22 HashFlow -->
-    <article class="pub-feature">
+    <article class="pub-feature" id="pub-hashflow">
       <div class="pf-teaser theme-net" aria-hidden="true">
         <img src="images/papers/hashflow.png" alt="HashFlow">
         <div class="teaser-label">HashFlow</div>
@@ -2608,7 +2607,7 @@
         Zongyi Zhao, Xingang Shi*, Zhiliang Wang, Qi Li, <b>Han Zhang</b>, Xia Yin
       </p>
       <p class="pf-venue">IEEE 并行与分布式系统汇刊, vol. 33, no. 5, pp. 1069–1083, 2022.</p>
-      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">核心洞见</span>Improves the scalability, accuracy, or robustness of a core measurement, verification, or security primitive used in real network infrastructures.</div></div>
+      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">核心洞见</span>Keeps large flows in a main table and summarizes the rest in an ancillary table, promoting flows back with guaranteed probability as they grow. Implemented on a <b>Tofino switch</b>, it beats the best competitors by up to 21%, 60%, and 35% in flow-size estimation, flow-size-distribution estimation, and heavy-hitter detection, with almost no loss in throughput.</div></div>
       <div class="pf-impact">
         <span><i class="fa-solid fa-book-open"></i>顶级系统期刊</span>
         <span><i class="fa-solid fa-microchip"></i>并行 / 分布式</span>
@@ -2633,7 +2632,7 @@
         Su Wang, Hongbin Sun, Zhiliang Wang, Tao Zhou, Xia Yin, Dongqi Han, <b>Han Zhang</b>, Xingang Shi, Jiahai Yang
       </p>
       <p class="pf-venue">IEEE 信息取证与安全汇刊, 2025.</p>
-      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">核心洞见</span>Pushes anomaly / intrusion detection from offline analytics to <b>online</b>, ISP-scale operation, with measurable gains in accuracy and false-positive rates.</div></div>
+      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">核心洞见</span>eaGle reconstructs <b>end-to-end attack scenarios</b> from raw host data: anomaly-based scoring plus fine-grained misuse detection feed a new anomalous-subtree detection algorithm, and coarse-grained rule matching produces an interpretable attack-scenario graph. It outperforms three state-of-the-art reconstruction systems on DARPA TC data and three deployment scenarios.</div></div>
       <div class="pf-impact">
         <span><i class="fa-solid fa-shield-halved"></i>安全顶级期刊</span>
         <span><i class="fa-solid fa-microscope"></i>真实流量数据</span>
@@ -2658,7 +2657,7 @@
         Yahui Li, <b>Han Zhang*</b>, Jilong Wang, Xingang Shi, Xia Yin, Zhiliang Wang, Jiankun Hu, Congcong Miao, Jianping Wu
       </p>
       <p class="pf-venue">IEEE 信息取证与安全汇刊, vol. 19, pp. 10099–10113, 2024.</p>
-      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">核心洞见</span>Brings <b>formal verification</b> to a previously hand-tuned operational primitive, scaling to carrier-sized state while keeping counter-examples interpretable.</div></div>
+      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">核心洞见</span>Quantitative network verification (QNV) checks <b>quantitative policies</b>, such as whether a link becomes overloaded, rather than only Boolean ones like reachability: configurations are translated into a symbolic model of converged forwarding, and a logical formula matrix captures behavior under failures. It verifies such policies precisely within minutes, even on large networks.</div></div>
       <div class="pf-impact">
         <span><i class="fa-solid fa-shield-halved"></i>安全顶级期刊</span>
         <span><i class="fa-solid fa-microscope"></i>真实流量数据</span>
@@ -2683,7 +2682,7 @@
         Pei Zhang, Fangzhou He, <b>Han Zhang*</b>, Jiankun Hu, et al.
       </p>
       <p class="pf-venue">IEEE 信息取证与安全汇刊, vol. 18, pp. 2076–2090, 2023.</p>
-      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">核心洞见</span>Improves the scalability, accuracy, or robustness of a core measurement, verification, or security primitive used in real network infrastructures.</div></div>
+      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">核心洞见</span>OADSD detects malicious traffic in <b>SD-WAN</b> using distributed dynamic feature extraction from raw traffic and an on-demand evolving isolation forest that adapts to the environment, with a theoretical performance analysis. It achieves up to 60% higher accuracy than state-of-the-art systems.</div></div>
       <div class="pf-impact">
         <span><i class="fa-solid fa-shield-halved"></i>安全顶级期刊</span>
         <span><i class="fa-solid fa-microscope"></i>真实流量数据</span>
@@ -2708,7 +2707,7 @@
         Tianbo Wang, Huacheng Li, Chunhe Xia*, <b>Han Zhang</b>, Pei Zhang
       </p>
       <p class="pf-venue">IEEE 信息取证与安全汇刊, vol. 18, pp. 1610–1624, 2023.</p>
-      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">核心洞见</span>Improves the scalability, accuracy, or robustness of a core measurement, verification, or security primitive used in real network infrastructures.</div></div>
+      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">核心洞见</span>Models <b>hybrid worms</b> that combine scanning with social-network spreading through a hierarchical-stochastic propagation model, then derives a hierarchical-measure immunization strategy: maximum-likelihood estimation locates vulnerable hosts, and a propagation-centrality measure finds vital social nodes. The model is more accurate than prior ones, and the strategy contains the spread more effectively.</div></div>
       <div class="pf-impact">
         <span><i class="fa-solid fa-shield-halved"></i>安全顶级期刊</span>
         <span><i class="fa-solid fa-microscope"></i>真实流量数据</span>
@@ -2733,7 +2732,7 @@
         Su Wang, Zhiliang Wang*, Tao Zhou, Hongbin Sun, Xia Yin, Dongqi Han, <b>Han Zhang</b>, et al.
       </p>
       <p class="pf-venue">IEEE 信息取证与安全汇刊, vol. 17, pp. 3972–3987, 2022.</p>
-      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">核心洞见</span>Demonstrates <b>non-intrusive, low-overhead tracing</b> deployable on production workloads without application-level cooperation.</div></div>
+      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">核心洞见</span>Detects host-based threats, including APTs, at <b>system-entity level</b> without prior knowledge of attack patterns: an inductive graph neural network (GraphSAGE) learns each benign entity&#39;s role in the provenance graph. It runs in real time on long-running hosts, catches intrusions early, and outperforms seven state-of-the-art host IDSs on five public datasets.</div></div>
       <div class="pf-impact">
         <span><i class="fa-solid fa-shield-halved"></i>安全顶级期刊</span>
         <span><i class="fa-solid fa-microscope"></i>真实流量数据</span>
@@ -2758,7 +2757,7 @@
         Shangbin Han, Qianhong Wu, <b>Han Zhang*</b>, Bo Qin, Jiankun Hu, et al.
       </p>
       <p class="pf-venue">IEEE 信息取证与安全汇刊, vol. 16, pp. 2300–2311, 2021.</p>
-      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">核心洞见</span>Pushes anomaly / intrusion detection from offline analytics to <b>online</b>, ISP-scale operation, with measurable gains in accuracy and false-positive rates.</div></div>
+      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">核心洞见</span>ROEAD makes log-based anomaly detection <b>robust to noisy data and cheap to update</b>: a robust feature extractor removes noise, and an online evolving SVM updates its parameters as logs arrive, provably approaching the best hypothesis over time. Detection accuracy improves by more than 40% on public log datasets.</div></div>
       <div class="pf-impact">
         <span><i class="fa-solid fa-shield-halved"></i>安全顶级期刊</span>
         <span><i class="fa-solid fa-microscope"></i>真实流量数据</span>
@@ -2783,7 +2782,7 @@
         Ying Tian, Zhiliang Wang*, Xia Yin, Xingang Shi, Jiahai Yang, <b>Han Zhang</b>
       </p>
       <p class="pf-venue">IEEE 国际网络协议会议 (ICNP '22), 2022.</p>
-      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">核心洞见</span>Improves the scalability, accuracy, or robustness of a core measurement, verification, or security primitive used in real network infrastructures.</div></div>
+      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">核心洞见</span>A centralized, efficient, and scalable NUM algorithm for SDN: smooth utility and penalty functions enable <b>Nesterov&#39;s accelerated gradient method</b>, with an O(d/t&sup2;) convergence rate, the fastest in the number of iterations t and scalable in the number of flows d. It reaches accurate, close-to-optimal utility in fewer iterations.</div></div>
       <div class="pf-impact">
         <span><i class="fa-solid fa-book-open"></i>网络顶级会议</span>
         <span><i class="fa-solid fa-flask"></i>系统原型</span>
@@ -2808,7 +2807,7 @@
         Dongqi Han, Zhiliang Wang*, Wenqi Chen, Ying Zhong, Su Wang, <b>Han Zhang</b>, Jiahai Yang, Xingang Shi, Xia Yin
       </p>
       <p class="pf-venue">ACM 计算机与通信安全会议 (CCS '21), 2021.</p>
-      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">核心洞见</span>Pushes anomaly / intrusion detection from offline analytics to <b>online</b>, ISP-scale operation, with measurable gains in accuracy and false-positive rates.</div></div>
+      <div class="pf-highlight"><div class="pf-hl-text"><span class="pf-hl-label">核心洞见</span>A general framework to <b>interpret unsupervised deep-learning anomaly detectors</b> in security applications and to improve them with the interpretations: a constrained-optimization interpreter tailored to security requirements, plus a model-based Distiller. Applied to three kinds of detection systems, it helps operators understand decisions, diagnose mistakes, give feedback, and reduce false positives.</div></div>
       <div class="pf-impact">
         <span><i class="fa-solid fa-trophy"></i>Top-tier venue</span>
         <span class="deploy"><i class="fa-solid fa-tower-broadcast"></i>Production-grade</span>
@@ -2893,7 +2892,8 @@
       <li class="pub-item"><span class="pub-num">[6]</span><span class="pub-content">
         Kaiyang Zhao, <b>Han Zhang*</b>, Yao Tong, Yahui Li, Xingang Shi, Zhiliang Wang, Xia Yin, Jianping Wu.
         "Efficient Slice-Parallel Distributed Probing in SRv6 Networks."
-        <span class="pub-venue top">IEEE/ACM 网络汇刊</span>, 2026.
+        <span class="pub-venue top">IEEE/ACM 网络汇刊</span>, vol. 34, pp. 5588–5600, 2026.
+        <a class="pub-pdf" href="https://ieeexplore.ieee.org/document/11533551"><i class="fa-solid fa-file-pdf"></i>PDF</a>
       </span></li>
       <li class="pub-item"><span class="pub-num">[7]</span><span class="pub-content">
         XinZhe Liu, Yahui Li, <b>Han Zhang</b>, Renrui Tian, Xia Yin, Xingang Shi, Zhiliang Wang, Gang Ren, Jilong Wang, Jiangyuan Yao.
@@ -2946,6 +2946,7 @@
         Zhaozhen Wang, Xingang Shi*, Haijun Geng, <b>Han Zhang</b>, Xia Yin, Zhiliang Wang.
         "On Non-Commutative Routing."
         <span class="pub-venue top">IEEE INFOCOM 2025</span>, pp. 1–10.
+        <a class="pub-pdf" href="https://ieeexplore.ieee.org/document/11044753"><i class="fa-solid fa-file-pdf"></i>PDF</a>
       </span></li>
       <li class="pub-item"><span class="pub-num">[3]</span><span class="pub-content">
         Weiting Zhang, Jiadong Ren, Tao Zheng, Ruibin Guo, <b>Han Zhang</b>, Shiwen Mao, Hongke Zhang*.
