@@ -41,11 +41,11 @@
 % ------------------------------------------------------------- 研究概述
 \section*{研究概述}
 \noindent
-本人的研究面向\textbf{AI / 网络基础设施}，构建\textbf{测量、资源调度与安全}技术，
-覆盖互联网（BGP、RPKI、DNS、Web PKI）、ISP 与运营商骨干网、
-\textbf{FITI / CERNET / CERNET2} 国家级试验设施，以及从智算集群到超大规模云与
-Serverless 平台的智算 / 数据中心。研究工作分为三个方向，服务于同一个目标——
-\emph{让 AI / 网络基础设施看得清、调得优、守得住}：
+本人的研究面向\textbf{AI / 网络基础设施}，构建\textbf{测量、资源调度、智能运维与安全防护}技术，
+覆盖互联网（BGP、RPKI、DNS、Web PKI）、运营商骨干网与城域网、
+\textbf{FITI / CERNET / CERNET2} 国家级试验设施以及智算中心。研究聚焦国家战略需求、
+注重产学研深度融合，分为三个方向，服务于同一个目标——
+\emph{让 AI / 网络基础设施看得清、调得优、管得好、守得住}：
 
 \begin{enumerate}[leftmargin=1.8em,label=\textbf{\arabic*.}]
   \item \textbf{AI / 网络基础设施测量。}以线速、零应用改造的方式让生产基础设施可观测：
@@ -53,16 +53,17 @@ Serverless 平台的智算 / 数据中心。研究工作分为三个方向，服
   SRv6 探测与时延瓶颈诊断（ICNP'25、ToN'26）；可编程交换机上的流测量（TPDS'22）；
   以及面向 Looking Glass 服务、AS 商业关系与域间路由的互联网级测量（WWW'26、ToN'25、ICNP'26）。
   \item \textbf{AI / 网络基础设施资源调度。}把测量结果转化为高效、抗故障的带宽与算力调度：
-  具备可用性保障的跨数据中心广域网流量工程（CoNEXT'21、ToN'22）；
+  基于混合链路保护的可靠性路由（IPCCC'14、ICC'15、JCN'20），已应用于中国电信城域网；
+  具备可用性保障的跨数据中心广域网流量工程（CoNEXT'21、ToN'22）；FITI 试验设施资源调度与试验服务；
   集中式网络效用最大化（ICNP'22、ToN'25）；路由代数（INFOCOM'25）；
   可编程交换机上的网内加速（INFOCOM'24、TPDS'22）；面向网络功能的 FaaS 平台（TPDS'23）；
   服务功能链部署与调度（TPDS'26）；以及面向企业云的即插即用网络管理（NSDI'27）。
-  \item \textbf{AI / 网络基础设施安全。}在攻击与配置错误扩散之前发现并阻断：
+  \item \textbf{AI / 网络基础设施智能运维与安全防护。}在配置错误、故障与攻击扩散之前验证、诊断并阻断：
+  运营商规模的配置验证（TIFS'24、CoNEXT'25、INFOCOM'26）；
   可编程交换机上的在线入侵检测，已在 ISP 生产环境运行（SIGCOMM'25、SIGCOMM'26）；
   可解释、能应对正常态漂移的异常检测（CCS'21、NDSS'23）；
-  基于溯源图的 APT 检测（TIFS'22、TIFS'25）；
-  Serverless 钱包耗尽（DoW）攻击检测（CCS'22、ToN'26）；
-  路由与 Web PKI 安全（CCS'26、WWW'25）；以及运营商规模的配置验证（TIFS'24、CoNEXT'25、INFOCOM'26）。
+  基于溯源图的 APT 检测与 Serverless 钱包耗尽攻击检测（TIFS'22、TIFS'25、CCS'22、ToN'26）；
+  以及证书、Web PKI 与路由的互联网信任基础设施态势感知（WWW'25、CCS'26）。
 \end{enumerate}
 
 % ----------------------------------------------------------- 学术计量
@@ -96,6 +97,7 @@ ACM CoNEXT、ACM WWW、ACM ICSE、IEEE INFOCOM、IEEE/ACM ToN、IEEE TIFS、IEEE
 % ---------------------------------------------------------------- 奖励
 \section{主要奖励与荣誉}
 \begin{itemize}
+  \item \textbf{世界互联网大会领先科技奖}，2026。\note{国际}
   \item \textbf{Applied Networking Research Prize（ANRP）}，IRTF / Internet Society，2023。
         \note{国际}
   \item \textbf{中国通信学会科学技术奖一等奖}——《城域云网关键技术及规模应用》，2025。
@@ -180,7 +182,7 @@ Method.'' \venue{IEEE Transactions on Networking}, 2025.
 
 \end{publist}
 
-\subsection*{AI / 网络基础设施安全}
+\subsection*{AI / 网络基础设施智能运维与安全防护}
 \begin{publist}[resume]
 
 \item \me{Han Zhang}, Xuefeng Liu, Linqiang Qian, Guyue Liu, Tianyu Zhang, Kaiyang
@@ -610,9 +612,14 @@ C\&C Traces.'' \venue{IEEE HST 2015}.
 % -------------------------------------------------------------- 成果转化
 \section{成果转化与国家级影响}
 \begin{itemize}
-  \item \textbf{中国电信骨干网}——线速加密流量异常检测；大规模广域网感知与优化。
-  \item \textbf{未来互联网试验设施（FITI）}——可编程交换机入侵检测与分段路由诊断在
-        国家下一代互联网试验设施上部署；配置与覆盖网验证。
+  \item \textbf{中国电信城域网与骨干网}——混合链路保护技术应用于城域网，5 年降低建设成本超 40\%，
+        服务 1.2 亿用户（2025 年中国通信学会科学技术奖一等奖、2026 年世界互联网大会领先科技奖）；
+        线速加密流量异常检测；大规模广域网感知与优化。
+  \item \textbf{未来互联网试验设施（FITI）}——资源调度与试验服务系统保障设施稳定运行 3 年
+        （全国 40 个节点、100 余项大型试验）；配置与覆盖网验证；可编程交换机入侵检测与 SRv6 诊断。
+        相关技术应用于华为等 32 家企业及腾讯。
+  \item \textbf{证书系统态势感知平台}——国内首个，应用于电信、银行等行业，检测全部央企及 2000 余家
+        政府和关键事业单位，发现证书部署威胁上百个。
   \item \textbf{CERNET / CERNET2}——基于 DeepFlow 的可观测性与路由异常分析，
         覆盖中国教育和科研计算机网。
   \item \textbf{腾讯云}——大规模微服务系统可观测性；跨数据中心广域网流量工程联合设计。

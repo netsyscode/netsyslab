@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>张晗 · AI / 网络基础设施的测量、资源调度与安全 · 清华大学</title>
-<meta name="description" content="张晗，清华大学网络科学与网络空间研究院副教授。研究 AI / 网络基础设施的测量、资源调度与安全，覆盖互联网、运营商骨干网、FITI / CERNET 国家级试验设施与智算中心。" />
+<title>张晗 · AI / 网络基础设施测量、资源调度、智能运维与安全防护 · 清华大学</title>
+<meta name="description" content="张晗，清华大学网络科学与网络空间研究院副教授。研究 AI / 网络基础设施的测量、资源调度、智能运维与安全防护，覆盖互联网、运营商骨干网与城域网、FITI / CERNET 国家级试验设施与智算中心。" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Lora:ital,wght@0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -257,6 +257,46 @@
   }
   .venue-tag:hover {
     background: var(--c-accent); color: #fff !important;
+  }
+
+  /* ─── Research areas: three structured blocks (2026-10-18) ──── */
+  .ra-intro { font-size: 14.5px; line-height: 1.75; color: var(--c-ink-soft); margin: 4px 0 18px; }
+  .ra-list { display: flex; flex-direction: column; gap: 18px; }
+  .ra-block {
+    background: var(--c-paper); border: 1px solid var(--c-line);
+    border-top: 3px solid var(--c-accent); border-radius: var(--radius);
+    padding: 18px 22px; box-shadow: var(--shadow-sm);
+  }
+  .ra-head { display: flex; align-items: center; gap: 14px; margin-bottom: 12px; }
+  .ra-no { font-family: var(--serif); font-size: 30px; font-weight: 700; color: var(--c-accent); line-height: 1; min-width: 44px; }
+  .ra-title { font-family: var(--serif); font-weight: 600; font-size: 18px; margin: 0; color: var(--c-ink); }
+  .ra-title i { color: var(--c-accent); margin-right: 8px; font-size: 15px; }
+  .ra-sub { margin: 3px 0 0; font-size: 13px; color: var(--c-muted); }
+  .ra-label {
+    display: inline-block; font-size: 11.5px; font-weight: 600; letter-spacing: .02em;
+    color: var(--c-accent); background: var(--c-accent-soft); border-radius: 4px;
+    padding: 1px 8px; margin-right: 8px; vertical-align: 1px;
+  }
+  .ra-text { font-size: 14px; line-height: 1.75; color: var(--c-ink-soft); margin: 0 0 12px; }
+  .ra-sec { margin: 0 0 8px; }
+  .ra-contrib { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 0 0 12px; }
+  .ra-item {
+    border: 1px solid var(--c-line); border-radius: 8px; padding: 12px 14px 10px;
+    background: #fdfcf9; display: flex; flex-direction: column;
+  }
+  .ra-item-head { font-weight: 600; font-size: 14.5px; color: var(--c-ink); margin-bottom: 6px; display: flex; align-items: baseline; gap: 8px; }
+  .ra-idx {
+    flex: none; display: inline-flex; align-items: center; justify-content: center;
+    width: 20px; height: 20px; border-radius: 50%; background: var(--c-accent); color: #fff;
+    font-size: 11.5px; font-weight: 700; transform: translateY(-1px);
+  }
+  .ra-item p { font-size: 13.5px; line-height: 1.68; color: var(--c-ink-soft); margin: 0 0 8px; flex: 1; }
+  .ra-tags { display: flex; flex-wrap: wrap; gap: 4px 2px; }
+  .ra-impact { background: var(--c-accent-soft); border-radius: 6px; padding: 10px 14px; margin: 0; }
+  .ra-impact .ra-label { background: var(--c-accent); color: #fff; }
+  @media (max-width: 900px) {
+    .ra-contrib { grid-template-columns: 1fr; }
+    .ra-block { padding: 16px; }
   }
 
   /* ─── Research Vision (framework figure) ─────────────────── */
@@ -1184,8 +1224,8 @@
       <span style="color:var(--c-muted);font-size:13px;">AI &amp; Network Infrastructure Measurement</span><br>
       <b>AI / 网络基础设施资源调度</b><br>
       <span style="color:var(--c-muted);font-size:13px;">AI &amp; Network Infrastructure Resource Scheduling</span><br>
-      <b>AI / 网络基础设施安全</b><br>
-      <span style="color:var(--c-muted);font-size:13px;">AI &amp; Network Infrastructure Security</span>
+      <b>AI / 网络基础设施智能运维与安全防护</b><br>
+      <span style="color:var(--c-muted);font-size:13px;">AI &amp; Network Infrastructure Intelligent Operations &amp; Security</span>
     </p>
 
     <div class="contact-row">
@@ -1216,20 +1256,18 @@
 <!-- ═══════════════════════ About ═══════════════════════ -->
 <section class="section about" id="about">
   <h2><i class="fa-solid fa-user icon"></i>关于我</h2>
-  <p>我的研究面向 <b>AI / 网络基础设施</b>，构建 <b>测量、资源调度与安全</b> 技术，覆盖互联网（BGP、RPKI、DNS、Web PKI）、ISP 与运营商骨干网、<b>FITI / CERNET / CERNET2</b> 国家级试验设施，以及从智算集群到超大规模云与 Serverless 平台的智算 / 数据中心。研究工作分为 <b>三个方向</b>，详见下方 <a href="#research">研究方向</a>：</p>
+  <p><b>学术方向与研究特点。</b>我主要从事 <b>AI / 网络基础设施</b> 方向的研究，覆盖互联网（BGP、RPKI、DNS、Web PKI）、运营商骨干网与城域网、<b>FITI / CERNET / CERNET2</b> 国家级试验设施以及智算中心。研究围绕三条主线展开，目标是让 AI / 网络基础设施 <b>看得清、调得优、管得好、守得住</b>；研究特色在于聚焦国家战略需求、注重产学研深度融合，详见下方 <a href="#research">研究方向</a>：</p>
   <ol style="margin:6px 0 12px 22px;padding:0;line-height:1.65;">
-    <li><b>AI / 网络基础设施测量。</b> 以线速、零应用改造的方式让生产基础设施可观测：基于 eBPF 的零代码分布式追踪（<a href="#pub-deepflow"><i>DeepFlow</i> SIGCOMM'23</a>、<a href="#pub-deeptrace"><i>DeepTrace</i> SIGCOMM'25</a>、<a href="#pub-icse26"><i>FlowScope</i> ICSE'26</a>），SRv6 探测与时延瓶颈诊断（<a href="#pub-srmesh"><i>SRmesh</i> ICNP'25</a>、<a href="#pub-srv6">ToN'26</a>），可编程交换机上的流测量（<a href="#pub-hashflow"><i>HashFlow</i> TPDS'22</a>），以及面向 Looking Glass 服务、AS 商业关系与域间路由的互联网级测量（<a href="#pub-glassminer"><i>GlassMiner</i> WWW'26</a>、<a href="#pub-hela"><i>HELA</i> ToN'25</a>、ICNP'26）。</li>
-    <li><b>AI / 网络基础设施资源调度。</b> 把测量结果转化为高效、抗故障的带宽与算力调度：具备可用性保障的跨数据中心广域网流量工程（<a href="#pub-conext21"><i>BATE</i> CoNEXT'21</a>、<a href="#pub-ton22"><i>TEDAT</i> ToN'22</a>），集中式网络效用最大化（<a href="#pub-num">ToN'25</a>），路由代数（<a href="#pub-infocom25">INFOCOM'25</a>），可编程交换机上的网内加速（<a href="#pub-infocom24"><i>NetFEC</i> INFOCOM'24</a>、<a href="#pub-netec"><i>NetEC</i> TPDS'22</a>），面向网络功能的 FaaS 平台（<a href="#pub-serpens"><i>Serpens</i> TPDS'23</a>），服务功能链部署与调度（<a href="#pub-sfc"><i>SFCES</i> TPDS'26</a>），以及面向企业云的即插即用网络管理（<a href="#pub-kuiper"><i>Kuiper</i> NSDI'27</a>）。</li>
-    <li><b>AI / 网络基础设施安全。</b> 在攻击与配置错误扩散之前发现并阻断：可编程交换机上的在线入侵检测，已在 ISP 生产环境运行（<a href="#pub-deepshield"><i>DeepShield</i> SIGCOMM'25</a>、<a href="#pub-sigcomm26"><i>SiteGuard</i> SIGCOMM'26</a>），可解释、能应对正常态漂移的异常检测（<a href="#pub-ccs21"><i>DeepAID</i> CCS'21</a>、<a href="#pub-ndss23"><i>OWAD</i> NDSS'23</a>），基于溯源图的 APT 检测（<a href="#pub-tifs22"><i>THREATRACE</i> TIFS'22</a>、<a href="#pub-tifs25">TIFS'25</a>），Serverless 钱包耗尽（DoW）攻击检测（<a href="#pub-gringotts"><i>Gringotts</i> CCS'22</a>、<a href="#pub-clover"><i>Clover</i> ToN'26</a>），路由与 Web PKI 安全（<i>Parade</i> CCS'26、<a href="#pub-acme"><i>ACME++</i> WWW'25</a>），以及运营商规模的配置验证（<a href="#pub-tifs24">TIFS'24</a>、<a href="#pub-conext25"><i>MEV</i> CoNEXT'25</a>、<a href="#pub-infocom26"><i>Bulwark</i> INFOCOM'26</a>）。</li>
+    <li><b>AI / 网络基础设施测量</b>：零代码分布式追踪（<a href="#pub-deepflow"><i>DeepFlow</i> SIGCOMM'23</a>、<a href="#pub-deeptrace"><i>DeepTrace</i> SIGCOMM'25</a>、<a href="#pub-icse26"><i>FlowScope</i> ICSE'26</a>），SRv6 探测与诊断（<a href="#pub-srmesh"><i>SRmesh</i> ICNP'25</a>、<a href="#pub-srv6">ToN'26</a>），互联网级测量（<a href="#pub-glassminer"><i>GlassMiner</i> WWW'26</a>、<a href="#pub-hela"><i>HELA</i> ToN'25</a>）。</li>
+    <li><b>AI / 网络基础设施资源调度</b>：可靠性驱动的路由与流量工程（<a href="#pub-conext21"><i>BATE</i> CoNEXT'21</a>、<a href="#pub-ton22"><i>TEDAT</i> ToN'22</a>、<a href="#pub-infocom25">INFOCOM'25</a>），试验设施资源调度（<a href="#pub-kuiper"><i>Kuiper</i> NSDI'27</a>），算力与网络功能调度（<a href="#pub-sfc"><i>SFCES</i> TPDS'26</a>、<a href="#pub-serpens"><i>Serpens</i> TPDS'23</a>、<a href="#pub-infocom24"><i>NetFEC</i> INFOCOM'24</a>）。</li>
+    <li><b>AI / 网络基础设施智能运维与安全防护</b>：配置验证（<a href="#pub-tifs24">TIFS'24</a>、<a href="#pub-conext25"><i>MEV</i> CoNEXT'25</a>、<a href="#pub-infocom26"><i>Bulwark</i> INFOCOM'26</a>），已在 ISP 生产环境运行的线速入侵检测（<a href="#pub-deepshield"><i>DeepShield</i> SIGCOMM'25</a>、<a href="#pub-sigcomm26"><i>SiteGuard</i> SIGCOMM'26</a>），可解释异常检测（<a href="#pub-ccs21"><i>DeepAID</i> CCS'21</a>、<a href="#pub-ndss23"><i>OWAD</i> NDSS'23</a>），互联网信任基础设施态势感知（<a href="#pub-acme"><i>ACME++</i> WWW'25</a>、<i>Parade</i> CCS'26）。</li>
   </ol>
-  <p>三个方向服务于同一个目标：<b>让 AI / 网络基础设施看得清、调得优、守得住</b>——从操作系统内核与可编程数据平面，一直延伸到国家级骨干网与智算中心。</p>
+  <p><b>学术贡献与影响。</b>我主导了 <b>DeepShield</b> 等项目，在 <i>SIGCOMM、NSDI、CCS、NDSS、CoNEXT、INFOCOM、IEEE/ACM ToN</i> 等国际顶级会议与期刊发表论文近百篇。研究成果深度融入国家关键网络基础设施：链路保护技术应用于 <b>中国电信城域网</b>（5 年降低建设成本超 40%，服务 1.2 亿用户）；资源调度与配置验证技术保障 <b>未来互联网试验设施（FITI）</b> 稳定运行 3 年（全国 40 个节点、100 余项大型试验）；相关技术还应用于 <b>CERNET / CERNET2</b>，服务于电信运营商、国防及其他关乎国计民生的重要领域。荣获 <b>2025 年中国通信学会科学技术奖一等奖</b>、<b>2026 年世界互联网大会领先科技奖</b>、<b>IRTF 应用网络研究奖（ANRP）</b>、<b>NSGA 杰出研究者奖</b> 与 <b>ACM SIGCSE 中国新星奖</b> 等荣誉。</p>
 
-  <p>我主导了 <b>DeepShield</b> 等项目，在 <i>SIGCOMM、NSDI、CCS、NDSS、CoNEXT、INFOCOM、IEEE/ACM ToN</i> 等国际顶级会议与期刊发表论文近百篇。研究成果已被工业界广泛采用，相关技术深度融入 <b>中国电信骨干网</b>、<b>未来互联网试验设施（FITI）</b>、<b>CERNET / CERNET2</b> 等国家关键网络基础设施，服务于电信运营商、国防及其他关乎国计民生的重要领域。</p>
-
-  <p>本人荣获 <b>ACM SIGCSE 中国新星奖</b>，担任 <i>《通信技术》</i> 期刊编委、<i>MDPI Electronics</i> 与 <i>IEEE JSAC</i> 客座编辑，长期为 <i>IEEE/ACM ToN、IEEE TPDS、IEEE TIFS</i> 等期刊审稿；担任 <i>USENIX NSDI、USENIX Security、IEEE INFOCOM、ACM CoNEXT、IEEE ICNP</i> 等国际会议程序委员会委员，并担任 <i>ACM SIGCOMM NGNO</i> 研讨会程序委员会共同主席。研究形成的技术已服务于数亿用户。</p>
+  <p><b>学术服务。</b>担任 <i>《通信技术》</i> 期刊编委、<i>MDPI Electronics</i> 与 <i>IEEE JSAC</i> 客座编辑，长期为 <i>IEEE/ACM ToN、IEEE TPDS、IEEE TIFS</i> 等期刊审稿；担任 <i>USENIX NSDI、USENIX Security、IEEE INFOCOM、ACM CoNEXT、IEEE ICNP</i> 等国际会议程序委员会委员，并担任 <i>ACM SIGCOMM NGNO</i> 研讨会程序委员会共同主席。</p>
 
   <div class="callout">
-    <strong>招生：</strong> 招收 <b>2027 年秋季入学</b> 的博士 / 硕士研究生，从事 AI / 网络基础设施的测量、调度与安全研究。具备系统编程经验者尤佳，欢迎邮件联系！
+    <strong>招生：</strong> 招收 <b>2027 年秋季入学</b> 的博士 / 硕士研究生，从事 AI / 网络基础设施的测量、调度、智能运维与安全研究。具备系统编程经验者尤佳，欢迎邮件联系！
   </div>
 </section>
 
@@ -1238,7 +1276,7 @@
   <h2><i class="fa-solid fa-compass-drafting icon"></i>研究愿景</h2>
   <div class="vision-wrap">
     <p class="vision-lead">
-      &ldquo;下一代互联网与智算中心，需要 <b>看得清</b>、<b>调得优</b>、<b>守得住</b> 的基础设施。我们的使命，是构建让这一切成为可能的系统。&rdquo;
+      &ldquo;下一代互联网与智算中心，需要 <b>看得清</b>、<b>调得优</b>、<b>管得好</b>、<b>守得住</b> 的基础设施。我们的使命，是构建让这一切成为可能的系统。&rdquo;
     </p>
 
     <div class="vision-fig" aria-label="研究框架：从基础设施出发，经由三大研究方向，落地为已部署成果">
@@ -1260,7 +1298,7 @@
         <ul>
           <li><b>测量</b>——eBPF 零代码追踪、SRv6 探测与诊断、互联网级测量</li>
           <li><b>资源调度</b>——广域网流量工程、网内加速、Serverless 与服务链调度</li>
-          <li><b>安全</b>——线速入侵检测、APT 检测、路由与 PKI 安全、配置验证</li>
+          <li><b>智能运维与安全防护</b>——配置验证、线速入侵检测、APT 检测、信任基础设施态势感知</li>
         </ul>
       </div>
       <div class="vision-arrow" aria-hidden="true"><i class="fa-solid fa-arrow-right"></i></div>
@@ -1287,8 +1325,8 @@
         我们把测量转化为决策：<em>流量工程</em>、<em>路由</em>、<em>网内加速</em> 与 <em>Serverless / 服务链调度</em>，让带宽与算力在故障下依然高效可用。
       </div>
       <div class="vision-pillar">
-        <b>III. 安全</b>
-        我们在 ISP 规模上发现并遏制 <em>攻击</em>、<em>入侵</em> 与 <em>配置错误</em>：网内的学习型检测，加上对配置与策略的形式化验证。
+        <b>III. 运维与防护</b>
+        我们在 ISP 规模上验证 <em>配置</em>、诊断 <em>故障</em>、发现 <em>攻击</em>：形式化验证与网内可解释的学习型检测相结合。
       </div>
     </div>
   </div>
@@ -1558,101 +1596,98 @@
 <!-- ═══════════════════════ Research ═══════════════════════ -->
 <section class="section" id="research">
   <h2><i class="fa-solid fa-flask icon"></i>研究方向</h2>
+  <p class="ra-intro"><b>学术方向与研究特点。</b>AI 与网络基础设施是数字经济与网络强国建设的关键底座。我们围绕测量、资源调度、智能运维与安全防护三条主线开展系统研究，目标是让基础设施 <b>看得清、调得优、管得好、守得住</b>。研究特色在于聚焦国家战略需求、注重产学研深度融合：系统长期运行于中国电信城域网、未来互联网试验设施 FITI、CERNET / CERNET2 与多家头部企业的生产环境，生产中遇到的问题再反哺学术研究。</p>
 
-  <div class="research-grid">
-    <div class="research-card">
-      <div class="area-title"><i class="fa-solid fa-satellite-dish"></i>AI / 网络基础设施测量</div>
-      <p>
-        <em>从内核、数据平面到全球路由系统，以线速、零应用改造的方式端到端观测生产基础设施。</em><br><br>
-        零代码分布式追踪
-        <a class="venue-tag" href="papers/deepflow.pdf">SIGCOMM'23</a>
-        <a class="venue-tag" href="papers/deeptrace.pdf">SIGCOMM'25</a>
-        <a class="venue-tag" href="papers/non-intrusive-trace.pdf">ICSE'26</a>；
-        SRv6 探测与时延诊断
-        <a class="venue-tag" href="papers/srmesh-srv6.pdf">ICNP'25</a>
-        <a class="venue-tag" href="papers/srv6-probing.pdf">ToN'26</a>；
-        可编程交换机流测量
-        <a class="venue-tag" href="papers/hashflow.pdf">TPDS'22</a>；
-        Looking Glass 发现与 Web 基础设施可观测
-        <a class="venue-tag" href="papers/glassminer.pdf">WWW'26</a>；
-        AS 商业关系推断
-        <a class="venue-tag" href="papers/hela.pdf">ToN'25</a>；
-        域间路由控制平面与数据平面不一致
-        <a class="venue-tag" href="#publications">ICNP'26</a>；
-        IPv6 与 IP 地理定位测量
-        <a class="venue-tag" href="papers/knocking-cells-2023.pdf">ISCC'23</a>
-        <a class="venue-tag" href="papers/cheap-accurate-delay-2023.pdf">IFIP Networking'23</a>；
-        面向数据平面故障的测试报文生成
-        <a class="venue-tag" href="papers/testpktgen.pdf">TPDS'23</a>。
-      </p>
-    </div>
+  <div class="ra-list">
+    <article class="ra-block" id="ra-measure">
+      <div class="ra-head">
+        <span class="ra-no">01</span>
+        <div>
+          <h3 class="ra-title"><i class="fa-solid fa-satellite-dish"></i>AI / 网络基础设施测量</h3>
+          <p class="ra-sub">看得清：零侵入、线速、全覆盖的测量</p>
+        </div>
+      </div>
+      <p class="ra-text"><span class="ra-label">研究方向与特点</span>AI 数据中心与网络基础设施规模大、协议多、流量高速且普遍加密，「看不见、测不准、跟不上」是运维与安全的首要瓶颈。本方向以零侵入、线速、全覆盖为目标，构建「应用—网络—互联网」三层测量体系，测量系统直接部署于生产环境，为调度与安全提供数据底座。</p>
+      <div class="ra-sec"><span class="ra-label">学术贡献与创新成果</span></div>
+      <div class="ra-contrib">
+        <div class="ra-item">
+          <div class="ra-item-head"><span class="ra-idx">1</span>零代码分布式追踪</div>
+          <p>提出以网络为中心的追踪平面与隐式上下文传播，基于 eBPF 无需修改应用代码即可重建请求因果链；进一步提出基于事务的追踪与方法级时延分布估计，高并发下准确率超过 95%，较 DeepFlow 与 TraceWeaver 再提升 51%。</p>
+          <div class="ra-tags"><a class="venue-tag" href="papers/deepflow.pdf">SIGCOMM'23</a> <a class="venue-tag" href="papers/deeptrace.pdf">SIGCOMM'25</a> <a class="venue-tag" href="papers/non-intrusive-trace.pdf">ICSE'26</a></div>
+        </div>
+        <div class="ra-item">
+          <div class="ra-item-head"><span class="ra-idx">2</span>高速网络测量与 SRv6 主动探测</div>
+          <p>HashFlow 在可编程交换机上实现线速、高精度的流记录采集；SRmesh 以确定性 SR 路径探测、基于时延的多路径推断与渐进式诊断定位 SRv6 网络中的时延瓶颈链路，并扩展为切片并行的分布式探测，探测开销降低 90% 以上。</p>
+          <div class="ra-tags"><a class="venue-tag" href="papers/hashflow.pdf">TPDS'22</a> <a class="venue-tag" href="papers/srmesh-srv6.pdf">ICNP'25</a> <a class="venue-tag" href="papers/srv6-probing.pdf">ToN'26</a></div>
+        </div>
+        <div class="ra-item">
+          <div class="ra-item-head"><span class="ra-idx">3</span>互联网级测量</div>
+          <p>融合结构与语义特征发现全球 Looking Glass 服务，新增 7,558 个观测点；以经验与学习混合方法推断 AS 商业关系，错误率最高降低 2.9 倍；结合 IPv6 活跃地址探测与运营商侧、终端侧提取，构建超百亿规模的证书库。</p>
+          <div class="ra-tags"><a class="venue-tag" href="papers/glassminer.pdf">WWW'26</a> <a class="venue-tag" href="papers/hela.pdf">ToN'25</a> <a class="venue-tag" href="papers/knocking-cells-2023.pdf">ISCC'23</a> <a class="venue-tag" href="papers/cheap-accurate-delay-2023.pdf">IFIP Networking'23</a></div>
+        </div>
+      </div>
+      <p class="ra-text ra-impact"><span class="ra-label">科学价值与社会经济意义</span>形成了从应用、网络到互联网的多层测量方法体系。DeepFlow 开源并成为 CNCF Sandbox 项目，部署于数万台主机，为 26 家以上企业定位 70 余起重大性能异常；DeepTrace 被数十家企业用于生产环境的故障诊断与资源优化；SRv6 探测支撑大规模切片网络的实时监测。</p>
+    </article>
 
-    <div class="research-card">
-      <div class="area-title"><i class="fa-solid fa-diagram-project"></i>AI / 网络基础设施资源调度</div>
-      <p>
-        <em>把测量转化为决策，让广域网、数据中心与 Serverless 平台上的带宽与算力高效、抗故障地运转。</em><br><br>
-        跨数据中心广域网流量工程
-        <a class="venue-tag" href="papers/inter-dc-wan.pdf">CoNEXT'21</a>
-        <a class="venue-tag" href="papers/wan-ha.pdf">ToN'22</a>；
-        网络效用最大化
-        <a class="venue-tag" href="papers/num-icnp22.pdf">ICNP'22</a>
-        <a class="venue-tag" href="papers/num.pdf">ToN'25</a>；
-        路由代数与故障感知的流量工程
-        <a class="venue-tag" href="papers/non-commutative.pdf">INFOCOM'25</a>
-        <a class="venue-tag" href="papers/probabilistic-analysis-overload-2025.pdf">IWQoS'25</a>
-        <a class="venue-tag" href="papers/traffic-engineering-segment-2021.pdf">CNSM'21</a>；
-        可编程交换机网内加速
-        <a class="venue-tag" href="papers/nnetfec.pdf">INFOCOM'24</a>
-        <a class="venue-tag" href="papers/netec.pdf">TPDS'22</a>；
-        Serverless 与云资源管理
-        <a class="venue-tag" href="papers/serpens.pdf">TPDS'23</a>
-        <a class="venue-tag" href="papers/scorpius-2022.pdf">IWQoS'22</a>
-        <a class="venue-tag" href="papers/puvar-2023.pdf">ICWS'23</a>；
-        服务功能链部署与调度
-        <a class="venue-tag" href="papers/sfces.pdf">TPDS'26</a>
-        <a class="venue-tag" href="papers/cost-efficient-dynamic-2021.pdf">CNSM'21</a>；
-        拥塞控制与 Coflow 调度
-        <a class="venue-tag" href="papers/delay-based-congestion-2023.pdf">IWQoS'23</a>
-        <a class="venue-tag" href="papers/efficient-scheduling-weighted-2019.pdf">TPDS'19</a>；
-        企业云即插即用网络管理
-        <a class="venue-tag" href="papers/kuiper.pdf">NSDI'27</a>。
-      </p>
-    </div>
+    <article class="ra-block" id="ra-schedule">
+      <div class="ra-head">
+        <span class="ra-no">02</span>
+        <div>
+          <h3 class="ra-title"><i class="fa-solid fa-diagram-project"></i>AI / 网络基础设施资源调度</h3>
+          <p class="ra-sub">调得优：带宽、路由、算力与网络功能，既用得省、又用得稳</p>
+        </div>
+      </div>
+      <p class="ra-text"><span class="ra-label">研究方向与特点</span>试验设施、运营商网络与智算 / 云数据中心中的带宽、路由、算力与网络功能等资源，既要用得省、又要用得稳。本方向把可靠性与可用性引入路由与调度计算，形成从链路、广域网到算力与网络功能的分层调度方法，并在国家级试验设施与运营商网络中规模落地。</p>
+      <div class="ra-sec"><span class="ra-label">学术贡献与创新成果</span></div>
+      <div class="ra-contrib">
+        <div class="ra-item">
+          <div class="ra-item-head"><span class="ra-idx">1</span>可靠性驱动的路由与流量工程</div>
+          <p>提出混合链路保护与无环备份路径计算，将可靠性引入路由算路，同等可靠性下设备数量降低 30%；提出带宽可用性保障的跨数据中心流量工程，准入控制提速 30 倍、多满足 23%–60% 的需求；建立非交换路由代数理论。获国家自然科学基金重大项目支持。</p>
+          <div class="ra-tags"><a class="venue-tag" href="papers/hybrid-link-protection-old.pdf">IPCCC'14</a> <a class="venue-tag" href="papers/efficient-link-protection-old.pdf">ICC'15</a> <a class="venue-tag" href="papers/hybrid-link-protection-2020.pdf">JCN'20</a> <a class="venue-tag" href="papers/inter-dc-wan.pdf">CoNEXT'21</a> <a class="venue-tag" href="papers/wan-ha.pdf">ToN'22</a> <a class="venue-tag" href="papers/non-commutative.pdf">INFOCOM'25</a></div>
+        </div>
+        <div class="ra-item">
+          <div class="ra-item-head"><span class="ra-idx">2</span>试验设施资源调度与试验服务</div>
+          <p>设计试验环境描述语言，对设备、拓扑、资源与策略分层抽象，支持试验环境的灵活定义与批量创建；构建融合网络属性与用户需求的分层抽象模型，实现资源按需调度；研制面向企业云的即插即用网络管理平台 Kuiper。</p>
+          <div class="ra-tags"><a class="venue-tag" href="papers/kuiper.pdf">NSDI'27</a></div>
+        </div>
+        <div class="ra-item">
+          <div class="ra-item-head"><span class="ra-idx">3</span>算力与网络功能调度</div>
+          <p>研究时延感知的服务功能链部署与调度，部署成本降低 46%–64%；研制面向网络功能的 FaaS 平台，吞吐提升 10 倍以上、时延降低 90% 以上；提出集中式网络效用最大化的加速梯度方法，以及可编程交换机上的网内加速。</p>
+          <div class="ra-tags"><a class="venue-tag" href="papers/sfces.pdf">TPDS'26</a> <a class="venue-tag" href="papers/serpens.pdf">TPDS'23</a> <a class="venue-tag" href="papers/num.pdf">ToN'25</a> <a class="venue-tag" href="papers/nnetfec.pdf">INFOCOM'24</a> <a class="venue-tag" href="papers/netec.pdf">TPDS'22</a></div>
+        </div>
+      </div>
+      <p class="ra-text ra-impact"><span class="ra-label">科学价值与社会经济意义</span>为以路由算法替代冗余设备保障可靠性提供了新途径。链路保护技术应用于中国电信城域网，5 年降低建设成本超 40%，服务 1.2 亿城域网用户，获 2025 年中国通信学会科学技术奖一等奖、2026 年世界互联网大会领先科技奖；试验设施调度系统保障 FITI 稳定运行 3 年，调度全国 40 个节点资源，服务 100 余项大型试验，相关技术应用于华为等 32 家企业及腾讯。</p>
+    </article>
 
-    <div class="research-card">
-      <div class="area-title"><i class="fa-solid fa-shield-halved"></i>AI / 网络基础设施安全</div>
-      <p>
-        <em>在 ISP 规模上发现攻击与入侵，并在配置上线之前完成验证。</em><br><br>
-        可编程交换机在线加密流量入侵检测
-        <a class="venue-tag" href="papers/deepshield-p4.pdf">SIGCOMM'25</a>
-        <a class="venue-tag" href="papers/isp-centric-ids.pdf">SIGCOMM'26</a>；
-        可解释、能应对漂移的异常检测
-        <a class="venue-tag" href="papers/deepaid.pdf">CCS'21</a>
-        <a class="venue-tag" href="papers/owad.pdf">NDSS'23</a>
-        <a class="venue-tag" href="papers/sd-wan-ids.pdf">TIFS'23</a>；
-        基于溯源图的 APT 检测
-        <a class="venue-tag" href="papers/threatrace.pdf">TIFS'22</a>
-        <a class="venue-tag" href="papers/attackscene.pdf">TIFS'25</a>
-        <a class="venue-tag" href="papers/evolution-provenance-based-2026.pdf">IEEE Network'26</a>；
-        日志异常检测
-        <a class="venue-tag" href="papers/logad.pdf">TIFS'21</a>；
-        Serverless 钱包耗尽攻击检测
-        <a class="venue-tag" href="papers/gringotts.pdf">CCS'22</a>
-        <a class="venue-tag" href="papers/clover.pdf">ToN'26</a>；
-        BGP 与 RPKI 路由安全
-        <a class="venue-tag" href="papers/parade-2026.pdf">CCS'26</a>
-        <a class="venue-tag" href="#publications">ICNP'26</a>
-        <a class="venue-tag" href="papers/eris-2025.pdf">CCS'25</a>；
-        Web PKI / ACME 安全
-        <a class="venue-tag" href="papers/acmeplusplus-web-pki.pdf">WWW'25</a>；
-        配置与策略验证
-        <a class="venue-tag" href="papers/policyverify.pdf">TIFS'24</a>
-        <a class="venue-tag" href="papers/overlaycheck.pdf">CoNEXT'25</a>
-        <a class="venue-tag" href="papers/configverify.pdf">INFOCOM'26</a>；
-        大模型辅助的漏洞验证代码生成
-        <a class="venue-tag" href="papers/master-2026.pdf">电子学报'26</a>。
-      </p>
-    </div>
+    <article class="ra-block" id="ra-ops">
+      <div class="ra-head">
+        <span class="ra-no">03</span>
+        <div>
+          <h3 class="ra-title"><i class="fa-solid fa-shield-halved"></i>AI / 网络基础设施智能运维与安全防护</h3>
+          <p class="ra-sub">管得好、守得住：配置可验证、故障可诊断、攻击可检测、信任可感知</p>
+        </div>
+      </div>
+      <p class="ra-text"><span class="ra-label">研究方向与特点</span>配置错误、隐蔽故障与加密攻击是 AI / 网络基础设施稳定运行的主要威胁，且常发生在跨层、跨域、跨信任体系的交界处。本方向将形式化验证与可解释 AI 相结合，研究「配置可验证、故障可诊断、攻击可检测、信任可感知」的智能运维与安全防护技术，相关系统已在 ISP 与国家级试验设施中长期运行。</p>
+      <div class="ra-sec"><span class="ra-label">学术贡献与创新成果</span></div>
+      <div class="ra-contrib">
+        <div class="ra-item">
+          <div class="ra-item-head"><span class="ra-idx">1</span>配置验证与智能运维</div>
+          <p>提出定量策略验证、覆盖网集成验证与环境约简验证方法，在网络变动、试验创建与变更时将配置错误发现效率提升 10 倍以上；覆盖网验证器在全国性 FITI 网络上发现 22 处配置错误，较 Batfish+ 最高提速 102 倍。获泉城实验室项目支持。</p>
+          <div class="ra-tags"><a class="venue-tag" href="papers/policyverify.pdf">TIFS'24</a> <a class="venue-tag" href="papers/overlaycheck.pdf">CoNEXT'25</a> <a class="venue-tag" href="papers/configverify.pdf">INFOCOM'26</a> <a class="venue-tag" href="papers/testpktgen.pdf">TPDS'23</a></div>
+        </div>
+        <div class="ra-item">
+          <div class="ra-item-head"><span class="ra-idx">2</span>线速、可信的智能入侵检测</div>
+          <p>提出可编程交换机双平面协同架构，将特征提取下沉至数据平面，结合轻量单类分类与在线更新，在 Tbps 带宽下分钟级以约 90% 的准确率识别加密恶意流量；提出面向深度异常检测的解释机制与正常态漂移自适应方法，并拓展到基于溯源图的 APT 检测与 Serverless 钱包耗尽攻击检测。获 IRTF 应用网络研究奖。</p>
+          <div class="ra-tags"><a class="venue-tag" href="papers/deepshield-p4.pdf">SIGCOMM'25</a> <a class="venue-tag" href="papers/isp-centric-ids.pdf">SIGCOMM'26</a> <a class="venue-tag" href="papers/deepaid.pdf">CCS'21</a> <a class="venue-tag" href="papers/owad.pdf">NDSS'23</a> <a class="venue-tag" href="papers/threatrace.pdf">TIFS'22</a> <a class="venue-tag" href="papers/gringotts.pdf">CCS'22</a></div>
+        </div>
+        <div class="ra-item">
+          <div class="ra-item-head"><span class="ra-idx">3</span>互联网信任基础设施态势感知</div>
+          <p>以证书为核心，基于 CT 日志流式分析、多视角主动探测与网络侧 / 终端侧比对，识别证书签发、部署与使用异常，准确率较基线提升 30% 以上；构建证书、域名、IP 前缀与自治系统间的信任依赖图，形成千万级证书知识图谱。获中关村实验室项目支持。</p>
+          <div class="ra-tags"><a class="venue-tag" href="papers/acmeplusplus-web-pki.pdf">WWW'25</a> <a class="venue-tag" href="papers/parade-2026.pdf">CCS'26</a> <a class="venue-tag" href="papers/eris-2025.pdf">CCS'25</a> <a class="venue-tag" href="papers/rov-gd-2024.pdf">ISCC'24</a></div>
+        </div>
+      </div>
+      <p class="ra-text ra-impact"><span class="ra-label">科学价值与社会经济意义</span>推动智能运维与检测向可验证、线速、可信发展。入侵检测系统在两家 ISP 生产运行，发现 10 余起重大攻击事件、保护超 1000 万台服务器；初步建成国内首个证书系统态势感知平台，应用于电信、银行等行业，检测全部央企及 2000 余家政府和关键事业单位，发现证书部署威胁上百个。</p>
+    </article>
   </div>
 </section>
 
@@ -3526,6 +3561,7 @@
   <div class="awards-tier">
     <div class="tier-label"><span class="tier-tag">国际级</span>受国际学术界认可</div>
     <ul class="info-list">
+      <li><b>世界互联网大会领先科技奖</b>，2026。</li>
       <li><b>Applied Networking Research Prize (ANRP)</b>，IRTF / Internet Society 颁发，2023。</li>
     </ul>
   </div>

@@ -42,13 +42,13 @@
 % ------------------------------------------------------------- statement
 \section*{Research Statement}
 \noindent
-My research develops \textbf{measurement, resource-scheduling and security}
-technologies for \textbf{AI and network infrastructure}: the Internet (BGP, RPKI, DNS,
-Web PKI), ISP and carrier backbones, the \textbf{FITI / CERNET / CERNET2} national
-testbeds, and AI data centers, from intelligent-computing clusters to hyperscale and
-serverless clouds. The work is organised along three directions that serve one goal ---
-\emph{AI and network infrastructure that is observable, efficiently scheduled and secure
-by design}:
+My research develops \textbf{measurement, resource-scheduling, intelligent-operations
+and security} technologies for \textbf{AI and network infrastructure}: the Internet (BGP,
+RPKI, DNS, Web PKI), carrier backbones and metropolitan networks, the
+\textbf{FITI / CERNET / CERNET2} national testbeds, and AI data centers. The work is
+driven by national needs, built with industry, and organised along three directions that
+serve one goal --- \emph{AI and network infrastructure that is observable, efficiently
+scheduled, well operated and secure}:
 
 \begin{enumerate}[leftmargin=1.6em,label=\textbf{\arabic*.}]
   \item \textbf{AI \& Network Infrastructure Measurement.} Making production
@@ -58,19 +58,23 @@ by design}:
   switches (TPDS'22); and Internet-scale measurement of Looking-Glass services, AS
   relationships and interdomain routing (WWW'26, ToN'25, ICNP'26).
   \item \textbf{AI \& Network Infrastructure Resource Scheduling.} Turning measurements
-  into efficient, failure-resilient use of bandwidth and compute: inter-DC WAN traffic
-  engineering with availability guarantees (CoNEXT'21, ToN'22); centralised network
+  into efficient, failure-resilient use of bandwidth and compute: reliability-aware
+  routing with hybrid link protection (IPCCC'14, ICC'15, JCN'20), deployed in China
+  Telecom's metropolitan networks; inter-DC WAN traffic engineering with availability
+  guarantees (CoNEXT'21, ToN'22); resource scheduling and experiment services for the
+  FITI testbed; centralised network
   utility maximisation (ICNP'22, ToN'25); routing algebra (INFOCOM'25); in-network
   acceleration on programmable switches (INFOCOM'24, TPDS'22); FaaS platforms for
   network functions (TPDS'23); service-function-chain embedding and scheduling
   (TPDS'26); and plug-and-play network management for enterprise clouds (NSDI'27).
-  \item \textbf{AI \& Network Infrastructure Security.} Detecting attacks and
-  misconfigurations before they spread: inline intrusion detection on programmable
-  switches, in production at ISPs (SIGCOMM'25, SIGCOMM'26); interpretable and
-  shift-aware anomaly detection (CCS'21, NDSS'23); provenance-based APT detection
-  (TIFS'22, TIFS'25); serverless Denial-of-Wallet detection (CCS'22, ToN'26); routing
-  and Web-PKI security (CCS'26, WWW'25); and configuration verification at carrier
-  scale (TIFS'24, CoNEXT'25, INFOCOM'26).
+  \item \textbf{AI \& Network Infrastructure Intelligent Operations \& Security.}
+  Verifying configurations, diagnosing failures and detecting attacks before they
+  spread: configuration verification at carrier scale (TIFS'24, CoNEXT'25, INFOCOM'26);
+  inline intrusion detection on programmable switches, in production at ISPs
+  (SIGCOMM'25, SIGCOMM'26); interpretable and shift-aware anomaly detection (CCS'21,
+  NDSS'23); provenance-based APT and serverless Denial-of-Wallet detection (TIFS'22,
+  TIFS'25, CCS'22, ToN'26); and situational awareness of Internet trust infrastructure
+  --- certificates, Web PKI and routing (WWW'25, CCS'26).
 \end{enumerate}
 
 % ----------------------------------------------------------- bibliometrics
@@ -104,6 +108,8 @@ IEEE/ACM Transactions on Networking, IEEE TIFS and IEEE TPDS.}
 % ---------------------------------------------------------------- awards
 \section{Selected Awards \& Honours}
 \begin{itemize}
+  \item \textbf{World Internet Conference Leading Technology Award}
+        (\cn{世界互联网大会领先科技奖}), 2026. \note{International}
   \item \textbf{Applied Networking Research Prize (ANRP)}, IRTF / Internet Society ---
         Certificate of Award, 2023. \note{International}
   \item \textbf{First Prize, Science and Technology Award}, China Institute of
@@ -201,7 +207,7 @@ of flows, including prioritised flows on multiple paths.}
 
 \end{publist}
 
-\subsection*{AI \& Network Infrastructure Security}
+\subsection*{AI \& Network Infrastructure Intelligent Operations \& Security}
 \begin{publist}[resume]
 
 \item \me{Han Zhang}, Xuefeng Liu, Linqiang Qian, Guyue Liu, Tianyu Zhang, Kaiyang
@@ -653,11 +659,21 @@ C\&C Traces.'' \venue{IEEE HST 2015}.
 % -------------------------------------------------------------- transfer
 \section{Technology Transfer \& National Impact}
 \begin{itemize}
-  \item \textbf{China Telecom backbone} --- line-rate encrypted-traffic anomaly
-        detection; large-scale WAN sensing and optimisation.
-  \item \textbf{FITI (Future Internet Technology Infrastructure)} --- programmable-switch
-        IDS and segment-routing diagnosis deployed on the national next-generation
-        Internet testbed; configuration and overlay verification.
+  \item \textbf{China Telecom metropolitan and backbone networks} --- hybrid link
+        protection in the metropolitan networks: construction cost cut by more than 40\%
+        over five years for 120 million users (2025 China Institute of Communications
+        S\&T Award, First Prize; 2026 World Internet Conference Leading Technology
+        Award); line-rate encrypted-traffic anomaly detection; WAN sensing and
+        optimisation.
+  \item \textbf{FITI (Future Internet Technology Infrastructure)} --- resource scheduling
+        and experiment services that have kept the national testbed running for three
+        years (40 sites, more than 100 large experiments); configuration and overlay
+        verification; programmable-switch IDS and SRv6 diagnosis. The technology is also
+        used by 32 companies including Huawei, and by Tencent.
+  \item \textbf{Certificate situational-awareness platform} --- the first in China;
+        serves the telecom and banking sectors and monitors all central state-owned
+        enterprises and more than 2{,}000 government and critical public institutions,
+        uncovering over a hundred certificate-deployment threats.
   \item \textbf{CERNET / CERNET2} --- DeepFlow-based observability and routing-anomaly
         analysis across the China Education and Research Network.
   \item \textbf{Tencent Cloud} --- observability for large-scale microservice systems;
