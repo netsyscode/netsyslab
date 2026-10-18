@@ -259,46 +259,6 @@
     background: var(--c-accent); color: #fff !important;
   }
 
-  /* ─── Research areas: three structured blocks (2026-10-18) ──── */
-  .ra-intro { font-size: 14.5px; line-height: 1.75; color: var(--c-ink-soft); margin: 4px 0 18px; }
-  .ra-list { display: flex; flex-direction: column; gap: 18px; }
-  .ra-block {
-    background: var(--c-paper); border: 1px solid var(--c-line);
-    border-top: 3px solid var(--c-accent); border-radius: var(--radius);
-    padding: 18px 22px; box-shadow: var(--shadow-sm);
-  }
-  .ra-head { display: flex; align-items: center; gap: 14px; margin-bottom: 12px; }
-  .ra-no { font-family: var(--serif); font-size: 30px; font-weight: 700; color: var(--c-accent); line-height: 1; min-width: 44px; }
-  .ra-title { font-family: var(--serif); font-weight: 600; font-size: 18px; margin: 0; color: var(--c-ink); }
-  .ra-title i { color: var(--c-accent); margin-right: 8px; font-size: 15px; }
-  .ra-sub { margin: 3px 0 0; font-size: 13px; color: var(--c-muted); }
-  .ra-label {
-    display: inline-block; font-size: 11.5px; font-weight: 600; letter-spacing: .02em;
-    color: var(--c-accent); background: var(--c-accent-soft); border-radius: 4px;
-    padding: 1px 8px; margin-right: 8px; vertical-align: 1px;
-  }
-  .ra-text { font-size: 14px; line-height: 1.75; color: var(--c-ink-soft); margin: 0 0 12px; }
-  .ra-sec { margin: 0 0 8px; }
-  .ra-contrib { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 0 0 12px; }
-  .ra-item {
-    border: 1px solid var(--c-line); border-radius: 8px; padding: 12px 14px 10px;
-    background: #fdfcf9; display: flex; flex-direction: column;
-  }
-  .ra-item-head { font-weight: 600; font-size: 14.5px; color: var(--c-ink); margin-bottom: 6px; display: flex; align-items: baseline; gap: 8px; }
-  .ra-idx {
-    flex: none; display: inline-flex; align-items: center; justify-content: center;
-    width: 20px; height: 20px; border-radius: 50%; background: var(--c-accent); color: #fff;
-    font-size: 11.5px; font-weight: 700; transform: translateY(-1px);
-  }
-  .ra-item p { font-size: 13.5px; line-height: 1.68; color: var(--c-ink-soft); margin: 0 0 8px; flex: 1; }
-  .ra-tags { display: flex; flex-wrap: wrap; gap: 4px 2px; }
-  .ra-impact { background: var(--c-accent-soft); border-radius: 6px; padding: 10px 14px; margin: 0; }
-  .ra-impact .ra-label { background: var(--c-accent); color: #fff; }
-  @media (max-width: 900px) {
-    .ra-contrib { grid-template-columns: 1fr; }
-    .ra-block { padding: 16px; }
-  }
-
   /* ─── Research Vision (framework figure) ─────────────────── */
   .vision-wrap {
     background: linear-gradient(180deg, var(--c-paper) 0%, #fdfbf6 100%);
@@ -1322,15 +1282,17 @@
 <!-- ═══════════════════════ About ═══════════════════════ -->
 <section class="section about" id="about">
   <h2><i class="fa-solid fa-user icon"></i>About</h2>
-  <p><b>Direction and approach.</b> I work on <b>AI and network infrastructure</b>: the Internet (BGP, RPKI, DNS, Web PKI), carrier backbones and metropolitan networks, the <b>FITI / CERNET / CERNET2</b> national testbeds, and AI data centers. The research follows three lines, aimed at infrastructure that is <b>observable, efficiently scheduled, well operated, and secure</b>. It is driven by national needs and built together with industry; details are in <a href="#research">Research Areas</a> below.</p>
+  <p>My research develops <b>measurement, resource-scheduling, intelligent-operations, and security</b> technologies for <b>AI and network infrastructure</b>: the Internet (BGP, RPKI, DNS, Web PKI), ISP and carrier backbones, the <b>FITI / CERNET / CERNET2</b> national testbeds, and AI data centers, from intelligent-computing clusters to hyperscale and serverless clouds. The work is organized into <b>three directions</b>, detailed in <a href="#research">Research Areas</a> below:</p>
   <ol style="margin:6px 0 12px 22px;padding:0;line-height:1.65;">
-    <li><b>AI &amp; Network Infrastructure Measurement</b>: zero-code distributed tracing (<a href="#pub-deepflow"><i>DeepFlow</i> SIGCOMM'23</a>, <a href="#pub-deeptrace"><i>DeepTrace</i> SIGCOMM'25</a>, <a href="#pub-icse26"><i>FlowScope</i> ICSE'26</a>), SRv6 probing and diagnosis (<a href="#pub-srmesh"><i>SRmesh</i> ICNP'25</a>, <a href="#pub-srv6">ToN'26</a>), and Internet-scale measurement (<a href="#pub-glassminer"><i>GlassMiner</i> WWW'26</a>, <a href="#pub-hela"><i>HELA</i> ToN'25</a>).</li>
-    <li><b>AI &amp; Network Infrastructure Resource Scheduling</b>: reliability-driven routing and traffic engineering (<a href="#pub-conext21"><i>BATE</i> CoNEXT'21</a>, <a href="#pub-ton22"><i>TEDAT</i> ToN'22</a>, <a href="#pub-infocom25">INFOCOM'25</a>), testbed resource scheduling (<a href="#pub-kuiper"><i>Kuiper</i> NSDI'27</a>), and compute and network-function scheduling (<a href="#pub-sfc"><i>SFCES</i> TPDS'26</a>, <a href="#pub-serpens"><i>Serpens</i> TPDS'23</a>, <a href="#pub-infocom24"><i>NetFEC</i> INFOCOM'24</a>).</li>
-    <li><b>AI &amp; Network Infrastructure Intelligent Operations &amp; Security</b>: configuration verification (<a href="#pub-tifs24">TIFS'24</a>, <a href="#pub-conext25"><i>MEV</i> CoNEXT'25</a>, <a href="#pub-infocom26"><i>Bulwark</i> INFOCOM'26</a>), line-rate intrusion detection in production at ISPs (<a href="#pub-deepshield"><i>DeepShield</i> SIGCOMM'25</a>, <a href="#pub-sigcomm26"><i>SiteGuard</i> SIGCOMM'26</a>), interpretable anomaly detection (<a href="#pub-ccs21"><i>DeepAID</i> CCS'21</a>, <a href="#pub-ndss23"><i>OWAD</i> NDSS'23</a>), and situational awareness of Internet trust infrastructure (<a href="#pub-acme"><i>ACME++</i> WWW'25</a>, <i>Parade</i> CCS'26).</li>
+    <li><b>AI &amp; Network Infrastructure Measurement.</b> Making production infrastructure observable at line rate and with zero application changes: zero-code distributed tracing with eBPF (<a href="#pub-deepflow"><i>DeepFlow</i> SIGCOMM'23</a>, <a href="#pub-deeptrace"><i>DeepTrace</i> SIGCOMM'25</a>, <a href="#pub-icse26"><i>FlowScope</i> ICSE'26</a>), SRv6 probing and latency-bottleneck diagnosis (<a href="#pub-srmesh"><i>SRmesh</i> ICNP'25</a>, <a href="#pub-srv6">ToN'26</a>), flow measurement on programmable switches (<a href="#pub-hashflow"><i>HashFlow</i> TPDS'22</a>), and Internet-scale measurement of Looking-Glass services, AS relationships, and interdomain routing (<a href="#pub-glassminer"><i>GlassMiner</i> WWW'26</a>, <a href="#pub-hela"><i>HELA</i> ToN'25</a>, ICNP'26).</li>
+    <li><b>AI &amp; Network Infrastructure Resource Scheduling.</b> Turning measurements into efficient, failure-resilient use of bandwidth and compute: inter-DC WAN traffic engineering with availability guarantees (<a href="#pub-conext21"><i>BATE</i> CoNEXT'21</a>, <a href="#pub-ton22"><i>TEDAT</i> ToN'22</a>), centralized network utility maximization (<a href="#pub-num">ToN'25</a>), routing algebra (<a href="#pub-infocom25">INFOCOM'25</a>), in-network acceleration on programmable switches (<a href="#pub-infocom24"><i>NetFEC</i> INFOCOM'24</a>, <a href="#pub-netec"><i>NetEC</i> TPDS'22</a>), FaaS platforms for network functions (<a href="#pub-serpens"><i>Serpens</i> TPDS'23</a>), service-function-chain embedding and scheduling (<a href="#pub-sfc"><i>SFCES</i> TPDS'26</a>), and plug-and-play network management for enterprise clouds (<a href="#pub-kuiper"><i>Kuiper</i> NSDI'27</a>).</li>
+    <li><b>AI &amp; Network Infrastructure Intelligent Operations &amp; Security.</b> Verifying configurations and detecting attacks before they spread: configuration verification at carrier scale (<a href="#pub-tifs24">TIFS'24</a>, <a href="#pub-conext25"><i>MEV</i> CoNEXT'25</a>, <a href="#pub-infocom26"><i>Bulwark</i> INFOCOM'26</a>), inline intrusion detection on programmable switches, in production at ISPs (<a href="#pub-deepshield"><i>DeepShield</i> SIGCOMM'25</a>, <a href="#pub-sigcomm26"><i>SiteGuard</i> SIGCOMM'26</a>), interpretable and shift-aware anomaly detection (<a href="#pub-ccs21"><i>DeepAID</i> CCS'21</a>, <a href="#pub-ndss23"><i>OWAD</i> NDSS'23</a>), provenance-based APT detection (<a href="#pub-tifs22"><i>THREATRACE</i> TIFS'22</a>, <a href="#pub-tifs25">TIFS'25</a>), serverless Denial-of-Wallet detection (<a href="#pub-gringotts"><i>Gringotts</i> CCS'22</a>, <a href="#pub-clover"><i>Clover</i> ToN'26</a>), and routing and Web-PKI security (<i>Parade</i> CCS'26, <a href="#pub-acme"><i>ACME++</i> WWW'25</a>).</li>
   </ol>
-  <p><b>Contributions and impact.</b> I have led projects such as <b>DeepShield</b> and published nearly 100 papers in venues including <i>SIGCOMM, NSDI, CCS, NDSS, CoNEXT, INFOCOM,</i> and <i>IEEE/ACM ToN</i>. The technologies run in critical national network infrastructure: link protection in <b>China Telecom's metropolitan networks</b> (more than 40% lower construction cost over five years, 120 million users), resource scheduling and configuration verification for the <b>Future Internet Technology Infrastructure (FITI)</b> (three years of stable operation, 40 sites, more than 100 large experiments), and <b>CERNET / CERNET2</b>, serving telecom operators, national defense, and other sectors vital to the national economy and people's livelihoods. Honors include the <b>First Prize of the China Institute of Communications Science and Technology Award</b> (2025), the <b>World Internet Conference Leading Technology Award</b> (2026), the <b>IRTF Applied Networking Research Prize</b>, the <b>NSGA Best Researcher Award</b>, and the <b>ACM SIGCSE China Rising Star Award</b>.</p>
+  <p>Together, the three directions serve one goal: <b>AI and network infrastructure that is observable, efficiently scheduled, well operated, and secure by design</b>, from the kernel and the programmable data plane up to national backbones and AI data centers.</p>
 
-  <p><b>Academic service.</b> I serve on the editorial board of <i>Communication Technology</i>, as a guest editor for <i>MDPI Electronics</i> and <i>IEEE JSAC</i>, and as a regular reviewer for <i>IEEE/ACM ToN, IEEE TPDS,</i> and <i>IEEE TIFS</i>. I have served on the program committees of <i>USENIX NSDI, USENIX Security, IEEE INFOCOM, ACM CoNEXT,</i> and <i>IEEE ICNP</i>, and co-chaired the program committee of the <i>ACM SIGCOMM NGNO</i> workshop.</p>
+  <p>I have led projects such as <b>DeepShield</b> and published nearly 100 papers in top-tier international conferences and journals, including <i>SIGCOMM, NSDI, CCS, NDSS, CoNEXT, INFOCOM,</i> and <i>IEEE/ACM ToN</i>. The resulting technologies are widely adopted in industry and deployed in critical national network infrastructure, including <b>China Telecom's backbone network</b>, the <b>Future Internet Technology Infrastructure (FITI)</b>, and <b>CERNET / CERNET2</b>, serving telecom operators, national defense, and other sectors vital to the national economy and people's livelihoods.</p>
+
+  <p>I received the <b>ACM SIGCSE China Rising Star Award</b>. I serve on the editorial board of <i>Communication Technology</i>, as a guest editor for <i>MDPI Electronics</i> and <i>IEEE JSAC</i>, and as a regular reviewer for <i>IEEE/ACM ToN, IEEE TPDS,</i> and <i>IEEE TIFS</i>. I have served on the program committees of <i>USENIX NSDI, USENIX Security, IEEE INFOCOM, ACM CoNEXT,</i> and <i>IEEE ICNP</i>, and co-chaired the program committee of the <i>ACM SIGCOMM NGNO</i> workshop. Technologies from my research serve hundreds of millions of users.</p>
 
   <div class="callout">
     <strong>Looking for students:</strong> I am recruiting Ph.D. and Master's students for <b>Fall 2027</b> to work on measurement, scheduling, intelligent operations, and security for AI and network infrastructure. Systems-programming experience is a big plus &mdash; feel free to email me!
@@ -1662,98 +1624,101 @@
 <!-- ═══════════════════════ Research ═══════════════════════ -->
 <section class="section" id="research">
   <h2><i class="fa-solid fa-flask icon"></i>Research Areas</h2>
-  <p class="ra-intro"><b>Direction and approach.</b> AI and network infrastructure underpins the digital economy and the nation&#39;s cyber capability. We study it along three lines (measurement, resource scheduling, and intelligent operations and security) so that infrastructure is <b>observable, efficiently scheduled, well operated, and secure</b>. The work is driven by national needs and built with industry: our systems run in China Telecom&#39;s metropolitan networks, the FITI national testbed, CERNET / CERNET2, and leading companies, and the problems they meet in production feed back into the research.</p>
 
-  <div class="ra-list">
-    <article class="ra-block" id="ra-measure">
-      <div class="ra-head">
-        <span class="ra-no">01</span>
-        <div>
-          <h3 class="ra-title"><i class="fa-solid fa-satellite-dish"></i>AI &amp; Network Infrastructure Measurement</h3>
-          <p class="ra-sub">Seeing what was invisible: zero-intrusion, line-rate, full-coverage measurement</p>
-        </div>
-      </div>
-      <p class="ra-text"><span class="ra-label">Direction &amp; characteristics</span>AI data centers and network infrastructure are huge, multi-protocol, fast, and mostly encrypted; being unable to see, to measure accurately, or to keep up is the first bottleneck for both operations and security. We build a three-layer measurement stack (application, network, Internet) that is zero-intrusion, line-rate, and full-coverage, and we deploy it in production, where it becomes the data foundation for scheduling and security.</p>
-      <div class="ra-sec"><span class="ra-label">Innovations &amp; contributions</span></div>
-      <div class="ra-contrib">
-        <div class="ra-item">
-          <div class="ra-item-head"><span class="ra-idx">1</span>Zero-code distributed tracing</div>
-          <p>A network-centric tracing plane with implicit context propagation uses eBPF to reconstruct request causality without any change to application code. Transaction-based tracing and method-level delay estimation keep accuracy above 95% under high concurrency and improve it by a further 51% over DeepFlow and TraceWeaver.</p>
-          <div class="ra-tags"><a class="venue-tag" href="papers/deepflow.pdf">SIGCOMM'23</a> <a class="venue-tag" href="papers/deeptrace.pdf">SIGCOMM'25</a> <a class="venue-tag" href="papers/non-intrusive-trace.pdf">ICSE'26</a></div>
-        </div>
-        <div class="ra-item">
-          <div class="ra-item-head"><span class="ra-idx">2</span>Line-rate measurement and SRv6 probing</div>
-          <p>HashFlow collects accurate flow records at line rate on programmable switches. SRmesh locates latency-bottleneck links in SRv6 networks through deterministic SR probes, latency-based multipath inference, and progressive diagnosis, and scales to slice-parallel distributed probing, cutting probe overhead by more than 90%.</p>
-          <div class="ra-tags"><a class="venue-tag" href="papers/hashflow.pdf">TPDS'22</a> <a class="venue-tag" href="papers/srmesh-srv6.pdf">ICNP'25</a> <a class="venue-tag" href="papers/srv6-probing.pdf">ToN'26</a></div>
-        </div>
-        <div class="ra-item">
-          <div class="ra-item-head"><span class="ra-idx">3</span>Internet-scale measurement</div>
-          <p>Structure–semantics fusion discovers Looking-Glass services worldwide and adds 7,558 vantage points; a hybrid empirical and learning method infers AS business relationships with up to 2.9× lower error; IPv6 active-address probing, combined with operator-side and endpoint-side extraction, has built a corpus of more than ten billion certificates.</p>
-          <div class="ra-tags"><a class="venue-tag" href="papers/glassminer.pdf">WWW'26</a> <a class="venue-tag" href="papers/hela.pdf">ToN'25</a> <a class="venue-tag" href="papers/knocking-cells-2023.pdf">ISCC'23</a> <a class="venue-tag" href="papers/cheap-accurate-delay-2023.pdf">IFIP Networking'23</a></div>
-        </div>
-      </div>
-      <p class="ra-text ra-impact"><span class="ra-label">Scientific value &amp; impact</span>A measurement methodology that spans applications, networks, and the Internet. DeepFlow is an open-source CNCF Sandbox project deployed on tens of thousands of hosts and has located more than 71 critical performance anomalies for over 26 companies; DeepTrace is used in production by dozens of companies for failure diagnosis and resource optimization; SRv6 probing supports real-time monitoring of large sliced networks.</p>
-    </article>
+  <div class="research-grid">
+    <div class="research-card">
+      <div class="area-title"><i class="fa-solid fa-satellite-dish"></i>AI &amp; Network Infrastructure Measurement</div>
+      <p>
+        <em>Observing production infrastructure end to end &mdash; from the kernel and the data plane to the global routing system &mdash; at line rate and with zero application changes.</em><br><br>
+        Zero-code distributed tracing
+        <a class="venue-tag" href="papers/deepflow.pdf">SIGCOMM'23</a>
+        <a class="venue-tag" href="papers/deeptrace.pdf">SIGCOMM'25</a>
+        <a class="venue-tag" href="papers/non-intrusive-trace.pdf">ICSE'26</a>;
+        SRv6 probing &amp; latency diagnosis
+        <a class="venue-tag" href="papers/srmesh-srv6.pdf">ICNP'25</a>
+        <a class="venue-tag" href="papers/srv6-probing.pdf">ToN'26</a>;
+        flow measurement on programmable switches
+        <a class="venue-tag" href="papers/hashflow.pdf">TPDS'22</a>;
+        Looking-Glass discovery &amp; web-infrastructure observability
+        <a class="venue-tag" href="papers/glassminer.pdf">WWW'26</a>;
+        AS-relationship inference
+        <a class="venue-tag" href="papers/hela.pdf">ToN'25</a>;
+        interdomain control- / data-plane mismatch
+        <a class="venue-tag" href="#publications">ICNP'26</a>;
+        IPv6 &amp; IP-geolocation measurement
+        <a class="venue-tag" href="papers/knocking-cells-2023.pdf">ISCC'23</a>
+        <a class="venue-tag" href="papers/cheap-accurate-delay-2023.pdf">IFIP Networking'23</a>;
+        test-packet generation for data-plane faults
+        <a class="venue-tag" href="papers/testpktgen.pdf">TPDS'23</a>.
+      </p>
+    </div>
 
-    <article class="ra-block" id="ra-schedule">
-      <div class="ra-head">
-        <span class="ra-no">02</span>
-        <div>
-          <h3 class="ra-title"><i class="fa-solid fa-diagram-project"></i>AI &amp; Network Infrastructure Resource Scheduling</h3>
-          <p class="ra-sub">Scheduling well: bandwidth, routes, compute, and network functions, used economically and reliably</p>
-        </div>
-      </div>
-      <p class="ra-text"><span class="ra-label">Direction &amp; characteristics</span>Bandwidth, routes, compute, and network functions in testbeds, carrier networks, and AI / cloud data centers must be used both economically and reliably. We bring reliability and availability into routing and scheduling, from links and WANs up to compute and network functions, and deploy the results at scale in national testbeds and carrier networks.</p>
-      <div class="ra-sec"><span class="ra-label">Innovations &amp; contributions</span></div>
-      <div class="ra-contrib">
-        <div class="ra-item">
-          <div class="ra-item-head"><span class="ra-idx">1</span>Reliability-driven routing and traffic engineering</div>
-          <p>Hybrid link protection and loop-free-alternate computation bring reliability into route computation and need 30% fewer devices for the same reliability; availability-guaranteed inter-DC traffic engineering speeds up admission control 30× and meets 23–60% more demands; a routing algebra covers non-commutative metrics. Supported by an NSFC Major Program.</p>
-          <div class="ra-tags"><a class="venue-tag" href="papers/hybrid-link-protection-old.pdf">IPCCC'14</a> <a class="venue-tag" href="papers/efficient-link-protection-old.pdf">ICC'15</a> <a class="venue-tag" href="papers/hybrid-link-protection-2020.pdf">JCN'20</a> <a class="venue-tag" href="papers/inter-dc-wan.pdf">CoNEXT'21</a> <a class="venue-tag" href="papers/wan-ha.pdf">ToN'22</a> <a class="venue-tag" href="papers/non-commutative.pdf">INFOCOM'25</a></div>
-        </div>
-        <div class="ra-item">
-          <div class="ra-item-head"><span class="ra-idx">2</span>Testbed resource scheduling and experiment services</div>
-          <p>An experiment-environment description language abstracts devices, topologies, resources, and policies in layers, so that environments can be defined flexibly and created in batches; a layered model that combines network attributes with user requirements schedules resources on demand; Kuiper brings plug-and-play network management to enterprise clouds.</p>
-          <div class="ra-tags"><a class="venue-tag" href="papers/kuiper.pdf">NSDI'27</a></div>
-        </div>
-        <div class="ra-item">
-          <div class="ra-item-head"><span class="ra-idx">3</span>Compute and network-function scheduling</div>
-          <p>Delay-aware service-function-chain embedding and scheduling cuts embedding cost by 46–64%; a FaaS platform for network functions delivers more than 10× the throughput and over 90% lower latency; an accelerated-gradient method for centralized network utility maximization and in-network acceleration on programmable switches complete the toolbox.</p>
-          <div class="ra-tags"><a class="venue-tag" href="papers/sfces.pdf">TPDS'26</a> <a class="venue-tag" href="papers/serpens.pdf">TPDS'23</a> <a class="venue-tag" href="papers/num.pdf">ToN'25</a> <a class="venue-tag" href="papers/nnetfec.pdf">INFOCOM'24</a> <a class="venue-tag" href="papers/netec.pdf">TPDS'22</a></div>
-        </div>
-      </div>
-      <p class="ra-text ra-impact"><span class="ra-label">Scientific value &amp; impact</span>A new way to guarantee reliability with routing algorithms instead of redundant equipment. Link protection runs in China Telecom&#39;s metropolitan networks, where it has cut construction cost by more than 40% over five years for 120 million users; it received the 2025 China Institute of Communications Science and Technology Award (First Prize) and the 2026 World Internet Conference Leading Technology Award. The testbed scheduling system has kept FITI running for three years across 40 sites nationwide and has served more than 100 large experiments; the technology is also used by 32 companies including Huawei, and by Tencent.</p>
-    </article>
+    <div class="research-card">
+      <div class="area-title"><i class="fa-solid fa-diagram-project"></i>AI &amp; Network Infrastructure Resource Scheduling</div>
+      <p>
+        <em>Turning measurements into efficient, failure-resilient use of bandwidth and compute across WANs, data centers, and serverless platforms.</em><br><br>
+        Inter-DC WAN traffic engineering
+        <a class="venue-tag" href="papers/inter-dc-wan.pdf">CoNEXT'21</a>
+        <a class="venue-tag" href="papers/wan-ha.pdf">ToN'22</a>;
+        network utility maximization
+        <a class="venue-tag" href="papers/num-icnp22.pdf">ICNP'22</a>
+        <a class="venue-tag" href="papers/num.pdf">ToN'25</a>;
+        routing algebra &amp; failure-aware traffic engineering
+        <a class="venue-tag" href="papers/non-commutative.pdf">INFOCOM'25</a>
+        <a class="venue-tag" href="papers/probabilistic-analysis-overload-2025.pdf">IWQoS'25</a>
+        <a class="venue-tag" href="papers/traffic-engineering-segment-2021.pdf">CNSM'21</a>;
+        in-network acceleration on programmable switches
+        <a class="venue-tag" href="papers/nnetfec.pdf">INFOCOM'24</a>
+        <a class="venue-tag" href="papers/netec.pdf">TPDS'22</a>;
+        serverless &amp; cloud resource management
+        <a class="venue-tag" href="papers/serpens.pdf">TPDS'23</a>
+        <a class="venue-tag" href="papers/scorpius-2022.pdf">IWQoS'22</a>
+        <a class="venue-tag" href="papers/puvar-2023.pdf">ICWS'23</a>;
+        service-function-chain embedding &amp; scheduling
+        <a class="venue-tag" href="papers/sfces.pdf">TPDS'26</a>
+        <a class="venue-tag" href="papers/cost-efficient-dynamic-2021.pdf">CNSM'21</a>;
+        congestion control &amp; coflow scheduling
+        <a class="venue-tag" href="papers/delay-based-congestion-2023.pdf">IWQoS'23</a>
+        <a class="venue-tag" href="papers/efficient-scheduling-weighted-2019.pdf">TPDS'19</a>;
+        plug-and-play enterprise network management
+        <a class="venue-tag" href="papers/kuiper.pdf">NSDI'27</a>.
+      </p>
+    </div>
 
-    <article class="ra-block" id="ra-ops">
-      <div class="ra-head">
-        <span class="ra-no">03</span>
-        <div>
-          <h3 class="ra-title"><i class="fa-solid fa-shield-halved"></i>AI &amp; Network Infrastructure Intelligent Operations &amp; Security</h3>
-          <p class="ra-sub">Operating and securing: verifiable configurations, diagnosable failures, detectable attacks, observable trust</p>
-        </div>
-      </div>
-      <p class="ra-text"><span class="ra-label">Direction &amp; characteristics</span>Misconfigurations, silent failures, and encrypted attacks are the main threats to AI and network infrastructure, and they tend to arise where layers, domains, and trust systems meet. We combine formal verification with interpretable AI so that configurations are verifiable, failures diagnosable, attacks detectable, and trust observable; the resulting systems have run for years at ISPs and in national testbeds.</p>
-      <div class="ra-sec"><span class="ra-label">Innovations &amp; contributions</span></div>
-      <div class="ra-contrib">
-        <div class="ra-item">
-          <div class="ra-item-head"><span class="ra-idx">1</span>Configuration verification and intelligent operations</div>
-          <p>Quantitative-policy verification, ensemble verification for overlay/underlay networks, and environment-reduction verification find configuration errors more than 10× faster when networks change or experiments are created and modified; the overlay verifier found 22 misconfigurations on the nationwide FITI network and runs up to 102× faster than Batfish+. Supported by Quancheng Laboratory.</p>
-          <div class="ra-tags"><a class="venue-tag" href="papers/policyverify.pdf">TIFS'24</a> <a class="venue-tag" href="papers/overlaycheck.pdf">CoNEXT'25</a> <a class="venue-tag" href="papers/configverify.pdf">INFOCOM'26</a> <a class="venue-tag" href="papers/testpktgen.pdf">TPDS'23</a></div>
-        </div>
-        <div class="ra-item">
-          <div class="ra-item-head"><span class="ra-idx">2</span>Line-rate, trustworthy intrusion detection</div>
-          <p>A dual-plane design on programmable switches pushes feature extraction into the data plane and pairs it with a lightweight one-class model and online updates, identifying encrypted malicious traffic at Tbps with about 90% accuracy within minutes. Interpretation and normality-shift adaptation make deep anomaly detectors usable in practice, and the work extends to provenance-based APT detection and serverless Denial-of-Wallet detection. IRTF Applied Networking Research Prize.</p>
-          <div class="ra-tags"><a class="venue-tag" href="papers/deepshield-p4.pdf">SIGCOMM'25</a> <a class="venue-tag" href="papers/isp-centric-ids.pdf">SIGCOMM'26</a> <a class="venue-tag" href="papers/deepaid.pdf">CCS'21</a> <a class="venue-tag" href="papers/owad.pdf">NDSS'23</a> <a class="venue-tag" href="papers/threatrace.pdf">TIFS'22</a> <a class="venue-tag" href="papers/gringotts.pdf">CCS'22</a></div>
-        </div>
-        <div class="ra-item">
-          <div class="ra-item-head"><span class="ra-idx">3</span>Situational awareness of Internet trust infrastructure</div>
-          <p>Certificate-centric lifecycle monitoring (streaming CT-log analysis, multi-vantage active probing, and comparison of network-side and endpoint-side views) detects issuance, deployment, and usage anomalies with more than 30% higher accuracy than baselines; a trust-dependency graph across certificates, domains, IP prefixes, and ASes yields a knowledge graph of tens of millions of certificates. Supported by Zhongguancun Laboratory.</p>
-          <div class="ra-tags"><a class="venue-tag" href="papers/acmeplusplus-web-pki.pdf">WWW'25</a> <a class="venue-tag" href="papers/parade-2026.pdf">CCS'26</a> <a class="venue-tag" href="papers/eris-2025.pdf">CCS'25</a> <a class="venue-tag" href="papers/rov-gd-2024.pdf">ISCC'24</a></div>
-        </div>
-      </div>
-      <p class="ra-text ra-impact"><span class="ra-label">Scientific value &amp; impact</span>Intelligent operations and detection that are verifiable, line-rate, and trustworthy. The intrusion-detection system runs in production at two ISPs, where it has caught more than 10 critical attack events and protects over 10 million servers. China&#39;s first certificate situational-awareness platform serves the telecom and banking sectors, monitors all central state-owned enterprises and more than 2,000 government and critical public institutions, and has uncovered over a hundred certificate-deployment threats.</p>
-    </article>
+    <div class="research-card">
+      <div class="area-title"><i class="fa-solid fa-shield-halved"></i>AI &amp; Network Infrastructure Intelligent Operations &amp; Security</div>
+      <p>
+        <em>Verifying configurations before they reach production, diagnosing failures, and detecting attacks and intrusions at ISP scale.</em><br><br>
+        Configuration &amp; policy verification
+        <a class="venue-tag" href="papers/policyverify.pdf">TIFS'24</a>
+        <a class="venue-tag" href="papers/overlaycheck.pdf">CoNEXT'25</a>
+        <a class="venue-tag" href="papers/configverify.pdf">INFOCOM'26</a>;
+        inline encrypted-traffic IDS on programmable switches
+        <a class="venue-tag" href="papers/deepshield-p4.pdf">SIGCOMM'25</a>
+        <a class="venue-tag" href="papers/isp-centric-ids.pdf">SIGCOMM'26</a>;
+        interpretable &amp; shift-aware anomaly detection
+        <a class="venue-tag" href="papers/deepaid.pdf">CCS'21</a>
+        <a class="venue-tag" href="papers/owad.pdf">NDSS'23</a>
+        <a class="venue-tag" href="papers/sd-wan-ids.pdf">TIFS'23</a>;
+        provenance-based APT detection
+        <a class="venue-tag" href="papers/threatrace.pdf">TIFS'22</a>
+        <a class="venue-tag" href="papers/attackscene.pdf">TIFS'25</a>
+        <a class="venue-tag" href="papers/evolution-provenance-based-2026.pdf">IEEE Network'26</a>;
+        log anomaly detection
+        <a class="venue-tag" href="papers/logad.pdf">TIFS'21</a>;
+        serverless Denial-of-Wallet detection
+        <a class="venue-tag" href="papers/gringotts.pdf">CCS'22</a>
+        <a class="venue-tag" href="papers/clover.pdf">ToN'26</a>;
+        BGP &amp; RPKI routing security
+        <a class="venue-tag" href="papers/parade-2026.pdf">CCS'26</a>
+        <a class="venue-tag" href="#publications">ICNP'26</a>
+        <a class="venue-tag" href="papers/eris-2025.pdf">CCS'25</a>;
+        Web PKI / ACME security
+        <a class="venue-tag" href="papers/acmeplusplus-web-pki.pdf">WWW'25</a>;
+        LLM-assisted vulnerability PoC generation
+        <a class="venue-tag" href="papers/master-2026.pdf">Acta Electronica Sinica'26</a>.
+      </p>
+    </div>
   </div>
 </section>
 
